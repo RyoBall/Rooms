@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8366139130483890723}
   - component: {fileID: 569945169924219791}
   - component: {fileID: 7317319354597684351}
-  - component: {fileID: 7465757095469412834}
+  - component: {fileID: 4120320803168002030}
   m_Layer: 7
-  m_Name: Image (9)
+  m_Name: range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7465757095469412834
+--- !u!114 &4120320803168002030
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2244958802183244850}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0898264014dae284194ff5d77bc6ab60, type: 3}
+  m_Script: {fileID: 11500000, guid: c6f934c67006490489e8ea90510de075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0}
@@ -97,8 +97,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   factor: 0
+  background: {fileID: 0}
   ChipLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
   ChipsAround: []
   inchipscount: 0

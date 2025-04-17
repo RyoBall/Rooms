@@ -48,12 +48,10 @@ public class EnhanceChipBase : ChipBase
     public virtual void chipexiteffect(ChipBase chip)
     {
         ChipsAround.Remove(chip);
-        chip.factor = chip.factor / 2;
     }
     public virtual void chipentereffect(ChipBase chip)
     {
         ChipsAround.Add(chip);
-        chip.factor = chip.factor * 2;
     }
     public virtual void checAround() 
     {

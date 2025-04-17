@@ -14,8 +14,8 @@ public class RoomController : MonoBehaviour
     void Start()
     {
         instance = this;
-        xdistance = 60;
-        ydistance = 45;
+        xdistance = 20;
+        ydistance = 15;
         Initroomlist();
         Vector2[] a = new Vector2[4];
         a[0] = new Vector2(0, 0);
@@ -42,6 +42,7 @@ public class RoomController : MonoBehaviour
         {
             instanrooms.Add(InitRoom((int)positions[i].x, (int)positions[i].y));
         }
+        Player.instance.currentRoom = instanrooms[0].transform;
     }
     void Initroomlist() 
     {

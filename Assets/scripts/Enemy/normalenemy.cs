@@ -23,5 +23,12 @@ public class normalenemy : EnemyBase
     {
         base.Update();
     }
-    
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player") 
+        {
+            if(Random.value>Player.instance.hidefactor)
+            Player.instance.health-=attack;
+        }
+    }
 }

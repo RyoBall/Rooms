@@ -6,12 +6,20 @@ using UnityEngine.EventSystems;
 public class WeaponChipBase : ChipBase
 {
     public GameObject ins;//生成的武器
+    public WeaponBase insScript;//武器的脚本
     public GameObject prefab;//武器预制体
+    public float attackfactor;
+    public float speed;
+    public float range;
+    public float cdm;
     public override void entereffect(RaycastResult result)
     {
         base.entereffect(result);
-        if (ins == null)
+        if (ins == null) 
+        {
             ins = Instantiate(prefab, Player.instance.transform.position, Quaternion.identity, Player.instance.transform);
+            insScript = ins.GetComponent<WeaponBase>();
+        }
     }
 
     public override void exiteffect()
@@ -23,6 +31,12 @@ public class WeaponChipBase : ChipBase
     public override void FixedUpdate()
     {
         base.FixedUpdate();
+        if (ins != null) 
+        {
+            insScript.attack = attackfactor;
+            insScript.cdm=cdm/speed;
+            insScript.range=range;
+        }
     }
 
     public override void OnPointerDown(PointerEventData eventData)

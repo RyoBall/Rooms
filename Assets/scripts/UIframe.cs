@@ -9,26 +9,34 @@ public class UIframe : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler,IP
 {
     public Vector2 position;
     public bool unlock;
+    public int islock;
     public bool getin;
     public void OnPointerClick(PointerEventData eventData)
     {
-        unlock = true;
+        if (Player.instance.unlockpoint > 0&&!unlock) 
+        {
+            unlock = true;
+            Player.instance.unlockpoint -= 1;
+            islock = 0;
+            GetComponent<Image>().DOColor(new Color(0, 0, 0, .8f), .3f); 
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        GetComponent<Image>().DOColor(new Color(.5f, .5f, .5f, .8f), .3f);
+        GetComponent<Image>().DOColor(new Color(.5f*islock,0, 0, .8f), .3f);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        GetComponent<Image>().DOColor(new Color(.5f, .5f, .5f, .4f), .3f);
+        GetComponent<Image>().DOColor(new Color(.5f * islock, 0, 0, .4f), .3f);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        unlock=false;   
+        unlock=false;
+        islock = 1;
     }
 
     // Update is called once per frame

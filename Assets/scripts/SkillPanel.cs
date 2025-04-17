@@ -6,13 +6,14 @@ using UnityEngine;
 public class SkillPanel : MonoBehaviour
 {
     public RectTransform exitpos;
+    public RectTransform enterpos;
     public bool exit;
     public float enterY;
     public float exitY;
     // Start is called before the first frame update
     void Start()
     {
-        enterY = GetComponent<RectTransform>().position.y;
+        enterY = enterpos.position.y;
         exitY = exitpos.position.y;
     }
 

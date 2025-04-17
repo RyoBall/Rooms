@@ -7,12 +7,15 @@ public class WeaponBase : MonoBehaviour
 {
     public float cd;
     public float cdm;
-    public float range;
     public List<GameObject> enemysin;
     public UnityEngine.Vector2 dir;
-    public float attack;
+    public float range;
     public GameObject closestenemy;
     public GameObject bullet;
+    [Header("attack")]
+    public float attack;
+    public float attackfactor;
+    public float finalattack;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,10 @@ public class WeaponBase : MonoBehaviour
     void Update()
     {
         shoot();
+    }
+    void AttackCount() 
+    {
+        finalattack = Player.instance.attack * attack * (1 + attackfactor + Player.instance.attackfactor);
     }
     void DIR() 
     {
@@ -45,7 +52,7 @@ public class WeaponBase : MonoBehaviour
             cd = cdm;
             GameObject shootbullet=Instantiate(bullet,transform.position, UnityEngine.Quaternion.identity);
             shootbullet.GetComponent<bullet>().dir = dir;
-            shootbullet.GetComponent<bullet>().attack=attack;
+            shootbullet.GetComponent<bullet>().attack=finalattack;
         }
     }
     GameObject FindEnemy() 

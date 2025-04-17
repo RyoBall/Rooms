@@ -6,12 +6,7 @@ public class Storage : RoomBase
 {
     public GameObject Locker;
     private int lockerNum;
-    void Start()
-    {
-        //在一到二之间生成一个数
-        lockerNum = Random.Range(1,3);
-        InstantiateLocker(lockerNum);
-    }
+
 
     private void InstantiateLocker(int lockerNum)
     {
@@ -24,5 +19,14 @@ public class Storage : RoomBase
     protected override void OnMouseDown()
     {
         base.OnMouseDown();
+    }
+
+    protected override void Start()
+    {
+        dangerousLevel = 2 / 3;
+        base.Start();
+        //在一到二之间生成一个数
+        lockerNum = Random.Range(1, 3);
+        InstantiateLocker(lockerNum);
     }
 }

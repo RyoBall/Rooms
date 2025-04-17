@@ -9,6 +9,10 @@ public class EnemyBase : MonoBehaviour
     public float speed;
     public float health;
     public GameObject deadparticle;
+    public GameObject exp;
+    public float CorrectingFactor;
+    public int dropExpNum;
+    public float attack;
     // Start is called before the first frame update
     public virtual void Start()
     {
@@ -32,17 +36,15 @@ public class EnemyBase : MonoBehaviour
         if (health <= 0)
         {
             Instantiate(deadparticle, transform.position, Quaternion.identity);
+            expdrop(dropExpNum);
             Destroy(gameObject);
         }
     }
-    public virtual void OnTriggerEnter2D(Collider2D collision)
+    public void expdrop(int nums) 
     {
-        if (collision.tag == "Player") 
+        for(int i = 0; i < nums; i++) 
         {
-            
+            Instantiate(exp,transform.position+new Vector3(Random.Range(-CorrectingFactor,CorrectingFactor), Random.Range(-CorrectingFactor, CorrectingFactor),0),Quaternion.identity);
         }
     }
-    
-    
-    
 }

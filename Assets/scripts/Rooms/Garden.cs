@@ -9,8 +9,9 @@ public class Garden : RoomBase
         base.OnMouseDown();
     }
 
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         //»Ø¸´ÂúÀíÖÇÖµ
         Player.instance.currentSanity = Player.instance.maxSanity;
     }

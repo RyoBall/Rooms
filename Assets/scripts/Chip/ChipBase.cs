@@ -11,7 +11,6 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public bool getin;
     public Vector3 startposition;
     public GameObject packpanel;
-    public LayerMask UIPanellayer;
     public float factor;
     public UIframe background;
     public virtual void OnPointerDown(PointerEventData eventData)
@@ -33,7 +32,7 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         EventSystem.current.RaycastAll(eventData, results);
         foreach (var result in results)
         {
-            if (result.gameObject.layer == 6 && result.gameObject.GetComponent<UIframe>().unlock && !result.gameObject.GetComponent<UIframe>().getin)
+            if (result.gameObject.layer == GetinChips.UIcaolayer && result.gameObject.GetComponent<UIframe>().unlock && !result.gameObject.GetComponent<UIframe>().getin)
             {
                 entereffect(result);
             }

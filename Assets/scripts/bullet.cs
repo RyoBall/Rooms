@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class bullet : MonoBehaviour
@@ -8,6 +9,8 @@ public class bullet : MonoBehaviour
     public Vector2 dir;
     public float speed;
     public GameObject disapearparticle;
+    public GameObject damagetex;
+    public float damagetexcorecfactor;
     public float attack;
     // Start is called before the first frame update
     void Start()
@@ -43,6 +46,8 @@ public class bullet : MonoBehaviour
         {
             Instantiate(disapearparticle,transform.position,Quaternion.identity);
             collision.GetComponent<normalenemy>().health -= attack;
+            GameObject tex = Instantiate(damagetex, transform.position + new Vector3(Random.Range(-damagetexcorecfactor, damagetexcorecfactor), Random.Range(-damagetexcorecfactor, damagetexcorecfactor), 0),Quaternion.identity);
+            tex.GetComponentInChildren<TMP_Text>().text = attack.ToString();
             Destroy(gameObject);
         }
     }
