@@ -1296,10 +1296,12 @@ MonoBehaviour:
   chosen: 0
   getin: 0
   startposition: {x: 0, y: 0, z: 0}
-  inposition: {fileID: 0}
+  packpanel: {fileID: 23899818}
+  UIPanellayer:
+    serializedVersion: 2
+    m_Bits: 64
   ins: {fileID: 0}
   prefab: {fileID: 2955214245461157583, guid: 4936a64bffbe2654ebcbce4db24fde90, type: 3}
-  packpanel: {fileID: 23899818}
 --- !u!1 &695261288
 GameObject:
   m_ObjectHideFlags: 0
@@ -2452,6 +2454,8 @@ MonoBehaviour:
   cdm: 0
   bullet: {fileID: 5694872876357371771, guid: 804877621f21c0249818c10826d0abc8, type: 3}
   exp: 0
+  level: 0
+  levelfactor: 0
 --- !u!212 &1863174156
 SpriteRenderer:
   m_ObjectHideFlags: 0

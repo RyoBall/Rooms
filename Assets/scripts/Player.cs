@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move();
+        levelup();
     }
     void Move()
     {
@@ -48,6 +49,10 @@ public class Player : MonoBehaviour
     }
     void levelup()
     {
-        ;
+        if (exp >= 10 + level * levelfactor) 
+        {
+            exp = 0;
+            level++;
+        }
     }
 }

@@ -4,62 +4,67 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class pack : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
+public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public bool chosen;
     public bool getin;
     public Vector3 startposition;
-    public RectTransform inposition;
-    public GameObject ins;
-    public GameObject prefab;
     public GameObject packpanel;
-    public void OnPointerDown(PointerEventData eventData)
+    public LayerMask UIPanellayer;
+    public virtual void OnPointerDown(PointerEventData eventData)
     {
         chosen = true;
         getin = false;
         GetComponent<Image>().raycastTarget = false;
     }
 
-    public void OnPointerUp(PointerEventData eventData)
+    public virtual void OnPointerUp(PointerEventData eventData)
     {
         chosen = false;
         GetComponent<Image>().raycastTarget = true;
         List<RaycastResult> results = new List<RaycastResult>();
-        EventSystem.current.RaycastAll(eventData,results);
-        foreach(var result in results) 
+        EventSystem.current.RaycastAll(eventData, results);
+        foreach (var result in results)
         {
-            if (result.gameObject.layer == 6) 
+            if (result.gameObject.layer == UIPanellayer)
             {
                 GetComponent<RectTransform>().position = result.gameObject.GetComponent<RectTransform>().position;
                 transform.parent = result.gameObject.transform;
                 getin = true;
             }
         }
-        if (getin) 
+        if (getin)
         {
-            if(ins==null)
-            ins=Instantiate(prefab, Player.instance.transform.position, Quaternion.identity,Player.instance.transform);
+            entereffect();
         }
-        if (!getin) 
+        if (!getin)
         {
-            transform.parent = packpanel.transform;
-            GetComponent<RectTransform>().position = startposition;
-            Destroy(ins);
+            exiteffect();
         }
+        
     }
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
-        startposition=GetComponent<RectTransform>().position;
+        startposition = GetComponent<RectTransform>().position;
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    public virtual void FixedUpdate()
     {
         if (chosen)
         {
             GetComponent<RectTransform>().position = Input.mousePosition;
         }
+    }
+    public virtual void entereffect() 
+    {
+        
+    }
+    public virtual void exiteffect() 
+    {
+        transform.parent = packpanel.transform;
+        GetComponent<RectTransform>().position = startposition;
     }
 }
