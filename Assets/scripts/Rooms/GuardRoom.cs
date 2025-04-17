@@ -8,4 +8,10 @@ public class GuardRoom : RoomBase
     {
         base.OnMouseDown();
     }
+
+    protected override void Start()
+    {
+        dangerousLevel = 1;
+        base.Start();
+    }
 }

@@ -8,11 +8,27 @@ public class RoomBase : MonoBehaviour
 {
     private Vector3 direction;
     public float moveDistance;
+
+    protected bool isfog = false;
+    protected float dangerousLevel = 0;
+
+    virtual protected void Start()
+    {
+        if(UnityEngine.Random.value < dangerousLevel)
+            isfog = true;
+    } 
     virtual protected void OnMouseDown()
     {
-        Player.instance.targetRoom = transform;
-        CheckDirection(transform);
-        Player.instance.BeginMove(direction);
+        gameManager.instance.energy += 5;
+        if (!isfog)
+        {
+            Player.instance.targetRoom = transform;
+            CheckDirection(transform);
+            Player.instance.BeginMove(direction);
+        }else
+        {
+            //×ªÒÆ³¡¾°
+        }
     }
 
     private void CheckDirection(Transform transform)

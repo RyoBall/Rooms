@@ -6,10 +6,6 @@ using UnityEngine;
 public class Lib : RoomBase
 {
     public GameObject bookprefab;
-    void Start()
-    {
-        InstantiateBook();
-    }
 
     private void InstantiateBook()
     {
@@ -17,12 +13,19 @@ public class Lib : RoomBase
         //初始数字为0，可能会存在显示问题，可修改
         for(int i = 0; i < 3; i++)
         {
-            //Instantiate(bookprefab, transform.position, Quaternion.identity).GetComponent<Book>().color = i;
+            Instantiate(bookprefab, transform.position, Quaternion.identity).GetComponent<Book>().color = i;
         }
     }
 
     protected override void OnMouseDown()
     {
         base.OnMouseDown();
+    }
+
+    protected override void Start()
+    {
+        dangerousLevel = 1 / 3;
+        base.Start();
+        InstantiateBook();
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Garden : RoomBase
+public class Corridor : RoomBase
 {
     protected override void OnMouseDown()
     {
@@ -11,8 +11,7 @@ public class Garden : RoomBase
 
     protected override void Start()
     {
+        dangerousLevel = 1 / 3;
         base.Start();
-        //ªÿ∏¥¬˙¿Ì÷«÷µ
-        Player.instance.currentSanity = Player.instance.maxSanity;
     }
 }

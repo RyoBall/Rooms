@@ -11,9 +11,11 @@ public class DrinkRoom : RoomBase
         base.OnMouseDown();
     }
 
-    void Start()
+    protected override void Start()
     {
-        //位置可调,我觉得可以做房间的时候用空物体子物体
-        Instantiate(drink,transform.position,Quaternion.identity);
+        dangerousLevel = 1 / 3;
+        base.Start();
+        //生成位置待定
+        Instantiate(drink, transform.position, Quaternion.identity);
     }
 }

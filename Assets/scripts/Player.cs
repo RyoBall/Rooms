@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
         //Move();
         levelup();
     }
-    //玩家需要移动吗（
+    //（
     //void Move()
     //{
     //    rb.velocity = new Vector2(speed * Input.GetAxisRaw("Horizontal"), speed * Input.GetAxisRaw("Vertical"));
