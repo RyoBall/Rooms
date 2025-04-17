@@ -9,7 +9,7 @@ public class UIframe : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler,IP
 {
     public Vector2 position;
     public bool unlock;
-
+    public bool getin;
     public void OnPointerClick(PointerEventData eventData)
     {
         unlock = true;

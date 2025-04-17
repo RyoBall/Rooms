@@ -7,9 +7,9 @@ public class WeaponChipBase : ChipBase
 {
     public GameObject ins;//生成的武器
     public GameObject prefab;//武器预制体
-    public override void entereffect()
+    public override void entereffect(RaycastResult result)
     {
-        base.entereffect();
+        base.entereffect(result);
         if (ins == null)
             ins = Instantiate(prefab, Player.instance.transform.position, Quaternion.identity, Player.instance.transform);
     }

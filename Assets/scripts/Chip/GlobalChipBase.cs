@@ -5,9 +5,9 @@ using UnityEngine.EventSystems;
 
 public class GlobalChipBase : ChipBase
 {
-    public override void entereffect()
+    public override void entereffect(RaycastResult result)
     {
-        base.entereffect();
+        base.entereffect(result);
         Player.instance.healthm = Player.instance.healthm * factor;
     }
 

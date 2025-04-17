@@ -13,9 +13,10 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public GameObject packpanel;
     public LayerMask UIPanellayer;
     public float factor;
+    public UIframe background;
     public virtual void OnPointerDown(PointerEventData eventData)
     {
-        if (getin) 
+        if (getin)
         {
             exiteffect();
         }
@@ -32,16 +33,12 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         EventSystem.current.RaycastAll(eventData, results);
         foreach (var result in results)
         {
-            if (result.gameObject.layer == 6&&result.gameObject.GetComponent<UIframe>().unlock)
+            if (result.gameObject.layer == 6 && result.gameObject.GetComponent<UIframe>().unlock && !result.gameObject.GetComponent<UIframe>().getin)
             {
-                GetComponent<RectTransform>().position = result.gameObject.GetComponent<RectTransform>().position;
-                transform.parent = result.gameObject.transform;
-                position = result.gameObject.GetComponent<UIframe>().position;
-                entereffect();
-                getin = true;
+                entereffect(result);
             }
         }
-        if (!getin) 
+        if (!getin)
         {
             returnposition();
         }
@@ -51,6 +48,7 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public virtual void Start()
     {
         startposition = GetComponent<RectTransform>().position;
+        packpanel = transform.parent.gameObject;
     }
 
     // Update is called once per frame
@@ -61,17 +59,25 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             GetComponent<RectTransform>().position = Input.mousePosition;
         }
     }
-    public virtual void entereffect() 
+    public virtual void entereffect(RaycastResult result)
     {
-        GetinChips.instance.chips.Add(this);   
+        background = result.gameObject.GetComponent<UIframe>();
+        background.getin = true;
+        GetComponent<RectTransform>().position = result.gameObject.GetComponent<RectTransform>().position;
+        transform.SetParent(result.gameObject.transform);
+        position = result.gameObject.GetComponent<UIframe>().position;
+        getin = true;
+        GetinChips.instance.chips.Add(this);
     }
-    public virtual void exiteffect() 
+    public virtual void exiteffect()
     {
-        GetinChips.instance.chips.Remove(this);   
+        GetinChips.instance.chips.Remove(this);
+        background.getin = false;
+        background = null;
     }
-    public void returnposition() 
+    public void returnposition()
     {
-        transform.parent = packpanel.transform;
-        GetComponent<RectTransform>().position = startposition;        
+        transform.SetParent(packpanel.transform);
+        GetComponent<RectTransform>().position = startposition;
     }
 }
