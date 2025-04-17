@@ -16,6 +16,9 @@ public class Player : MonoBehaviour
     public float exp;
     public int level;
     public float levelfactor;
+    [Header("factor")]
+    public float health;
+    public float healthm;
     // Start is called before the first frame update
     void Awake()
     {

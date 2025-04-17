@@ -61,16 +61,21 @@
     <Compile Include="Assets\scripts\CanvasController.cs" />
     <Compile Include="Assets\scripts\Enemy\normalenemy.cs" />
     <Compile Include="Assets\scripts\Chip\pack.cs" />
+    <Compile Include="Assets\scripts\Chip\GlobalChipBase.cs" />
     <Compile Include="Assets\scripts\SkillPanel.cs" />
     <Compile Include="Assets\scripts\UIframe.cs" />
     <Compile Include="Assets\scripts\WeaponBase.cs" />
     <Compile Include="Assets\scripts\exp.cs" />
+    <Compile Include="Assets\scripts\Chip\PanelBase.cs" />
     <Compile Include="Assets\scripts\bullet.cs" />
     <Compile Include="Assets\scripts\Chip\ChipBase.cs" />
+    <Compile Include="Assets\scripts\Chip\WeaponChipBase.cs" />
     <Compile Include="Assets\scripts\Enemy\EnemyBase.cs" />
     <Compile Include="Assets\scripts\Enemy\enemyGeneratorController.cs" />
+    <Compile Include="Assets\scripts\Chip\GetinChips.cs" />
     <Compile Include="Assets\scripts\expchecer.cs" />
     <Compile Include="Assets\scripts\Player.cs" />
+    <Compile Include="Assets\scripts\Chip\EnhanceChipBase.cs" />
     <Compile Include="Assets\scripts\Enemy\enemyGenerator.cs" />
     <Compile Include="Assets\scripts\RoomController.cs" />
   </ItemGroup>
