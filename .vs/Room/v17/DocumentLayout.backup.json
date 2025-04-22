@@ -7,11 +7,11 @@
       "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\damagetext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|d:\\room\\assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|d:\\room\\assets\\scripts\\enemy\\normalenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\enemy\\normalenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy\\normalenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -138,8 +138,7 @@
               "RelativeToolTip": "Assets\\scripts\\bullet.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAwDAAAABwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T08:23:06.9Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-21T08:23:06.9Z"
             },
             {
               "$type": "Document",
@@ -149,7 +148,7 @@
               "RelativeDocumentMoniker": "Assets\\scripts\\damageText.cs",
               "ToolTip": "D:\\room\\Assets\\scripts\\damageText.cs",
               "RelativeToolTip": "Assets\\scripts\\damageText.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-21T08:16:17.373Z",
               "EditorCaption": ""
@@ -236,8 +235,7 @@
               "RelativeToolTip": "Assets\\scripts\\Enemy\\normalenemy.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T05:41:28.198Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-19T05:41:28.198Z"
             },
             {
               "$type": "Document",
