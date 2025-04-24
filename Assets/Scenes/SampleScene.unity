@@ -1267,7 +1267,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.27044016, g: 0.27044016, b: 0.27044016, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2379,6 +2379,7 @@ MonoBehaviour:
   fightTime: 0
   fightTimem: 0
   inend: 0
+  infight: 0
   level: 0
 --- !u!4 &1240210841
 Transform:
@@ -3297,6 +3298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f40f01272e9e346a03df85f142df80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackedtime: 0
+  attacked: 0
   rb: {fileID: 0}
   speed: 5
   moveTime: 0.5

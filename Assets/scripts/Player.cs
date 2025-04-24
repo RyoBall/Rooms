@@ -6,6 +6,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public static Player instance;
+    //State
+    public PlayerState currentState;
+    public float attackedtime;
+    public bool attacked;
     [Header("move")]
     public Rigidbody2D rb;
     public float speed;
@@ -41,6 +45,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        currentState = new PlayerNormalState();
         rb = GetComponent<Rigidbody2D>();
         instance = this;
     }
@@ -50,6 +55,11 @@ public class Player : MonoBehaviour
     {
         Move();
         levelup();
+        StateControl();
+    }
+    void StateControl() 
+    {
+        currentState.update();
     }
     void Move()
     {
@@ -106,5 +116,10 @@ public class Player : MonoBehaviour
             gameManager.instance.GetChip(4, Random.Range(0,gameManager.instance.specialChips.Count));
         }
     }
-
+    public void ChangeState(PlayerState state)
+    {
+        currentState.Exit();
+        currentState = state;
+        currentState.Enter();
+    }
 }

@@ -98,7 +98,7 @@ MonoBehaviour:
   ins: {fileID: 0}
   insScript: {fileID: 0}
   prefab: {fileID: 2955214245461157583, guid: 4936a64bffbe2654ebcbce4db24fde90, type: 3}
-  attack: 1
+  attackfactor: 1
   speed: 0
   range: 15
   cdm: 3

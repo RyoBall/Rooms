@@ -78,6 +78,7 @@ public class enemyGeneratorController : MonoBehaviour
     {
         level++;
         Player.instance.transform.DOMove(Player.instance.targetRoom.position, .5f);
+        Player.instance.currentRoom=Player.instance.targetRoom;
         Player.instance.targetRoom.GetComponent<RoomBase>().Removefog();
         infight = false;
     }

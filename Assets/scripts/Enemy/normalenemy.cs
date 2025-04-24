@@ -18,17 +18,21 @@ public class normalenemy : EnemyBase
     {
         base.Start();
     }
-
+    
     public override void Update()
     {
         base.Update();
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player") 
+        if (collision.tag == "Player")
         {
-            if(Random.value>Player.instance.hidefactor)
-            Player.instance.health-=attack;
+            if (!Player.instance.attacked&&Random.value > Player.instance.hidefactor)
+            {
+                Debug.Log("attack");
+                Player.instance.ChangeState(new PlayerAttackedState());
+                Player.instance.health -= attack;
+            }
         }
     }
 }

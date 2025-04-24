@@ -31,7 +31,7 @@ public class RoomBase : MonoBehaviour
             }
             else
             {
-                foggy();
+                ChangeTofoggy();
             }
         }
         else
@@ -61,7 +61,7 @@ public class RoomBase : MonoBehaviour
             direction = Vector3.up * moveDistance;
         }
     }
-    private void foggy()
+    private void ChangeTofoggy()
     {
         infog = true;
         GetComponent<SpriteRenderer>().DOColor(Color.black, .5f);
