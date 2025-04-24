@@ -17,9 +17,11 @@ public class Book : MonoBehaviour
                 break;
             case 1:
                 gameManager.instance.GetChip(3, 1);
+                //
                 break;
             case 2:
                 gameManager.instance.GetChip(2, 1);
+                //
                 break;
             default:
                 return;
