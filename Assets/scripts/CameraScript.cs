@@ -23,6 +23,26 @@ public class CameraScript : MonoBehaviour
 
     void Update()
     {
+        sizeControl();
+        moveCamera();
+    }
+    private void LateUpdate()
+    {
+        SmoothFollow();
+    }
+    void moveCamera() 
+    {
+        if (Input.GetMouseButtonDown(1)) 
+        {
+            isDraging = true;
+        }
+        if (Input.GetMouseButtonUp(1)) 
+        {
+            isDraging = false;
+        }
+    }
+    void sizeControl() 
+    {
         // 获取鼠标滚轮输入
         float scrollInput = Input.GetAxis("Mouse ScrollWheel");
 
@@ -36,20 +56,14 @@ public class CameraScript : MonoBehaviour
             cam.orthographicSize = newSize;
         }
     }
-    private void LateUpdate()
-    {
-        SmoothFollow();
-    }
     void SmoothFollow()
     {
         //按下H找到主角
-        if (target != null && Input.GetKeyDown(KeyCode.H))
+        if (target != null&&!isDraging)
         {
-            // 计算目标位置（保持当前镜头高度）
             Vector3 targetPosition = target.position;
-            targetPosition.z = transform.position.z; // 保持Z轴不变（适用于2D）
+            targetPosition.z = transform.position.z; 
 
-            // 使用SmoothDamp平滑移动
             transform.position = Vector3.SmoothDamp(
                 transform.position,
                 targetPosition,
@@ -76,13 +90,5 @@ public class CameraScript : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
-    {
-        isDraging = true;
-    }
 
-    private void OnMouseUp()
-    {
-        isDraging = false;
-    }
 }
