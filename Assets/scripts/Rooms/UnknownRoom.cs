@@ -7,8 +7,11 @@ public class UnknownRoom : MonoBehaviour
 {
     private void OnMouseDown()
     {
-        if(segment.instance.targetroom)
+        if (segment.instance.targetroom == null) 
+        {
         segment.instance.targetroom = this;
         segment.instance.GenerateWheel();
+        segment.instance.UIEnter();
+        }
     }
 }

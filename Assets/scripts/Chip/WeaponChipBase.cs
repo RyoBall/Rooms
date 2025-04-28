@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class WeaponChipBase : ChipBase
+public class WeaponChipBase : ChipBase//武器的数值由芯片决定
 {
     public GameObject ins;//生成的武器
     public WeaponBase insScript;//武器的脚本
     public GameObject prefab;//武器预制体
     public float attackfactor;
-    public float speed;
     public float range;
     public float cdm;
     public override void entereffect(RaycastResult result)
@@ -34,7 +33,7 @@ public class WeaponChipBase : ChipBase
         if (ins != null) 
         {
             insScript.attack = attackfactor;
-            insScript.cdm=cdm/speed;
+            insScript.cdm = cdm;
             insScript.range=range;
         }
     }

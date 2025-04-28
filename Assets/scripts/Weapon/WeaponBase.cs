@@ -11,27 +11,25 @@ public class WeaponBase : MonoBehaviour
     public UnityEngine.Vector2 dir;
     public float range;
     public GameObject closestenemy;
-    public GameObject bullet;
     [Header("attack")]
     public float attack;
     public float attackfactor;
-    public float finalattack;
-    // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         GetComponent<CircleCollider2D>().radius = range;
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
-        shoot();
+        Attack();
     }
-    void AttackCount() 
+    public int AttackCount() 
     {
-        finalattack = Player.instance.attack * attack * (1 + attackfactor + Player.instance.attackfactor);
+       int finalattack = (int)(Player.instance.attack * attack * (1 + attackfactor + Player.instance.attackfactor));
+        return finalattack;
     }
-    void DIR() 
+    public virtual void DIR() 
     {
         closestenemy = FindEnemy();
         if (closestenemy != null)
@@ -40,22 +38,11 @@ public class WeaponBase : MonoBehaviour
             Debug.Log("noenemy");
             dir = dir.normalized;
     }
-    void shoot() 
+    public virtual void Attack() 
     {
-        if (cd > 0) 
-        {
-            cd -= Time.deltaTime;
-        }
-        if (cd <= 0&&enemysin.Count!=0) 
-        {
-            DIR();
-            cd = cdm;
-            GameObject shootbullet=Instantiate(bullet,transform.position, UnityEngine.Quaternion.identity);
-            shootbullet.GetComponent<bullet>().dir = dir;
-            shootbullet.GetComponent<bullet>().attack=finalattack;
-        }
+        ;
     }
-    GameObject FindEnemy() 
+    public GameObject FindEnemy() 
     {
         float closestdistance=0;
         GameObject closest=null;
@@ -79,14 +66,14 @@ public class WeaponBase : MonoBehaviour
         }
         return closest;
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Enemy")
         {
             enemysin.Add(collision.gameObject);
         }   
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    public void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "Enemy")
         {

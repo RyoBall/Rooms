@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using DG.Tweening;
+using static UnityEngine.GraphicsBuffer;
+using System.Collections;
 
 [RequireComponent(typeof(RectTransform))]
 public class segment : MonoBehaviour
@@ -14,12 +16,14 @@ public class segment : MonoBehaviour
     public float wheelRadius = 200f;
     public float padding; // 扇形间距
     public Sprite circle;
+    public List<GameObject> Rooms = new List<GameObject>();
     [Header("标签设置")]
     public bool showLabels = true;
     public Font labelFont;
     public int labelFontSize = 14;
     public Color labelColor = Color.white;
     public float rotatespeed;
+    public float rotatespeedm;
     public float downspeed;
     private List<Image> segmentImages = new List<Image>();
     public UnknownRoom targetroom;
@@ -35,11 +39,17 @@ public class segment : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab)) 
         {
-            rotatespeed = 500;
+            Startrotate();
         }
         rotatehere();
     }
-    public void rotatehere() 
+    private void Startrotate() 
+    {
+        rotatespeed = rotatespeedm;
+        float waittime = rotatespeedm / downspeed;
+        startchec(waittime+.2f);
+    }
+    public void rotatehere() //转动
     {
         if(rotatespeed>=0)
         here.rotation = Quaternion.Euler(0, 0, here.localEulerAngles.z + Time.deltaTime * rotatespeed);
@@ -49,7 +59,6 @@ public class segment : MonoBehaviour
     public void GenerateWheel()
     {
         ClearWheel();
-        UIEnter();
         float totalValue = CalculateTotalValue();
         if (totalValue <= 0) return;
 
@@ -92,7 +101,8 @@ public class segment : MonoBehaviour
 
         // 添加并配置Image组件
         Image img = segment.AddComponent<Image>();
-        segment.AddComponent<segmentpart>();
+        segmentpart part=segment.AddComponent<segmentpart>();
+        part.room = Rooms[index %Rooms.Count];
         img.sprite = circle;
         img.color = segmentColors[index % segmentColors.Count];
         img.type = Image.Type.Filled;
@@ -122,20 +132,41 @@ public class segment : MonoBehaviour
         segmentImages.Clear();
     }
 
-    public void UpdateSegmentValue(int index, float newValue)
+    /*public void UpdateSegmentValue(int index, float newValue)
     {
         if (index >= 0 && index < segmentValues.Count)
         {
             segmentValues[index] = newValue;
             GenerateWheel();
         }
-    }
-    private void UIEnter()
+    }*/
+    public void UIEnter()
     {
         transform.parent.GetComponent<RectTransform>().DOMove(Enter.position, .8f); 
     }
-    void UIExit() 
+    public void UIExit() 
     {
         transform.parent.GetComponent<RectTransform>().DOMove(Exit.position, .8f); 
     }
+    public void startchec(float waittime)
+    {
+        StartCoroutine(checroutine(waittime));
+    }
+    IEnumerator checroutine(float waittime)
+    {
+        yield return new WaitForSeconds(waittime);
+        chec();
+    }
+    private void chec() 
+    {
+        segmentImages[((int)here.rotation.z / 30) % 12].GetComponent<segmentpart>().Effect();
+    }
+    /*private void partEffect()
+    {
+        Debug.Log("enterpos");
+        Destroy(segment.instance.targetroom.gameObject);
+        Instantiate(room, segment.instance.targetroom.transform.position, Quaternion.identity);
+        segment.instance.targetroom = null;
+        segment.instance.UIExit();
+    }*/
 }

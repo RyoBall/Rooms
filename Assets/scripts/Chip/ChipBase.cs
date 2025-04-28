@@ -9,7 +9,8 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public Vector2 position;
     public bool chosen;
     public bool getin;
-    public Vector3 startposition;
+    public RectTransform startposition;
+    public int startpositioncount;
     public GameObject packpanel;
     public float factor;
     public UIframe background;
@@ -46,7 +47,7 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     // Start is called before the first frame update
     public virtual void Start()
     {
-        startposition = GetComponent<RectTransform>().position;
+        startposition = gameManager.instance.backpacktrans[startpositioncount];
         packpanel = transform.parent.gameObject;
     }
 
@@ -77,6 +78,6 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void returnposition()
     {
         transform.SetParent(packpanel.transform);
-        GetComponent<RectTransform>().position = startposition;
+        GetComponent<RectTransform>().position = startposition.position;
     }
 }

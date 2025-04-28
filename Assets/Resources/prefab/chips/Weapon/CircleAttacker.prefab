@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1724937726277973930}
   - component: {fileID: 3921075408725220444}
   m_Layer: 7
-  m_Name: Image (7)
+  m_Name: CircleAttacker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,14 +91,14 @@ MonoBehaviour:
   position: {x: 0, y: 0}
   chosen: 0
   getin: 0
-  startposition: {x: 0, y: 0, z: 0}
+  startposition: {fileID: 0}
+  startpositioncount: 0
   packpanel: {fileID: 0}
   factor: 0
   background: {fileID: 0}
   ins: {fileID: 0}
   insScript: {fileID: 0}
-  prefab: {fileID: 2955214245461157583, guid: 4936a64bffbe2654ebcbce4db24fde90, type: 3}
+  prefab: {fileID: 5707013938116029968, guid: 622a7568b1d28184091dea16fcbcb559, type: 3}
   attackfactor: 1
-  speed: 0
   range: 15
   cdm: 3
