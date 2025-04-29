@@ -11,12 +11,12 @@ public class segment : MonoBehaviour
     public static segment instance;
     public RectTransform here;
     [Header("轮盘设置")]
-    public List<float> segmentValues = new List<float> { 1,1,1,1,1,1,1,1,1,1,1,1};
-    public List<Color> segmentColors = new List<Color> { Color.red, Color.green, Color.blue, Color.yellow };
+    public const int segmentcount = 12;
+    public List<GameObject> segmentparts = new List<GameObject>();
+    public List<GameObject> Rooms = new List<GameObject>();
     public float wheelRadius = 200f;
     public float padding; // 扇形间距
     public Sprite circle;
-    public List<GameObject> Rooms = new List<GameObject>();
     [Header("标签设置")]
     public bool showLabels = true;
     public Font labelFont;
@@ -37,7 +37,7 @@ public class segment : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab)) 
+        if (Input.GetKeyDown(KeyCode.Tab)&&targetroom!=null) 
         {
             Startrotate();
         }
@@ -59,63 +59,39 @@ public class segment : MonoBehaviour
     public void GenerateWheel()
     {
         ClearWheel();
-        float totalValue = CalculateTotalValue();
-        if (totalValue <= 0) return;
-
         float currentAngle = 0f;
-        for (int i = 0; i < segmentValues.Count; i++)
+        for (int i = 0; i < segmentcount; i++)
         {
-            float segmentAngle = (segmentValues[i] / totalValue) * 360f;
+            float segmentAngle = 360f / segmentcount;
             CreateSegment(i, currentAngle, segmentAngle);
             currentAngle += segmentAngle;
         }
     }
 
-    float CalculateTotalValue()
-    {
-        float total = 0f;
-        foreach (float value in segmentValues)
-        {
-            if (value < 0)
-            {
-                Debug.LogWarning("Segment value cannot be negative. Using absolute value.");
-                total += Mathf.Abs(value);
-            }
-            else
-            {
-                total += value;
-            }
-        }
-        return total;
-    }
-
     void CreateSegment(int index, float startAngle, float angle)
     {
         // 创建扇形游戏对象
-        GameObject segment = new GameObject($"Segment_{index}");
+        /*GameObject segment = new GameObject($"Segment_{index}");
         RectTransform rect = segment.AddComponent<RectTransform>();
         segment.transform.SetParent(transform);
         rect.localPosition = Vector3.zero;
         rect.localRotation = Quaternion.identity;
-        rect.sizeDelta = new Vector2(wheelRadius * 2, wheelRadius * 2);
-
-        // 添加并配置Image组件
-        Image img = segment.AddComponent<Image>();
-        segmentpart part=segment.AddComponent<segmentpart>();
-        part.room = Rooms[index %Rooms.Count];
-        img.sprite = circle;
-        img.color = segmentColors[index % segmentColors.Count];
-        img.type = Image.Type.Filled;
+        rect.sizeDelta = new Vector2(wheelRadius * 2, wheelRadius * 2);*/
+        GameObject segment = Instantiate(segmentparts[index % segmentparts.Count], transform.position, Quaternion.identity);
+        segment.transform.SetParent(transform);
+        segment.GetComponent<segmentpart>().i=index;
+        RectTransform rect = segment.GetComponent<RectTransform>();
+        // 配置Image组件
+        Image img = segment.GetComponent<Image>();
+        // 设置旋转
+        rect.localRotation = Quaternion.Euler(0, 0, -startAngle);
+        segmentImages.Add(img);
+        /*img.type = Image.Type.Filled;
         img.fillMethod = Image.FillMethod.Radial360;
         img.fillOrigin = 2; // 对应Image.Origin360.Top
         img.fillClockwise = true;
-        img.fillAmount = (angle - padding) / 360f; // 减去间距
+        img.fillAmount = (angle - padding) / 360f; // 减去间距*/ //配置image
 
-        // 设置旋转
-        rect.localRotation = Quaternion.Euler(0, 0, -startAngle);
-
-
-        segmentImages.Add(img);
     }
 
 
@@ -132,14 +108,6 @@ public class segment : MonoBehaviour
         segmentImages.Clear();
     }
 
-    /*public void UpdateSegmentValue(int index, float newValue)
-    {
-        if (index >= 0 && index < segmentValues.Count)
-        {
-            segmentValues[index] = newValue;
-            GenerateWheel();
-        }
-    }*/
     public void UIEnter()
     {
         transform.parent.GetComponent<RectTransform>().DOMove(Enter.position, .8f); 
@@ -148,6 +116,32 @@ public class segment : MonoBehaviour
     {
         transform.parent.GetComponent<RectTransform>().DOMove(Exit.position, .8f); 
     }
+    /*public void UpdateSegmentValue(int index, float newValue)
+    {
+        if (index >= 0 && index < segmentValues.Count)
+        {
+            segmentValues[index] = newValue;
+            GenerateWheel();
+        }
+    }*/
+    /*float CalculateTotalValue()
+    {
+        float total = 0f;
+        foreach (float value in segmentValues)
+        {
+            if (value < 0)
+            {
+                Debug.LogWarning("Segment value cannot be negative. Using absolute value.");
+                total += Mathf.Abs(value);
+            }
+            else
+            {
+                total += value;
+            }
+        }
+        return total;
+    }*/
+
     public void startchec(float waittime)
     {
         StartCoroutine(checroutine(waittime));
@@ -159,7 +153,7 @@ public class segment : MonoBehaviour
     }
     private void chec() 
     {
-        segmentImages[((int)here.rotation.z / 30) % 12].GetComponent<segmentpart>().Effect();
+        segmentImages[((int)here.rotation.eulerAngles.z / 30) % 12].GetComponent<segmentpart>().Effect();
     }
     /*private void partEffect()
     {

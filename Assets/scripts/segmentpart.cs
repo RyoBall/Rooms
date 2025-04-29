@@ -13,8 +13,10 @@ public class segmentpart : MonoBehaviour
     public void Effect() 
     {
         Debug.Log("enterpos");
+        Debug.Log(i);
         Destroy(segment.instance.targetroom.gameObject);
         Instantiate(room, segment.instance.targetroom.transform.position, Quaternion.identity);
+        //以下考虑放在segment里
         segment.instance.targetroom = null;
         segment.instance.UIExit();
     }
