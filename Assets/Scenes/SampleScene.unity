@@ -333,7 +333,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -142897612877892567, guid: 8319ad5add7c61844bdb61b0fd0452c6, type: 3}
       propertyPath: startpositioncount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2244958802183244850, guid: 8319ad5add7c61844bdb61b0fd0452c6, type: 3}
       propertyPath: m_Name
@@ -1001,36 +1001,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   here: {fileID: 0}
-  segmentValues:
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  segmentColors:
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
-  - {r: 0, g: 0, b: 1, a: 1}
-  - {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  segmentparts:
+  - {fileID: 9171886044242984860, guid: aed9ef4eca068524baf4148d86eab49b, type: 3}
+  - {fileID: 9171886044242984860, guid: e4f06d786c37c35479a1366b666a28ac, type: 3}
+  - {fileID: 9171886044242984860, guid: 4041cb8ce2104274fb1634dccbf5bc08, type: 3}
+  - {fileID: 9171886044242984860, guid: 576879cfba01f3b4597edaac1bca62bf, type: 3}
+  - {fileID: 9171886044242984860, guid: 0e32371a230a6254497ca5e46267a52b, type: 3}
+  - {fileID: 9171886044242984860, guid: 96d93327e8203b44cbcabc1316164c2d, type: 3}
   wheelRadius: 100
   padding: 0
   circle: {fileID: 21300000, guid: 3bc57525d8c603b4eb901164967487b7, type: 3}
-  Rooms:
-  - {fileID: 3734793419762496665, guid: 0885854a930bc2b408ac70809336d45b, type: 3}
   showLabels: 1
   labelFont: {fileID: 0}
   labelFontSize: 14
   labelColor: {r: 1, g: 1, b: 1, a: 1}
   rotatespeed: 10
-  rotatespeedm: 500
-  downspeed: 250
+  rotatespeedm: 1000
+  rotatespeedcorecfactor: 200
+  downspeed: 500
   targetroom: {fileID: 0}
   Enter: {fileID: 743782225}
   Exit: {fileID: 1293980640}
@@ -1490,7 +1478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4120320803168002030, guid: 49ab3cd76afe1014eb5b2fd175882c4a, type: 3}
       propertyPath: startpositioncount
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8366139130483890723, guid: 49ab3cd76afe1014eb5b2fd175882c4a, type: 3}
       propertyPath: m_Pivot.x
@@ -2202,7 +2190,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3921075408725220444, guid: 7a5f627e581fa5e4bb20565260aff752, type: 3}
       propertyPath: startpositioncount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4651852436152165656, guid: 7a5f627e581fa5e4bb20565260aff752, type: 3}
       propertyPath: m_Name
@@ -2580,7 +2568,7 @@ MonoBehaviour:
   t7: {fileID: 1101571377}
   enemyGenerator: {fileID: 6862286974601113965, guid: 423e22771493de94d937cd92dd469469, type: 3}
   Correctionfactor: 1.5
-  cd: 9
+  cd: 0
   cdm: 9
   fightTime: 0
   fightTimem: 0
@@ -3255,7 +3243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6558963345276785369, guid: 03b6494008e6752499bfeb26c32eda23, type: 3}
       propertyPath: startpositioncount
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8366139130483890723, guid: 03b6494008e6752499bfeb26c32eda23, type: 3}
       propertyPath: m_Pivot.x
@@ -3453,7 +3441,7 @@ MonoBehaviour:
   exp: 0
   level: 0
   levelfactor: 0
-  unlockpoint: 0
+  unlockpoint: 1
   specialChipGetCount: 0
   currentSanity: 0
   maxSanity: 0

@@ -14,6 +14,9 @@ public class WeaponBase : MonoBehaviour
     [Header("attack")]
     public float attack;
     public float attackfactor;
+    [Header("bulleteffect")]
+    public bool doubleattack;
+    public bool icyattack;
     public virtual void Start()
     {
         GetComponent<CircleCollider2D>().radius = range;
@@ -27,6 +30,8 @@ public class WeaponBase : MonoBehaviour
     public int AttackCount() 
     {
        int finalattack = (int)(Player.instance.attack * attack * (1 + attackfactor + Player.instance.attackfactor));
+        if (doubleattack)
+          finalattack= (int)(finalattack * 0.6f);
         return finalattack;
     }
     public virtual void DIR() 

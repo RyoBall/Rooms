@@ -9,30 +9,26 @@ public class RoomBase : MonoBehaviour
     private Vector3 direction;
     public float moveDistance;
     public Transform foggylevel;
-    protected bool isfog = false;
-    protected bool infog = false;
+    protected bool isfog = false;//
     protected float dangerousLevel = 0;
 
     virtual protected void Start()
     {
         foggylevel = enemyGeneratorController.instance.transform;
         if (UnityEngine.Random.value < dangerousLevel)
+        {
             isfog = true;
+            ChangeTofoggy();
+        }
+
     }
     virtual protected void OnMouseDown()
     {
         gameManager.instance.energy += 5;
-        if (!infog)
+        if (!isfog)
         {
-            if (!isfog)
-            {
-                Player.instance.targetRoom = transform;
-                Player.instance.BeginMove(transform.position);
-            }
-            else
-            {
-                ChangeTofoggy();
-            }
+            Player.instance.targetRoom = transform;
+            Player.instance.BeginMove(transform.position);
         }
         else
         {
@@ -63,7 +59,6 @@ public class RoomBase : MonoBehaviour
     }
     private void ChangeTofoggy()
     {
-        infog = true;
         GetComponent<SpriteRenderer>().DOColor(Color.black, .5f);
     }
     private void intofog()
@@ -72,9 +67,9 @@ public class RoomBase : MonoBehaviour
         Player.instance.transform.DOMove(foggylevel.position, 1);
         enemyGeneratorController.instance.Init();
     }
-    public void Removefog() 
+    public void Removefog()
     {
-        infog = false;
+        isfog = false;
     }
 
 }

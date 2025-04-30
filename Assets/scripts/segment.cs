@@ -13,18 +13,17 @@ public class segment : MonoBehaviour
     [Header("轮盘设置")]
     public const int segmentcount = 12;
     public List<GameObject> segmentparts = new List<GameObject>();
-    public List<GameObject> Rooms = new List<GameObject>();
-    public float wheelRadius = 200f;
-    public float padding; // 扇形间距
-    public Sprite circle;
     [Header("标签设置")]
     public bool showLabels = true;
     public Font labelFont;
     public int labelFontSize = 14;
     public Color labelColor = Color.white;
+    [Header("旋转属性")]
     public float rotatespeed;
     public float rotatespeedm;
+    public float rotatespeedcorecfactor;
     public float downspeed;
+    [Header("杂项")]
     private List<Image> segmentImages = new List<Image>();
     public UnknownRoom targetroom;
     public RectTransform Enter;
@@ -45,8 +44,8 @@ public class segment : MonoBehaviour
     }
     private void Startrotate() 
     {
-        rotatespeed = rotatespeedm;
-        float waittime = rotatespeedm / downspeed;
+        rotatespeed = Random.Range(rotatespeedm - rotatespeedcorecfactor, rotatespeedm + rotatespeedcorecfactor);
+        float waittime = rotatespeed / downspeed;
         startchec(waittime+.2f);
     }
     public void rotatehere() //转动

@@ -13,7 +13,7 @@ public class DrinkRoom : RoomBase
 
     protected override void Start()
     {
-        dangerousLevel = 1;
+        dangerousLevel = 1/3;
         base.Start();
         //生成位置待定
         //Instantiate(drink, transform.position, Quaternion.identity);

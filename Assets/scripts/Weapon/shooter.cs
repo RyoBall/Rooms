@@ -17,11 +17,22 @@ public class shooter : WeaponBase
         {
             cd = cdm;
             DIR();
-            GameObject ins=Instantiate(bullet, transform.position, Quaternion.identity);
-            ins.GetComponent<bullet>().dir = dir;
+            shoot();
+            if (doubleattack)
+                StartCoroutine(doubleroutine());
         }
     }
-
+    IEnumerator doubleroutine() 
+    {
+        yield return new WaitForSeconds(.1f);
+        shoot();
+    }
+    void shoot() 
+    {
+        GameObject ins = Instantiate(bullet, transform.position, Quaternion.identity);
+        ins.GetComponent<bullet>().dir = dir;
+        ins.GetComponent<bullet>().attack=AttackCount();
+    }
     public override void DIR()
     {
         base.DIR();

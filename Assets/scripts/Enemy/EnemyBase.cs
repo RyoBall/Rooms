@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
 {
+    private SpriteRenderer render;
     public Rigidbody2D rb;
     public Vector2 dir;
     public float speed;
@@ -17,6 +18,7 @@ public class EnemyBase : MonoBehaviour
     public virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        render = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -46,5 +48,15 @@ public class EnemyBase : MonoBehaviour
         {
             Instantiate(exp,transform.position+new Vector3(Random.Range(-CorrectingFactor,CorrectingFactor), Random.Range(-CorrectingFactor, CorrectingFactor),0),Quaternion.identity);
         }
+    }
+    protected void attackanim() 
+    {
+        render.color = Color.blue;
+        StartCoroutine(attackroutine());
+    }
+    IEnumerator attackroutine() 
+    {
+        yield return new WaitForSeconds(0);
+        render.color = Color.white;
     }
 }

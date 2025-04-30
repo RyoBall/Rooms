@@ -27,9 +27,9 @@ public class enemyGeneratorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CDCount();
         if (infight)
         {
+            CDCount();
             FightTimeCount();
         }
     }
