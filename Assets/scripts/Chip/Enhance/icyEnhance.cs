@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
-public class doubleAttack : EnhanceChipBase
+public class icyEnhance : EnhanceChipBase
 {
     public override void checAround()
     {
@@ -16,7 +15,7 @@ public class doubleAttack : EnhanceChipBase
         base.chipentereffect(chip);
         if (chip.gameObject.GetComponent<WeaponChipBase>() != null)
         {
-            chip.gameObject.GetComponent<WeaponChipBase>().insScript.doubleattack = true;
+            chip.gameObject.GetComponent<WeaponChipBase>().insScript.icyattacklevel++;
         }
     }
 
@@ -25,10 +24,10 @@ public class doubleAttack : EnhanceChipBase
         base.chipexiteffect(chip);
         if (chip.gameObject.GetComponent<WeaponChipBase>() != null)
         {
-            chip.gameObject.GetComponent<WeaponChipBase>().insScript.doubleattack = false;
+            chip.gameObject.GetComponent<WeaponChipBase>().insScript.icyattacklevel--;
         }
     }
-    
+
     public override void entereffect(RaycastResult result)
     {
         base.entereffect(result);
@@ -51,21 +50,7 @@ public class doubleAttack : EnhanceChipBase
 
     public override void OnPointerUp(PointerEventData eventData)
     {
-        chosen = false;
-        GetComponent<Image>().raycastTarget = true;
-        List<RaycastResult> results = new List<RaycastResult>();
-        EventSystem.current.RaycastAll(eventData, results);
-        foreach (var result in results)
-        {
-            if (result.gameObject.layer == GetinChips.UIcaolayer && result.gameObject.GetComponent<UIframe>().unlock && !result.gameObject.GetComponent<UIframe>().getin)
-            {
-                entereffect(result);
-            }
-        }
-        if (!getin)
-        {
-            returnposition();
-        }
+        base.OnPointerUp(eventData);
     }
 
     public override void Start()

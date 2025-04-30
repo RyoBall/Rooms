@@ -14,6 +14,8 @@ public class EnemyBase : MonoBehaviour
     public float CorrectingFactor;
     public int dropExpNum;
     public float attack;
+    [Header("state")]
+    public float icytime;
     // Start is called before the first frame update
     public virtual void Start()
     {

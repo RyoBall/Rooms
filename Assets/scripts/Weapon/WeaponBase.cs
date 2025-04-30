@@ -16,7 +16,7 @@ public class WeaponBase : MonoBehaviour
     public float attackfactor;
     [Header("bulleteffect")]
     public bool doubleattack;
-    public bool icyattack;
+    public int icyattacklevel;
     public virtual void Start()
     {
         GetComponent<CircleCollider2D>().radius = range;

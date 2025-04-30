@@ -8,8 +8,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -81,6 +80,7 @@
     <Compile Include="Assets\scripts\Chip\Enhance\doubleAttack.cs" />
     <Compile Include="Assets\scripts\Rooms\RoomBase.cs" />
     <Compile Include="Assets\scripts\segmentpos.cs" />
+    <Compile Include="Assets\scripts\Chip\Enhance\icyEnhance.cs" />
     <Compile Include="Assets\scripts\SkillPanel.cs" />
     <Compile Include="Assets\scripts\UIframe.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />

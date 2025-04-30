@@ -32,6 +32,7 @@ public class shooter : WeaponBase
         GameObject ins = Instantiate(bullet, transform.position, Quaternion.identity);
         ins.GetComponent<bullet>().dir = dir;
         ins.GetComponent<bullet>().attack=AttackCount();
+        ins.GetComponent<bullet>().dad=this;
     }
     public override void DIR()
     {

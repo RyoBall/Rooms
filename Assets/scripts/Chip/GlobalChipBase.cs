@@ -8,14 +8,12 @@ public class GlobalChipBase : ChipBase
     public override void entereffect(RaycastResult result)
     {
         base.entereffect(result);
-        Player.instance.healthm = Player.instance.healthm * factor;
     }
 
 
     public override void exiteffect()
     {
-        base.exiteffect();
-        Player.instance.healthm = Player.instance.healthm / factor;
+        base.exiteffect();  
     }
 
     public override void FixedUpdate()
