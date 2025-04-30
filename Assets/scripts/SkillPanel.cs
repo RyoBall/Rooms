@@ -17,7 +17,8 @@ public class SkillPanel : MonoBehaviour
     public List<GameObject> UIframes2; 
     public List<GameObject> UIframes3; 
     public List<GameObject> UIframes4; 
-    public List<GameObject> UIframes5; 
+    public List<GameObject> UIframes5; //test
+
     // Start is called before the first frame update
     void Start()
     {
