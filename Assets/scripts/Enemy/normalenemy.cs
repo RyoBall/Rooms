@@ -25,7 +25,7 @@ public class normalenemy : EnemyBase
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Player"&&icytime<=0)
         {
             if (!Player.instance.attacked&&Random.value > Player.instance.hidefactor)
             {

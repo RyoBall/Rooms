@@ -31,9 +31,12 @@ public class EnemyBase : MonoBehaviour
     }
     public virtual void move()
     {
-        dir = -new Vector2(transform.position.x - Player.instance.transform.position.x, transform.position.y - Player.instance.transform.position.y);
-        dir = dir.normalized;
-        rb.velocity = speed * dir;
+        if (icytime <= 0) 
+        {
+            dir = -new Vector2(transform.position.x - Player.instance.transform.position.x, transform.position.y - Player.instance.transform.position.y);
+            dir = dir.normalized;
+            rb.velocity = speed * dir;
+        }
     }
     public virtual void Dead()
     {
@@ -42,6 +45,13 @@ public class EnemyBase : MonoBehaviour
             Instantiate(deadparticle, transform.position, Quaternion.identity);
             expdrop(dropExpNum);
             Destroy(gameObject);
+        }
+    }
+    void icytimecount() 
+    {
+        if (icytime > 0) 
+        {
+            icytime -= Time.deltaTime;
         }
     }
     public void expdrop(int nums) 

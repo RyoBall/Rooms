@@ -18,10 +18,10 @@ public class EnhanceChipBase : ChipBase
     public override void FixedUpdate()
     {
         base.FixedUpdate();
-        if (getin && inchipscount != GetinChips.instance.chips.Count)
+        /*if (getin && inchipscount != GetinChips.instance.chips.Count)
         {
             checAround();
-        }
+        }*/
     }
 
     public override void OnPointerDown(PointerEventData eventData)
@@ -36,7 +36,7 @@ public class EnhanceChipBase : ChipBase
     public override void entereffect(RaycastResult result)
     {
         base.entereffect(result);
-        checAround();
+        //checAround();
     }
     public override void exiteffect()
     {

@@ -6,6 +6,7 @@ using UnityEngine;
 public class shooter : WeaponBase
 {
     public GameObject bullet;
+    public int doubleattackpoint;
     public override void Attack()
     {
         base.Attack();
@@ -18,14 +19,19 @@ public class shooter : WeaponBase
             cd = cdm;
             DIR();
             shoot();
-            if (doubleattack)
-                StartCoroutine(doubleroutine());
+            doubleattackpoint = doubleattacklevel;
+            StartCoroutine(doubleroutine());
         }
     }
     IEnumerator doubleroutine() 
     {
         yield return new WaitForSeconds(.1f);
-        shoot();
+        if (doubleattackpoint > 0) 
+        {
+            doubleattackpoint--;
+            shoot();    
+            StartCoroutine(doubleroutine());
+        }
     }
     void shoot() 
     {

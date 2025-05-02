@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class icyEnhance : EnhanceChipBase
+public class bumEnhance : bulletEnhanceBase
 {
     public override void checAround()
     {
@@ -15,7 +15,7 @@ public class icyEnhance : EnhanceChipBase
         base.chipentereffect(chip);
         if (chip.gameObject.GetComponent<WeaponChipBase>() != null)
         {
-            chip.gameObject.GetComponent<WeaponChipBase>().insScript.icyattacklevel++;
+            chip.gameObject.GetComponent<WeaponChipBase>().insScript.bumattacklevel++;
         }
     }
 
@@ -24,7 +24,7 @@ public class icyEnhance : EnhanceChipBase
         base.chipexiteffect(chip);
         if (chip.gameObject.GetComponent<WeaponChipBase>() != null)
         {
-            chip.gameObject.GetComponent<WeaponChipBase>().insScript.icyattacklevel--;
+            chip.gameObject.GetComponent<WeaponChipBase>().insScript.bumattacklevel--;
         }
     }
 

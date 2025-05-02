@@ -154,6 +154,7 @@ MonoBehaviour:
   CorrectingFactor: 1
   dropExpNum: 3
   attack: 0
+  icytime: 0
 --- !u!50 &2800023597242915732
 Rigidbody2D:
   serializedVersion: 4
@@ -180,7 +181,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &4988106555429100347
 GameObject:
   m_ObjectHideFlags: 0

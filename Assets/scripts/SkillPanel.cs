@@ -11,13 +11,13 @@ public class SkillPanel : MonoBehaviour
     public bool exit;
     public float enterY;
     public float exitY;
-    public List<List<GameObject>> UIframes;
-    public List<GameObject> UIframes0; 
-    public List<GameObject> UIframes1; 
-    public List<GameObject> UIframes2; 
-    public List<GameObject> UIframes3; 
-    public List<GameObject> UIframes4; 
-    public List<GameObject> UIframes5; //test
+    public List<List<GameObject>> UIframes=new List<List<GameObject>>();
+    public List<GameObject> UIframes0=new List<GameObject>(); 
+    public List<GameObject> UIframes1 = new List<GameObject>(); 
+    public List<GameObject> UIframes2 = new List<GameObject>(); 
+    public List<GameObject> UIframes3 = new List<GameObject>(); 
+    public List<GameObject> UIframes4 = new List<GameObject>(); 
+    public List<GameObject> UIframes5 = new List<GameObject>(); //test
 
     // Start is called before the first frame update
     void Start()

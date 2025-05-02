@@ -11,28 +11,36 @@ public class WeaponBase : MonoBehaviour
     public UnityEngine.Vector2 dir;
     public float range;
     public GameObject closestenemy;
+    public CircleCollider2D rangechecer;
     [Header("attack")]
     public float attack;
     public float attackfactor;
     [Header("bulleteffect")]
-    public bool doubleattack;
+    public int doubleattacklevel;
     public int icyattacklevel;
+    public int bumattacklevel;
+    public int bombattacklevel;
     public virtual void Start()
     {
-        GetComponent<CircleCollider2D>().radius = range;
+        rangechecer=GetComponent<CircleCollider2D>();
     }
 
     // Update is called once per frame
     public virtual void Update()
     {
+        rangechecer.radius = range;
         Attack();
     }
     public int AttackCount() 
     {
        int finalattack = (int)(Player.instance.attack * attack * (1 + attackfactor + Player.instance.attackfactor));
-        if (doubleattack)
+        if (doubleattacklevel>0)
           finalattack= (int)(finalattack * 0.6f);
         return finalattack;
+    }
+    public virtual void Attack() 
+    {
+        ;
     }
     public virtual void DIR() 
     {
@@ -42,10 +50,6 @@ public class WeaponBase : MonoBehaviour
         else
             Debug.Log("noenemy");
             dir = dir.normalized;
-    }
-    public virtual void Attack() 
-    {
-        ;
     }
     public GameObject FindEnemy() 
     {
