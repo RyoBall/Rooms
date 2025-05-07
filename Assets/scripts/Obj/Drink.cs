@@ -11,14 +11,14 @@ public class Drink : MonoBehaviour
         switch (num)
         {
             case 0:
-                Player.instance.currentSanity += 50;
+                Player.instance.health += 50;
                 break;
             case 1:
-                Player.instance.currentSanity -= 20;
+                Player.instance.health -= 20;
                 break;
             case 2:
-                Player.instance.maxSanity += 20;
-                Player.instance.currentSanity += 20;
+                Player.instance.healthm += 20;
+                Player.instance.healthm += 20;
                 break;
             default:
                 return;

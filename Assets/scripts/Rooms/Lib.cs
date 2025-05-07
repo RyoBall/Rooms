@@ -13,7 +13,7 @@ public class Lib : RoomBase
         //初始数字为0，可能会存在显示问题，可修改
         for(int i = 0; i < 3; i++)
         {
-            Instantiate(bookprefab, transform.position, Quaternion.identity).GetComponent<Book>().color = i;
+            Instantiate(bookprefab, transform.position, Quaternion.identity).GetComponent<Book>().color = (Book.Color)i;
         }
     }
 

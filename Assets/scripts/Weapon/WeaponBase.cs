@@ -20,6 +20,7 @@ public class WeaponBase : MonoBehaviour
     public int icyattacklevel;
     public int bumattacklevel;
     public int bombattacklevel;
+    public int heavyattacklevel;
     public virtual void Start()
     {
         rangechecer=GetComponent<CircleCollider2D>();
@@ -36,6 +37,8 @@ public class WeaponBase : MonoBehaviour
        int finalattack = (int)(Player.instance.attack * attack * (1 + attackfactor + Player.instance.attackfactor));
         if (doubleattacklevel>0)
           finalattack= (int)(finalattack * 0.6f);
+        if(heavyattacklevel>0)
+          finalattack= (int)(finalattack*(1+heavyattacklevel));
         return finalattack;
     }
     public virtual void Attack() 

@@ -26,9 +26,9 @@ public class bullet : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         bumpoint = dad.bumattacklevel;
-        bombpoint = dad.bombattacklevel;
+        bombpoint = dad.bombattacklevel;    
         //
-        redir();
+        Redir();
         //
     }
     // Update is called once per frame
@@ -78,9 +78,9 @@ public class bullet : MonoBehaviour
         else
             Debug.Log("noenemy");
         dir = dir.normalized;
-        redir();
+        Redir();
     }
-    void redir() //调整子弹朝向
+    void Redir() //调整子弹朝向
     {
         if (dir.x < 0)
         {
@@ -120,7 +120,8 @@ public class bullet : MonoBehaviour
         if (bombpoint > 0)
         {
             bombpoint--;
-            Instantiate(bomber, position, Quaternion.identity);
+            GameObject bomb=Instantiate(bomber, position, Quaternion.identity);
+            bomb.GetComponent<bomb>().damage = (int)(attack*.3f);
             StartCoroutine(bombroutine(position));
         }
     }

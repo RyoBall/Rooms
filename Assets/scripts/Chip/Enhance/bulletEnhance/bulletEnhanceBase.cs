@@ -94,6 +94,7 @@ public class bulletEnhanceBase : EnhanceChipBase
     public override void Start()
     {
         base.Start();
+        partA = transform.Find("occupy").gameObject;
         relativePosition = partA.transform.position - transform.position;
     }
 }

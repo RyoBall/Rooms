@@ -124,7 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dad: {fileID: 0}
   nochec:
-  - {fileID: 0}
+  - {fileID: 7829229060571778979}
+  - {fileID: 5302448060114594152}
 --- !u!1 &5302448060114594152
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,7 +141,7 @@ GameObject:
   - component: {fileID: 5845999046460698534}
   m_Layer: 7
   m_Name: occupy
-  m_TagString: chip
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

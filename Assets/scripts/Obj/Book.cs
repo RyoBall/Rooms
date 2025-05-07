@@ -5,22 +5,32 @@ using UnityEngine;
 public class Book : MonoBehaviour
 {
     //0代表紫色，1代表绿色，2代表蓝色
-    public int color;
+    public enum Color { purple,green,blue};
+    public Color color;
 
     private void Start()
     {
         switch (color)
         {
-            case 0:
-                gameManager.instance.GetChip(1,1);
+            case Color.purple:
+                for(int i = 0; i < 3; i++) 
+                {
+                    gameManager.instance.GetChipButton(1, Random.Range(0, gameManager.instance.chipsDic[1].Count),i);
+                }
                 //改变颜色
                 break;
-            case 1:
-                gameManager.instance.GetChip(3, 1);
+            case Color.green:
+                for (int i = 0; i < 3; i++)
+                {
+                    gameManager.instance.GetChipButton(1, Random.Range(0, gameManager.instance.chipsDic[3].Count), i);
+                }
                 //
                 break;
-            case 2:
-                gameManager.instance.GetChip(2, 1);
+            case Color.blue:
+                for (int i = 0; i < 3; i++)
+                {
+                    gameManager.instance.GetChipButton(1, Random.Range(0, gameManager.instance.chipsDic[2].Count), i);
+                }
                 //
                 break;
             default:

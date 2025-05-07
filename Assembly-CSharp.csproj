@@ -75,6 +75,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\scripts\damageText.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
+    <Compile Include="Assets\scripts\Chip\GetChipBase.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\scripts\Obj\ShopObj.cs" />
     <Compile Include="Assets\scripts\Rooms\RoomBase.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Assets\scripts\SkillPanel.cs" />
     <Compile Include="Assets\scripts\UIframe.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
+    <Compile Include="Assets\scripts\Chip\Enhance\bulletEnhance\heavyEnhance.cs" />
     <Compile Include="Assets\scripts\Chip\Enhance\attackEnhance.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\scripts\Chip\Global\SpeedGlobalChip.cs" />
@@ -95,8 +97,8 @@
     <Compile Include="Assets\scripts\Rooms\Lib.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\scripts\Chip\Enhance\bulletEnhance\bulletEnhanceBase.cs" />
+    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\scripts\exp.cs" />
     <Compile Include="Assets\scripts\Chip\PanelBase.cs" />
     <Compile Include="Assets\scripts\bullet.cs" />
@@ -150,7 +152,7 @@
     <Compile Include="Assets\scripts\Chip\Enhance\speedEnhance.cs" />
     <Compile Include="Assets\scripts\Rooms\Garden.cs" />
     <Compile Include="Assets\scripts\Chip\Enhance\bulletEnhance\bombEnhance.cs" />
-    <Compile Include="Assets\scripts\Chip\Enhance\occupychecer.cs" />
+    <Compile Include="Assets\scripts\Weapon\bomb.cs" />
     <Compile Include="Assets\scripts\Rooms\GuardRoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\scripts\segment.cs" />
