@@ -16,8 +16,10 @@ public class shooter : WeaponBase
         }
         if (cd <= 0 && enemysin.Count != 0)
         {
-            if(heavyattacklevel>0)
-            cd = cdm*(1.4f+heavyattacklevel*.2f);
+            if (heavyattacklevel > 0)
+                cd = cdm * (1.4f + heavyattacklevel * .2f);
+            else
+                cd = cdm;
             DIR();
             shoot();
             doubleattackpoint = doubleattacklevel;

@@ -10,13 +10,19 @@ public class Book : MonoBehaviour
 
     private void Start()
     {
+        
+    }
+
+    private void OnMouseDown()
+    {
         switch (color)
         {
             case Color.purple:
-                for(int i = 0; i < 3; i++) 
+                for (int i = 0; i < 3; i++)
                 {
-                    gameManager.instance.GetChipButton(1, Random.Range(0, gameManager.instance.chipsDic[1].Count),i);
+                    gameManager.instance.GetChipButton(1, Random.Range(0, gameManager.instance.chipsDic[1].Count), i);
                 }
+                    ChoosePanel.instance.Enter();
                 //改变颜色
                 break;
             case Color.green:
@@ -24,6 +30,7 @@ public class Book : MonoBehaviour
                 {
                     gameManager.instance.GetChipButton(1, Random.Range(0, gameManager.instance.chipsDic[3].Count), i);
                 }
+                    ChoosePanel.instance.Enter();
                 //
                 break;
             case Color.blue:
@@ -31,16 +38,13 @@ public class Book : MonoBehaviour
                 {
                     gameManager.instance.GetChipButton(1, Random.Range(0, gameManager.instance.chipsDic[2].Count), i);
                 }
+                    ChoosePanel.instance.Enter();
                 //
                 break;
             default:
                 return;
         }
-    }
-
-    private void OnMouseDown()
-    {
-        //Destroy(gameObject);
+        GetComponentInParent<Lib>().DestroyBook();
         //把模块给予玩家
         //唤出模块装配画面
     }

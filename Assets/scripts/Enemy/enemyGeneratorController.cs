@@ -19,7 +19,7 @@ public class enemyGeneratorController : MonoBehaviour
     public bool infight;
     public int level;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         instance = this;
     }

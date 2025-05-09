@@ -71,6 +71,7 @@ public class gameManager : MonoBehaviour
     public void GetChipButton(int type,int order,int position) 
     {
         GameObject chipbutton = Instantiate(chipGetButton, buttonpacktrans[position].position, Quaternion.identity,chipGetButtonParent.transform);
+        ChoosePanel.instance.choice.Add(chipbutton);
         chipbutton.GetComponent<RectTransform>().position = buttonpacktrans[position].position;
         GameObject ins;
         GetChipBase insscript;

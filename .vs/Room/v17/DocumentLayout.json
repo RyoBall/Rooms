@@ -3,48 +3,68 @@
   "WorkspaceRootPath": "D:\\room\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\enemy\\enemybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy\\enemybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\enemy\\normalenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy\\normalenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\skillpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\skillpanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\obj\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\obj\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\chip\\getinchips.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\chip\\getinchips.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|d:\\room\\assets\\scripts\\obj\\drink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\obj\\drink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\segment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\segment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\chip\\choosepanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\chip\\choosepanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\rooms\\lib.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\rooms\\lib.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|d:\\room\\assets\\scripts\\chip\\getchipbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\chip\\getchipbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|d:\\room\\assets\\scripts\\chip\\get\\getparticle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\chip\\get\\getparticle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\chip\\enhance\\speedenhance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\chip\\enhance\\speedenhance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\segmentpart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\segmentpart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\chip\\getchipbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\chip\\getchipbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\obj\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\obj\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\weapon\\circleattacker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapon\\circleattacker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\enemy\\enemygeneratorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy\\enemygeneratorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\rooms\\roombase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\rooms\\roombase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\rooms\\lib.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\rooms\\lib.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\room\\Assets\\scripts\\Chip\\Enhance\\icyEnhance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\Chip\\Enhance\\icyEnhance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\chip\\enhance\\checer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\chip\\enhance\\checer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\weapon\\circleattacker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapon\\circleattacker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\chip\\chipbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -53,6 +73,30 @@
     {
       "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\chip\\enhancechipbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\chip\\enhancechipbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\obj\\drink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\obj\\drink.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\obj\\research.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\obj\\research.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\weapon\\shooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapon\\shooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\chip\\enhance\\speedenhance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\chip\\enhance\\speedenhance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\chip\\enhance\\checer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\chip\\enhance\\checer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\chip\\enhance\\occupy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -75,28 +119,12 @@
       "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\chip\\weaponchipbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\weapon\\shooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapon\\shooter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\weapon\\weaponbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapon\\weaponbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\enemy\\normalenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy\\normalenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\enemy\\enemybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy\\enemybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\segment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\segment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\chip\\weapon\\shooterchip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -107,28 +135,12 @@
       "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\rooms\\drinkroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\rooms\\roombase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\rooms\\roombase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\enemy\\enemygeneratorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy\\enemygeneratorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\segmentpart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\segmentpart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\segmentpos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\segmentpos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\rooms\\unknownroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\rooms\\unknownroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\chip\\getinchips.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\chip\\getinchips.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{74053A23-DE5A-D7E3-5322-E3E3BDBF31D3}|Assembly-CSharp.csproj|D:\\room\\assets\\scripts\\chip\\global\\attackglobalchip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -202,73 +214,176 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GetParticle.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\Get\\GetParticle.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\Get\\GetParticle.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\Get\\GetParticle.cs",
+              "RelativeToolTip": "Assets\\scripts\\Chip\\Get\\GetParticle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T06:15:58.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GetChipBase.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\GetChipBase.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\GetChipBase.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\GetChipBase.cs",
+              "RelativeToolTip": "Assets\\scripts\\Chip\\GetChipBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-06T12:44:32.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ChoosePanel.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\ChoosePanel.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\ChoosePanel.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\ChoosePanel.cs",
+              "RelativeToolTip": "Assets\\scripts\\Chip\\ChoosePanel.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAwC0AAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T02:26:36.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "gameManager.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\gameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\gameManager.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\gameManager.cs",
+              "RelativeToolTip": "Assets\\scripts\\gameManager.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAQwEgAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T11:15:03.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "segment.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\segment.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\segment.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\segment.cs",
+              "RelativeToolTip": "Assets\\scripts\\segment.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAYwG8AAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T06:45:37.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GetinChips.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\GetinChips.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\GetinChips.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\GetinChips.cs",
+              "RelativeToolTip": "Assets\\scripts\\Chip\\GetinChips.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwgAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T08:42:34.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Drink.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Obj\\Drink.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Obj\\Drink.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\Obj\\Drink.cs",
-              "RelativeToolTip": "Assets\\scripts\\Obj\\Drink.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvxQAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T07:09:47.326Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Book.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Obj\\Book.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Obj\\Book.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\Obj\\Book.cs",
-              "RelativeToolTip": "Assets\\scripts\\Obj\\Book.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvxgAAAB2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T06:52:47.394Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "SkillPanel.cs",
               "DocumentMoniker": "D:\\room\\Assets\\scripts\\SkillPanel.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\SkillPanel.cs",
               "ToolTip": "D:\\room\\Assets\\scripts\\SkillPanel.cs",
               "RelativeToolTip": "Assets\\scripts\\SkillPanel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvyMAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-21T06:00:07.251Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 1,
+              "Title": "normalenemy.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Enemy\\normalenemy.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Enemy\\normalenemy.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Enemy\\normalenemy.cs",
+              "RelativeToolTip": "Assets\\scripts\\Enemy\\normalenemy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T05:41:28.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "EnemyBase.cs",
               "DocumentMoniker": "D:\\room\\Assets\\scripts\\Enemy\\EnemyBase.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Enemy\\EnemyBase.cs",
               "ToolTip": "D:\\room\\Assets\\scripts\\Enemy\\EnemyBase.cs",
               "RelativeToolTip": "Assets\\scripts\\Enemy\\EnemyBase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAqwCAAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T05:41:26.068Z"
+              "WhenOpened": "2025-04-19T05:41:26.068Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "icyEnhance.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\icyEnhance.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\Enhance\\icyEnhance.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\icyEnhance.cs",
-              "RelativeToolTip": "Assets\\scripts\\Chip\\Enhance\\icyEnhance.cs",
+              "DocumentIndex": 11,
+              "Title": "enemyGeneratorController.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Enemy\\enemyGeneratorController.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Enemy\\enemyGeneratorController.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Enemy\\enemyGeneratorController.cs",
+              "RelativeToolTip": "Assets\\scripts\\Enemy\\enemyGeneratorController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T06:34:15.259Z"
+              "WhenOpened": "2025-04-19T05:41:02.57Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
+              "Title": "RoomBase.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Rooms\\RoomBase.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Rooms\\RoomBase.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Rooms\\RoomBase.cs",
+              "RelativeToolTip": "Assets\\scripts\\Rooms\\RoomBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T11:06:48.725Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Book.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Obj\\Book.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Obj\\Book.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Obj\\Book.cs",
+              "RelativeToolTip": "Assets\\scripts\\Obj\\Book.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACgAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T06:52:47.394Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Lib.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Rooms\\Lib.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Rooms\\Lib.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Rooms\\Lib.cs",
+              "RelativeToolTip": "Assets\\scripts\\Rooms\\Lib.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvxYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T11:10:16.153Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "CircleAttacker.cs",
               "DocumentMoniker": "D:\\room\\Assets\\scripts\\Weapon\\CircleAttacker.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Weapon\\CircleAttacker.cs",
@@ -280,309 +395,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Player.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Player.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Player.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\Player.cs",
-              "RelativeToolTip": "Assets\\scripts\\Player.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAADwvyMAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T06:41:28.129Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "speedEnhance.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\speedEnhance.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\Enhance\\speedEnhance.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\speedEnhance.cs",
-              "RelativeToolTip": "Assets\\scripts\\Chip\\Enhance\\speedEnhance.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAwAkAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T06:48:36.153Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "gameManager.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\gameManager.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\gameManager.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\gameManager.cs",
-              "RelativeToolTip": "Assets\\scripts\\gameManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T11:15:03.485Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "EnhanceChipBase.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\EnhanceChipBase.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\EnhanceChipBase.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\EnhanceChipBase.cs",
-              "RelativeToolTip": "Assets\\scripts\\Chip\\EnhanceChipBase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T07:45:41.347Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "checer.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\checer.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\Enhance\\checer.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\checer.cs",
-              "RelativeToolTip": "Assets\\scripts\\Chip\\Enhance\\checer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T12:09:36.554Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Lib.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Rooms\\Lib.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Rooms\\Lib.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\Rooms\\Lib.cs",
-              "RelativeToolTip": "Assets\\scripts\\Rooms\\Lib.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvxwAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T11:10:16.153Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "GetChipBase.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\GetChipBase.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\GetChipBase.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\GetChipBase.cs",
-              "RelativeToolTip": "Assets\\scripts\\Chip\\GetChipBase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvxwAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-06T12:44:32.057Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ChipBase.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\ChipBase.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\ChipBase.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\ChipBase.cs",
-              "RelativeToolTip": "Assets\\scripts\\Chip\\ChipBase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T06:42:37.361Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "bulletEnhanceBase.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\bulletEnhanceBase.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\Enhance\\bulletEnhanceBase.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\bulletEnhanceBase.cs",
-              "RelativeToolTip": "Assets\\scripts\\Chip\\Enhance\\bulletEnhanceBase.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAgwC8AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T15:52:03.682Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "occupy.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\occupy.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\Enhance\\occupy.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\occupy.cs",
-              "RelativeToolTip": "Assets\\scripts\\Chip\\Enhance\\occupy.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T04:08:25.99Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "rangeEnhance.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\rangeEnhance.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\Enhance\\rangeEnhance.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\rangeEnhance.cs",
-              "RelativeToolTip": "Assets\\scripts\\Chip\\Enhance\\rangeEnhance.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T06:45:50.958Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "attackEnhance.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\attackEnhance.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\Enhance\\attackEnhance.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\attackEnhance.cs",
-              "RelativeToolTip": "Assets\\scripts\\Chip\\Enhance\\attackEnhance.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAANAAAAAAAAAA==",
+              "Title": "icyEnhance.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\icyEnhance.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\Enhance\\icyEnhance.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\icyEnhance.cs",
+              "RelativeToolTip": "Assets\\scripts\\Chip\\Enhance\\icyEnhance.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T06:53:05.935Z"
+              "WhenOpened": "2025-04-30T06:34:15.259Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "GlobalChipBase.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\GlobalChipBase.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\GlobalChipBase.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\GlobalChipBase.cs",
-              "RelativeToolTip": "Assets\\scripts\\Chip\\GlobalChipBase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T07:26:01.788Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "normalenemy.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Enemy\\normalenemy.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Enemy\\normalenemy.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\Enemy\\normalenemy.cs",
-              "RelativeToolTip": "Assets\\scripts\\Enemy\\normalenemy.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T05:41:28.198Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "bullet.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\bullet.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\bullet.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\bullet.cs",
-              "RelativeToolTip": "Assets\\scripts\\bullet.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAAwBQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T08:23:06.9Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "shooter.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Weapon\\shooter.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Weapon\\shooter.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\Weapon\\shooter.cs",
-              "RelativeToolTip": "Assets\\scripts\\Weapon\\shooter.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAwCIAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T13:34:44.361Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "WeaponBase.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Weapon\\WeaponBase.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Weapon\\WeaponBase.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\Weapon\\WeaponBase.cs",
-              "RelativeToolTip": "Assets\\scripts\\Weapon\\WeaponBase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T07:34:34.067Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "WeaponChipBase.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\WeaponChipBase.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\WeaponChipBase.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\WeaponChipBase.cs",
-              "RelativeToolTip": "Assets\\scripts\\Chip\\WeaponChipBase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T07:22:35.922Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "segment.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\segment.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\segment.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\segment.cs",
-              "RelativeToolTip": "Assets\\scripts\\segment.cs",
-              "ViewState": "AgIAAIEAAAAAAAAAAAAiwJUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T06:45:37.922Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "DrinkRoom.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Rooms\\DrinkRoom.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Rooms\\DrinkRoom.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\Rooms\\DrinkRoom.cs",
-              "RelativeToolTip": "Assets\\scripts\\Rooms\\DrinkRoom.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvw8AAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T07:42:40.33Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "RoomBase.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Rooms\\RoomBase.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Rooms\\RoomBase.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\Rooms\\RoomBase.cs",
-              "RelativeToolTip": "Assets\\scripts\\Rooms\\RoomBase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEcAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T11:06:48.725Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "segmentpos.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\segmentpos.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\segmentpos.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\segmentpos.cs",
-              "RelativeToolTip": "Assets\\scripts\\segmentpos.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T16:08:37.216Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "enemyGeneratorController.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Enemy\\enemyGeneratorController.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Enemy\\enemyGeneratorController.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\Enemy\\enemyGeneratorController.cs",
-              "RelativeToolTip": "Assets\\scripts\\Enemy\\enemyGeneratorController.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAewEgAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T05:41:02.57Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "shooterChip.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\Weapon\\shooterChip.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\Weapon\\shooterChip.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\Weapon\\shooterChip.cs",
-              "RelativeToolTip": "Assets\\scripts\\Chip\\Weapon\\shooterChip.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvw0AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T10:35:17.571Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "UnknownRoom.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Rooms\\UnknownRoom.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Rooms\\UnknownRoom.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\Rooms\\UnknownRoom.cs",
-              "RelativeToolTip": "Assets\\scripts\\Rooms\\UnknownRoom.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T06:37:10.581Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 9,
               "Title": "segmentpart.cs",
               "DocumentMoniker": "D:\\room\\Assets\\scripts\\segmentpart.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\segmentpart.cs",
@@ -594,19 +418,247 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "GetinChips.cs",
-              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\GetinChips.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\GetinChips.cs",
-              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\GetinChips.cs",
-              "RelativeToolTip": "Assets\\scripts\\Chip\\GetinChips.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwgAAAAKAAAAAAAAAA==",
+              "DocumentIndex": 23,
+              "Title": "checer.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\checer.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\Enhance\\checer.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\checer.cs",
+              "RelativeToolTip": "Assets\\scripts\\Chip\\Enhance\\checer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T08:42:34.247Z"
+              "WhenOpened": "2025-04-30T12:09:36.554Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 17,
+              "Title": "EnhanceChipBase.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\EnhanceChipBase.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\EnhanceChipBase.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\EnhanceChipBase.cs",
+              "RelativeToolTip": "Assets\\scripts\\Chip\\EnhanceChipBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T07:45:41.347Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "speedEnhance.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\speedEnhance.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\Enhance\\speedEnhance.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\speedEnhance.cs",
+              "RelativeToolTip": "Assets\\scripts\\Chip\\Enhance\\speedEnhance.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAwAkAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T06:48:36.153Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Player.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Player.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Player.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Player.cs",
+              "RelativeToolTip": "Assets\\scripts\\Player.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAADwvyMAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T06:41:28.129Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ChipBase.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\ChipBase.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\ChipBase.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\ChipBase.cs",
+              "RelativeToolTip": "Assets\\scripts\\Chip\\ChipBase.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAIwDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T06:42:37.361Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Drink.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Obj\\Drink.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Obj\\Drink.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Obj\\Drink.cs",
+              "RelativeToolTip": "Assets\\scripts\\Obj\\Drink.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvxgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T07:09:47.326Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "research.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Obj\\research.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Obj\\research.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Obj\\research.cs",
+              "RelativeToolTip": "Assets\\scripts\\Obj\\research.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvxkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T07:30:37.223Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "shooter.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Weapon\\shooter.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Weapon\\shooter.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Weapon\\shooter.cs",
+              "RelativeToolTip": "Assets\\scripts\\Weapon\\shooter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T13:34:44.361Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "bulletEnhanceBase.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\bulletEnhanceBase.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\Enhance\\bulletEnhanceBase.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\bulletEnhanceBase.cs",
+              "RelativeToolTip": "Assets\\scripts\\Chip\\Enhance\\bulletEnhanceBase.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAgwC8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T15:52:03.682Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "occupy.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\occupy.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\Enhance\\occupy.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\occupy.cs",
+              "RelativeToolTip": "Assets\\scripts\\Chip\\Enhance\\occupy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-01T04:08:25.99Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "rangeEnhance.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\rangeEnhance.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\Enhance\\rangeEnhance.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\rangeEnhance.cs",
+              "RelativeToolTip": "Assets\\scripts\\Chip\\Enhance\\rangeEnhance.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T06:45:50.958Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "attackEnhance.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\attackEnhance.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\Enhance\\attackEnhance.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\Enhance\\attackEnhance.cs",
+              "RelativeToolTip": "Assets\\scripts\\Chip\\Enhance\\attackEnhance.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T06:53:05.935Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "GlobalChipBase.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\GlobalChipBase.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\GlobalChipBase.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\GlobalChipBase.cs",
+              "RelativeToolTip": "Assets\\scripts\\Chip\\GlobalChipBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T07:26:01.788Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "bullet.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\bullet.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\bullet.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\bullet.cs",
+              "RelativeToolTip": "Assets\\scripts\\bullet.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAwBQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T08:23:06.9Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "WeaponBase.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Weapon\\WeaponBase.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Weapon\\WeaponBase.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Weapon\\WeaponBase.cs",
+              "RelativeToolTip": "Assets\\scripts\\Weapon\\WeaponBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T07:34:34.067Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "WeaponChipBase.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\WeaponChipBase.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\WeaponChipBase.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\WeaponChipBase.cs",
+              "RelativeToolTip": "Assets\\scripts\\Chip\\WeaponChipBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T07:22:35.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "DrinkRoom.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Rooms\\DrinkRoom.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Rooms\\DrinkRoom.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Rooms\\DrinkRoom.cs",
+              "RelativeToolTip": "Assets\\scripts\\Rooms\\DrinkRoom.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvw8AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T07:42:40.33Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "segmentpos.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\segmentpos.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\segmentpos.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\segmentpos.cs",
+              "RelativeToolTip": "Assets\\scripts\\segmentpos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T16:08:37.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "shooterChip.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\Weapon\\shooterChip.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\Weapon\\shooterChip.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Chip\\Weapon\\shooterChip.cs",
+              "RelativeToolTip": "Assets\\scripts\\Chip\\Weapon\\shooterChip.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvw0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T10:35:17.571Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "UnknownRoom.cs",
+              "DocumentMoniker": "D:\\room\\Assets\\scripts\\Rooms\\UnknownRoom.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Rooms\\UnknownRoom.cs",
+              "ToolTip": "D:\\room\\Assets\\scripts\\Rooms\\UnknownRoom.cs",
+              "RelativeToolTip": "Assets\\scripts\\Rooms\\UnknownRoom.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T06:37:10.581Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
               "Title": "PlayerAttackedState.cs",
               "DocumentMoniker": "D:\\room\\Assets\\scripts\\PlayerState\\PlayerAttackedState.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\PlayerState\\PlayerAttackedState.cs",
@@ -618,7 +670,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 38,
               "Title": "UIframe.cs",
               "DocumentMoniker": "D:\\room\\Assets\\scripts\\UIframe.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\UIframe.cs",
@@ -630,7 +682,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 37,
               "Title": "CameraScript.cs",
               "DocumentMoniker": "D:\\room\\Assets\\scripts\\CameraScript.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\CameraScript.cs",
@@ -642,7 +694,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 36,
               "Title": "PlayerNormalState.cs",
               "DocumentMoniker": "D:\\room\\Assets\\scripts\\PlayerState\\PlayerNormalState.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\PlayerState\\PlayerNormalState.cs",
@@ -654,7 +706,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 35,
               "Title": "AttackGlobalChip.cs",
               "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\Global\\AttackGlobalChip.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\Global\\AttackGlobalChip.cs",
@@ -666,7 +718,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 40,
               "Title": "Shop.cs",
               "DocumentMoniker": "D:\\room\\Assets\\scripts\\Rooms\\Shop.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Rooms\\Shop.cs",
@@ -678,7 +730,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 41,
               "Title": "PlayerState.cs",
               "DocumentMoniker": "D:\\room\\Assets\\scripts\\PlayerState\\PlayerState.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\PlayerState\\PlayerState.cs",
@@ -690,7 +742,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 42,
               "Title": "PlayerStateMachine.cs",
               "DocumentMoniker": "D:\\room\\Assets\\scripts\\PlayerState\\PlayerStateMachine.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\PlayerState\\PlayerStateMachine.cs",
@@ -702,7 +754,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 43,
               "Title": "RoomController.cs",
               "DocumentMoniker": "D:\\room\\Assets\\scripts\\RoomController.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\RoomController.cs",
@@ -714,7 +766,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 44,
               "Title": "damageText.cs",
               "DocumentMoniker": "D:\\room\\Assets\\scripts\\damageText.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\damageText.cs",
@@ -726,7 +778,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 45,
               "Title": "CriticalAttackGlobalChip.cs",
               "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\Global\\CriticalAttackGlobalChip.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\Global\\CriticalAttackGlobalChip.cs",
@@ -738,7 +790,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 46,
               "Title": "HealthGlobalChip.cs",
               "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\Global\\HealthGlobalChip.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\Global\\HealthGlobalChip.cs",
@@ -750,7 +802,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 47,
               "Title": "SpeedGlobalChip.cs",
               "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\Global\\SpeedGlobalChip.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\Global\\SpeedGlobalChip.cs",
@@ -762,7 +814,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 48,
               "Title": "CritialGloablChip.cs",
               "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\Global\\CritialGloablChip.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\Global\\CritialGloablChip.cs",
@@ -774,7 +826,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 49,
               "Title": "pack.cs",
               "DocumentMoniker": "D:\\room\\Assets\\scripts\\Chip\\pack.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Chip\\pack.cs",

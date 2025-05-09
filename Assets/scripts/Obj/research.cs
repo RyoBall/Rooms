@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Drink : MonoBehaviour
+public class research : MonoBehaviour
 {
     private void OnMouseDown()
     {
@@ -22,6 +22,5 @@ public class Drink : MonoBehaviour
             default:
                 return;
         }
-        Destroy(gameObject);
     }
 }

@@ -14,6 +14,8 @@ public class EnemyBase : MonoBehaviour
     public float CorrectingFactor;
     public int dropExpNum;
     public float attack;
+    [SerializeField] protected float cd;
+    [SerializeField] protected float cdm;
     [Header("state")]
     public float icytime;
     // Start is called before the first frame update
@@ -28,10 +30,16 @@ public class EnemyBase : MonoBehaviour
     {
         move();
         Dead();
+        CDCount();
+    }
+    protected virtual void CDCount() 
+    {
+        if (cd > 0)
+            cd -= Time.deltaTime;
     }
     public virtual void move()
     {
-        if (icytime <= 0) 
+        if (icytime <= 0)
         {
             dir = -new Vector2(transform.position.x - Player.instance.transform.position.x, transform.position.y - Player.instance.transform.position.y);
             dir = dir.normalized;
@@ -47,26 +55,35 @@ public class EnemyBase : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void icytimecount() 
+    void icytimecount()
     {
-        if (icytime > 0) 
+        if (icytime > 0)
         {
             icytime -= Time.deltaTime;
         }
     }
-    public void expdrop(int nums) 
+    public virtual void OnTriggerEnter2D(Collider2D collision)//touch 
     {
-        for(int i = 0; i < nums; i++) 
+        if (collision.tag == "Player" && icytime <= 0&&cd<=0)
         {
-            Instantiate(exp,transform.position+new Vector3(Random.Range(-CorrectingFactor,CorrectingFactor), Random.Range(-CorrectingFactor, CorrectingFactor),0),Quaternion.identity);
+            cd = cdm;
+            if(Random.value>Player.instance.hidefactor)
+            Player.instance.health -= attack;
         }
     }
-    protected void attackanim() 
+    public void expdrop(int nums)
+    {
+        for (int i = 0; i < nums; i++)
+        {
+            Instantiate(exp, transform.position + new Vector3(Random.Range(-CorrectingFactor, CorrectingFactor), Random.Range(-CorrectingFactor, CorrectingFactor), 0), Quaternion.identity);
+        }
+    }
+    protected void attackanim()
     {
         render.color = Color.blue;
         StartCoroutine(attackroutine());
     }
-    IEnumerator attackroutine() 
+    IEnumerator attackroutine()
     {
         yield return new WaitForSeconds(0);
         render.color = Color.white;

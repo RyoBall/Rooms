@@ -5,18 +5,15 @@ using UnityEngine;
 
 public class Lib : RoomBase
 {
-    public GameObject bookprefab;
+    public List<GameObject> bookprefab;
 
-    private void InstantiateBook()
+    public void DestroyBook() 
     {
-        //需要生成书的位置，和策划协商
-        //初始数字为0，可能会存在显示问题，可修改
-        for(int i = 0; i < 3; i++)
+        for(int i = 0; i < bookprefab.Count; i++) 
         {
-            Instantiate(bookprefab, transform.position, Quaternion.identity).GetComponent<Book>().color = (Book.Color)i;
+            Destroy(bookprefab[i]);
         }
     }
-
     protected override void OnMouseDown()
     {
         base.OnMouseDown();
@@ -26,6 +23,5 @@ public class Lib : RoomBase
     {
         dangerousLevel = 1 / 3;
         base.Start();
-        InstantiateBook();
     }
 }

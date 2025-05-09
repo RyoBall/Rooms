@@ -148,7 +148,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 0
   foggylevel: {fileID: 0}
-  bookprefab: {fileID: 0}
+  bookprefab:
+  - {fileID: 8820702398930131533}
+  - {fileID: 8889488929288203426}
+  - {fileID: 5078392503161664471}
 --- !u!1001 &5674767854313168920
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -230,6 +233,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccf9674a9e9480d4d96369f6b6b8675a, type: 3}
+--- !u!1 &5078392503161664471 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 629026612894061519, guid: ccf9674a9e9480d4d96369f6b6b8675a, type: 3}
+  m_PrefabInstance: {fileID: 5674767854313168920}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9113041411243022727 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3510790850549709215, guid: ccf9674a9e9480d4d96369f6b6b8675a, type: 3}
@@ -317,6 +325,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3510790850549709215, guid: ccf9674a9e9480d4d96369f6b6b8675a, type: 3}
   m_PrefabInstance: {fileID: 8274148556659214722}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8820702398930131533 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 629026612894061519, guid: ccf9674a9e9480d4d96369f6b6b8675a, type: 3}
+  m_PrefabInstance: {fileID: 8274148556659214722}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8351660844738477933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -401,5 +414,10 @@ PrefabInstance:
 --- !u!4 &4854839611024213746 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3510790850549709215, guid: ccf9674a9e9480d4d96369f6b6b8675a, type: 3}
+  m_PrefabInstance: {fileID: 8351660844738477933}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8889488929288203426 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 629026612894061519, guid: ccf9674a9e9480d4d96369f6b6b8675a, type: 3}
   m_PrefabInstance: {fileID: 8351660844738477933}
   m_PrefabAsset: {fileID: 0}

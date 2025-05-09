@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class normalenemy : EnemyBase
+public class BigEnemy : EnemyBase
 {
     public override void Dead()
     {
@@ -22,13 +22,18 @@ public class normalenemy : EnemyBase
     public override void Start()
     {
         base.Start();
-        health = 20 + 10 * enemyGeneratorController.instance.level;
-        attack = 5;
+        health = 50 + 20 * enemyGeneratorController.instance.level;
+        attack=  5+2* enemyGeneratorController.instance.level;
         cdm = 1;
     }
 
     public override void Update()
     {
         base.Update();
+    }
+
+    protected override void CDCount()
+    {
+        base.CDCount();
     }
 }
