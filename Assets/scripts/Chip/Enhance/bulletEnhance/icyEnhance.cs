@@ -5,10 +5,6 @@ using UnityEngine.EventSystems;
 
 public class icyEnhance : bulletEnhanceBase
 {
-    public override void checAround()
-    {
-        base.checAround();
-    }
 
     public override void chipentereffect(ChipBase chip)
     {

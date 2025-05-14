@@ -4,17 +4,9 @@ using UnityEngine;
 
 public class Storage : RoomBase
 {
-    public GameObject Locker;
+    public List<GameObject> Locker;
     private int lockerNum;
 
-
-    private void InstantiateLocker(int lockerNum)
-    {
-        for(int i = 0; i < lockerNum; i++)
-        {
-            Instantiate(Locker,transform.position, Quaternion.identity);
-        }
-    }
 
     protected override void OnMouseDown()
     {
@@ -23,10 +15,9 @@ public class Storage : RoomBase
 
     protected override void Start()
     {
-        dangerousLevel = 2 / 3;
+        dangerousLevel = 1 / 2;
+        gameObjects = Locker;
         base.Start();
-        //在一到二之间生成一个数
-        lockerNum = Random.Range(1, 3);
-        InstantiateLocker(lockerNum);
+
     }
 }

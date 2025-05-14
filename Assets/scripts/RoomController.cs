@@ -10,6 +10,7 @@ public class RoomController : MonoBehaviour
     public List<GameObject> instanrooms;
     public float xdistance;
     public float ydistance;
+    public Vector2[] a;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +18,7 @@ public class RoomController : MonoBehaviour
         xdistance = 20;
         ydistance = 15;
         Initroomlist();
-        Vector2[] a = new Vector2[4];
-        a[0] = new Vector2(0, 0);
-        a[1] = new Vector2(1, 1);
-        a[2] = new Vector2(2, 4);
-        a[3] = new Vector2(3, 0);
+
         Initlevel(a);
     }
 

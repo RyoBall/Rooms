@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DrinkRoom : RoomBase
 {
-    public GameObject drink;
+    public List<GameObject> drink;
 
     protected override void OnMouseDown()
     {
@@ -13,9 +13,8 @@ public class DrinkRoom : RoomBase
 
     protected override void Start()
     {
-        dangerousLevel = 1/3;
+        dangerousLevel = 1/4;
+        gameObjects = drink;
         base.Start();
-        //生成位置待定
-        //Instantiate(drink, transform.position, Quaternion.identity);
     }
 }

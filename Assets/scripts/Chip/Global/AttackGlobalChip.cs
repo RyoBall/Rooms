@@ -8,13 +8,13 @@ public class AttackGlobalChip : GlobalChipBase
     public override void entereffect(RaycastResult result)
     {
         base.entereffect(result);
-        Player.instance.attackfactor+=0.1f;
+        Player.instance.attack += 5;
     }
 
     public override void exiteffect()
     {
         base.exiteffect();
-        Player.instance.attackfactor-=0.1f;
+        Player.instance.attack -= 5;
     }
 
     public override void FixedUpdate()

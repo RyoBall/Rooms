@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Garden : RoomBase
 {
+    public List<GameObject> flowers;
+
+
     protected override void OnMouseDown()
     {
         base.OnMouseDown();
@@ -11,8 +14,9 @@ public class Garden : RoomBase
 
     protected override void Start()
     {
+        dangerousLevel = 0;
+        gameObjects = flowers;
         base.Start();
         //ªÿ∏¥¬˙¿Ì÷«÷µ
-        Player.instance.currentSanity = Player.instance.maxSanity;
     }
 }

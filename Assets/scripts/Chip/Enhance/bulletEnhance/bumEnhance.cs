@@ -5,10 +5,6 @@ using UnityEngine.EventSystems;
 
 public class bumEnhance : bulletEnhanceBase
 {
-    public override void checAround()
-    {
-        base.checAround();
-    }
 
     public override void chipentereffect(ChipBase chip)
     {

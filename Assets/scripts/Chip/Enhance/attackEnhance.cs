@@ -6,10 +6,6 @@ using UnityEngine.EventSystems;
 public class attackEnhance : EnhanceChipBase
 {
     // Start is called before the first frame update
-    public override void checAround()
-    {
-        base.checAround();
-    }
 
     public override void chipentereffect(ChipBase chip)
     {

@@ -11,24 +11,39 @@ public class RoomBase : MonoBehaviour
     public Transform foggylevel;
     protected bool isfog = false;//
     protected float dangerousLevel = 0;
-
+    protected bool firstEnter;
+    protected List<GameObject> gameObjects;
     virtual protected void Start()
     {
-        foggylevel = enemyGeneratorController.instance.transform;
+        foggylevel = enemyGeneratorController.instance.foggylevel;
         if (UnityEngine.Random.value < dangerousLevel)
         {
             isfog = true;
             ChangeTofoggy();
         }
-
+        else 
+        {
+            InitEnvironment();
+        }
+    }
+    protected virtual void InitEnvironment()
+    {
+        if (gameObjects != null)
+        {
+            for (int i = 0; i < gameObjects.Count; i++)
+            {
+                gameObjects[i].SetActive(true);
+            }
+        }
     }
     virtual protected void OnMouseDown()
     {
-        gameManager.instance.energy += 5;
         if (!isfog)
         {
             Player.instance.targetRoom = transform;
             Player.instance.BeginMove(transform.position);
+            if(firstEnter)
+            gameManager.instance.energy += 5;
         }
         else
         {
@@ -67,9 +82,10 @@ public class RoomBase : MonoBehaviour
         Player.instance.transform.DOMove(foggylevel.position, 1);
         enemyGeneratorController.instance.Init();
     }
-    public void Removefog()
+    public virtual void Removefog()
     {
         isfog = false;
+        InitEnvironment();
     }
 
 }

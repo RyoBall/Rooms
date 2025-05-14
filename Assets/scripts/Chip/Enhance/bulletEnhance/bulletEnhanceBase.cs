@@ -8,10 +8,6 @@ public class bulletEnhanceBase : EnhanceChipBase
 {
     public GameObject partA;
     public Vector3 relativePosition;
-    public override void checAround()
-    {
-        base.checAround();
-    }
 
     public override void chipentereffect(ChipBase chip)
     {

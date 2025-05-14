@@ -8,6 +8,7 @@ public class bullet : MonoBehaviour
     public Rigidbody2D rb;
     public Vector2 dir;
     public float speed;
+    public float speedfactor;
     public WeaponBase dad;
     public GameObject disapearparticle;
     public GameObject damagetex;
@@ -24,6 +25,7 @@ public class bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        speedfactor = 1;
         rb = GetComponent<Rigidbody2D>();
         bumpoint = dad.bumattacklevel;
         bombpoint = dad.bombattacklevel;    
@@ -88,7 +90,7 @@ public class bullet : MonoBehaviour
         }
         else if (dir.x > 0)
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan(dir.y / dir.x) * Mathf.Rad2Deg));
-        rb.velocity = speed * dir;
+        rb.velocity = speed * dir*speedfactor;
     }
     public GameObject FindEnemy()
     {

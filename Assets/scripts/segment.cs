@@ -109,11 +109,11 @@ public class segment : MonoBehaviour
 
     public void UIEnter()
     {
-        transform.parent.GetComponent<RectTransform>().DOMove(Enter.position, .8f); 
+        transform.parent.GetComponent<RectTransform>().DOAnchorPosX(-82.5f, .8f); 
     }
     public void UIExit() 
     {
-        transform.parent.GetComponent<RectTransform>().DOMove(Exit.position, .8f); 
+        transform.parent.GetComponent<RectTransform>().DOAnchorPosX(82.5f, .8f); 
     }
     /*public void UpdateSegmentValue(int index, float newValue)
     {

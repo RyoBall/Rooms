@@ -14,9 +14,9 @@ public class normalenemy : EnemyBase
         base.move();
     }
 
-    public override void OnTriggerEnter2D(Collider2D collision)
+    public override void OnTriggerStay2D(Collider2D collision)
     {
-        base.OnTriggerEnter2D(collision);
+        base.OnTriggerStay2D(collision);
     }
 
     public override void Start()

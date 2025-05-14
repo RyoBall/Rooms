@@ -7,6 +7,7 @@ public class shooter : WeaponBase
 {
     public GameObject bullet;
     public int doubleattackpoint;
+    public float speedfactor;
     public override void Attack()
     {
         base.Attack();
@@ -42,6 +43,7 @@ public class shooter : WeaponBase
         ins.GetComponent<bullet>().dir = dir;
         ins.GetComponent<bullet>().attack=AttackCount();
         ins.GetComponent<bullet>().dad=this;
+        ins.GetComponent<bullet>().speedfactor=speedfactor;
     }
     public override void DIR()
     {

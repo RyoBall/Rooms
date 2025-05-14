@@ -31,10 +31,11 @@ public class EnemyBase : MonoBehaviour
         move();
         Dead();
         CDCount();
+        icytimecount();
     }
     protected virtual void CDCount() 
     {
-        if (cd > 0)
+        if (cd > 0&&icytime<=0)
             cd -= Time.deltaTime;
     }
     public virtual void move()
@@ -62,7 +63,7 @@ public class EnemyBase : MonoBehaviour
             icytime -= Time.deltaTime;
         }
     }
-    public virtual void OnTriggerEnter2D(Collider2D collision)//touch 
+    public virtual void OnTriggerStay2D(Collider2D collision)//touch 
     {
         if (collision.tag == "Player" && icytime <= 0&&cd<=0)
         {

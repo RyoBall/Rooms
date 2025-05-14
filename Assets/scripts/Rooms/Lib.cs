@@ -14,6 +14,8 @@ public class Lib : RoomBase
             Destroy(bookprefab[i]);
         }
     }
+
+
     protected override void OnMouseDown()
     {
         base.OnMouseDown();
@@ -21,7 +23,7 @@ public class Lib : RoomBase
 
     protected override void Start()
     {
-        dangerousLevel = 1 / 3;
+        dangerousLevel = 1 / 4;
         base.Start();
     }
 }

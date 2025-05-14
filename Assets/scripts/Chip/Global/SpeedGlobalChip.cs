@@ -8,13 +8,13 @@ public class SpeedGlobalChip : GlobalChipBase
     public override void entereffect(RaycastResult result)
     {
         base.entereffect(result);
-        Player.instance.speed = Player.instance.speed * 1.2f;
+        Player.instance.speed = Player.instance.speed * 1.1f;
     }
 
     public override void exiteffect()
     {
         base.exiteffect();
-        Player.instance.speed = Player.instance.speed / 1.2f;
+        Player.instance.speed = Player.instance.speed / 1.1f;
     }
 
     public override void FixedUpdate()

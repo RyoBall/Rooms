@@ -8,13 +8,13 @@ public class CriticalAttackGlobalChip : GlobalChipBase
     public override void entereffect(RaycastResult result)
     {
         base.entereffect(result);
-        Player.instance.criticalattackfactor += 0.2f;
+        Player.instance.criticalattackfactor += 0.25f;
     }
 
     public override void exiteffect()
     {
         base.exiteffect();
-        Player.instance.criticalattackfactor -= 0.2f;
+        Player.instance.criticalattackfactor -= 0.25f;
 
     }
 

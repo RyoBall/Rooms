@@ -101,7 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 0
   foggylevel: {fileID: 0}
-  drink: {fileID: 629026612894061519, guid: 8a6117493279e9b4eaa881b17420c969, type: 3}
+  drink:
+  - {fileID: 6397470157905373266}
 --- !u!61 &7695239642393709043
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -159,6 +160,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: drink
       objectReference: {fileID: 0}
+    - target: {fileID: 629026612894061519, guid: 8a6117493279e9b4eaa881b17420c969, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3510790850549709215, guid: 8a6117493279e9b4eaa881b17420c969, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.05
@@ -212,6 +217,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a6117493279e9b4eaa881b17420c969, type: 3}
+--- !u!1 &6397470157905373266 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 629026612894061519, guid: 8a6117493279e9b4eaa881b17420c969, type: 3}
+  m_PrefabInstance: {fileID: 5796873145823394717}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6974515361579860482 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3510790850549709215, guid: 8a6117493279e9b4eaa881b17420c969, type: 3}

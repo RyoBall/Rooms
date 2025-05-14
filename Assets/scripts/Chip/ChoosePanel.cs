@@ -19,10 +19,12 @@ public class ChoosePanel : MonoBehaviour
     public void Enter() 
     {
         StartCoroutine(IEnter());
+        Blacker.instance.Enter();
     }
     public void Exit() 
     {
         StartCoroutine(IExit());   
+        Blacker.instance.Exit();
     }
     void Afterexit() 
     {

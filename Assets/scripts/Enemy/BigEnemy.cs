@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BigEnemy : EnemyBase
 {
+    [SerializeField] GameObject bullet;
     public override void Dead()
     {
         base.Dead();
@@ -14,17 +15,12 @@ public class BigEnemy : EnemyBase
         base.move();
     }
 
-    public override void OnTriggerEnter2D(Collider2D collision)
-    {
-        base.OnTriggerEnter2D(collision);
-    }
-
     public override void Start()
     {
         base.Start();
-        health = 50 + 20 * enemyGeneratorController.instance.level;
+        health = 100 + 20 * enemyGeneratorController.instance.level;
         attack=  5+2* enemyGeneratorController.instance.level;
-        cdm = 1;
+        cdm = 5;
     }
 
     public override void Update()
@@ -35,5 +31,13 @@ public class BigEnemy : EnemyBase
     protected override void CDCount()
     {
         base.CDCount();
+    }
+    protected void Attack() 
+    {
+        if (cd <= 0) 
+        {
+            GameObject Bul=Instantiate(bullet, transform.position, Quaternion.identity);
+            Bul.GetComponent<EnemyBullet>().attack = attack;
+        }
     }
 }

@@ -11,6 +11,7 @@ public class WeaponChipBase : ChipBase//武器的数值由芯片决定
     public float attackfactor;
     public float range;
     public float cdm;
+    public float speed;
     public override void entereffect(RaycastResult result)
     {
         base.entereffect(result);

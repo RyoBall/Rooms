@@ -9,6 +9,7 @@ public class enemyGeneratorController : MonoBehaviour
     public Transform t1;
     public Transform t3;//用小键盘数字的位置代指方位
     public Transform t7;
+    public Transform foggylevel;
     public GameObject enemyGenerator;
     public float Correctionfactor;
     public float cd;

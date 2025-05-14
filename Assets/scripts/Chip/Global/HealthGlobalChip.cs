@@ -8,15 +8,15 @@ public class HealthGlobalChip : GlobalChipBase
     public override void entereffect(RaycastResult result)
     {
         base.entereffect(result);
-        Player.instance.healthm += 20;
-        Player.instance.health += 20;
+        Player.instance.healthm += 50;
+        Player.instance.health += 50;
     }
 
     public override void exiteffect()
     {
         base.exiteffect();
-        Player.instance.healthm += 20;
-        Player.instance.health += 20;
+        Player.instance.healthm -= 50;
+        Player.instance.health -= 50;
     }
 
     public override void FixedUpdate()

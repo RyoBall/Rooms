@@ -5,11 +5,7 @@ using UnityEngine.EventSystems;
 
 public class speedEnhance : EnhanceChipBase
 {
-    public override void checAround()
-    {
-        base.checAround();
-    }
-
+  
     public override void chipentereffect(ChipBase chip)
     {
         base.chipentereffect(chip);

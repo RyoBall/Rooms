@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
     public Vector2 position;
     public bool chosen;
@@ -14,6 +14,11 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public GameObject packpanel;
     public float factor;
     public UIframe background;
+    protected RectTransform rectTransform;
+    protected Vector2 offset;
+    [Header("пео╒")]
+    public string chipname;
+    public string description;
     public virtual void OnPointerDown(PointerEventData eventData)
     {
         if (getin)
@@ -49,15 +54,13 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         startposition = gameManager.instance.backpacktrans[startpositioncount];
         packpanel = transform.parent.gameObject;
+        rectTransform = GetComponent<RectTransform>();
     }
 
     // Update is called once per frame
     public virtual void FixedUpdate()
     {
-        if (chosen)
-        {
-            GetComponent<RectTransform>().position = Input.mousePosition;
-        }
+
     }
     public virtual void entereffect(RaycastResult result)
     {
@@ -80,4 +83,16 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         transform.SetParent(packpanel.transform);
         GetComponent<RectTransform>().position = startposition.position;
     }
+    public void OnDrag(PointerEventData eventData)
+    {
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
+    rectTransform.parent as RectTransform,
+    eventData.position,
+    eventData.pressEventCamera,
+    out Vector2 localPoint))
+        {
+            rectTransform.localPosition = localPoint+offset;
+        }
+    }
+
 }

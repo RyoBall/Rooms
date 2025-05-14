@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     public GameObject bullet;
     [Header("level")]
     public float exp;
+    public float expm;
     public int level;
     public float levelfactor;
     public int unlockpoint;
@@ -42,6 +43,7 @@ public class Player : MonoBehaviour
     public float hidefactor;
     public float criticalfactor;
     public float criticalattackfactor;
+    public int energy;
     // Start is called before the first frame update
     void Awake()
     {
@@ -106,14 +108,14 @@ public class Player : MonoBehaviour
     void levelupreward()
     {
         unlockpoint+=1;
-        attack += 1;
+        attack += 2;
         healthm+=10;
         health+=10;
         specialChipGetCount += 1;
         if (specialChipGetCount >= 5) 
         {
             specialChipGetCount = 0;
-            gameManager.instance.GetChip(4, Random.Range(0,gameManager.instance.specialChips.Count));
+            gameManager.instance.GetChip(3, Random.Range(0,gameManager.instance.specialChips.Count));
         }
     }
     public void ChangeState(PlayerState state)
