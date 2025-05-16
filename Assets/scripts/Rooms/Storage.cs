@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Storage : RoomBase
 {
-    public List<GameObject> Locker;
+    //public List<GameObject> Locker;
+    public GameObject Locker1;
+    public GameObject Locker2;
     private int lockerNum;
 
 
@@ -16,8 +18,16 @@ public class Storage : RoomBase
     protected override void Start()
     {
         dangerousLevel = 1 / 2;
-        gameObjects = Locker;
-        base.Start();
+        switch (level)
+        {
+            case 0:
+                gameObjects.Add(Locker1);
+                Locker1.GetComponent<Locker1>().level = level;
+                break;
 
+
+        }
+        base.Start();
+        canUpgrated = true;
     }
 }

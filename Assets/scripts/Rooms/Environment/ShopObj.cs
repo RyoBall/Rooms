@@ -16,10 +16,10 @@ public class ShopObj : MonoBehaviour
         //货币是什么？（判断钱是不是大于价格
         if (true)
         {
-            if(maxStock > 1)
+            if(maxStock > 1 && Player.instance.energy >= price)
             {
                 maxStock--;
-                //扣钱
+                Player.instance.energy -= price;
             }
         }
     }

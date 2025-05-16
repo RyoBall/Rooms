@@ -6,13 +6,20 @@ using System;
 
 public class RoomBase : MonoBehaviour
 {
+    [Header("PlayerMove")]
     private Vector3 direction;
     public float moveDistance;
+
+    [Header("FogSet")]
     public Transform foggylevel;
-    protected bool isfog = false;//
+    protected bool isfog = false;
+
     protected float dangerousLevel = 0;
     protected bool firstEnter;
     protected List<GameObject> gameObjects;
+
+    [SerializeField] protected bool canUpgrated = false;
+    public int level = -1;
     virtual protected void Start()
     {
         foggylevel = enemyGeneratorController.instance.foggylevel;
@@ -28,7 +35,7 @@ public class RoomBase : MonoBehaviour
     }
     protected virtual void InitEnvironment()
     {
-        if (gameObjects != null)
+        if (gameObjects != null && level == -1)
         {
             for (int i = 0; i < gameObjects.Count; i++)
             {

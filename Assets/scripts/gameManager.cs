@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class gameManager : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class gameManager : MonoBehaviour
     public List<GameObject> specialChips;
     public Dictionary<int, List<GameObject>> chipsDic = new Dictionary<int, List<GameObject>>();
     public List<RectTransform> backpacktrans;
+    //加了这个
+    public RectTransform middleScreen;
+
     public List<RectTransform> buttonpacktrans;
     public int backpackcount;
     public GameObject chipGetButton;
@@ -39,6 +43,7 @@ public class gameManager : MonoBehaviour
         chipsDic.Add(2, globalChips);
         chipsDic.Add(3, BulletEnhanceChips);
     }
+    //稍加修改（
     public GameObject GetChip(int type, int order)
     {
         GameObject ins = null;
@@ -46,21 +51,25 @@ public class gameManager : MonoBehaviour
         {
             //1:武器 2：全局 3：增益 4:特殊
             case 1:
-                ins = Instantiate(BulletEffectChips[order], backpackpanel.transform);
-                ins.GetComponent<RectTransform>().position = backpacktrans[backpackcount].position;
+                //ins = Instantiate(BulletEffectChips[order], backpackpanel.transform);
+                ins = Instantiate(BulletEffectChips[order], middleScreen);
+                //ins.GetComponent<RectTransform>().position = backpacktrans[backpackcount].position;
                 backpackcount++;
                 break;
             case 2:
-                ins = Instantiate(globalChips[order], backpackpanel.transform);
-                ins.GetComponent<RectTransform>().position = backpacktrans[backpackcount].position;
+                //ins = Instantiate(globalChips[order], backpackpanel.transform);
+                ins = Instantiate(globalChips[order], middleScreen);
+                //ins.GetComponent<RectTransform>().position = backpacktrans[backpackcount].position;
                 backpackcount++;
                 break;
             case 3:
-                ins = Instantiate(BulletEnhanceChips[order], backpackpanel.transform);
-                ins.GetComponent<RectTransform>().position = backpacktrans[backpackcount].position;
+                //ins = Instantiate(BulletEnhanceChips[order], backpackpanel.transform);
+                ins = Instantiate(BulletEnhanceChips[order], middleScreen);
+                //ins.GetComponent<RectTransform>().position = backpacktrans[backpackcount].position;
                 backpackcount++;
                 break;
         }
+        ins.GetComponent<RectTransform>().DOAnchorPos(backpacktrans[backpackcount].position, 1);
         return ins;
     }
     public void GetChipButton(int type, int order, int position)
