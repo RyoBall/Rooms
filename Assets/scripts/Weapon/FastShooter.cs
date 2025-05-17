@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
-public class shooter : WeaponBase
+public class FastShooter : WeaponBase
 {
     public GameObject bullet;
     public int doubleattackpoint;
@@ -27,23 +26,23 @@ public class shooter : WeaponBase
             StartCoroutine(doubleroutine());
         }
     }
-    public virtual IEnumerator doubleroutine() 
+    IEnumerator doubleroutine()
     {
         yield return new WaitForSeconds(.1f);
-        if (doubleattackpoint > 0) 
+        if (doubleattackpoint > 0)
         {
             doubleattackpoint--;
-            shoot();    
+            shoot();
             StartCoroutine(doubleroutine());
         }
     }
-    public virtual void shoot() 
+    void shoot()
     {
         GameObject ins = Instantiate(bullet, transform.position, Quaternion.identity);
         ins.GetComponent<bullet>().dir = dir;
-        ins.GetComponent<bullet>().attack=AttackCount();
-        ins.GetComponent<bullet>().dad=this;
-        ins.GetComponent<bullet>().speedfactor=speedfactor;
+        ins.GetComponent<bullet>().attack = AttackCount();
+        ins.GetComponent<bullet>().dad = this;
+        ins.GetComponent<bullet>().speedfactor = speedfactor;
     }
     public override void DIR()
     {
@@ -60,3 +59,4 @@ public class shooter : WeaponBase
         base.Update();
     }
 }
+

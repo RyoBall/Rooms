@@ -5,8 +5,6 @@ using DG.Tweening;
 using static UnityEngine.GraphicsBuffer;
 using System.Collections;
 using UnityEngine.Events;
-
-[RequireComponent(typeof(RectTransform))]
 public class segment : MonoBehaviour
 {
     public static segment instance;
@@ -15,11 +13,6 @@ public class segment : MonoBehaviour
     public const int segmentcount = 12;
     public List<GameObject> segmentparts = new List<GameObject>();
     private List<Image> segmentImages = new List<Image>();
-    [Header("标签设置")]
-    public bool showLabels = true;
-    public Font labelFont;
-    public int labelFontSize = 14;
-    public Color labelColor = Color.white;
     [Header("旋转属性")]
     public float rotatespeed;
     public float rotatespeedm;
@@ -71,12 +64,8 @@ public class segment : MonoBehaviour
             float segmentAngle = 360f / segmentcount;
             CreateSegment(i, currentAngle, segmentAngle);
             //用于替换轮盘块
-            Button btn = gameObject.AddComponent<Button>();
-            btn.onClick.AddListener(() => OnSegmentClicked?.Invoke(i));
-
             currentAngle += segmentAngle;
         }
-
     }
 
     public void ReplaceSegmentPart(int i)
@@ -92,7 +81,6 @@ public class segment : MonoBehaviour
         }
         segmentparts[i] = replacePrefab;
         segmentImages[i] = replaceImage;
-        
         StartCoroutine(ShowWheel());
     }
 
@@ -105,13 +93,6 @@ public class segment : MonoBehaviour
 
     void CreateSegment(int index, float startAngle, float angle)
     {
-        // 创建扇形游戏对象
-        /*GameObject segment = new GameObject($"Segment_{index}");
-        RectTransform rect = segment.AddComponent<RectTransform>();
-        segment.transform.SetParent(transform);
-        rect.localPosition = Vector3.zero;
-        rect.localRotation = Quaternion.identity;
-        rect.sizeDelta = new Vector2(wheelRadius * 2, wheelRadius * 2);*/
         GameObject segment = Instantiate(segmentparts[index % segmentparts.Count], transform.position, Quaternion.identity);
         segment.transform.SetParent(transform);
         segment.GetComponent<segmentpart>().i=index;
@@ -120,19 +101,10 @@ public class segment : MonoBehaviour
         Image img = segment.GetComponent<Image>();
         // 设置旋转
         rect.localRotation = Quaternion.Euler(0, 0, -startAngle);
+        Button btn = segment.AddComponent<Button>();
+        btn.onClick.AddListener(() => OnSegmentClicked?.Invoke(index));
         segmentImages.Add(img);
-        /*img.type = Image.Type.Filled;
-        img.fillMethod = Image.FillMethod.Radial360;
-        img.fillOrigin = 2; // 对应Image.Origin360.Top
-        img.fillClockwise = true;
-        img.fillAmount = (angle - padding) / 360f; // 减去间距*/ //配置image
-
     }
-
-
-
-
-
     public void ClearWheel()
     {
         //改成把子物体都删除了（
@@ -158,32 +130,6 @@ public class segment : MonoBehaviour
     {
         transform.parent.GetComponent<RectTransform>().DOAnchorPosX(82.5f, .8f); 
     }
-    /*public void UpdateSegmentValue(int index, float newValue)
-    {
-        if (index >= 0 && index < segmentValues.Count)
-        {
-            segmentValues[index] = newValue;
-            GenerateWheel();
-        }
-    }*/
-    /*float CalculateTotalValue()
-    {
-        float total = 0f;
-        foreach (float value in segmentValues)
-        {
-            if (value < 0)
-            {
-                Debug.LogWarning("Segment value cannot be negative. Using absolute value.");
-                total += Mathf.Abs(value);
-            }
-            else
-            {
-                total += value;
-            }
-        }
-        return total;
-    }*/
-
     public void startchec(float waittime)
     {
         StartCoroutine(checroutine(waittime));
@@ -197,12 +143,4 @@ public class segment : MonoBehaviour
     {
         segmentImages[((int)here.rotation.eulerAngles.z / 30) % 12].GetComponent<segmentpart>().Effect();
     }
-    /*private void partEffect()
-    {
-        Debug.Log("enterpos");
-        Destroy(segment.instance.targetroom.gameObject);
-        Instantiate(room, segment.instance.targetroom.transform.position, Quaternion.identity);
-        segment.instance.targetroom = null;
-        segment.instance.UIExit();
-    }*/
 }

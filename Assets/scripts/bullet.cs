@@ -28,7 +28,7 @@ public class bullet : MonoBehaviour
         speedfactor = 1;
         rb = GetComponent<Rigidbody2D>();
         bumpoint = dad.bumattacklevel;
-        bombpoint = dad.bombattacklevel;    
+        bombpoint = dad.bombattacklevel;
         //
         Redir();
         //
@@ -90,7 +90,7 @@ public class bullet : MonoBehaviour
         }
         else if (dir.x > 0)
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan(dir.y / dir.x) * Mathf.Rad2Deg));
-        rb.velocity = speed * dir*speedfactor;
+        rb.velocity = speed * dir * speedfactor;
     }
     public GameObject FindEnemy()
     {
@@ -122,8 +122,8 @@ public class bullet : MonoBehaviour
         if (bombpoint > 0)
         {
             bombpoint--;
-            GameObject bomb=Instantiate(bomber, position, Quaternion.identity);
-            bomb.GetComponent<bomb>().damage = (int)(attack*.3f);
+            GameObject bomb = Instantiate(bomber, position, Quaternion.identity);
+            bomb.GetComponent<bomb>().damage = (int)(attack * .3f);
             StartCoroutine(bombroutine(position));
         }
     }

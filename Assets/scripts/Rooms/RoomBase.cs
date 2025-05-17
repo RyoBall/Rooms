@@ -16,7 +16,7 @@ public class RoomBase : MonoBehaviour
 
     protected float dangerousLevel = 0;
     protected bool firstEnter;
-    protected List<GameObject> gameObjects;
+    protected List<GameObject> gameObjects;//场景里的互动物
 
     [SerializeField] protected bool canUpgrated = false;
     public int level = -1;

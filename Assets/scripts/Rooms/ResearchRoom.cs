@@ -14,6 +14,7 @@ public class ResearchRoom : RoomBase
     {
         dangerousLevel = 1 / 2;
         gameObjects = researcher;
+        researcher[0].GetComponent<research>().level = level;
         base.Start();
         
     }

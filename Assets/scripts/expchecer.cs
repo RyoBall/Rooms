@@ -20,7 +20,6 @@ public class expchecer : MonoBehaviour
         if (other.tag == "Player")
         {
             GetComponentInParent<exp>().active = true;
-            Debug.Log(11);
         }
     }
 }

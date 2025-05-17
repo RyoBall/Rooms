@@ -83,6 +83,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\scripts\UI\healthTex.cs" />
     <Compile Include="Assets\scripts\Rooms\Environment\Box.cs" />
+    <Compile Include="Assets\scripts\Rooms\Environment\Commodities\UnlockRommManager.cs" />
     <Compile Include="Assets\scripts\Rooms\RoomBase.cs" />
     <Compile Include="Assets\scripts\segmentpos.cs" />
     <Compile Include="Assets\scripts\Chip\Enhance\bulletEnhance\doubleAttack.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="Assets\scripts\Chip\Weapon\shooterChip.cs" />
     <Compile Include="Assets\scripts\gameManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
+    <Compile Include="Assets\scripts\Rooms\Environment\Commodities\RoomCom.cs" />
     <Compile Include="Assets\scripts\Chip\Global\AttackGlobalChip.cs" />
     <Compile Include="Assets\scripts\Enemy\EnemyBullet.cs" />
     <Compile Include="Assets\scripts\Rooms\Lib.cs" />
@@ -121,6 +123,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\scripts\UI\Blacker.cs" />
+    <Compile Include="Assets\scripts\Chip\Weapon\TribalShooter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\scripts\Enemy\EnemyBase.cs" />
@@ -142,6 +145,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\scripts\Rooms\Environment\Flower.cs" />
     <Compile Include="Assets\scripts\Player.cs" />
+    <Compile Include="Assets\scripts\Weapon\FastShooter.cs" />
     <Compile Include="Assets\scripts\Chip\Global\HealthGlobalChip.cs" />
     <Compile Include="Assets\scripts\PlayerState\PlayerAttackedState.cs" />
     <Compile Include="Assets\scripts\Rooms\Corridor.cs" />
@@ -151,10 +155,13 @@
     <Compile Include="Assets\scripts\Chip\Global\CriticalAttackGlobalChip.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\scripts\Rooms\Environment\Locker.cs" />
+    <Compile Include="Assets\scripts\Rooms\Environment\Commodities\Recover.cs" />
     <Compile Include="Assets\scripts\Chip\Enhance\checer.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\scripts\Chip\EnhanceChipBase.cs" />
+    <Compile Include="Assets\scripts\Rooms\Environment\Commodities\ChipCom.cs" />
     <Compile Include="Assets\scripts\UI\EXPTex.cs" />
+    <Compile Include="Assets\scripts\Rooms\Environment\Commodities\DeleteCom.cs" />
     <Compile Include="Assets\scripts\Rooms\Shop.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\scripts\Weapon\WeaponBase.cs" />
