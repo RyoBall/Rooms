@@ -15,6 +15,8 @@ public class DrinkRoom : RoomBase
     {
         dangerousLevel = 1/4;
         gameObjects = drink;
+        //只有一杯饮料
+        drink[0].GetComponent<Drink>().level = level;
         base.Start();
     }
 }

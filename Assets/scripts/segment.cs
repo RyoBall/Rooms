@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using static UnityEngine.GraphicsBuffer;
 using System.Collections;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(RectTransform))]
 public class segment : MonoBehaviour
@@ -13,6 +14,7 @@ public class segment : MonoBehaviour
     [Header("轮盘设置")]
     public const int segmentcount = 12;
     public List<GameObject> segmentparts = new List<GameObject>();
+    private List<Image> segmentImages = new List<Image>();
     [Header("标签设置")]
     public bool showLabels = true;
     public Font labelFont;
@@ -24,10 +26,14 @@ public class segment : MonoBehaviour
     public float rotatespeedcorecfactor;
     public float downspeed;
     [Header("杂项")]
-    private List<Image> segmentImages = new List<Image>();
     public UnknownRoom targetroom;
     public RectTransform Enter;
     public RectTransform Exit;
+    public GameObject replacePrefab;
+    public Image replaceImage;
+
+    public UnityEvent<int> OnSegmentClicked; // 点击事件
+    public bool isNewRoom = false;
     void Start()
     {
         instance = this;
@@ -58,13 +64,43 @@ public class segment : MonoBehaviour
     public void GenerateWheel()
     {
         ClearWheel();
+        OnSegmentClicked.AddListener(ReplaceSegmentPart);
         float currentAngle = 0f;
         for (int i = 0; i < segmentcount; i++)
         {
             float segmentAngle = 360f / segmentcount;
             CreateSegment(i, currentAngle, segmentAngle);
+            //用于替换轮盘块
+            Button btn = gameObject.AddComponent<Button>();
+            btn.onClick.AddListener(() => OnSegmentClicked?.Invoke(i));
+
             currentAngle += segmentAngle;
         }
+
+    }
+
+    public void ReplaceSegmentPart(int i)
+    {
+        //这里需要知道走廊是哪些数字,isnewroom是在清除走廊时为true
+        if(i == 0 && !isNewRoom)
+        {
+            return;
+        }
+        else if (isNewRoom)
+        {
+            return;
+        }
+        segmentparts[i] = replacePrefab;
+        segmentImages[i] = replaceImage;
+        
+        StartCoroutine(ShowWheel());
+    }
+
+    IEnumerator ShowWheel()
+    {
+        GenerateWheel();
+        yield return new WaitForSeconds(1);
+        UIExit();
     }
 
     void CreateSegment(int index, float startAngle, float angle)
@@ -95,16 +131,23 @@ public class segment : MonoBehaviour
 
 
 
-    void ClearWheel()
+
+
+    public void ClearWheel()
     {
-        foreach (Image img in segmentImages)
+        //改成把子物体都删除了（
+        //foreach (Image img in segmentImages)
+        //{
+        //    if (img != null && img.gameObject != null)
+        //    {
+        //        Destroy(img.gameObject);
+        //    }
+        //}
+        //segmentImages.Clear();
+        foreach (Transform child in transform)
         {
-            if (img != null && img.gameObject != null)
-            {
-                Destroy(img.gameObject);
-            }
+            Destroy(child.gameObject);
         }
-        segmentImages.Clear();
     }
 
     public void UIEnter()

@@ -293,12 +293,6 @@ MonoBehaviour:
   exit: 1
   enterY: 0
   exitY: 0
-  UIframes0: []
-  UIframes1: []
-  UIframes2: []
-  UIframes3: []
-  UIframes4: []
-  UIframes5: []
 --- !u!1 &39415070
 GameObject:
   m_ObjectHideFlags: 0
@@ -1333,6 +1327,12 @@ MonoBehaviour:
   targetroom: {fileID: 0}
   Enter: {fileID: 743782225}
   Exit: {fileID: 1293980640}
+  replacePrefab: {fileID: 0}
+  replaceImage: {fileID: 0}
+  OnSegmentClicked:
+    m_PersistentCalls:
+      m_Calls: []
+  isNewRoom: 0
 --- !u!1 &366570027
 GameObject:
   m_ObjectHideFlags: 0
@@ -2750,6 +2750,7 @@ MonoBehaviour:
   instanrooms: []
   xdistance: 20
   ydistance: 15
+  a: []
 --- !u!4 &778298154
 Transform:
   m_ObjectHideFlags: 0
@@ -3851,6 +3852,7 @@ MonoBehaviour:
   t1: {fileID: 1548779203}
   t3: {fileID: 1124557239}
   t7: {fileID: 1101571377}
+  foggylevel: {fileID: 0}
   enemyGenerator: {fileID: 6862286974601113965, guid: 423e22771493de94d937cd92dd469469, type: 3}
   Correctionfactor: 1.5
   cd: 0
@@ -5024,12 +5026,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backpackpanel: {fileID: 23899818}
-  weaponChips:
-  - {fileID: 4651852436152165656, guid: 7a5f627e581fa5e4bb20565260aff752, type: 3}
+  BulletEffectChips: []
   globalChips:
   - {fileID: 7214501248943364746, guid: c72190686bbf9de49b2886d26400bd2c, type: 3}
-  enhanceChips:
-  - {fileID: 2244958802183244850, guid: 8319ad5add7c61844bdb61b0fd0452c6, type: 3}
+  BulletEnhanceChips: []
   specialChips: []
   backpacktrans:
   - {fileID: 808921367}
@@ -5043,7 +5043,11 @@ MonoBehaviour:
   - {fileID: 1941147872}
   - {fileID: 1333443726}
   - {fileID: 1274405476}
+  middleScreen: {fileID: 0}
+  buttonpacktrans: []
   backpackcount: 0
+  chipGetButton: {fileID: 0}
+  chipGetButtonParent: {fileID: 0}
   energy: 0
 --- !u!1 &1688765375
 GameObject:
@@ -5712,6 +5716,7 @@ MonoBehaviour:
   cdm: 0
   bullet: {fileID: 5694872876357371771, guid: 804877621f21c0249818c10826d0abc8, type: 3}
   exp: 0
+  expm: 0
   level: 0
   levelfactor: 0
   unlockpoint: 5
@@ -5725,6 +5730,7 @@ MonoBehaviour:
   hidefactor: 0
   criticalfactor: 0
   criticalattackfactor: 0
+  energy: 0
 --- !u!212 &1863174156
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6155,34 +6161,6 @@ MonoBehaviour:
   exit: 1
   enterY: 0
   exitY: 0
-  UIframes0:
-  - {fileID: 989535192}
-  - {fileID: 591569651}
-  - {fileID: 1716353795}
-  UIframes1:
-  - {fileID: 103455323}
-  - {fileID: 128557705}
-  - {fileID: 1407974359}
-  - {fileID: 879218131}
-  UIframes2:
-  - {fileID: 1379069711}
-  - {fileID: 1926785684}
-  - {fileID: 673313700}
-  - {fileID: 166347190}
-  - {fileID: 1843116601}
-  UIframes3:
-  - {fileID: 0}
-  - {fileID: 1444947292}
-  - {fileID: 249200700}
-  - {fileID: 429700809}
-  - {fileID: 1615024209}
-  UIframes4:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 601317114}
-  - {fileID: 1502391354}
-  - {fileID: 2031463217}
-  UIframes5: []
 --- !u!1 &1941147871
 GameObject:
   m_ObjectHideFlags: 0
