@@ -20,6 +20,7 @@ public class ChipCom : ShopObj
     protected override void OnMouseDown()
     {
         base.OnMouseDown();
+        //展示
         gameManager.instance.GetChip((int)chipType,order);
     }
 
@@ -44,7 +45,9 @@ public class ChipCom : ShopObj
             default:
                 return;
         }
+
         ChipBase chipBase = chips[0].GetComponent<ChipBase>();
+        //chips[order].SetActive(true);启动模块
         itemID = "Chip";
         itemName = chipBase.chipname;
         price = 1;

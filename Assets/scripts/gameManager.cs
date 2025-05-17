@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class gameManager : MonoBehaviour
 {
@@ -16,12 +18,13 @@ public class gameManager : MonoBehaviour
     public List<RectTransform> backpacktrans;
     //加了这个
     public RectTransform middleScreen;
+    public UnityEvent<int,int> OnChipClicked;
 
     public List<RectTransform> buttonpacktrans;
     public int backpackcount;
     public GameObject chipGetButton;
     public GameObject chipGetButtonParent;
-    public int energy = 0;
+    //public int energy = 0;重复了
     // Start is called before the first frame update
     void Awake()
     {
@@ -71,6 +74,45 @@ public class gameManager : MonoBehaviour
         }
         ins.GetComponent<RectTransform>().DOAnchorPos(backpacktrans[backpackcount].position, 1);
         return ins;
+    }
+
+    //用于生成给玩家选择的模块
+    public void ShowChipAndButton(int type,int order,RectTransform middleScreen,Transform parent)
+    {
+        GameObject ins;
+        OnChipClicked.AddListener(AfterChooseChip);
+        switch (type)
+        {
+            //1:武器 2：全局 3：增益 4:特殊
+            case 1:
+                ins = Instantiate(BulletEffectChips[order], middleScreen);
+                break;
+            case 2:
+                ins = Instantiate(globalChips[order], middleScreen);
+                break;
+            case 3:
+                ins = Instantiate(BulletEnhanceChips[order], middleScreen);
+                break;
+            default:
+                ins = null;
+                break;
+        }
+        //绑定父级
+        ins.transform.SetParent(parent);
+        //绑定按钮事件
+        Button btn = gameObject.AddComponent<Button>();
+        btn.onClick.AddListener(() => OnChipClicked?.Invoke(type,order));
+
+    }
+
+    //选定后删除选择模块，加载模块
+    public void AfterChooseChip(int type,int order)
+    {
+        foreach(Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
+        GetChip(type,order);
     }
     public void GetChipButton(int type, int order, int position)
     {

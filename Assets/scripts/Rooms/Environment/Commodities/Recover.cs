@@ -10,7 +10,7 @@ public class Recover : ShopObj
         float current = Player.instance.currentSanity;
         float max = Player.instance.maxSanity;
         Player.instance.currentSanity = current < max* 0.5f ?
-            current += max * 0.5f : max;
+            current + max * 0.5f : max;
     }
 
     private void Start()

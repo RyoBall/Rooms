@@ -21,13 +21,26 @@ public class Storage : RoomBase
         switch (level)
         {
             case 0:
-                gameObjects.Add(Locker1);
-                Locker1.GetComponent<Locker1>().level = level;
+                AddLockerAndSetLevel(Locker1, level);
                 break;
-
-
+            case 1:
+                AddLockerAndSetLevel(Locker2, level);
+                AddLockerAndSetLevel(Locker1, level);
+                break;
+            case 2:
+                AddLockerAndSetLevel(Locker2, level);
+                AddLockerAndSetLevel(Locker1, level);
+                break;
+            default:
+                break;
         }
         base.Start();
         canUpgrated = true;
+    }
+
+    public void AddLockerAndSetLevel(GameObject locker,int level)
+    {
+        gameObjects.Add(locker);
+        locker.GetComponent<Locker>().level = level;
     }
 }

@@ -133,7 +133,7 @@ public class segment : MonoBehaviour
 
 
 
-    void ClearWheel()
+    public void ClearWheel()
     {
         //改成把子物体都删除了（
         //foreach (Image img in segmentImages)

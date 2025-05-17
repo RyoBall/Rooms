@@ -35,7 +35,7 @@ public class RoomBase : MonoBehaviour
     }
     protected virtual void InitEnvironment()
     {
-        if (gameObjects != null && level == -1)
+        if (gameObjects != null)
         {
             for (int i = 0; i < gameObjects.Count; i++)
             {
@@ -50,7 +50,7 @@ public class RoomBase : MonoBehaviour
             Player.instance.targetRoom = transform;
             Player.instance.BeginMove(transform.position);
             if(firstEnter)
-            gameManager.instance.energy += 5;
+            Player.instance.energy += 5;
         }
         else
         {
