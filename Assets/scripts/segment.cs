@@ -12,7 +12,7 @@ public class segment : MonoBehaviour
     [Header("ÂÖÅÌÉèÖÃ")]
     public const int segmentcount = 12;
     public List<GameObject> segmentparts = new List<GameObject>();
-    private List<Image> segmentImages = new List<Image>();
+    [SerializeField]private List<Image> segmentImages = new List<Image>();
     [Header("Ğı×ªÊôĞÔ")]
     public float rotatespeed;
     public float rotatespeedm;
@@ -115,11 +115,11 @@ public class segment : MonoBehaviour
         //        Destroy(img.gameObject);
         //    }
         //}
-        //segmentImages.Clear();
         foreach (Transform child in transform)
         {
             Destroy(child.gameObject);
         }
+        segmentImages.Clear();
     }
 
     public void UIEnter()

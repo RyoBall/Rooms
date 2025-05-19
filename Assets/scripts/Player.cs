@@ -44,6 +44,8 @@ public class Player : MonoBehaviour
     public float criticalfactor;
     public float criticalattackfactor;
     public int energy;
+    [Header("UPGrade")]
+    public List<UpgradeBase> Upgrades=new List<UpgradeBase>();
     // Start is called before the first frame update
     void Awake()
     {

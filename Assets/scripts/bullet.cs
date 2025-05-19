@@ -56,6 +56,7 @@ public class bullet : MonoBehaviour
             collision.GetComponent<EnemyBase>().health -= attack;
             GameObject tex = Instantiate(damagetex, transform.position + new Vector3(Random.Range(-damagetexcorecfactor, damagetexcorecfactor), Random.Range(-damagetexcorecfactor, damagetexcorecfactor), 0), Quaternion.identity);
             tex.GetComponentInChildren<TMP_Text>().text = attack.ToString();
+            collision.GetComponent<EnemyBase>().attackedAction.Invoke();
             //icychec
             collision.GetComponent<EnemyBase>().icytime += dad.icyattacklevel;
             //bombchec

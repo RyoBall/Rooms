@@ -21,15 +21,22 @@ public class SkillPanel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
+        if (gameManager.instance.currentState == gameManager.GameState.InFight && !exit)
+        {
+            GetComponent<RectTransform>().DOAnchorPosY(exitY, .5f);
+            exit = true;
+        }
+        if (Input.GetKeyDown(KeyCode.K) && gameManager.instance.currentState != gameManager.GameState.InFight)
         {
             if (exit)
             {
                 GetComponent<RectTransform>().DOAnchorPosY(enterY, .5f);
+                gameManager.instance.currentState = gameManager.GameState.UIPause;
             }
             else
             {
                 GetComponent<RectTransform>().DOAnchorPosY(exitY, .5f);
+                gameManager.instance.currentState = gameManager.GameState.Normal;
             }
             exit = !exit;
         }

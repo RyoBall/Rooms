@@ -19,12 +19,14 @@ public class gameManager : MonoBehaviour
     //加了这个
     public RectTransform middleScreen;
     public UnityEvent<int,int> OnChipClicked;
-
+    [Header("GameState")]
+    public GameState currentState;
+    public enum GameState {UIPause,InFight,Normal};
+    [Header("杂项")]
     public List<RectTransform> buttonpacktrans;
     public int backpackcount;
     public GameObject chipGetButton;
     public GameObject chipGetButtonParent;
-    //public int energy = 0;重复了
     // Start is called before the first frame update
     void Awake()
     {

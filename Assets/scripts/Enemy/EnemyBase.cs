@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemyBase : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class EnemyBase : MonoBehaviour
     public Rigidbody2D rb;
     public Vector2 dir;
     public float speed;
+    public float normalspeed;
     public float health;
     public GameObject deadparticle;
     public GameObject exp;
@@ -19,10 +22,14 @@ public class EnemyBase : MonoBehaviour
     [Header("state")]
     public float icytime;
     // Start is called before the first frame update
+    public Action attackedAction;
     public virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         render = GetComponent<SpriteRenderer>();
+        attackedAction += attackanim;
+        attackedAction += Repel;
+        normalspeed = speed;
     }
 
     // Update is called once per frame
@@ -81,12 +88,24 @@ public class EnemyBase : MonoBehaviour
     }
     protected void attackanim()
     {
-        render.color = Color.blue;
+        render.color = Color.red;
         StartCoroutine(attackroutine());
     }
     IEnumerator attackroutine()
     {
         yield return new WaitForSeconds(0);
         render.color = Color.white;
+    }
+    private void Repel() 
+    {
+        speed = -normalspeed;
+        StartCoroutine(RepelRoutine());   
+    }
+    IEnumerator RepelRoutine() 
+    {
+        speed += normalspeed * Time.deltaTime;
+        yield return new WaitForSeconds(0);
+        if (speed < normalspeed)
+            StartCoroutine(RepelRoutine());
     }
 }
