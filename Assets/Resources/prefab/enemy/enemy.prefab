@@ -147,13 +147,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   dir: {x: 0, y: 0}
-  speed: 2
+  speed: 4
+  normalspeed: 0
   health: 3
   deadparticle: {fileID: 760237439806765177, guid: 10b852a1f2125e74394e8644b23d8352, type: 3}
   exp: {fileID: 7681059151805284848, guid: a90204f0465e0974dbdedb6501cce52c, type: 3}
   CorrectingFactor: 1
   dropExpNum: 3
   attack: 0
+  cd: 0
+  cdm: 0
   icytime: 0
 --- !u!50 &2800023597242915732
 Rigidbody2D:

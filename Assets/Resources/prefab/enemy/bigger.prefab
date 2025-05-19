@@ -174,7 +174,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   dir: {x: 0, y: 0}
-  speed: 1.5
+  speed: 3
+  normalspeed: 0
   health: 10
   deadparticle: {fileID: 760237439806765177, guid: 10b852a1f2125e74394e8644b23d8352, type: 3}
   exp: {fileID: 7681059151805284848, guid: a90204f0465e0974dbdedb6501cce52c, type: 3}

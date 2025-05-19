@@ -38,6 +38,10 @@ public class BigEnemy : EnemyBase
     }
     protected void Attack() 
     {
+        if (shootcd > 0) 
+        {
+            shootcd -= Time.deltaTime;
+        }
         if (shootcd <= 0&&icytime<=0) 
         {
             shootcd = shootcdm;
