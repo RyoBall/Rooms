@@ -13,22 +13,23 @@ public class RoomBase : MonoBehaviour
     [Header("FogSet")]
     public Transform foggylevel;
     protected bool isfog = false;
-
     protected float dangerousLevel = 0;
     protected bool firstEnter;
-    protected List<GameObject> gameObjects;//场景里的互动物
-
+    [SerializeField] protected List<GameObject> gameObjects;//场景里的互动物
     [SerializeField] protected bool canUpgrated = false;
     public int level = -1;
+    public Vector2 Position;
+    public Action EnterAction;
     virtual protected void Start()
     {
+        EnterAction += Enter;
         foggylevel = enemyGeneratorController.instance.foggylevel;
         if (UnityEngine.Random.value < dangerousLevel)
         {
             isfog = true;
             ChangeTofoggy();
         }
-        else 
+        else
         {
             InitEnvironment();
         }
@@ -45,12 +46,14 @@ public class RoomBase : MonoBehaviour
     }
     virtual protected void OnMouseDown()
     {
+        if (firstEnter)
+        {
+            Player.instance.energy += 5;
+            firstEnter = false;
+        }
         if (!isfog)
         {
-            Player.instance.targetRoom = transform;
-            Player.instance.BeginMove(transform.position);
-            if(firstEnter)
-            Player.instance.energy += 5;
+            EnterAction.Invoke();
         }
         else
         {
@@ -85,7 +88,7 @@ public class RoomBase : MonoBehaviour
     }
     private void intofog()
     {
-        Player.instance.targetRoom = this.transform;
+        Player.instance.targetRoom = transform;
         Player.instance.transform.DOMove(foggylevel.position, 1);
         enemyGeneratorController.instance.Init();
     }
@@ -94,5 +97,12 @@ public class RoomBase : MonoBehaviour
         isfog = false;
         InitEnvironment();
     }
-
+    protected void Enter() 
+    {
+        if (Player.instance.currentRoom != null)
+            Player.instance.currentRoom.GetComponent<Collider2D>().enabled = true;
+        Player.instance.currentRoom = transform;
+        GetComponent<Collider2D>().enabled = false;
+        Player.instance.BeginMove(transform.position);
+    }
 }

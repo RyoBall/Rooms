@@ -104,6 +104,7 @@
     <Compile Include="Assets\scripts\Rooms\Environment\Commodities\RoomCom.cs" />
     <Compile Include="Assets\scripts\Chip\Global\AttackGlobalChip.cs" />
     <Compile Include="Assets\scripts\Enemy\EnemyBullet.cs" />
+    <Compile Include="Assets\scripts\Rooms\StartRoom.cs" />
     <Compile Include="Assets\scripts\Rooms\Lib.cs" />
     <Compile Include="Assets\scripts\Chip\ChoosePanel.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />

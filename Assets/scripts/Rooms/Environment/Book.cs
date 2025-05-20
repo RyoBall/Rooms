@@ -44,8 +44,7 @@ public class Book : MonoBehaviour
             default:
                 return;
         }
-        Destroy(gameObject);
-        //GetComponentInParent<Lib>().DestroyBook();
+        GetComponentInParent<Lib>().DestroyBook();
         //把模块给予玩家
         //唤出模块装配画面
     }

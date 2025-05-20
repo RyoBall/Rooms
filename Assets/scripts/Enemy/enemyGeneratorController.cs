@@ -30,11 +30,20 @@ public class enemyGeneratorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1)) 
+        {
+            FightTest();
+        }
         if (gameManager.instance.currentState==gameManager.GameState.InFight)
         {
             CDCount();
             FightTimeCount();
         }
+    }
+    public void FightTest() 
+    {
+        Player.instance.transform.DOMove(foggylevel.position, 1);
+        enemyGeneratorController.instance.Init();
     }
     void Generate(int num)
     {
@@ -80,9 +89,9 @@ public class enemyGeneratorController : MonoBehaviour
     void exit()
     {
         level++;
-        Player.instance.transform.DOMove(Player.instance.targetRoom.position, .5f);
-        Player.instance.currentRoom=Player.instance.targetRoom;
         Player.instance.targetRoom.GetComponent<RoomBase>().Removefog();
+        Player.instance.targetRoom.GetComponent<RoomBase>().EnterAction.Invoke();
+        Player.instance.targetRoom = null;
         ExitAction.Invoke();
         gameManager.instance.currentState = gameManager.GameState.Normal;
     }

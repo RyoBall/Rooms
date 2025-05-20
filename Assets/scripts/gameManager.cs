@@ -27,6 +27,7 @@ public class gameManager : MonoBehaviour
     public int backpackcount;
     public GameObject chipGetButton;
     public GameObject chipGetButtonParent;
+    public int currentlevel;
     // Start is called before the first frame update
     void Awake()
     {
@@ -56,21 +57,21 @@ public class gameManager : MonoBehaviour
         {
             //1:武器 2：全局 3：增益 4:特殊
             case 1:
-                //ins = Instantiate(BulletEffectChips[order], backpackpanel.transform);
-                ins = Instantiate(BulletEffectChips[order], middleScreen);
-                //ins.GetComponent<RectTransform>().position = backpacktrans[backpackcount].position;
+                ins = Instantiate(BulletEffectChips[order], backpackpanel.transform);
+                //ins = Instantiate(BulletEffectChips[order], middleScreen);
+                ins.GetComponent<RectTransform>().position = backpacktrans[backpackcount].position;
                 backpackcount++;
                 break;
             case 2:
-                //ins = Instantiate(globalChips[order], backpackpanel.transform);
-                ins = Instantiate(globalChips[order], middleScreen);
-                //ins.GetComponent<RectTransform>().position = backpacktrans[backpackcount].position;
+                ins = Instantiate(globalChips[order], backpackpanel.transform);
+                //ins = Instantiate(globalChips[order], middleScreen);
+                ins.GetComponent<RectTransform>().position = backpacktrans[backpackcount].position;
                 backpackcount++;
                 break;
             case 3:
-                //ins = Instantiate(BulletEnhanceChips[order], backpackpanel.transform);
-                ins = Instantiate(BulletEnhanceChips[order], middleScreen);
-                //ins.GetComponent<RectTransform>().position = backpacktrans[backpackcount].position;
+                ins = Instantiate(BulletEnhanceChips[order], backpackpanel.transform);
+                //ins = Instantiate(BulletEnhanceChips[order], middleScreen);
+                ins.GetComponent<RectTransform>().position = backpacktrans[backpackcount].position;
                 backpackcount++;
                 break;
         }

@@ -7,6 +7,7 @@ public class Drink : MonoBehaviour
     public int level;
     private void OnMouseDown()
     {
+        Debug.Log(1);
         int num = Random.Range(0, 3);
         switch (level)
         {
@@ -20,7 +21,7 @@ public class Drink : MonoBehaviour
                 Level2(num);
                 break;
             default:
-                return;
+                break;
         }
         Destroy(gameObject);
     }

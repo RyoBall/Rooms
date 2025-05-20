@@ -67,6 +67,7 @@ public class Player : MonoBehaviour
     }
     void Move()
     {
+        if(gameManager.instance.currentState==gameManager.GameState.InFight)
         rb.velocity = new Vector2(speed * Input.GetAxisRaw("Horizontal"), speed * Input.GetAxisRaw("Vertical"));
         if (rb.velocity.x != 0 || rb.velocity.y != 0) 
         {

@@ -146,8 +146,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 0
   foggylevel: {fileID: 0}
-  researcher:
+  gameObjects:
   - {fileID: 4583865336971956860}
+  canUpgrated: 0
+  level: -1
+  researcher: []
 --- !u!1001 &3974401811676250547
 PrefabInstance:
   m_ObjectHideFlags: 0

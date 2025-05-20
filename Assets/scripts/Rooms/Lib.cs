@@ -5,13 +5,11 @@ using UnityEngine;
 
 public class Lib : RoomBase
 {
-    public List<GameObject> bookprefab;
-
     public void DestroyBook() 
     {
-        for(int i = 0; i < bookprefab.Count; i++) 
+        for(int i = 0; i < gameObjects.Count; i++) 
         {
-            Destroy(bookprefab[i]);
+            Destroy(gameObjects[i]);
         }
     }
 

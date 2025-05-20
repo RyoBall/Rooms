@@ -148,10 +148,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 0
   foggylevel: {fileID: 0}
-  bookprefab:
+  gameObjects:
   - {fileID: 8820702398930131533}
   - {fileID: 8889488929288203426}
   - {fileID: 5078392503161664471}
+  canUpgrated: 0
+  level: -1
 --- !u!1001 &5674767854313168920
 PrefabInstance:
   m_ObjectHideFlags: 0
