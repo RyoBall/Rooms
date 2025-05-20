@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ResearchRoom : RoomBase
 {
-    [SerializeField] List<GameObject> researcher;
     protected override void OnMouseDown()
     {
         base.OnMouseDown();
@@ -13,8 +12,7 @@ public class ResearchRoom : RoomBase
     protected override void Start()
     {
         dangerousLevel = 1 / 2;
-        gameObjects = researcher;
-        researcher[0].GetComponent<research>().level = level;
+        gameObjects[0].GetComponent<research>().level = level;
         base.Start();
         
     }

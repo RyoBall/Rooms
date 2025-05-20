@@ -30,11 +30,20 @@ public class enemyGeneratorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1)) 
+        {
+            FightTest();
+        }
         if (gameManager.instance.currentState==gameManager.GameState.InFight)
         {
             CDCount();
             FightTimeCount();
         }
+    }
+    public void FightTest() 
+    {
+        Player.instance.transform.DOMove(foggylevel.position, 1);
+        enemyGeneratorController.instance.Init();
     }
     void Generate(int num)
     {

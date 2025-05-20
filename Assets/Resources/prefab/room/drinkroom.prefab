@@ -101,8 +101,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 0
   foggylevel: {fileID: 0}
-  drink:
+  gameObjects:
   - {fileID: 6397470157905373266}
+  canUpgrated: 0
+  level: -1
+  drink: []
 --- !u!61 &7695239642393709043
 BoxCollider2D:
   m_ObjectHideFlags: 0

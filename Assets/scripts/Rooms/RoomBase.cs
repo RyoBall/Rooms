@@ -16,8 +16,7 @@ public class RoomBase : MonoBehaviour
 
     protected float dangerousLevel = 0;
     protected bool firstEnter;
-    protected List<GameObject> gameObjects;//场景里的互动物
-
+    [SerializeField]protected List<GameObject> gameObjects;//场景里的互动物
     [SerializeField] protected bool canUpgrated = false;
     public int level = -1;
     virtual protected void Start()
@@ -47,7 +46,10 @@ public class RoomBase : MonoBehaviour
     {
         if (!isfog)
         {
+            if(Player.instance.targetRoom!=null)
+            Player.instance.targetRoom.GetComponent<Collider2D>().enabled = true;
             Player.instance.targetRoom = transform;
+            GetComponent<Collider2D>().enabled = false;
             Player.instance.BeginMove(transform.position);
             if(firstEnter)
             Player.instance.energy += 5;

@@ -147,9 +147,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 0
   foggylevel: {fileID: 0}
-  Locker:
+  gameObjects:
   - {fileID: 3165467740368063426}
   - {fileID: 1549693643856982693}
+  canUpgrated: 0
+  level: -1
+  Locker1: {fileID: 3165467740368063426}
+  Locker2: {fileID: 1549693643856982693}
 --- !u!1001 &2106381118991753578
 PrefabInstance:
   m_ObjectHideFlags: 0
