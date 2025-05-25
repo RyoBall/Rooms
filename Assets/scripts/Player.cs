@@ -101,9 +101,10 @@ public class Player : MonoBehaviour
     #endregion
     void levelup()
     {
-        if (exp >= 10 + level * levelfactor) 
+        if (exp >=expm) 
         {
             exp = 0;
+            expm = 10 + level * levelfactor;
             level++;
             levelupreward();
         }
@@ -118,7 +119,7 @@ public class Player : MonoBehaviour
         if (specialChipGetCount >= 5) 
         {
             specialChipGetCount = 0;
-            gameManager.instance.GetChip(3, Random.Range(0,gameManager.instance.specialChips.Count));
+            gameManager.instance.GetChip(3, Random.Range(0, gameManager.instance.chipsDic[3].Count));
         }
     }
     public void ChangeState(PlayerState state)

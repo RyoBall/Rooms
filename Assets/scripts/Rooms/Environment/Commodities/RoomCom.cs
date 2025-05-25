@@ -23,7 +23,6 @@ public class RoomCom : ShopObj
         prefab.GetComponent<RoomBase>().level++;
         if (maxStock == 3)
         {   //»½ÆğÂÖÅÌ
-            segment.instance.GenerateWheel();
             segment.instance.UIEnter();
             //´ıÌæ»»
 

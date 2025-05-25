@@ -11,9 +11,9 @@ public class gameManager : MonoBehaviour
     [Header("GetChip")]
     public GameObject backpackpanel;
     public List<GameObject> BulletEffectChips;
-    public List<GameObject> globalChips;
+    public List<GameObject> GlobalChips;
     public List<GameObject> BulletEnhanceChips;
-    public List<GameObject> specialChips;
+    public List<GameObject> BulletChips;
     public Dictionary<int, List<GameObject>> chipsDic = new Dictionary<int, List<GameObject>>();
     public List<RectTransform> backpacktrans;
     //加了这个
@@ -46,7 +46,7 @@ public class gameManager : MonoBehaviour
     void InitDic()
     {
         chipsDic.Add(1, BulletEffectChips);
-        chipsDic.Add(2, globalChips);
+        chipsDic.Add(2, GlobalChips);
         chipsDic.Add(3, BulletEnhanceChips);
     }
     //稍加修改（
@@ -63,7 +63,7 @@ public class gameManager : MonoBehaviour
                 backpackcount++;
                 break;
             case 2:
-                ins = Instantiate(globalChips[order], backpackpanel.transform);
+                ins = Instantiate(GlobalChips[order], backpackpanel.transform);
                 //ins = Instantiate(globalChips[order], middleScreen);
                 ins.GetComponent<RectTransform>().position = backpacktrans[backpackcount].position;
                 backpackcount++;
@@ -91,7 +91,7 @@ public class gameManager : MonoBehaviour
                 ins = Instantiate(BulletEffectChips[order], middleScreen);
                 break;
             case 2:
-                ins = Instantiate(globalChips[order], middleScreen);
+                ins = Instantiate(GlobalChips[order], middleScreen);
                 break;
             case 3:
                 ins = Instantiate(BulletEnhanceChips[order], middleScreen);
@@ -131,7 +131,7 @@ public class gameManager : MonoBehaviour
                 ins = Instantiate(BulletEffectChips[order], chipbutton.transform.Find("chipPosition").position, Quaternion.identity, chipbutton.transform.Find("chipPosition"));
                 break;
             case 2:
-                ins = Instantiate(globalChips[order], chipbutton.transform.Find("chipPosition").position, Quaternion.identity, chipbutton.transform.Find("chipPosition"));
+                ins = Instantiate(GlobalChips[order], chipbutton.transform.Find("chipPosition").position, Quaternion.identity, chipbutton.transform.Find("chipPosition"));
                 break;
             case 3:
                 ins = Instantiate(BulletEnhanceChips[order], chipbutton.transform.Find("chipPosition").position, Quaternion.identity, chipbutton.transform.Find("chipPosition"));

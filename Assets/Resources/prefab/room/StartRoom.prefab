@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5942953847543635161}
   - component: {fileID: 3141290017937768470}
   - component: {fileID: 6423852976844985366}
-  - component: {fileID: -7122658152909538390}
+  - component: {fileID: 32126522796117925}
   m_Layer: 0
   m_Name: StartRoom
   m_TagString: Untagged
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5254902}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &-7122658152909538390
+--- !u!114 &32126522796117925
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,8 +140,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8344030837516253767}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3248708b5312a0c42ab822b8a8631a3b, type: 3}
+  m_Script: {fileID: 11500000, guid: d26c2b1e399defd4b9890d020f354f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveDistance: 0
   foggylevel: {fileID: 0}
+  gameObjects: []
+  canUpgrated: 0
+  level: -1

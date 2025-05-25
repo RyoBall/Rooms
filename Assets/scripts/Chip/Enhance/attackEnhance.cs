@@ -12,7 +12,7 @@ public class attackEnhance : EnhanceChipBase
         base.chipentereffect(chip);
         if (chip.gameObject.GetComponent<WeaponChipBase>() != null) 
         {
-            chip.gameObject.GetComponent<WeaponChipBase>().attackfactor = chip.gameObject.GetComponent<WeaponChipBase>().attackfactor*1.3f;
+            chip.gameObject.GetComponent<WeaponChipBase>().attackfactor = chip.gameObject.GetComponent<WeaponChipBase>().attackfactor*1.25f;
         }
     }
 
@@ -21,7 +21,7 @@ public class attackEnhance : EnhanceChipBase
         base.chipexiteffect(chip);
         if (chip.gameObject.GetComponent<WeaponChipBase>() != null)
         {
-            chip.gameObject.GetComponent<WeaponChipBase>().attackfactor = chip.gameObject.GetComponent<WeaponChipBase>().attackfactor/1.3f;
+            chip.gameObject.GetComponent<WeaponChipBase>().attackfactor = chip.gameObject.GetComponent<WeaponChipBase>().attackfactor/1.25f;
         }
     }
 

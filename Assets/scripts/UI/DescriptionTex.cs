@@ -3,17 +3,23 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class EXPTex : MonoBehaviour
+public class DescriptionTex : MonoBehaviour
 {
+    public static DescriptionTex instance;
+    public TMP_Text TMP_Text;
+    private void Awake()
+    {
+        instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        
+        TMP_Text = GetComponent<TMP_Text>();   
     }
 
     // Update is called once per frame
     void Update()
     {
-        GetComponent<TMP_Text>().text = Player.instance.exp.ToString() + '/' + Player.instance.expm.ToString();
+        
     }
 }

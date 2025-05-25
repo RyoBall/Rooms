@@ -16,6 +16,7 @@ public class enemyGeneratorController : MonoBehaviour
     public float Correctionfactor;
     public float cd;
     public float cdm;
+    public float startcdm;
     public float fightTime;
     public float fightTimem;
     public bool inend;//×îÖÕ½×¶Î
@@ -43,7 +44,7 @@ public class enemyGeneratorController : MonoBehaviour
     public void FightTest() 
     {
         Player.instance.transform.DOMove(foggylevel.position, 1);
-        enemyGeneratorController.instance.Init();
+        Init();
     }
     void Generate(int num)
     {
@@ -68,11 +69,6 @@ public class enemyGeneratorController : MonoBehaviour
         {
             fightTime -= Time.deltaTime;
         }
-        if (fightTime <= fightTimem - 60 && !inend)
-        {
-            inend = true;
-            cdm = cdm / 1.25f;
-        }
         if (fightTime <= 0)
         {
             exit();
@@ -81,9 +77,9 @@ public class enemyGeneratorController : MonoBehaviour
     public void Init()
     {
         gameManager.instance.currentState = gameManager.GameState.InFight;
-        fightTime = 90f;
-        cdm = cdm * 1.25f;
-        inend = false;
+        fightTime = 60f;
+        cdm = startcdm;
+        StartCoroutine(FightHard(fightTime-30f));
         cd = 0;
     }
     void exit()
@@ -94,5 +90,10 @@ public class enemyGeneratorController : MonoBehaviour
         Player.instance.targetRoom = null;
         ExitAction.Invoke();
         gameManager.instance.currentState = gameManager.GameState.Normal;
+    }
+    IEnumerator FightHard(float time) 
+    {
+        yield return new WaitForSeconds(time);
+        cd = cdm / 1.25f;
     }
 }

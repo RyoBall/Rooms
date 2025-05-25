@@ -21,7 +21,6 @@ public class DeleteCom : ShopObj
     {
         base.OnMouseDown();
         //唤出轮盘
-        segment.instance.GenerateWheel();
         segment.instance.UIEnter();
         //生成选择房间列表
         GenerateOptions();

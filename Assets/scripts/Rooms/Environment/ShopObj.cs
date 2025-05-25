@@ -14,7 +14,7 @@ public class ShopObj : MonoBehaviour
     virtual protected void OnMouseDown()
     {
         //货币是什么？（判断钱是不是大于价格
-        if (true)
+        if (Player.instance.energy>=price)
         {
             if(maxStock > 1 && Player.instance.energy >= price)
             {

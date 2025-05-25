@@ -62,7 +62,7 @@ public class RoomController : MonoBehaviour
         {
             GameObject a = GenerateRoom((int)positions[i].x, (int)positions[i].y, (int)positions[i].z);
             instanrooms.Add(a);
-            a.GetComponent<RoomBase>().Position = new Vector2(positions[i].x, positions[i].y);
+            a.GetComponent<RoomPosition>().Position = new Vector2(positions[i].x, positions[i].y);
         }
     }
     void Initroomlist()//初始化每个房间的坐标 

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5942953847543635161}
   - component: {fileID: 3141290017937768470}
   - component: {fileID: 6423852976844985366}
-  - component: {fileID: -216014050549553315}
+  - component: {fileID: 3587304826203159616}
   m_Layer: 0
-  m_Name: guardRoom
+  m_Name: FightRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.49288654, a: 1}
+  m_Color: {r: 0.64779866, g: 0, b: 0.10392507, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &-216014050549553315
+--- !u!114 &3587304826203159616
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8344030837516253767}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e05ca8a89d408824c93809302f0e90a2, type: 3}
+  m_Script: {fileID: 11500000, guid: fc7856fedbb7e1f4782e2e010e8e4540, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveDistance: 0

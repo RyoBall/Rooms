@@ -79,7 +79,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\scripts\damageText.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
-    <Compile Include="Assets\scripts\Chip\GetChipBase.cs" />
+    <Compile Include="Assets\scripts\UI\NameTex.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\scripts\UI\healthTex.cs" />
     <Compile Include="Assets\scripts\Chip\Global\UpdateCriticalAttack.cs" />
@@ -88,6 +88,7 @@
     <Compile Include="Assets\scripts\Rooms\RoomBase.cs" />
     <Compile Include="Assets\scripts\segmentpos.cs" />
     <Compile Include="Assets\scripts\Chip\Global\UpdateAttack.cs" />
+    <Compile Include="Assets\scripts\UI\FightText.cs" />
     <Compile Include="Assets\scripts\Chip\Enhance\bulletEnhance\doubleAttack.cs" />
     <Compile Include="Assets\scripts\SkillPanel.cs" />
     <Compile Include="Assets\scripts\UIframe.cs" />
@@ -120,6 +121,7 @@
     <Compile Include="Assets\scripts\Chip\ChipBase.cs" />
     <Compile Include="Assets\scripts\CameraScript.cs" />
     <Compile Include="Assets\scripts\Rooms\DrinkRoom.cs" />
+    <Compile Include="Assets\scripts\Chip\Get\GetChipBase.cs" />
     <Compile Include="Assets\scripts\Chip\WeaponChipBase.cs" />
     <Compile Include="Assets\scripts\Weapon\shooter.cs" />
     <Compile Include="Assets\scripts\Chip\Get\GetParticle.cs" />
@@ -130,6 +132,7 @@
     <Compile Include="Assets\scripts\UI\Blacker.cs" />
     <Compile Include="Assets\scripts\Chip\Weapon\TribalShooter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
+    <Compile Include="Assets\scripts\UI\DescriptionTex.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\scripts\Enemy\EnemyBase.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
@@ -156,6 +159,7 @@
     <Compile Include="Assets\scripts\Rooms\Corridor.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\scripts\Rooms\FightRoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\scripts\Chip\Global\CriticalAttackGlobalChip.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />

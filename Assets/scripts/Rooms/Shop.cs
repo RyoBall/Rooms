@@ -15,7 +15,10 @@ public class Shop : RoomBase
     {
         base.OnMouseDown();
         //我觉得商店应该是进入了才能看见商品？
-        RefreshShop();
+        if (firstEnter)
+        {
+            RefreshShop();
+        }
         //生成currentItems里的商品
     }
 
@@ -58,19 +61,18 @@ public class Shop : RoomBase
         {
             currentItems.Add(availableItems[i]);
         }
-        
     }
 
     //随机顺序
     private void Shuffle<T>(List<T> list)
     {
-       for (int i = 0; i < list.Count; i++)
-       {
+        for (int i = 0; i < list.Count; i++)
+        {
             T temp = list[i];
             int randomIndex = Random.Range(i, list.Count);
             list[i] = list[randomIndex];
             list[randomIndex] = temp;
         }
     }
-    
+
 }

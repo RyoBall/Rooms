@@ -23,5 +23,7 @@ public class StartRoom : RoomBase
     {
         base.Start();
         Player.instance.transform.position = transform.position;
+        Player.instance.currentRoom = transform;
+        GetComponent<Collider2D>().enabled = false;
     }
 }

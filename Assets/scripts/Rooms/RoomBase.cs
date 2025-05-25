@@ -4,7 +4,11 @@ using UnityEngine;
 using DG.Tweening;
 using System;
 
-public class RoomBase : MonoBehaviour
+public interface RoomPosition
+{
+    Vector2 Position { get; set; }
+}
+public class RoomBase : MonoBehaviour, RoomPosition
 {
     [Header("PlayerMove")]
     private Vector3 direction;
@@ -18,8 +22,10 @@ public class RoomBase : MonoBehaviour
     [SerializeField] protected List<GameObject> gameObjects;//场景里的互动物
     [SerializeField] protected bool canUpgrated = false;
     public int level = -1;
-    public Vector2 Position;
     public Action EnterAction;
+
+    public Vector2 Position { get; set; }
+
     virtual protected void Start()
     {
         EnterAction += Enter;
@@ -46,21 +52,31 @@ public class RoomBase : MonoBehaviour
     }
     virtual protected void OnMouseDown()
     {
-        if (firstEnter)
+        if (Correc(Position.x - Player.instance.currentRoom.GetComponent<RoomBase>().Position.x) + Correc(Position.y - Player.instance.currentRoom.GetComponent<RoomBase>().Position.y) <= 1)
         {
-            Player.instance.energy += 5;
-            firstEnter = false;
-        }
-        if (!isfog)
-        {
-            EnterAction.Invoke();
-        }
-        else
-        {
-            intofog();
+            if (firstEnter)
+            {
+                Player.instance.energy += 5;
+                firstEnter = false;
+            }
+            if (!isfog)
+            {
+                EnterAction.Invoke();
+            }
+            else
+            {
+                intofog();
+            }
         }
     }
 
+    public static float Correc(float a)
+    {
+        if (a > 0)
+            return a;
+        else
+            return -a;
+    }
     private void CheckDirection(Transform transform)
     {
         float x = transform.position.x - Player.instance.currentRoom.transform.position.x;
@@ -82,7 +98,7 @@ public class RoomBase : MonoBehaviour
             direction = Vector3.up * moveDistance;
         }
     }
-    private void ChangeTofoggy()
+    public virtual void ChangeTofoggy()
     {
         GetComponent<SpriteRenderer>().DOColor(Color.black, .5f);
     }
@@ -97,7 +113,7 @@ public class RoomBase : MonoBehaviour
         isfog = false;
         InitEnvironment();
     }
-    protected void Enter() 
+    protected void Enter()
     {
         if (Player.instance.currentRoom != null)
             Player.instance.currentRoom.GetComponent<Collider2D>().enabled = true;

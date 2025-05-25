@@ -150,7 +150,6 @@ MonoBehaviour:
   - {fileID: 6130613311412201740}
   canUpgrated: 0
   level: -1
-  flowers: []
 --- !u!1001 &6750491274531322563
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -20,11 +20,11 @@ public class segment : MonoBehaviour
     public float downspeed;
     [Header("杂项")]
     public UnknownRoom targetroom;
-    public RectTransform Enter;
-    public RectTransform Exit;
+    [SerializeField]private RectTransform Enter;
+    [SerializeField]private RectTransform Exit;
     public GameObject replacePrefab;
     public Image replaceImage;
-
+    [SerializeField]private bool enter;
     public UnityEvent<int> OnSegmentClicked; // 点击事件
     public bool isNewRoom = false;
     void Start()
@@ -56,7 +56,6 @@ public class segment : MonoBehaviour
     }
     public void GenerateWheel()
     {
-        ClearWheel();
         OnSegmentClicked.AddListener(ReplaceSegmentPart);
         float currentAngle = 0f;
         for (int i = 0; i < segmentcount; i++)
@@ -107,14 +106,7 @@ public class segment : MonoBehaviour
     }
     public void ClearWheel()
     {
-        //改成把子物体都删除了（
-        //foreach (Image img in segmentImages)
-        //{
-        //    if (img != null && img.gameObject != null)
-        //    {
-        //        Destroy(img.gameObject);
-        //    }
-        //}
+        here.rotation = Quaternion.Euler(0, 0, 0);
         foreach (Transform child in transform)
         {
             Destroy(child.gameObject);
@@ -124,11 +116,12 @@ public class segment : MonoBehaviour
 
     public void UIEnter()
     {
-        transform.parent.GetComponent<RectTransform>().DOAnchorPosX(-82.5f, .8f); 
+        GenerateWheel();
+        transform.parent.GetComponent<RectTransform>().DOAnchorPosX(-82.5f, .8f);
     }
     public void UIExit() 
     {
-        transform.parent.GetComponent<RectTransform>().DOAnchorPosX(82.5f, .8f); 
+        transform.parent.GetComponent<RectTransform>().DOAnchorPosX(82.5f, .8f).OnComplete(ClearWheel); 
     }
     public void startchec(float waittime)
     {

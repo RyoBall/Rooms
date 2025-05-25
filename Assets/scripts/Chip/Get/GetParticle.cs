@@ -7,9 +7,11 @@ using UnityEngine.EventSystems;
 public class GetParticle : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public List<ParticleSystem> partis;
+    public GetChipBase getchip;
     // Start is called before the first frame update
     void Start()
     {
+        getchip = GetComponent<GetChipBase>();
     }
 
     // Update is called once per frame
@@ -19,12 +21,11 @@ public class GetParticle : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log(1);
         for (int i = 0; i < partis.Count; i++)
         {
             partis[i].Play();
         }
-
+        getchip.EnterAction.Invoke();
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -35,6 +36,7 @@ public class GetParticle : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             partis[i].Pause();
             partis[i].Clear();
         }
+        getchip.ExitAction.Invoke();
 
     }
 }
