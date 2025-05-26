@@ -10,12 +10,10 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     public bool chosen;
     public bool getin;
     public RectTransform startposition;
-    public int startpositioncount;
-    public GameObject packpanel;
-    public float factor;
-    public UIframe background;
+    public int startpositioncount;//初始位置ID
+    public GameObject BagPanel;//芯片背包
+    public UIframe background;//嵌入后的背景
     protected RectTransform rectTransform;
-    protected Vector2 offset;
     [Header("信息")]
     public string chipname;
     public string description;
@@ -53,7 +51,7 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     public virtual void Start()
     {
         startposition = gameManager.instance.backpacktrans[startpositioncount];
-        packpanel = transform.parent.gameObject;
+        BagPanel = transform.parent.gameObject;
         rectTransform = GetComponent<RectTransform>();
     }
 
@@ -80,7 +78,7 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     }
     public void returnposition()
     {
-        transform.SetParent(packpanel.transform);
+        transform.SetParent(BagPanel.transform);
         GetComponent<RectTransform>().position = startposition.position;
     }
     public void OnDrag(PointerEventData eventData)
@@ -91,7 +89,7 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     eventData.pressEventCamera,
     out Vector2 localPoint))
         {
-            rectTransform.localPosition = localPoint+offset;
+            rectTransform.localPosition = localPoint;
         }
     }
 

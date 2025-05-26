@@ -21,6 +21,7 @@ public class segmentpart : MonoBehaviour,IPointerClickHandler
         //以下考虑放在segment里
         segment.instance.targetroom = null;
         segment.instance.UIExit();
+        gameManager.instance.currentState = gameManager.GameState.Normal;
     }
 
     public void OnPointerClick(PointerEventData eventData)

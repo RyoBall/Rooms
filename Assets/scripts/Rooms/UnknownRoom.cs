@@ -14,6 +14,7 @@ public class UnknownRoom : MonoBehaviour, RoomPosition
             if (segment.instance.targetroom == null)
             {
                 segment.instance.targetroom = this;
+                gameManager.instance.currentState = gameManager.GameState.Rolling;
                 segment.instance.UIEnter();
             }
         }

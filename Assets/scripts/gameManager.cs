@@ -4,12 +4,13 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using System;
 
 public class gameManager : MonoBehaviour
 {
     public static gameManager instance;
     [Header("GetChip")]
-    public GameObject backpackpanel;
+    [SerializeField] private GameObject backpackpanel;
     public List<GameObject> BulletEffectChips;
     public List<GameObject> GlobalChips;
     public List<GameObject> BulletEnhanceChips;
@@ -18,20 +19,25 @@ public class gameManager : MonoBehaviour
     public List<RectTransform> backpacktrans;
     //加了这个
     public RectTransform middleScreen;
-    public UnityEvent<int,int> OnChipClicked;
+    public UnityEvent<int, int> OnChipClicked;
     [Header("GameState")]
     public GameState currentState;
-    public enum GameState {UIPause,InFight,Normal};
+    public enum GameState { UIPause, InFight, Normal,Rolling };
     [Header("杂项")]
     public List<RectTransform> buttonpacktrans;
     public int backpackcount;
     public GameObject chipGetButton;
     public GameObject chipGetButtonParent;
     public int currentlevel;
+    public Action UIExit;
+    public Action UIEnter;
+    public bool exit;
     // Start is called before the first frame update
     void Awake()
     {
         instance = this;
+        UIEnter += () => exit = false;
+        UIExit += () => exit = true;
         InitDic();
     }
 
@@ -41,6 +47,13 @@ public class gameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X))
         {
             GetChipButton(1, 0, 0);
+        }
+        if (Input.GetKeyDown(KeyCode.K)&&currentState!=GameState.InFight&&currentState!=GameState.Rolling)
+        {
+            if (exit)
+                UIEnter.Invoke();
+            else
+                UIExit.Invoke();
         }
     }
     void InitDic()
@@ -80,7 +93,7 @@ public class gameManager : MonoBehaviour
     }
 
     //用于生成给玩家选择的模块
-    public void ShowChipAndButton(int type,int order,RectTransform middleScreen,Transform parent)
+    public void ShowChipAndButton(int type, int order, RectTransform middleScreen, Transform parent)
     {
         GameObject ins;
         OnChipClicked.AddListener(AfterChooseChip);
@@ -104,18 +117,18 @@ public class gameManager : MonoBehaviour
         ins.transform.SetParent(parent);
         //绑定按钮事件
         Button btn = gameObject.AddComponent<Button>();
-        btn.onClick.AddListener(() => OnChipClicked?.Invoke(type,order));
+        btn.onClick.AddListener(() => OnChipClicked?.Invoke(type, order));
 
     }
 
     //选定后删除选择模块，加载模块
-    public void AfterChooseChip(int type,int order)
+    public void AfterChooseChip(int type, int order)
     {
-        foreach(Transform child in transform)
+        foreach (Transform child in transform)
         {
             Destroy(child.gameObject);
         }
-        GetChip(type,order);
+        GetChip(type, order);
     }
     public void GetChipButton(int type, int order, int position)
     {

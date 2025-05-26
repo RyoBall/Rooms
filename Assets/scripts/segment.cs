@@ -25,18 +25,21 @@ public class segment : MonoBehaviour
     public GameObject replacePrefab;
     public Image replaceImage;
     [SerializeField]private bool enter;
+    [SerializeField]private bool readytoroll;
     public UnityEvent<int> OnSegmentClicked; // µã»÷ÊÂ¼þ
     public bool isNewRoom = false;
     void Start()
     {
         instance = this;
         here = GetComponent<RectTransform>();
-        GenerateWheel();
+        gameManager.instance.UIEnter += UIEnter;
+        gameManager.instance.UIExit += UIExit;
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab)&&targetroom!=null) 
+        if (readytoroll&&targetroom!=null&&gameManager.instance.currentState==gameManager.GameState.Rolling) 
         {
+            readytoroll = false;
             Startrotate();
         }
         rotatehere();
@@ -57,6 +60,7 @@ public class segment : MonoBehaviour
     public void GenerateWheel()
     {
         OnSegmentClicked.AddListener(ReplaceSegmentPart);
+        ClearWheel();
         float currentAngle = 0f;
         for (int i = 0; i < segmentcount; i++)
         {
@@ -117,11 +121,13 @@ public class segment : MonoBehaviour
     public void UIEnter()
     {
         GenerateWheel();
+        readytoroll = true;
         transform.parent.GetComponent<RectTransform>().DOAnchorPosX(-82.5f, .8f);
     }
     public void UIExit() 
     {
-        transform.parent.GetComponent<RectTransform>().DOAnchorPosX(82.5f, .8f).OnComplete(ClearWheel); 
+        readytoroll = false;
+        transform.parent.GetComponent<RectTransform>().DOAnchorPosX(82.5f, .8f);
     }
     public void startchec(float waittime)
     {

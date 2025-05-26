@@ -3,15 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkillPanel : MonoBehaviour
+public class Bag : MonoBehaviour
 {
-    public static SkillPanel instance;
+    public static Bag instance;
     public RectTransform exitpos;
     public RectTransform enterpos;
     public bool exit;
     public float enterY;
     public float exitY;
-
+    public GameObject CurrentBag;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +32,7 @@ public class SkillPanel : MonoBehaviour
     {
         GetComponent<RectTransform>().DOAnchorPosY(exitY, .5f);
     }
-    public void Enter() 
+    public void Enter()
     {
         GetComponent<RectTransform>().DOAnchorPosY(enterY, .5f);
     }
