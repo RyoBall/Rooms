@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -9,12 +10,8 @@ public class DeleteCom : ShopObj
     //共七个，选择模型，也许可以换成按键？
     public GameObject[] roomPrefabs;
     public RectTransform rt;
-
-    //共七个，加入轮盘的模型
     public GameObject[] segmentPrefabs;
     public Image[] segmentImages;
-
-
     private UnityEvent<int> ChooseRoom;
 
     protected override void OnMouseDown()
@@ -25,7 +22,6 @@ public class DeleteCom : ShopObj
         //生成选择房间列表
         GenerateOptions();
     }
-
     private void GenerateOptions()
     {      
         int num = 0;
@@ -40,13 +36,11 @@ public class DeleteCom : ShopObj
                 rect.anchoredPosition += new Vector2(0, -num * 20);
                 room = Instantiate(roomPrefabs[i],rect);
                 room.transform.SetParent(transform,false);
-
                 Button btn = gameObject.AddComponent<Button>();
                 btn.onClick.AddListener(() => ChooseRoom?.Invoke(i));
             }
         }
     }
-
     private void ClearOptionsAndChangeWheel(int i)
     {
         foreach (Transform child in transform)
@@ -54,8 +48,6 @@ public class DeleteCom : ShopObj
             Destroy(child.gameObject);
         }
 
-        segment.instance.replacePrefab = segmentPrefabs[i];
-        segment.instance.replaceImage = segmentImages[i];
         segment.instance.isNewRoom = true;
         segment.instance.GenerateWheel();
     }

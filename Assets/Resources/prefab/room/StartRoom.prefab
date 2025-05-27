@@ -148,3 +148,4 @@ MonoBehaviour:
   gameObjects: []
   canUpgrated: 0
   level: -1
+  RoomID: 0

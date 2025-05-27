@@ -17,27 +17,32 @@ public class gameManager : MonoBehaviour
     public List<GameObject> BulletChips;
     public Dictionary<int, List<GameObject>> chipsDic = new Dictionary<int, List<GameObject>>();
     public List<RectTransform> backpacktrans;
+    public GameObject chipGetButton;
+    public GameObject chipGetButtonParent;
     //加了这个
     public RectTransform middleScreen;
     public UnityEvent<int, int> OnChipClicked;
     [Header("GameState")]
     public GameState currentState;
-    public enum GameState { UIPause, InFight, Normal,Rolling };
-    [Header("杂项")]
-    public List<RectTransform> buttonpacktrans;
-    public int backpackcount;
-    public GameObject chipGetButton;
-    public GameObject chipGetButtonParent;
+    public enum GameState { UIPause, InFight, Normal, Rolling };
     public int currentlevel;
+    [Header("UI")]
     public Action UIExit;
     public Action UIEnter;
     public bool exit;
+    [Header("GetReplacement")]
+    public List<GameObject> Segments;//通过Segment代表的房间的RoomID访问列表获取Segment
+    [Header("杂项")]
+    public List<RectTransform> buttonpacktrans;
+    public int backpackcount;
     // Start is called before the first frame update
     void Awake()
     {
         instance = this;
         UIEnter += () => exit = false;
+        UIEnter += () => currentState = GameState.UIPause;
         UIExit += () => exit = true;
+        UIExit += () => currentState = GameState.Normal;
         InitDic();
     }
 
@@ -48,7 +53,7 @@ public class gameManager : MonoBehaviour
         {
             GetChipButton(1, 0, 0);
         }
-        if (Input.GetKeyDown(KeyCode.K)&&currentState!=GameState.InFight&&currentState!=GameState.Rolling)
+        if (Input.GetKeyDown(KeyCode.K) && currentState != GameState.InFight && currentState != GameState.Rolling)
         {
             if (exit)
                 UIEnter.Invoke();
@@ -118,7 +123,6 @@ public class gameManager : MonoBehaviour
         //绑定按钮事件
         Button btn = gameObject.AddComponent<Button>();
         btn.onClick.AddListener(() => OnChipClicked?.Invoke(type, order));
-
     }
 
     //选定后删除选择模块，加载模块
@@ -161,5 +165,16 @@ public class gameManager : MonoBehaviour
         insscript = chipbutton.AddComponent<GetChipBase>();
         insscript.type = type;
         insscript.order = order;
+    }
+    public void GetReplacementInReward(GameObject segment)
+    {
+        GetReplacement(segment, SegmentBag.instance.segmentsnum++);
+    }
+    public void GetReplacement(GameObject segment, int i)
+    {
+        GameObject replacement = Instantiate(SegmentBag.instance.replacement, SegmentBag.instance.Positions[i].position, Quaternion.identity, SegmentBag.instance.transform);
+        replacement.GetComponent<Replacement>().segmentpart = segment;
+        replacement.GetComponent<Replacement>().ID = i;
+        replacement.GetComponent<Image>().color = segment.GetComponent<Image>().color;
     }
 }

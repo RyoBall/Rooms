@@ -26,8 +26,7 @@ public class RoomCom : ShopObj
             segment.instance.UIEnter();
             //待替换
 
-            segment.instance.replacePrefab = prefab;
-            segment.instance.replaceImage = image;
+
             //变为正常颜色
             //文字
         }

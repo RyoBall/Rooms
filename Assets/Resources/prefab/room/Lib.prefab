@@ -154,6 +154,7 @@ MonoBehaviour:
   - {fileID: 5078392503161664471}
   canUpgrated: 0
   level: -1
+  RoomID: 3
 --- !u!1001 &5674767854313168920
 PrefabInstance:
   m_ObjectHideFlags: 0

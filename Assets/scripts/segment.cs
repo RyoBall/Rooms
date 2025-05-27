@@ -22,7 +22,7 @@ public class segment : MonoBehaviour
     public UnknownRoom targetroom;
     [SerializeField]private RectTransform Enter;
     [SerializeField]private RectTransform Exit;
-    public GameObject replacePrefab;
+    //public GameObject replacePrefab;
     public Image replaceImage;
     [SerializeField]private bool enter;
     [SerializeField]private bool readytoroll;
@@ -59,7 +59,7 @@ public class segment : MonoBehaviour
     }
     public void GenerateWheel()
     {
-        OnSegmentClicked.AddListener(ReplaceSegmentPart);
+        //OnSegmentClicked.AddListener(ReplaceSegmentPart);
         ClearWheel();
         float currentAngle = 0f;
         for (int i = 0; i < segmentcount; i++)
@@ -71,7 +71,7 @@ public class segment : MonoBehaviour
         }
     }
 
-    public void ReplaceSegmentPart(int i)
+    /*public void ReplaceSegmentPart(int i)
     {
         //这里需要知道走廊是哪些数字,isnewroom是在清除走廊时为true
         if(i == 0 && !isNewRoom)
@@ -82,10 +82,8 @@ public class segment : MonoBehaviour
         {
             return;
         }
-        segmentparts[i] = replacePrefab;
-        segmentImages[i] = replaceImage;
         StartCoroutine(ShowWheel());
-    }
+    }*/
 
     IEnumerator ShowWheel()
     {
@@ -104,8 +102,8 @@ public class segment : MonoBehaviour
         Image img = segment.GetComponent<Image>();
         // 设置旋转
         rect.localRotation = Quaternion.Euler(0, 0, -startAngle);
-        Button btn = segment.AddComponent<Button>();
-        btn.onClick.AddListener(() => OnSegmentClicked?.Invoke(index));
+        //Button btn = segment.AddComponent<Button>();
+        //btn.onClick.AddListener(() => OnSegmentClicked?.Invoke(index));
         segmentImages.Add(img);
     }
     public void ClearWheel()

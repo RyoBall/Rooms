@@ -9,7 +9,7 @@ public class UnknownRoom : MonoBehaviour, RoomPosition
 
     private void OnMouseDown()
     {
-        if (RoomBase.Correc(Position.x - Player.instance.currentRoom.GetComponent<RoomBase>().Position.x) + RoomBase.Correc(Position.y - Player.instance.currentRoom.GetComponent<RoomBase>().Position.y) <= 1)
+        if (RoomBase.Correc(Position.x - Player.instance.currentRoom.GetComponent<RoomBase>().Position.x) + RoomBase.Correc(Position.y - Player.instance.currentRoom.GetComponent<RoomBase>().Position.y) <= 1 && gameManager.instance.currentState == gameManager.GameState.Normal)
         {
             if (segment.instance.targetroom == null)
             {

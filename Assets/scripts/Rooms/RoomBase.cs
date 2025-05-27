@@ -23,7 +23,7 @@ public class RoomBase : MonoBehaviour, RoomPosition
     [SerializeField] protected bool canUpgrated = false;
     public int level = -1;
     public Action EnterAction;
-
+    public int RoomID;
     public Vector2 Position { get; set; }
 
     virtual protected void Start()
@@ -52,7 +52,7 @@ public class RoomBase : MonoBehaviour, RoomPosition
     }
     virtual protected void OnMouseDown()
     {
-        if (Correc(Position.x - Player.instance.currentRoom.GetComponent<RoomBase>().Position.x) + Correc(Position.y - Player.instance.currentRoom.GetComponent<RoomBase>().Position.y) <= 1)
+        if (Correc(Position.x - Player.instance.currentRoom.GetComponent<RoomBase>().Position.x) + Correc(Position.y - Player.instance.currentRoom.GetComponent<RoomBase>().Position.y) <= 1&&gameManager.instance.currentState==gameManager.GameState.Normal)
         {
             if (firstEnter)
             {

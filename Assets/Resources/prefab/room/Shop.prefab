@@ -145,7 +145,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDistance: 0
   foggylevel: {fileID: 0}
+  gameObjects: []
   canUpgrated: 0
   level: -1
+  RoomID: 5
   allItems: []
   displayNum: 9

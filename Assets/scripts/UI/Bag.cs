@@ -12,6 +12,9 @@ public class Bag : MonoBehaviour
     public float enterY;
     public float exitY;
     public GameObject CurrentBag;
+    public List<GameObject> BagList;
+    public int CurrentBagNum;
+    public GameObject currentreplacement;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +29,12 @@ public class Bag : MonoBehaviour
         if (gameManager.instance.currentState == gameManager.GameState.InFight && !exit)
         {
             Exit();
+        }
+        if (Input.GetKeyDown(KeyCode.Tab)) 
+        {
+            CurrentBag.SetActive(false);
+            CurrentBag = BagList[CurrentBagNum++ % BagList.Count];
+            CurrentBag.SetActive(true);
         }
     }
     public void Exit()

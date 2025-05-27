@@ -150,7 +150,7 @@ MonoBehaviour:
   - {fileID: 4583865336971956860}
   canUpgrated: 0
   level: -1
-  researcher: []
+  RoomID: 4
 --- !u!1001 &3974401811676250547
 PrefabInstance:
   m_ObjectHideFlags: 0
