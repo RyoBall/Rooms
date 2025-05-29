@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class Recover : ShopObj
 {
+    protected override void Buy()
+    {
+        base.Buy();
+        float current = Player.instance.health;
+        float max = Player.instance.healthm;
+        Player.instance.currentSanity = current < max * 0.5f ?
+            current + max * 0.5f : max;
+    }
+
     protected override void OnMouseDown()
     {
         base.OnMouseDown();
-        float current = Player.instance.currentSanity;
-        float max = Player.instance.maxSanity;
-        Player.instance.currentSanity = current < max* 0.5f ?
-            current + max * 0.5f : max;
     }
 
     private void Start()
@@ -18,7 +23,7 @@ public class Recover : ShopObj
         itemID = "Recover";
         itemName = "Recover";
         price = 1;
-        maxStock = 0;
-        description = "emmmm";
+        maxStock = 1;
+        description = "»Ö¸´Ò»°ëµÄÀíÖÇ";
     }
 }

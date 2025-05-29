@@ -20,13 +20,11 @@ public class RoomCom : ShopObj
     protected override void OnMouseDown()
     {
         base.OnMouseDown();
-        prefab.GetComponent<RoomBase>().level++;
-        if (maxStock == 3)
+
+        /*if (maxStock == 3)
         {   //唤起轮盘
             segment.instance.UIEnter();
             //待替换
-
-
             //变为正常颜色
             //文字
         }
@@ -38,19 +36,29 @@ public class RoomCom : ShopObj
         else if (maxStock == 1)
         {
             //但是看不到了吧？
-
             //第二个方块亮起
-        }
+        }*/
     }
 
     protected void Start()
     {
         itemID = "Rooms";
-        itemName = "Rooms";
         price = 0;
         maxStock = 4;
 
         //设置成灰色
         //文字
+    }
+
+    protected override void Buy()
+    {
+        base.Buy();
+        if (prefab.GetComponent<RoomBase>().level == -1) 
+        {
+            SegmentCom.UnlockListener.Invoke();
+            gameManager.instance.GetReplacementInReward(gameManager.instance.Segments[prefab.GetComponent<RoomBase>().RoomID]);
+        }
+        prefab.GetComponent<RoomBase>().level++;
+        Destroy(gameObject);
     }
 }

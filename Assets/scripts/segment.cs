@@ -12,7 +12,7 @@ public class segment : MonoBehaviour
     [Header("ÂÖÅÌÉèÖÃ")]
     public const int segmentcount = 12;
     public List<GameObject> segmentparts = new List<GameObject>();
-    [SerializeField]private List<Image> segmentImages = new List<Image>();
+    [SerializeField]public List<Image> segmentImages = new List<Image>();
     [Header("Ğı×ªÊôĞÔ")]
     public float rotatespeed;
     public float rotatespeedm;
@@ -139,5 +139,12 @@ public class segment : MonoBehaviour
     private void chec() 
     {
         segmentImages[((int)here.rotation.eulerAngles.z / 30) % 12].GetComponent<segmentpart>().Effect();
+    }
+    public void RemoveReplacementChosen() 
+    {
+        for(int i = 0; i < segmentImages.Count; i++) 
+        {
+            segmentImages[i].GetComponent<segmentpart>().Clickaction = null;
+        }
     }
 }

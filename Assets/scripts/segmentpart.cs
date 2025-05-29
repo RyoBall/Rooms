@@ -11,7 +11,7 @@ public class segmentpart : MonoBehaviour, IPointerClickHandler
     public RectTransform targetUI; // 要检测的目标UI
     public GameObject room;
     public int i;
-    public Action Clickaction;
+    public Action<segmentpart> Clickaction=null;
     private void Awake()
     {
         GetComponent<Image>().alphaHitTestMinimumThreshold = 0.5f;
@@ -34,13 +34,6 @@ public class segmentpart : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (Bag.instance.currentreplacement != null)
-        {
-            segment.instance.segmentparts[i] = gameManager.instance.Segments[Bag.instance.currentreplacement.GetComponent<Replacement>().segmentpart.GetComponent<segmentpart>().room.GetComponent<RoomBase>().RoomID];
-            segment.instance.GenerateWheel();
-            gameManager.instance.GetReplacement(gameManager.instance.Segments[room.GetComponent<RoomBase>().RoomID], Bag.instance.currentreplacement.GetComponent<Replacement>().ID);
-            Destroy(Bag.instance.currentreplacement);
-        }
-        
+        Clickaction?.Invoke(this);
     }
 }

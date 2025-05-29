@@ -11,7 +11,6 @@ public class Garden : RoomBase
 
     protected override void Start()
     {
-        dangerousLevel = 0;
         base.Start();
         //»Ø¸´ÂúÀíÖÇÖµ
     }

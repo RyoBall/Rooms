@@ -1222,10 +1222,10 @@ MonoBehaviour:
   - {fileID: 9171886044242984860, guid: 143aee2f62e27144ba3050583b95f284, type: 3}
   - {fileID: 9171886044242984860, guid: 143aee2f62e27144ba3050583b95f284, type: 3}
   - {fileID: 9171886044242984860, guid: 143aee2f62e27144ba3050583b95f284, type: 3}
+  - {fileID: 9171886044242984860, guid: 143aee2f62e27144ba3050583b95f284, type: 3}
+  - {fileID: 9171886044242984860, guid: 143aee2f62e27144ba3050583b95f284, type: 3}
   - {fileID: 9171886044242984860, guid: 1cc3af3b56f1fac4ea3b920f8fbd3580, type: 3}
   - {fileID: 9171886044242984860, guid: 1cc3af3b56f1fac4ea3b920f8fbd3580, type: 3}
-  - {fileID: 9171886044242984860, guid: 1cc3af3b56f1fac4ea3b920f8fbd3580, type: 3}
-  - {fileID: 9171886044242984860, guid: 4041cb8ce2104274fb1634dccbf5bc08, type: 3}
   - {fileID: 9171886044242984860, guid: 4041cb8ce2104274fb1634dccbf5bc08, type: 3}
   - {fileID: 9171886044242984860, guid: 4041cb8ce2104274fb1634dccbf5bc08, type: 3}
   - {fileID: 9171886044242984860, guid: 96d93327e8203b44cbcabc1316164c2d, type: 3}
@@ -4039,8 +4039,8 @@ MonoBehaviour:
   enemyGenerator: {fileID: 6862286974601113965, guid: 423e22771493de94d937cd92dd469469, type: 3}
   Correctionfactor: 1.5
   cd: 0
-  cdm: 9
-  startcdm: 0
+  cdm: 4
+  startcdm: 6
   fightTime: 0
   fightTimem: 0
   inend: 0

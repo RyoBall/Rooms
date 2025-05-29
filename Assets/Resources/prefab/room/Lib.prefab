@@ -155,6 +155,7 @@ MonoBehaviour:
   canUpgrated: 0
   level: -1
   RoomID: 3
+  dangerouslevel: 1
 --- !u!1001 &5674767854313168920
 PrefabInstance:
   m_ObjectHideFlags: 0

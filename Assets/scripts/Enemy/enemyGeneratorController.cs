@@ -21,7 +21,7 @@ public class enemyGeneratorController : MonoBehaviour
     public float fightTimem;
     public bool inend;//×îÖÕ½×¶Î
     public int level;
-    public Action ExitAction;
+    public Action ExitAction = ()=> Debug.Log(1);
     // Start is called before the first frame update
     void Awake()
     {
@@ -35,6 +35,10 @@ public class enemyGeneratorController : MonoBehaviour
         {
             FightTest();
         }
+        if (Input.GetKeyDown(KeyCode.Alpha2)) 
+        {
+            FightEndTest();
+        } 
         if (gameManager.instance.currentState==gameManager.GameState.InFight)
         {
             CDCount();
@@ -45,6 +49,10 @@ public class enemyGeneratorController : MonoBehaviour
     {
         Player.instance.transform.DOMove(foggylevel.position, 1);
         Init();
+    }
+    public void FightEndTest() 
+    {
+        fightTime = 0;
     }
     void Generate(int num)
     {
@@ -94,6 +102,6 @@ public class enemyGeneratorController : MonoBehaviour
     IEnumerator FightHard(float time) 
     {
         yield return new WaitForSeconds(time);
-        cd = cdm / 1.25f;
+        cdm = startcdm / 1.25f;
     }
 }

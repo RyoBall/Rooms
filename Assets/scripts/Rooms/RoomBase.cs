@@ -18,16 +18,20 @@ public class RoomBase : MonoBehaviour, RoomPosition
     public Transform foggylevel;
     protected bool isfog = false;
     protected float dangerousLevel = 0;
-    protected bool firstEnter;
+    [SerializeField]protected bool firstEnter=true;
     [SerializeField] protected List<GameObject> gameObjects;//场景里的互动物
     [SerializeField] protected bool canUpgrated = false;
     public int level = -1;
     public Action EnterAction;
     public int RoomID;
+    public bool unlock;
+    private enum DangerousLevel {none,low,medium,high };
+    [SerializeField]private DangerousLevel dangerouslevel;
     public Vector2 Position { get; set; }
 
     virtual protected void Start()
     {
+        Dangerouschec();
         EnterAction += Enter;
         foggylevel = enemyGeneratorController.instance.foggylevel;
         if (UnityEngine.Random.value < dangerousLevel)
@@ -37,7 +41,25 @@ public class RoomBase : MonoBehaviour, RoomPosition
         }
         else
         {
-            InitEnvironment();
+            EnterAction.Invoke();
+        }
+    }
+    void Dangerouschec() 
+    {
+        switch (dangerouslevel) 
+        {
+            case DangerousLevel.none:
+                dangerousLevel = 0;
+                break;
+            case DangerousLevel.low:
+                dangerousLevel = .2f;
+                break;
+            case DangerousLevel.medium:
+                dangerousLevel = .4f;
+                break;
+            case DangerousLevel.high:
+                dangerousLevel = 1f;
+                break;
         }
     }
     protected virtual void InitEnvironment()
@@ -116,9 +138,14 @@ public class RoomBase : MonoBehaviour, RoomPosition
     protected void Enter()
     {
         if (Player.instance.currentRoom != null)
-            Player.instance.currentRoom.GetComponent<Collider2D>().enabled = true;
-        Player.instance.currentRoom = transform;
-        GetComponent<Collider2D>().enabled = false;
-        Player.instance.BeginMove(transform.position);
+            Player.instance.currentRoom.GetComponent<Collider2D>().enabled = true; //把上一个房间碰撞体激活
+        Player.instance.currentRoom = transform;//修改当前房间
+        GetComponent<Collider2D>().enabled = false;//把当前房间的碰撞体关闭
+        Player.instance.BeginMove(transform.position);//把玩家运过去
+        if (firstEnter) 
+        {
+            firstEnter = false;
+            InitEnvironment();//激活环境
+        }
     }
 }

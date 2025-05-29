@@ -10,6 +10,11 @@ public class Replacement : MonoBehaviour
     public void Click()
     {
         Bag.instance.currentreplacement = gameObject;
+        for(int i = 0; i < 12; i++) 
+        {
+            segment.instance.segmentImages[i].GetComponent<segmentpart>().Clickaction = null;
+            segment.instance.segmentImages[i].GetComponent<segmentpart>().Clickaction += ChooseSegment;
+        }
     }
 
     // Start is called before the first frame update
@@ -22,5 +27,12 @@ public class Replacement : MonoBehaviour
     void Update()
     {
 
+    }
+    void ChooseSegment(segmentpart segmentpart) 
+    {
+        segment.instance.segmentparts[segmentpart.i] = gameManager.instance.Segments[Bag.instance.currentreplacement.GetComponent<Replacement>().segmentpart.GetComponent<segmentpart>().room.GetComponent<RoomBase>().RoomID];
+        segment.instance.GenerateWheel();
+        gameManager.instance.GetReplacement(gameManager.instance.Segments[segmentpart.room.GetComponent<RoomBase>().RoomID], Bag.instance.currentreplacement.GetComponent<Replacement>().ID);
+        Destroy(Bag.instance.currentreplacement);
     }
 }

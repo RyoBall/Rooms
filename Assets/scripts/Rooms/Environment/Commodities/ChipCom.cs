@@ -1,15 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ChipCom : ShopObj
 {
     public enum ChipType
     {
+        random = 0,
         BulletEffect = 1,
         Global = 2,
         BulletEnhace = 3,
-        Weapon = 4
     }
     private ChipType chipType;
     private int order;
@@ -19,8 +21,6 @@ public class ChipCom : ShopObj
     {
         base.OnMouseDown();
         //չʾ
-        gameManager.instance.GetChipButton((int)chipType, order, 2);
-        ChoosePanel.instance.Enter();
     }
 
     private void Start()
@@ -29,7 +29,10 @@ public class ChipCom : ShopObj
     }
 
     public void RandomChip()
-    {   
+    {
+        if (chipType == ChipType.random)
+            chipType = (ChipType)Random.Range(1, 4);
+        order = Random.Range(0, gameManager.instance.chipsDic[(int)chipType].Count);
         insSprite();
         ChipBase chipBase = gameManager.instance.chipsDic[(int)chipType][order].GetComponent<ChipBase>();
         itemID = "Chip";
@@ -46,5 +49,12 @@ public class ChipCom : ShopObj
         {
             Destroy(inschip.GetComponentInChildren<occupy>());
         }
+    }
+
+    protected override void Buy()
+    {
+        base.Buy();
+        gameManager.instance.GetChipButton((int)chipType, order, 2);
+        ChoosePanel.instance.Enter();
     }
 }

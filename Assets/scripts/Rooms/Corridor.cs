@@ -11,7 +11,6 @@ public class Corridor : RoomBase
 
     protected override void Start()
     {
-        dangerousLevel = 1 / 3;
         base.Start();
     }
 }

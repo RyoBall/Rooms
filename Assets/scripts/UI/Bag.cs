@@ -35,6 +35,7 @@ public class Bag : MonoBehaviour
             CurrentBag.SetActive(false);
             CurrentBag = BagList[CurrentBagNum++ % BagList.Count];
             CurrentBag.SetActive(true);
+            segment.instance.RemoveReplacementChosen();
         }
     }
     public void Exit()

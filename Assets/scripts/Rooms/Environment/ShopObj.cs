@@ -18,9 +18,14 @@ public class ShopObj : MonoBehaviour
         {
             if(maxStock > 1 && Player.instance.energy >= price)
             {
+                Buy();
                 maxStock--;
                 Player.instance.energy -= price;
             }
         }
+    }
+    virtual protected void Buy() 
+    {
+        ;
     }
 }

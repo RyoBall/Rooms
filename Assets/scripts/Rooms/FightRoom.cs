@@ -11,7 +11,6 @@ public class FightRoom : RoomBase
 
     protected override void Start()
     {
-        dangerousLevel = 1;
         base.Start();
     }
 

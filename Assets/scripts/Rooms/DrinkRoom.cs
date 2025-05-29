@@ -12,7 +12,6 @@ public class DrinkRoom : RoomBase
 
     protected override void Start()
     {
-        dangerousLevel = 1/4;        //只有一杯饮料
         gameObjects[0].GetComponent<Drink>().level = level;
         base.Start();
     }

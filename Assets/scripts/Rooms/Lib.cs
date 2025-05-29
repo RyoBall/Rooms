@@ -20,8 +20,7 @@ public class Lib : RoomBase
     }
 
     protected override void Start()
-    {
-        dangerousLevel = 1 / 4;
+    { 
         base.Start();
     }
 }
