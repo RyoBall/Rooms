@@ -21,7 +21,7 @@ public class enemyGeneratorController : MonoBehaviour
     public float fightTimem;
     public bool inend;//×îÖÕ½×¶Î
     public int level;
-    public Action ExitAction = ()=> Debug.Log(1);
+    public Action ExitAction = () => Debug.Log(1);
     // Start is called before the first frame update
     void Awake()
     {
@@ -31,26 +31,26 @@ public class enemyGeneratorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1)) 
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             FightTest();
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2)) 
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             FightEndTest();
-        } 
-        if (gameManager.instance.currentState==gameManager.GameState.InFight)
+        }
+        if (gameManager.instance.currentState == gameManager.GameState.InFight)
         {
             CDCount();
             FightTimeCount();
         }
     }
-    public void FightTest() 
+    public void FightTest()
     {
         Player.instance.transform.DOMove(foggylevel.position, 1);
         Init();
     }
-    public void FightEndTest() 
+    public void FightEndTest()
     {
         fightTime = 0;
     }
@@ -87,7 +87,14 @@ public class enemyGeneratorController : MonoBehaviour
         gameManager.instance.currentState = gameManager.GameState.InFight;
         fightTime = 60f;
         cdm = startcdm;
-        StartCoroutine(FightHard(fightTime-30f));
+        StartCoroutine(FightHard(fightTime - 30f));
+        cd = 0;
+    }
+    public void HardInit()
+    {
+        gameManager.instance.currentState = gameManager.GameState.InFight;
+        fightTime = 120f;
+        cdm = startcdm;
         cd = 0;
     }
     void exit()
@@ -99,7 +106,7 @@ public class enemyGeneratorController : MonoBehaviour
         ExitAction.Invoke();
         gameManager.instance.currentState = gameManager.GameState.Normal;
     }
-    IEnumerator FightHard(float time) 
+    IEnumerator FightHard(float time)
     {
         yield return new WaitForSeconds(time);
         cdm = startcdm / 1.25f;

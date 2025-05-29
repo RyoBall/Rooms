@@ -179,6 +179,7 @@
     <Compile Include="Assets\scripts\Rooms\Shop.cs" />
     <Compile Include="Assets\scripts\Weapon\WeaponBase.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
+    <Compile Include="Assets\scripts\Enemy\RangeControl.cs" />
     <Compile Include="Assets\scripts\Enemy\enemyGenerator.cs" />
     <Compile Include="Assets\scripts\Rooms\Storage.cs" />
     <Compile Include="Assets\scripts\RoomController.cs" />
@@ -218,6 +219,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\Resources\Shader\Range.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
   </ItemGroup>
