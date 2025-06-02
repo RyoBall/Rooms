@@ -6,6 +6,7 @@ Shader "Custom/RangeHint" {
         _WaveSpeed ("WaveSpeed", Range(0,5)) = 2
         _WaveWidth ("WaveWidth", Range(0,1)) = 0.1
         _Mtime ("MTime", Range(0,5)) = 1.5
+        _StartTime ("StartTime", float) = -1
     }
 
     SubShader {
@@ -40,6 +41,7 @@ Shader "Custom/RangeHint" {
             float _WaveSpeed;
             float _WaveWidth;
             float _Mtime;
+            float _StartTime;
             // 顶点着色器
             v2f vert (appdata v) {
                 v2f o;
@@ -61,7 +63,8 @@ Shader "Custom/RangeHint" {
     fixed4 col = _Color;
     float Mtime=_Mtime;
     col.a*=(1-4.5*abs(i.uv.y-center.y));
-    col.a*=(step(1,(1-i.uv.x)+_Time.y/Mtime));
+    col.a*=(step(1.0,(1.0-i.uv.x)+((_Time.y-_StartTime)/Mtime)));
+    col.a+=0.1;
     col.a *= inRect; // 矩形内显示，外部透明
     return col;
 }

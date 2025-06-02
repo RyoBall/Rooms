@@ -47,6 +47,7 @@ public class BigEnemy : EnemyBase
             shootcd = shootcdm;
             GameObject Bul=Instantiate(bullet, transform.position, Quaternion.identity);
             Bul.GetComponent<EnemyBullet>().attack = attack;
+            Bul.GetComponent<EnemyBullet>().Redir();
         }
     }
 

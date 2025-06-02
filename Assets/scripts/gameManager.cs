@@ -52,6 +52,7 @@ public class gameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X))
         {
             GetChipButton(1, 0, 0);
+            ChoosePanel.instance.Enter();
         }
         if (Input.GetKeyDown(KeyCode.K) && currentState != GameState.InFight && currentState != GameState.Rolling)
         {

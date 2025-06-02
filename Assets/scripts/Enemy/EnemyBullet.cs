@@ -14,9 +14,6 @@ public class EnemyBullet : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        Redir();
-
     }
     // Update is called once per frame
     void Update()
@@ -38,11 +35,11 @@ public class EnemyBullet : MonoBehaviour
         if (collision.tag == "Player")
         {
             Instantiate(disapearparticle, transform.position, Quaternion.identity);
-            Player.instance.health -= attack;
+            Player.instance.Attacked(attack);
             Destroy(gameObject);
         }
     }
-    void Redir() //调整子弹朝向
+    public void Redir() //调整子弹朝向
     {
         dir = Player.instance.transform.position - transform.position;
         dir = dir.normalized;

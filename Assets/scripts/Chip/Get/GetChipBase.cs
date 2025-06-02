@@ -41,8 +41,8 @@ public class GetChipBase : MonoBehaviour, IPointerClickHandler
     }
     public void EnterTex() 
     {
-        NameTex.instance.TMP_Text.text = gameManager.instance.chipsDic[type][order].GetComponent<ChipBase>().chipname+"End";
-        DescriptionTex.instance.TMP_Text.text = gameManager.instance.chipsDic[type][order].GetComponent<ChipBase>().description+"End";
+        NameTex.instance.TMP_Text.text = gameManager.instance.chipsDic[type][order].GetComponent<ChipBase>().chipname;
+        DescriptionTex.instance.TMP_Text.text = gameManager.instance.chipsDic[type][order].GetComponent<ChipBase>().description;
         NameTex.instance.TMP_Text.enabled = true;
         DescriptionTex.instance.TMP_Text.enabled = true;
     }

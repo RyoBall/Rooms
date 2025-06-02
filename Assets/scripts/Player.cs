@@ -44,8 +44,6 @@ public class Player : MonoBehaviour
     public float criticalfactor;
     public float criticalattackfactor;
     public int energy;
-    [Header("UPGrade")]
-    public List<UpgradeBase> Upgrades=new List<UpgradeBase>();
     // Start is called before the first frame update
     void Awake()
     {
@@ -127,5 +125,16 @@ public class Player : MonoBehaviour
         currentState.Exit();
         currentState = state;
         currentState.Enter();
+    }
+    public void Attacked(float damage) 
+    {
+        if (!attacked) 
+        {
+            if (Random.value > hidefactor) 
+            {
+                health -= damage;
+                ChangeState(new PlayerAttackedState());
+            }
+        }
     }
 }

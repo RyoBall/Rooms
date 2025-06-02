@@ -8,7 +8,8 @@ public class RangeControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Disappear());   
+        StartCoroutine(Disappear());
+        GetComponent<SpriteRenderer>().material.SetFloat("_StartTime",Time.time);
     }
 
     // Update is called once per frame

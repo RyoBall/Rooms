@@ -14,9 +14,9 @@ public class ShopObj : MonoBehaviour
     virtual protected void OnMouseDown()
     {
         //货币是什么？（判断钱是不是大于价格
-        if (Player.instance.energy>=price)
+        if (Player.instance.energy >= price)
         {
-            if(maxStock > 1 && Player.instance.energy >= price)
+            if (maxStock > 1 && Player.instance.energy >= price)
             {
                 Buy();
                 maxStock--;
@@ -24,8 +24,18 @@ public class ShopObj : MonoBehaviour
             }
         }
     }
-    virtual protected void Buy() 
+    virtual protected void Buy()
     {
         ;
+    }
+    protected void OnMouseEnter()
+    {
+        NameTex.instance.TMP_Text.text = itemName;
+        DescriptionTex.instance.TMP_Text.text = "Price:" + price.ToString() + "\r\n" + description;
+    }
+    private void OnMouseExit()
+    {
+        NameTex.instance.TMP_Text.text = null;
+        DescriptionTex.instance.TMP_Text.text = null;
     }
 }

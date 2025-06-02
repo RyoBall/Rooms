@@ -13,6 +13,8 @@ public class Boss : EnemyBase
     [Header("dash")]
     [SerializeField] private GameObject DashRange;
     [SerializeField] private float offset;
+    [Header("shoot")]
+    [SerializeField] GameObject bullet;
     public override void Dead()
     {
         base.Dead();
@@ -101,5 +103,8 @@ public class Boss : EnemyBase
         dashing = false;
         attack = attack / 4;
     }
-    #endregion 
+    #endregion
+    #region ShootSkill
+
+    #endregion
 }

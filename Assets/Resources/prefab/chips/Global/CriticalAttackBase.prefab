@@ -93,8 +93,7 @@ MonoBehaviour:
   getin: 0
   startposition: {fileID: 0}
   startpositioncount: 0
-  packpanel: {fileID: 0}
-  factor: 0
+  BagPanel: {fileID: 0}
   background: {fileID: 0}
-  chipname: 
-  description: 
+  chipname: "\u66B4\u51FB\u4F24\u5BB3\u5168\u5C40\u6A21\u5757"
+  description: "\u63D0\u9AD8\u66B4\u51FB\u4F24\u5BB320%"

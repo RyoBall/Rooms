@@ -75,8 +75,7 @@ public class EnemyBase : MonoBehaviour
         if (collision.tag == "Player" && icytime <= 0&&cd<=0)
         {
             cd = cdm;
-            if(Random.value>Player.instance.hidefactor)
-            Player.instance.health -= attack;
+            Player.instance.Attacked(attack);
         }
     }
     public void expdrop(int nums)
