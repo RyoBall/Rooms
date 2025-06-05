@@ -16,11 +16,13 @@ public class BigEnemy : EnemyBase
     }
     public override void Start()
     {
-        base.Start();
         health = 100 + 20 * enemyGeneratorController.instance.level;
         attack = 5 + 2 * enemyGeneratorController.instance.level;
+        speed = 1.5f;
+        costs = 10;
         cdm = 1;
         shootcdm = 5;
+        base.Start();
     }
     public override void Update()
     {

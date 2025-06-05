@@ -5,9 +5,9 @@ using UnityEngine.EventSystems;
 
 public class UpdateCritical : UpgradeBase
 {
-    public override void entereffect(RaycastResult result)
+    public override void entereffect(GameObject BackGround)
     {
-        base.entereffect(result);
+        base.entereffect(BackGround);
         Player.instance.criticalfactor += currentfactor;
     }
 

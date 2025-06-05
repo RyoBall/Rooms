@@ -7,7 +7,6 @@ public class Drink : MonoBehaviour
     public int level;
     private void OnMouseDown()
     {
-        Debug.Log(1);
         int num = Random.Range(0, 3);
         switch (level)
         {
@@ -26,25 +25,6 @@ public class Drink : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void Level2(int num)
-    {
-        switch (num)
-        {
-            case 0:
-                Player.instance.health = Player.instance.healthm;
-                break;
-            case 1:
-                Player.instance.healthm += 50;
-                break;
-            case 2:
-                Player.instance.healthm += 30;
-                //其实没必要用这里但是我写都写了多用用好啦
-                CheckAndRecover(30);
-                break;
-            default:
-                return;
-        }
-    }
 
     private static void Level0(int num)
     {
@@ -84,12 +64,31 @@ public class Drink : MonoBehaviour
                 return;
         }
     }
+    private void Level2(int num)
+    {
+        switch (num)
+        {
+            case 0:
+                Player.instance.health = Player.instance.healthm;
+                break;
+            case 1:
+                Player.instance.healthm += 50;
+                break;
+            case 2:
+                Player.instance.healthm += 30;
+                //其实没必要用这里但是我写都写了多用用好啦
+                CheckAndRecover(30);
+                break;
+            default:
+                return;
+        }
+    }
 
     private static void CheckAndRecover(int health)
     {
-        float current = Player.instance.currentSanity;
-        float max = Player.instance.maxSanity;
-        Player.instance.currentSanity = current + health < max  ?
+        float current = Player.instance.health;
+        float max = Player.instance.healthm;
+        Player.instance.health = current + health < max  ?
             current + health : max;
     }
 }

@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class ChoosePanel : MonoBehaviour
 {
     public static ChoosePanel instance;
     public List<GameObject> choice;
+    public Action ExitAction;
     void Start()
     {
         instance = this;
@@ -20,11 +22,13 @@ public class ChoosePanel : MonoBehaviour
     {
         StartCoroutine(IEnter());
         Blacker.instance.Enter();
+        gameManager.instance.currentState = gameManager.GameState.Choosing;
     }
     public void Exit() 
     {
         StartCoroutine(IExit());   
         Blacker.instance.Exit();
+        gameManager.instance.currentState = gameManager.GameState.Normal;
     }
     void Afterexit() 
     {
@@ -33,6 +37,7 @@ public class ChoosePanel : MonoBehaviour
             Destroy(choice[i]);
         }
         choice.Clear();
+        ExitAction.Invoke();
     }
     IEnumerator IEnter (int i=0)
     {

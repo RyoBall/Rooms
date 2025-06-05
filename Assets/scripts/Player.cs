@@ -6,10 +6,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public static Player instance;
-    //State
-    public PlayerState currentState;
-    public float attackedtime;
-    public bool attacked;
     [Header("move")]
     public Rigidbody2D rb;
     public float speed;
@@ -22,10 +18,6 @@ public class Player : MonoBehaviour
     public float moveParticleCd;
     public float moveParticleCdm;
     public GameObject moveParticle;
-    [Header("shoot")]
-    public float cd;
-    public float cdm;
-    public GameObject bullet;
     [Header("level")]
     public float exp;
     public float expm;
@@ -33,9 +25,11 @@ public class Player : MonoBehaviour
     public float levelfactor;
     public int unlockpoint;
     public int specialChipGetCount;
-    [Header("State")]
-    public float currentSanity;
-    public float maxSanity;
+    public int ChipGetCount;
+    [Header("AttackedState")]
+    public PlayerState currentState;
+    public float attackedtime;
+    public bool attacked;
     [Header("factor")]
     public float health;
     public float healthm;
@@ -58,6 +52,8 @@ public class Player : MonoBehaviour
         currentState = new PlayerNormalState();
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
+        enemyGeneratorController.instance.ExitAction += GetChipReward;
+        ChoosePanel.instance.ExitAction += GetChipReward;
     }
     // Update is called once per frame
     void Update()
@@ -89,13 +85,13 @@ public class Player : MonoBehaviour
     #region AnimationAndMove
     public void BeginMove(int direction)
     {
-        transform.DOMove(transform.position+Vector3.right*direction*movedistance, moveTime);
+        transform.DOMove(transform.position + Vector3.right * direction * movedistance, moveTime);
         sprite.DOColor(new Color(1, 1, 1, 0), moveTime);
     }
 
     public void EndMove(int direction)
     {
-        transform.DOMove(transform.position+Vector3.right*direction*movedistance, moveTime);
+        transform.DOMove(transform.position + Vector3.right * direction * movedistance, moveTime);
         sprite.DOColor(new Color(1, 1, 1, 1), moveTime);
     }
     #endregion
@@ -103,9 +99,9 @@ public class Player : MonoBehaviour
     {
         if (exp >= expm)
         {
-            exp = 0;
-            expm = 10 + level * levelfactor;
             level++;
+            exp = 0;
+            expm += 10;
             levelupreward();
         }
     }
@@ -116,10 +112,29 @@ public class Player : MonoBehaviour
         healthm += 10;
         health += 10;
         specialChipGetCount += 1;
+        ChipGetCount += 1;
+    }
+    void GetChipReward()
+    {
         if (specialChipGetCount >= 5)
         {
-            specialChipGetCount = 0;
-            gameManager.instance.GetChip(3, Random.Range(0, gameManager.instance.chipsDic[3].Count));
+            specialChipGetCount -= 5;
+            for (int i = 0; i < 3; i++)
+            {
+                gameManager.instance.GetChipButton(4, i, i);
+            }
+            ChoosePanel.instance.Enter();
+        }
+        else if (ChipGetCount >= 1)
+        {
+            ChipGetCount -= 1;
+            for (int i = 0; i < 3; i++)
+            {
+                ChoosePanel.instance.Enter();
+                int j = Random.Range(1, 4);
+                gameManager.instance.GetChipButton(j, gameManager.instance.chipsDic[j].Count, i);
+            }
+            ChoosePanel.instance.Enter();
         }
     }
     public void ChangeState(PlayerState state)

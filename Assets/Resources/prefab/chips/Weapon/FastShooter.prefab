@@ -92,11 +92,6 @@ MonoBehaviour:
   position: {x: 0, y: 0}
   chosen: 0
   getin: 0
-  startposition: {fileID: 0}
-  startpositioncount: 0
-  packpanel: {fileID: 0}
-  factor: 0
-  background: {fileID: 0}
   chipname: 
   description: 
   ins: {fileID: 0}
@@ -105,7 +100,7 @@ MonoBehaviour:
   attackfactor: 0.25
   range: 15
   cdm: 0.2
-  speed: 0
+  repelforce: 0.5
 --- !u!60 &8294140111520745712
 PolygonCollider2D:
   m_ObjectHideFlags: 0

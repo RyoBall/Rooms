@@ -12,7 +12,9 @@ public class enemyGeneratorController : MonoBehaviour
     public Transform t3;//用小键盘数字的位置代指方位
     public Transform t7;
     public Transform foggylevel;
-    public GameObject enemyGenerator;
+    public List<GameObject> enemyGenerators;
+    public List<EnemyBase> enemyGeneratorsScripts;
+    private float AllWeights = 0;
     public float Correctionfactor;
     public float cd;
     public float cdm;
@@ -22,13 +24,19 @@ public class enemyGeneratorController : MonoBehaviour
     public bool inend;//最终阶段
     public int level;
     public Action ExitAction = null;
-    public List<GameObject> Enemys=new List<GameObject>();
+    public List<GameObject> Enemys = new List<GameObject>();
     // Start is called before the first frame update
     void Awake()
     {
         instance = this;
     }
-
+    private void Start()
+    {
+        for (int i = 0; i < enemyGeneratorsScripts.Count; i++)
+        {
+            AllWeights += 1/enemyGeneratorsScripts[i].costs;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -55,12 +63,22 @@ public class enemyGeneratorController : MonoBehaviour
     {
         fightTime = 0;
     }
-    void Generate(int num)
+    void Generate(float costs)
     {
         Vector3 position = new Vector3(Random.Range(t1.position.x, t3.position.x), Random.Range(t1.position.y, t7.position.y), 0);
-        for (int i = 0; i < num; i++)
+        float currentcost = 0;
+        while (currentcost < costs)
         {
-            Instantiate(enemyGenerator, new Vector3(position.x + Random.Range(-Correctionfactor, Correctionfactor), position.y + Random.Range(-Correctionfactor, Correctionfactor), 0), Quaternion.identity);
+            int currentenemyPointer = 0;//记录当前所指向的怪物
+            float randomweight = Random.Range(0, AllWeights);
+            float currentweight = 1/enemyGeneratorsScripts[0].costs;//在随机权重中当前记载的权重
+            while (currentweight < randomweight) 
+            {
+                currentenemyPointer++;
+                currentweight += enemyGeneratorsScripts[currentenemyPointer].costs;
+            }
+            Instantiate(enemyGenerators[currentenemyPointer], new Vector3(position.x + Random.Range(-Correctionfactor, Correctionfactor), position.y + Random.Range(-Correctionfactor, Correctionfactor), 0), Quaternion.identity);
+            currentcost += enemyGeneratorsScripts[currentenemyPointer].costs;
         }
     }
     void CDCount()
@@ -69,7 +87,7 @@ public class enemyGeneratorController : MonoBehaviour
         if (cd <= 0 && fightTime >= 0)
         {
             cd = cdm;
-            Generate(3);
+            Generate(15+level*5);
         }
     }
     void FightTimeCount()
@@ -100,18 +118,23 @@ public class enemyGeneratorController : MonoBehaviour
     }
     void exit()
     {
+        if(level<=2)
         level++;
-        Player.instance.targetRoom.GetComponent<RoomBase>().Removefog();
-        Player.instance.targetRoom.GetComponent<RoomBase>().GetComponent<SpriteRenderer>().color = Player.instance.targetRoom.GetComponent<RoomBase>().Startcolor;
+        if (Player.instance.targetRoom != null)
+        {
+            Player.instance.targetRoom.GetComponent<RoomBase>().Removefog();
+            Player.instance.targetRoom.GetComponent<RoomBase>().GetComponent<SpriteRenderer>().color = Player.instance.targetRoom.GetComponent<RoomBase>().Startcolor;
+        }
         Player.instance.targetRoom.GetComponent<RoomBase>().EnterAction?.Invoke();
         Player.instance.targetRoom = null;
         ExitAction?.Invoke();
-        for(int i = 0; i < Enemys.Count; i++) 
+        for (int i = 0; i < Enemys.Count; i++)
         {
             Destroy(Enemys[i]);
         }
         Enemys.Clear();
         gameManager.instance.currentState = gameManager.GameState.Normal;
+        Player.instance.rb.velocity = Vector2.zero;
     }
     IEnumerator FightHard(float time)
     {

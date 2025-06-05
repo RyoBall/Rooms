@@ -9,6 +9,7 @@ public class shooter : WeaponBase
     public int doubleattackpoint;
     public float speedfactor;
     public float repelforce;
+    public Collider2D RangeChecer;
     public override void Attack()
     {
         base.Attack();
@@ -44,7 +45,6 @@ public class shooter : WeaponBase
         ins.GetComponent<bullet>().dir = dir;
         ins.GetComponent<bullet>().attack=AttackCount();
         ins.GetComponent<bullet>().dad=this;
-        ins.GetComponent<bullet>().speedfactor=speedfactor;
     }
     public override void DIR()
     {
@@ -54,10 +54,19 @@ public class shooter : WeaponBase
     public override void Start()
     {
         base.Start();
+        RangeChecer = GetComponent<Collider2D>();
     }
 
     public override void Update()
     {
         base.Update();
+        if (gameManager.instance.currentState == gameManager.GameState.InFight) 
+        {
+            RangeChecer.enabled = true;
+        }
+        else
+        {
+            RangeChecer.enabled = false;
+        }
     }
 }

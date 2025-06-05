@@ -9,7 +9,7 @@ public class Recover : ShopObj
         base.Buy();
         float current = Player.instance.health;
         float max = Player.instance.healthm;
-        Player.instance.currentSanity = current < max * 0.5f ?
+        Player.instance.health = current < max * 0.5f ?
             current + max * 0.5f : max;
     }
 

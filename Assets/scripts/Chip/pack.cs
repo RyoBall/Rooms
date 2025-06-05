@@ -8,9 +8,9 @@ public class pack : ChipBase
 {
     public GameObject ins;//生成的武器
     public GameObject prefab;//武器预制体
-    public override void entereffect(RaycastResult result)
+    public override void entereffect(GameObject BackGround)
     {
-        base.entereffect(result);
+        base.entereffect(BackGround);
         if (ins == null)
             ins = Instantiate(prefab, Player.instance.transform.position, Quaternion.identity, Player.instance.transform);
     }

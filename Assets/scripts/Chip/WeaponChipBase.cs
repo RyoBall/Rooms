@@ -11,9 +11,10 @@ public class WeaponChipBase : ChipBase//武器的数值由芯片决定
     public float attackfactor;
     public float range;
     public float cdm;
-    public override void entereffect(RaycastResult result)
+    public float repelforce;
+    public override void entereffect(GameObject BackGround)
     {
-        base.entereffect(result);
+        base.entereffect(BackGround);
         if (ins == null) 
         {
             ins = Instantiate(prefab, Player.instance.transform.position, Quaternion.identity, Player.instance.transform);

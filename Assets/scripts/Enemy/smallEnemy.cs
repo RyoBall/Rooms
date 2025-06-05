@@ -21,13 +21,14 @@ public class smallEnemy : EnemyBase
 
     public override void Start()
     {
-        base.Start();
         health = 50 + 10 * enemyGeneratorController.instance.level;
         attack = 5 + 2 * enemyGeneratorController.instance.level;
         cdm = 1;
+        speed = 4;
+        costs = 5;
+        base.Start();
     }
     public override void Update()
-
     {
         base.Update();
     }

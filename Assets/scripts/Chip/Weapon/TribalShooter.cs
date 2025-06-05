@@ -28,7 +28,6 @@ public class TribalShooter : shooter
         ins.GetComponent<bullet>().dir = dir;
         ins.GetComponent<bullet>().attack = AttackCount();
         ins.GetComponent<bullet>().dad = this;
-        ins.GetComponent<bullet>().speedfactor = speedfactor;
     }
 
     public override void Attack()

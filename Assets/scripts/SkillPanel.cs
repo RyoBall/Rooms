@@ -11,11 +11,14 @@ public class SkillPanel : MonoBehaviour
     public bool exit;
     public float enterY;
     public float exitY;
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
         gameManager.instance.UIEnter += Enter;
         gameManager.instance.UIExit += Exit;
     }
@@ -32,7 +35,7 @@ public class SkillPanel : MonoBehaviour
     {
         GetComponent<RectTransform>().DOAnchorPosY(exitY, .5f);
     }
-    public void Enter() 
+    public void Enter()
     {
         GetComponent<RectTransform>().DOAnchorPosY(enterY, .5f);
     }

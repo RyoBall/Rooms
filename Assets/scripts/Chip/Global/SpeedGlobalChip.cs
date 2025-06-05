@@ -5,9 +5,9 @@ using UnityEngine.EventSystems;
 
 public class SpeedGlobalChip : GlobalChipBase
 {
-    public override void entereffect(RaycastResult result)
+    public override void entereffect(GameObject BackGround)
     {
-        base.entereffect(result);
+        base.entereffect(BackGround);
         Player.instance.speed = Player.instance.speed * 1.1f;
     }
 

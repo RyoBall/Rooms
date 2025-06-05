@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 
 public class EnemyBase : MonoBehaviour
 {
+    public float costs;
     private SpriteRenderer render;
     public Rigidbody2D rb;
     public Vector2 dir;
@@ -40,6 +41,12 @@ public class EnemyBase : MonoBehaviour
         Dead();
         CDCount();
         icytimecount();
+        RecoverSpeed();
+    }
+    void RecoverSpeed() 
+    {
+        if (speed < normalspeed)
+            speed += Time.deltaTime*normalspeed*2;
     }
     protected virtual void CDCount()
     {
@@ -104,14 +111,10 @@ public class EnemyBase : MonoBehaviour
     }
     private void Repel(float repelforce)
     {
+        if (speed > 0)
+            speed = 0;
         speed -= repelforce / RepelResistance;
-        StartCoroutine(RepelRoutine());
-    }
-    IEnumerator RepelRoutine()
-    {
-        speed += normalspeed * Time.deltaTime;
-        yield return new WaitForSeconds(0);
-        if (speed < normalspeed)
-            StartCoroutine(RepelRoutine());
+        if (speed < -4)
+            speed = -4;
     }
 }

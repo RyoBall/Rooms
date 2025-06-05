@@ -5,9 +5,9 @@ using UnityEngine.EventSystems;
 
 public class shooterChip : WeaponChipBase
 {
-    public override void entereffect(RaycastResult result)
+    public override void entereffect(GameObject BackGround)
     {
-        base.entereffect(result);
+        base.entereffect(BackGround);
     }
 
     public override void exiteffect()

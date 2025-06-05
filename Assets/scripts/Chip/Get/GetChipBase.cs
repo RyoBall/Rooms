@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class GetChipBase : MonoBehaviour, IPointerClickHandler
+public class GetChipBase : MonoBehaviour, IPointerClickHandler,IPointerEnterHandler,IPointerExitHandler
 {
     public int type;
     public int order;
@@ -52,5 +52,15 @@ public class GetChipBase : MonoBehaviour, IPointerClickHandler
         DescriptionTex.instance.TMP_Text.enabled = false;
         NameTex.instance.TMP_Text.text = null;
         DescriptionTex.instance.TMP_Text.text = null;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        EnterAction.Invoke();
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        ExitAction.Invoke();
     }
 }

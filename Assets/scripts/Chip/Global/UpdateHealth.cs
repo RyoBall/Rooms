@@ -5,9 +5,9 @@ using UnityEngine.EventSystems;
 
 public class UpdateHealth :UpgradeBase
 {
-    public override void entereffect(RaycastResult result)
+    public override void entereffect(GameObject BackGround)
     {
-        base.entereffect(result);
+        base.entereffect(BackGround);
         Player.instance.healthm += currentfactor;
         Player.instance.health += currentfactor;
     }

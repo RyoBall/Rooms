@@ -21,10 +21,12 @@ public class normalenemy : EnemyBase
 
     public override void Start()
     {
-        base.Start();
         health = 20 + 10 * enemyGeneratorController.instance.level;
         attack = 5;
         cdm = 1;
+        speed = 2.5f;
+        costs = 2;
+        base.Start();
     }
 
     public override void Update()

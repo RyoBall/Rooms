@@ -5,9 +5,9 @@ using UnityEngine.EventSystems;
 
 public class CriticalAttackGlobalChip : GlobalChipBase
 {
-    public override void entereffect(RaycastResult result)
+    public override void entereffect(GameObject BackGround)
     {
-        base.entereffect(result);
+        base.entereffect(BackGround);
         Player.instance.criticalattackfactor += 0.25f;
     }
 

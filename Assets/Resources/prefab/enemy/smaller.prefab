@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7457649895362474327}
   - component: {fileID: 2828312977479701789}
   - component: {fileID: 1191253128360259751}
-  - component: {fileID: 533446023338599768}
   - component: {fileID: 2800023597242915732}
+  - component: {fileID: 1746209617835764671}
   m_Layer: 8
   m_Name: smaller
   m_TagString: Enemy
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7174913467857534009}
@@ -133,31 +133,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &533446023338599768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890700637540671305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd0a2633a78684e4f83795aa871efdf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  dir: {x: 0, y: 0}
-  speed: 6
-  normalspeed: 0
-  health: 3
-  deadparticle: {fileID: 760237439806765177, guid: 10b852a1f2125e74394e8644b23d8352, type: 3}
-  exp: {fileID: 7681059151805284848, guid: a90204f0465e0974dbdedb6501cce52c, type: 3}
-  CorrectingFactor: 1
-  dropExpNum: 3
-  attack: 0
-  cd: 0
-  cdm: 0
-  icytime: 0
 --- !u!50 &2800023597242915732
 Rigidbody2D:
   serializedVersion: 4
@@ -185,6 +160,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1746209617835764671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890700637540671305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47c3b526d36b774bab6ea53fdd18b39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  costs: 5
+  rb: {fileID: 0}
+  dir: {x: 0, y: 0}
+  speed: 0
+  normalspeed: 0
+  health: 0
+  deadparticle: {fileID: 760237439806765177, guid: 10b852a1f2125e74394e8644b23d8352, type: 3}
+  exp: {fileID: 7681059151805284848, guid: a90204f0465e0974dbdedb6501cce52c, type: 3}
+  CorrectingFactor: 0
+  dropExpNum: 0
+  attack: 0
+  cd: 0
+  cdm: 0
+  icytime: 0
+  RepelResistance: 1
+  bullet: {fileID: 0}
 --- !u!1 &4988106555429100347
 GameObject:
   m_ObjectHideFlags: 0

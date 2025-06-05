@@ -19,9 +19,9 @@ public class bulletEnhanceBase : EnhanceChipBase
         base.chipexiteffect(chip);
     }
 
-    public override void entereffect(RaycastResult result)
+    public override void entereffect(GameObject BackGround)
     {
-        base.entereffect(result);
+        base.entereffect(BackGround);
         partA.GetComponent<occupy>().background.getin = true;
     }
 
@@ -45,6 +45,7 @@ public class bulletEnhanceBase : EnhanceChipBase
     public override void OnPointerUp(PointerEventData eventData)
     {
         chosen = false;
+        bool Alreadygetin = false;
         GetComponent<Image>().raycastTarget = true;
         List<RaycastResult> results = new List<RaycastResult>();
         List<RaycastResult> Aresults = new List<RaycastResult>();
@@ -52,14 +53,13 @@ public class bulletEnhanceBase : EnhanceChipBase
         Vector2 screenPos = RectTransformUtility.WorldToScreenPoint(null, partA.transform.position);
         PointerEventData eventDataA = new PointerEventData(EventSystem.current);
         eventDataA.position = screenPos;
-        Debug.Log(eventData.position);
-        Debug.Log(eventDataA.position);
         EventSystem.current.RaycastAll(eventDataA, Aresults);
         UIframe Aback = null;
         foreach (var result in Aresults)
         {
-            if (result.gameObject.layer == GetinChips.UIcaolayer && result.gameObject.GetComponent<UIframe>().unlock && !result.gameObject.GetComponent<UIframe>().getin)
+            if (result.gameObject.layer == GetinChips.UIcaolayer && result.gameObject.GetComponent<UIframe>().unlock && !result.gameObject.GetComponent<UIframe>().getin&&!Alreadygetin)
             {
+                Alreadygetin = true;
                 Aback = result.gameObject.GetComponent<UIframe>();
             }
         }
@@ -72,7 +72,7 @@ public class bulletEnhanceBase : EnhanceChipBase
                 if (result.gameObject.layer == GetinChips.UIcaolayer && result.gameObject.GetComponent<UIframe>().unlock && !result.gameObject.GetComponent<UIframe>().getin)
                 {
                     partA.GetComponent<occupy>().background = Aback;
-                    entereffect(result);
+                    entereffect(result.gameObject);
                 }
             }
         }

@@ -13,8 +13,6 @@ public class Boss : EnemyBase
     [Header("dash")]
     [SerializeField] private GameObject DashRange;
     [SerializeField] private float offset;
-    [Header("shoot")]
-    [SerializeField] GameObject bullet;
     public override void Dead()
     {
         base.Dead();

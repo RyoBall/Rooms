@@ -8,9 +8,9 @@ public class UpgradeBase : GlobalChipBase
     public int currentfactor;
     public int growfactor;
     public int maxfactor;
-    public override void entereffect(RaycastResult result)
+    public override void entereffect(GameObject BackGround)
     {
-        base.entereffect(result);
+        base.entereffect(BackGround);
         enemyGeneratorController.instance.ExitAction+=(Upgrade);
     }
 

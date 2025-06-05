@@ -15,7 +15,8 @@ public class FightText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tMP_Text.text = enemyGeneratorController.instance.fightTime.ToString();
+        int time = (int)enemyGeneratorController.instance.fightTime;
+        tMP_Text.text = time.ToString();
         if (enemyGeneratorController.instance.fightTime <= 0)
             tMP_Text.enabled = false;
         else

@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0a2633a78684e4f83795aa871efdf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  costs: 3
   rb: {fileID: 0}
   dir: {x: 0, y: 0}
   speed: 4
@@ -158,6 +159,8 @@ MonoBehaviour:
   cd: 0
   cdm: 0
   icytime: 0
+  RepelResistance: 1
+  bullet: {fileID: 0}
 --- !u!50 &2800023597242915732
 Rigidbody2D:
   serializedVersion: 4

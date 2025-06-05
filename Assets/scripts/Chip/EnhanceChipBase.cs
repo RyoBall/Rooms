@@ -31,9 +31,9 @@ public class EnhanceChipBase : ChipBase
     {
         base.OnPointerUp(eventData);
     }
-    public override void entereffect(RaycastResult result)
+    public override void entereffect(GameObject BackGround)
     {
-        base.entereffect(result);
+        base.entereffect(BackGround);
         //checAround();
     }
     public override void exiteffect()

@@ -30,15 +30,17 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
 
     public virtual void OnPointerUp(PointerEventData eventData)
     {
+        bool AlreadyGetin = false;//是否已经找到对应的背景（防止背景重叠导致同时触发多个背景）
         chosen = false;
         GetComponent<Image>().raycastTarget = true;
         List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(eventData, results);
         foreach (var result in results)
         {
-            if (result.gameObject.layer == GetinChips.UIcaolayer && result.gameObject.GetComponent<UIframe>().unlock && !result.gameObject.GetComponent<UIframe>().getin)
+            if (result.gameObject.layer == GetinChips.UIcaolayer && result.gameObject.GetComponent<UIframe>().unlock && !result.gameObject.GetComponent<UIframe>().getin&&!AlreadyGetin)
             {
-                entereffect(result);
+                AlreadyGetin = true;
+                entereffect(result.gameObject);
             }
         }
         if (!getin)
@@ -51,7 +53,7 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     public virtual void Start()
     {
         startposition = gameManager.instance.backpacktrans[startpositioncount];
-        BagPanel = transform.parent.gameObject;
+        BagPanel = Bag.instance.gameObject;
         rectTransform = GetComponent<RectTransform>();
     }
 
@@ -60,13 +62,14 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     {
 
     }
-    public virtual void entereffect(RaycastResult result)
+    public virtual void entereffect(GameObject BackGround)
     {
-        background = result.gameObject.GetComponent<UIframe>();
+        background = BackGround.GetComponent<UIframe>();
+        BackGround.GetComponent<RectTransform>().SetAsLastSibling();
         background.getin = true;
-        GetComponent<RectTransform>().position = result.gameObject.GetComponent<RectTransform>().position;
-        transform.SetParent(result.gameObject.transform);
-        position = result.gameObject.GetComponent<UIframe>().position;
+        GetComponent<RectTransform>().position = BackGround.GetComponent<RectTransform>().position;
+        transform.SetParent(BackGround.transform);
+        position = BackGround.GetComponent<UIframe>().position;
         getin = true;
         GetinChips.instance.chips.Add(this);
     }
