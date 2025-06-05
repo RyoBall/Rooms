@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class bullet : MonoBehaviour
 {
@@ -9,7 +11,7 @@ public class bullet : MonoBehaviour
     public Vector2 dir;
     public float speed;
     public float speedfactor;
-    public WeaponBase dad;
+    public shooter dad;
     public GameObject disapearparticle;
     public GameObject damagetex;
     public float damagetexcorecfactor;
@@ -21,7 +23,9 @@ public class bullet : MonoBehaviour
     private List<GameObject> enemysin = new List<GameObject>();
     [Header("±¨’®")]
     private int bombpoint;
-    [SerializeField] private GameObject bomber;
+    [SerializeField] public GameObject bomber;
+    [Header("»º…’")]
+    public Action<EnemyBase> BuffAction;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,11 +60,11 @@ public class bullet : MonoBehaviour
             collision.GetComponent<EnemyBase>().health -= attack;
             GameObject tex = Instantiate(damagetex, transform.position + new Vector3(Random.Range(-damagetexcorecfactor, damagetexcorecfactor), Random.Range(-damagetexcorecfactor, damagetexcorecfactor), 0), Quaternion.identity);
             tex.GetComponentInChildren<TMP_Text>().text = attack.ToString();
-            collision.GetComponent<EnemyBase>().attackedAction.Invoke();
+            collision.GetComponent<EnemyBase>().attackedAction.Invoke(this);
+            //chipbuff
+            dad.AttackAction?.Invoke(collision.GetComponent<EnemyBase>(), this);
             //icychec
             collision.GetComponent<EnemyBase>().icytime += dad.icyattacklevel;
-            //bombchec
-            bombroutine(transform.position);
             //’€…‰chec
             nochec = collision.gameObject;
             if (bumpoint > 0)

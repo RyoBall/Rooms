@@ -9,10 +9,10 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     public Vector2 position;
     public bool chosen;
     public bool getin;
-    public RectTransform startposition;
-    public int startpositioncount;//初始位置ID
-    public GameObject BagPanel;//芯片背包
-    public UIframe background;//嵌入后的背景
+    private RectTransform startposition;
+    private int startpositioncount;//初始位置ID
+    private GameObject BagPanel;//芯片背包
+    private UIframe background;//嵌入后的背景
     protected RectTransform rectTransform;
     [Header("信息")]
     public string chipname;

@@ -1,7 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using Quaternion = UnityEngine.Quaternion;
+using Random = UnityEngine.Random;
+using Vector3 = UnityEngine.Vector3;
 
 public class WeaponBase : MonoBehaviour
 {
@@ -21,9 +27,14 @@ public class WeaponBase : MonoBehaviour
     public int bumattacklevel;
     public int bombattacklevel;
     public int heavyattacklevel;
+    public int fireattacklevel;
+    [Header("AttackBuff")]
+    public Action<EnemyBase, bullet> AttackAction=null;
     public virtual void Start()
     {
         rangechecer=GetComponent<CircleCollider2D>();
+        AttackAction += FireEffect;
+        AttackAction += BombEffect;
     }
 
     // Update is called once per frame
@@ -90,6 +101,38 @@ public class WeaponBase : MonoBehaviour
         if (collision.tag == "Enemy")
         {
             enemysin.Remove(collision.gameObject);
+        }
+    }
+    public void FireEffect(EnemyBase target, bullet bullet)
+    {
+        if (fireattacklevel > 0)
+            StartCoroutine(FireRoutine(target, bullet, 5));
+    }
+    IEnumerator FireRoutine(EnemyBase target, bullet bullet, float time)
+    {
+        if (time >= 0)
+        {
+            target.health -= bullet.attack * (0.1f + 0.1f * bullet.dad.fireattacklevel);
+            GameObject tex = Instantiate(bullet.damagetex, transform.position + new Vector3(Random.Range(-bullet.damagetexcorecfactor, bullet.damagetexcorecfactor), Random.Range(-bullet.damagetexcorecfactor, bullet.damagetexcorecfactor), 0), Quaternion.identity);
+            tex.GetComponentInChildren<TMP_Text>().text = bullet.attack.ToString();
+        }
+        yield return new WaitForSeconds(1);
+        if (time >= 0)
+            StartCoroutine(FireRoutine(target, bullet, time - 1));
+    }
+    public void BombEffect(EnemyBase target, bullet bullet) 
+    {
+        if (bombattacklevel > 0)
+            StartCoroutine(BombRoutine(target,bullet,bombattacklevel));
+    }
+    IEnumerator BombRoutine(EnemyBase target, bullet bullet,int bombpoints)
+    {
+        yield return new WaitForSeconds(.05f);
+        if (bombpoints > 1)
+        {
+            GameObject bomb = Instantiate(bullet.bomber, target.transform.position, Quaternion.identity);
+            bomb.GetComponent<bomb>().damage = (int)(attack * .3f);
+            StartCoroutine(BombRoutine(target,bullet,bombpoints-1));
         }
     }
 }

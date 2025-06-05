@@ -11,6 +11,7 @@ public class UnknownRoom : MonoBehaviour, RoomPosition
     {
         if (RoomBase.Correc(Position.x - Player.instance.currentRoom.GetComponent<RoomBase>().Position.x) + RoomBase.Correc(Position.y - Player.instance.currentRoom.GetComponent<RoomBase>().Position.y) <= 1 && gameManager.instance.currentState == gameManager.GameState.Normal)
         {
+            Debug.Log("Clicked");
             if (segment.instance.targetroom == null)
             {
                 segment.instance.targetroom = this;

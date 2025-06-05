@@ -21,7 +21,8 @@ public class enemyGeneratorController : MonoBehaviour
     public float fightTimem;
     public bool inend;//×îÖÕ½×¶Î
     public int level;
-    public Action ExitAction = () => Debug.Log(1);
+    public Action ExitAction = null;
+    public List<GameObject> Enemys=new List<GameObject>();
     // Start is called before the first frame update
     void Awake()
     {
@@ -101,9 +102,15 @@ public class enemyGeneratorController : MonoBehaviour
     {
         level++;
         Player.instance.targetRoom.GetComponent<RoomBase>().Removefog();
-        Player.instance.targetRoom.GetComponent<RoomBase>().EnterAction.Invoke();
+        Player.instance.targetRoom.GetComponent<RoomBase>().GetComponent<SpriteRenderer>().color = Player.instance.targetRoom.GetComponent<RoomBase>().Startcolor;
+        Player.instance.targetRoom.GetComponent<RoomBase>().EnterAction?.Invoke();
         Player.instance.targetRoom = null;
-        ExitAction.Invoke();
+        ExitAction?.Invoke();
+        for(int i = 0; i < Enemys.Count; i++) 
+        {
+            Destroy(Enemys[i]);
+        }
+        Enemys.Clear();
         gameManager.instance.currentState = gameManager.GameState.Normal;
     }
     IEnumerator FightHard(float time)

@@ -8,6 +8,7 @@ public class PlayerAttackedState : PlayerState
     public override void Enter()
     {
         base.Enter();
+        Player.instance.AttackedAnim();
         Player.instance.attacked = true;
         attackedtime = Player.instance.attackedtime;
     }
@@ -19,7 +20,7 @@ public class PlayerAttackedState : PlayerState
     }
 
     public override void update()
-    {
+    {   
         base.update();
         attackedtime -= Time.deltaTime;
         if (attackedtime <= 0) 

@@ -21,14 +21,15 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] protected float cdm;
     [Header("state")]
     public float icytime;
+    [SerializeField] protected float RepelResistance = 1;
+    [SerializeField] protected GameObject bullet;
     // Start is called before the first frame update
-    public Action attackedAction;
+    public Action<bullet> attackedAction=null;
     public virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         render = GetComponent<SpriteRenderer>();
-        attackedAction += attackanim;
-        attackedAction += Repel;
+        attackedAction += AttackedAction;
         normalspeed = speed;
     }
 
@@ -40,9 +41,9 @@ public class EnemyBase : MonoBehaviour
         CDCount();
         icytimecount();
     }
-    protected virtual void CDCount() 
+    protected virtual void CDCount()
     {
-        if (cd > 0&&icytime<=0)
+        if (cd > 0 && icytime <= 0)
             cd -= Time.deltaTime;
     }
     public virtual void move()
@@ -58,6 +59,7 @@ public class EnemyBase : MonoBehaviour
     {
         if (health <= 0)
         {
+            enemyGeneratorController.instance.Enemys.Remove(gameObject);
             Instantiate(deadparticle, transform.position, Quaternion.identity);
             expdrop(dropExpNum);
             Destroy(gameObject);
@@ -72,7 +74,7 @@ public class EnemyBase : MonoBehaviour
     }
     public virtual void OnTriggerStay2D(Collider2D collision)//touch 
     {
-        if (collision.tag == "Player" && icytime <= 0&&cd<=0)
+        if (collision.tag == "Player" && icytime <= 0 && cd <= 0)
         {
             cd = cdm;
             Player.instance.Attacked(attack);
@@ -85,6 +87,11 @@ public class EnemyBase : MonoBehaviour
             Instantiate(exp, transform.position + new Vector3(Random.Range(-CorrectingFactor, CorrectingFactor), Random.Range(-CorrectingFactor, CorrectingFactor), 0), Quaternion.identity);
         }
     }
+    protected void AttackedAction(bullet source)
+    {
+        attackanim();
+        Repel(source.dad.repelforce);
+    }
     protected void attackanim()
     {
         render.color = Color.red;
@@ -95,12 +102,12 @@ public class EnemyBase : MonoBehaviour
         yield return new WaitForSeconds(0);
         render.color = Color.white;
     }
-    private void Repel() 
+    private void Repel(float repelforce)
     {
-        speed = -normalspeed;
-        StartCoroutine(RepelRoutine());   
+        speed -= repelforce / RepelResistance;
+        StartCoroutine(RepelRoutine());
     }
-    IEnumerator RepelRoutine() 
+    IEnumerator RepelRoutine()
     {
         speed += normalspeed * Time.deltaTime;
         yield return new WaitForSeconds(0);

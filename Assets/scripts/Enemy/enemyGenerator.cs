@@ -22,7 +22,8 @@ public class enemyGenerator : MonoBehaviour
         }
         if (cd <= 0) 
         {
-            Instantiate(enemy, transform.position, transform.rotation);
+            GameObject Enemy=Instantiate(enemy, transform.position, transform.rotation);
+            enemyGeneratorController.instance.Enemys.Add(Enemy);
             Destroy(gameObject);   
         }
     }

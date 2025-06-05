@@ -15,7 +15,7 @@ public class RoomCom : ShopObj
         drink = 1,
         research = 2,
     }
-    private RoomType roomType;
+    [SerializeField]private RoomType roomType;
     //升级时点亮方块
     public GameObject[] levelCube;
     private string rommName;

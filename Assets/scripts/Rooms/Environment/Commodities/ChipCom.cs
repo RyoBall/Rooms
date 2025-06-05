@@ -15,7 +15,7 @@ public class ChipCom : ShopObj
     }
     private ChipType chipType;
     private int order;
-
+    GameObject inschip;
     //需要四个
     protected override void OnMouseDown()
     {
@@ -33,7 +33,6 @@ public class ChipCom : ShopObj
         if (chipType == ChipType.random)
             chipType = (ChipType)Random.Range(1, 4);
         order = Random.Range(0, gameManager.instance.chipsDic[(int)chipType].Count);
-        insSprite();
         ChipBase chipBase = gameManager.instance.chipsDic[(int)chipType][order].GetComponent<ChipBase>();
         itemID = "Chip";
         itemName = chipBase.chipname;
@@ -43,7 +42,7 @@ public class ChipCom : ShopObj
     }
     void insSprite() //获取芯片商品图片
     {
-        GameObject inschip = Instantiate(gameManager.instance.chipsDic[(int)chipType][order], transform.position, Quaternion.identity);
+        inschip = Instantiate(gameManager.instance.chipsDic[(int)chipType][order], ChipShow.instance.transform.position, Quaternion.identity,ChipShow.instance.transform);
         Destroy(inschip.GetComponent<ChipBase>());
         if (chipType == ChipType.BulletEffect)
         {
@@ -56,5 +55,17 @@ public class ChipCom : ShopObj
         base.Buy();
         gameManager.instance.GetChipButton((int)chipType, order, 2);
         ChoosePanel.instance.Enter();
+    }
+
+    protected override void OnMouseEnter()
+    {
+        base.OnMouseEnter();
+        insSprite();
+    }
+
+    protected override void OnMouseExit()
+    {
+        base.OnMouseExit();
+        Destroy(inschip);
     }
 }

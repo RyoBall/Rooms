@@ -19,12 +19,12 @@ public class Blacker : MonoBehaviour
     {
         
     }
-    public void Enter() 
+    public void Enter(float alpha=.3f,float time=.5f) 
     {
-        image.DOColor(new Color(0,0,0,.3f),.5f);
+        image.DOColor(new Color(0,0,0,alpha),time);
     }
-    public void Exit() 
+    public void Exit(float time=.5f) 
     {
-        image.DOColor(new Color(0,0,0,0),.5f);
+        image.DOColor(new Color(0,0,0,0),time);
     }
 }

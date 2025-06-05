@@ -86,8 +86,16 @@ MonoBehaviour:
   dir: {x: 0, y: 0}
   range: 0
   closestenemy: {fileID: 0}
+  rangechecer: {fileID: 0}
   attack: 0
   attackfactor: 0
-  doubleattack: 0
+  doubleattacklevel: 0
   icyattacklevel: 0
+  bumattacklevel: 0
+  bombattacklevel: 0
+  heavyattacklevel: 0
+  fireattacklevel: 0
   bullet: {fileID: 5694872876357371771, guid: 804877621f21c0249818c10826d0abc8, type: 3}
+  doubleattackpoint: 0
+  speedfactor: 0
+  repelforce: 0.5

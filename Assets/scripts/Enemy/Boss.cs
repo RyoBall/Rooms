@@ -75,6 +75,9 @@ public class Boss : EnemyBase
             case 0:
                 Dash();
                 break;
+            case 1:
+                Shoot();
+                break;
         }
     }
     #region DashSkill
@@ -105,6 +108,9 @@ public class Boss : EnemyBase
     }
     #endregion
     #region ShootSkill
-
+    void Shoot() 
+    {
+           
+    }
     #endregion
 }

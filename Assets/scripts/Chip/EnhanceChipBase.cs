@@ -7,9 +7,8 @@ using UnityEngine.EventSystems;
 public class EnhanceChipBase : ChipBase
 {
     public LayerMask ChipLayer;
-    public List<RaycastHit2D> hits;
-    public List<ChipBase> ChipsAround;
-    public int inchipscount;
+    [HideInInspector]public List<ChipBase> ChipsAround;
+    private int inchipscount;
     public override void Start()
     {
         base.Start();

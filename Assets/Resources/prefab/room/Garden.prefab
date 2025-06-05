@@ -144,13 +144,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4fb92bfae3b45142bf77d559d3f22d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDistance: 0
   foggylevel: {fileID: 0}
+  firstEnter: 1
   gameObjects:
   - {fileID: 6130613311412201740}
   canUpgrated: 0
   level: -1
   RoomID: 2
+  unlock: 0
+  Startcolor: {r: 0, g: 0, b: 0, a: 0}
+  dangerouslevel: 0
 --- !u!1001 &6750491274531322563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -181,11 +184,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3510790850549709215, guid: 752609ab5b6fa744aa2225f844bb1571, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3510790850549709215, guid: 752609ab5b6fa744aa2225f844bb1571, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3510790850549709215, guid: 752609ab5b6fa744aa2225f844bb1571, type: 3}
       propertyPath: m_LocalPosition.z

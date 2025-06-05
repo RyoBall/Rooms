@@ -28,12 +28,12 @@ public class ShopObj : MonoBehaviour
     {
         ;
     }
-    protected void OnMouseEnter()
+    protected virtual void OnMouseEnter()
     {
         NameTex.instance.TMP_Text.text = itemName;
         DescriptionTex.instance.TMP_Text.text = "Price:" + price.ToString() + "\r\n" + description;
     }
-    private void OnMouseExit()
+    protected virtual void OnMouseExit()
     {
         NameTex.instance.TMP_Text.text = null;
         DescriptionTex.instance.TMP_Text.text = null;

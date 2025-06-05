@@ -8,6 +8,7 @@ public class shooter : WeaponBase
     public GameObject bullet;
     public int doubleattackpoint;
     public float speedfactor;
+    public float repelforce;
     public override void Attack()
     {
         base.Attack();
@@ -23,7 +24,7 @@ public class shooter : WeaponBase
                 cd = cdm;
             DIR();
             shoot();
-            doubleattackpoint = doubleattacklevel;
+            doubleattackpoint = doubleattacklevel;  
             StartCoroutine(doubleroutine());
         }
     }

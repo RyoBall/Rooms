@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1191253128360259751}
   - component: {fileID: 2800023597242915732}
   - component: {fileID: -5682161210416287931}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Boss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.01
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -185,8 +185,10 @@ MonoBehaviour:
   cd: 0
   cdm: 0
   icytime: 0
+  skillcd: 0
   DashRange: {fileID: 3436593746192985818, guid: 9fe152b157b3fc842a7fed372df51b65, type: 3}
   offset: 6.5
+  bullet: {fileID: 0}
 --- !u!1 &4988106555429100347
 GameObject:
   m_ObjectHideFlags: 0

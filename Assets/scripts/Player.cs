@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public float moveTime;
     private Animator anim;
     private string animBoolName;
+    public float movedistance;
     public Transform currentRoom;
     public Transform targetRoom;
     public float moveParticleCd;
@@ -44,14 +45,20 @@ public class Player : MonoBehaviour
     public float criticalfactor;
     public float criticalattackfactor;
     public int energy;
+    [Header("Attacked")]
+    [SerializeField] private GameObject AttackedParticle;
+    private SpriteRenderer sprite;
     // Start is called before the first frame update
     void Awake()
     {
-        currentState = new PlayerNormalState();
-        rb = GetComponent<Rigidbody2D>();
         instance = this;
     }
-
+    private void Start()
+    {
+        currentState = new PlayerNormalState();
+        rb = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -59,47 +66,42 @@ public class Player : MonoBehaviour
         levelup();
         StateControl();
     }
-    void StateControl() 
+    void StateControl()
     {
         currentState.update();
     }
     void Move()
     {
-        if(gameManager.instance.currentState==gameManager.GameState.InFight)
-        rb.velocity = new Vector2(speed * Input.GetAxisRaw("Horizontal"), speed * Input.GetAxisRaw("Vertical"));
-        if (rb.velocity.x != 0 || rb.velocity.y != 0) 
+        if (gameManager.instance.currentState == gameManager.GameState.InFight)
+            rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized * speed;
+        if (rb.velocity.x != 0 || rb.velocity.y != 0)
         {
             if (moveParticleCd > 0)
                 moveParticleCd -= Time.deltaTime;
-            if (moveParticleCd <= 0) 
+            if (moveParticleCd <= 0)
             {
-                Instantiate(moveParticle,transform.position-.5f*Vector3.up,Quaternion.identity);
+                Instantiate(moveParticle, transform.position - .5f * Vector3.up, Quaternion.identity);
                 moveParticleCd = moveParticleCdm;
             }
         }
     }
 
     #region AnimationAndMove
-    public void BeginMove(Vector3 target)
+    public void BeginMove(int direction)
     {
-        //禁用其他操作
-        //anim.SetBool("beginMove", true);
-        transform.DOMove(target, moveTime);
+        transform.DOMove(transform.position+Vector3.right*direction*movedistance, moveTime);
+        sprite.DOColor(new Color(1, 1, 1, 0), moveTime);
     }
 
-    public void EndMove(Vector3 direction)
+    public void EndMove(int direction)
     {
-        //anim.SetBool("beginMove", false);
-        transform.position = targetRoom.transform.position;
-        //anim.SetBool("endMove", true);
-        transform.DOMove(-direction, moveTime);
-            //.OnComplete(() => anim.SetBool("endMove", false));
-        //恢复控制
+        transform.DOMove(transform.position+Vector3.right*direction*movedistance, moveTime);
+        sprite.DOColor(new Color(1, 1, 1, 1), moveTime);
     }
     #endregion
     void levelup()
     {
-        if (exp >=expm) 
+        if (exp >= expm)
         {
             exp = 0;
             expm = 10 + level * levelfactor;
@@ -109,12 +111,12 @@ public class Player : MonoBehaviour
     }
     void levelupreward()
     {
-        unlockpoint+=1;
+        unlockpoint += 1;
         attack += 2;
-        healthm+=10;
-        health+=10;
+        healthm += 10;
+        health += 10;
         specialChipGetCount += 1;
-        if (specialChipGetCount >= 5) 
+        if (specialChipGetCount >= 5)
         {
             specialChipGetCount = 0;
             gameManager.instance.GetChip(3, Random.Range(0, gameManager.instance.chipsDic[3].Count));
@@ -126,15 +128,42 @@ public class Player : MonoBehaviour
         currentState = state;
         currentState.Enter();
     }
-    public void Attacked(float damage) 
+    #region Attacked
+    public void Attacked(float damage)
     {
-        if (!attacked) 
+        if (!attacked)
         {
-            if (Random.value > hidefactor) 
+            if (Random.value > hidefactor)
             {
                 health -= damage;
                 ChangeState(new PlayerAttackedState());
             }
         }
     }
+    public void AttackedAnim()
+    {
+        Instantiate(AttackedParticle, transform.position, Quaternion.identity);
+        StartCoroutine(AttackedRoutine());
+    }
+    IEnumerator AttackedRoutine()
+    {
+        yield return new WaitForSeconds(0);
+        if (attacked)
+        {
+            if (sprite.color.a == 1)
+            {
+                sprite.color = new Color(1, 1, 1, .3f);
+            }
+            else
+            {
+                sprite.color = new Color(1, 1, 1, 1);
+            }
+            StartCoroutine(AttackedRoutine());
+        }
+        else
+        {
+            sprite.color = new Color(1, 1, 1, 1);
+        }
+    }
+    #endregion
 }

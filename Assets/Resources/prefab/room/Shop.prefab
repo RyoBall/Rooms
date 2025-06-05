@@ -373,6 +373,7 @@ MonoBehaviour:
   description: 
   prefab: {fileID: 8344030837516253767, guid: 7b1bd033d2c481d4fb6eb156feec4d42, type: 3}
   image: {fileID: 0}
+  roomType: 0
   levelCube: []
 --- !u!1001 &1068788696948977502
 PrefabInstance:
@@ -562,6 +563,7 @@ MonoBehaviour:
   description: 
   prefab: {fileID: 3734793419762496665, guid: 0885854a930bc2b408ac70809336d45b, type: 3}
   image: {fileID: 0}
+  roomType: 1
   levelCube: []
 --- !u!1001 &2562269677751337835
 PrefabInstance:
@@ -1046,6 +1048,7 @@ MonoBehaviour:
   description: 
   prefab: {fileID: 8344030837516253767, guid: 1de342b6299c9cf4a85f207e2c968b0c, type: 3}
   image: {fileID: 0}
+  roomType: 2
   levelCube: []
 --- !u!4 &5265928588684960238 stripped
 Transform:

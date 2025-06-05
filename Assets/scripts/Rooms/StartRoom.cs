@@ -21,7 +21,18 @@ public class StartRoom : RoomBase
 
     protected override void Start()
     {
-        base.Start();
+        Dangerouschec();
+        EnterAction += Enter;
+        foggylevel = enemyGeneratorController.instance.foggylevel;
+        if (UnityEngine.Random.value < dangerousLevel)
+        {
+            isfog = true;
+            ChangeTofoggy();
+        }
+        else
+        {
+            Player.instance.transform.position = transform.position;
+        }
         Player.instance.transform.position = transform.position;
         Player.instance.currentRoom = transform;
         GetComponent<Collider2D>().enabled = false;

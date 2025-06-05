@@ -11,7 +11,7 @@ public class rangeEnhance : EnhanceChipBase
         base.chipentereffect(chip);
         if (chip.gameObject.GetComponent<WeaponChipBase>() != null) 
         {
-            chip.gameObject.GetComponent<WeaponChipBase>().range = chip.gameObject.GetComponent<WeaponChipBase>().range * 1.1f;
+            chip.gameObject.GetComponent<WeaponChipBase>().range = chip.gameObject.GetComponent<WeaponChipBase>().range * 1.25f;
         }
     }
 
@@ -20,7 +20,7 @@ public class rangeEnhance : EnhanceChipBase
         base.chipexiteffect(chip);
         if (chip.gameObject.GetComponent<WeaponChipBase>() != null)
         {
-            chip.gameObject.GetComponent<WeaponChipBase>().range = chip.gameObject.GetComponent<WeaponChipBase>().range / 1.1f;
+            chip.gameObject.GetComponent<WeaponChipBase>().range = chip.gameObject.GetComponent<WeaponChipBase>().range / 1.25f;
         }
     }
 
