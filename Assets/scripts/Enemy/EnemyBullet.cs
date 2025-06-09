@@ -10,7 +10,10 @@ public class EnemyBullet : MonoBehaviour
     public float speed;
     public GameObject disapearparticle;
     public float attack;
-    // Start is called before the first frame update
+    private void Start()
+    {
+        StartCoroutine(DestroySelf());
+    }
     Vector2 Dir()
     {
         Vector3 mousepos = Input.mousePosition;
@@ -32,16 +35,41 @@ public class EnemyBullet : MonoBehaviour
     }
     public void Redir() //调整子弹朝向
     {
-        dir = Player.instance.transform.position - transform.position;
-        dir = dir.normalized;
+        Setdir(Player.instance.transform.position-transform.position);
+        if (rb == null)
+            rb = GetComponent<Rigidbody2D>();
+        rb.velocity = speed * dir;
+    }
+    public void Act(float angle)
+    {
+        if (rb == null)
+            rb = GetComponent<Rigidbody2D>();
+        Setdir(angle);
+        rb.velocity = speed * dir;
+    }
+    void Setdir(float angle) 
+    {
+        dir = new Vector2(Mathf.Cos(angle*Mathf.Deg2Rad), Mathf.Sin(angle*Mathf.Deg2Rad));
         if (dir.x < 0)
         {
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan(dir.y / dir.x) * Mathf.Rad2Deg - 180));
         }
         else if (dir.x > 0)
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan(dir.y / dir.x) * Mathf.Rad2Deg));
-        if (rb == null)
-            rb = GetComponent<Rigidbody2D>();
-        rb.velocity = speed * dir;
+    }
+    void Setdir(Vector2 vec) 
+    {
+        dir = vec.normalized;
+        if (dir.x < 0)
+        {
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan(dir.y / dir.x) * Mathf.Rad2Deg - 180));
+        }
+        else if (dir.x > 0)
+            transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Atan(dir.y / dir.x) * Mathf.Rad2Deg));
+    }
+    IEnumerator DestroySelf() 
+    {
+        yield return new WaitForSeconds(8f);
+        Destroy(gameObject);
     }
 }

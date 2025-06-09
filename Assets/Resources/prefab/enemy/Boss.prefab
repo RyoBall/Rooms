@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd13cdf8ca43df4c8351bf6caa0c082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  costs: 0
   rb: {fileID: 0}
   dir: {x: 0, y: 0}
   speed: 3.5
@@ -185,10 +186,11 @@ MonoBehaviour:
   cd: 0
   cdm: 0
   icytime: 0
+  RepelResistance: 1
+  bullet: {fileID: 5694872876357371771, guid: 0de0b40eb6950684aa01e9a866ca8aa9, type: 3}
   skillcd: 0
   DashRange: {fileID: 3436593746192985818, guid: 9fe152b157b3fc842a7fed372df51b65, type: 3}
   offset: 6.5
-  bullet: {fileID: 0}
 --- !u!1 &4988106555429100347
 GameObject:
   m_ObjectHideFlags: 0

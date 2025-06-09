@@ -7,7 +7,7 @@ using Vector3 = UnityEngine.Vector3;
 
 public class Boss : EnemyBase
 {
-    [SerializeField]private float skillcd;
+    [SerializeField] private float skillcd;
     private float skillcdm;
     private bool dashing;
     [Header("dash")]
@@ -16,7 +16,7 @@ public class Boss : EnemyBase
     public override void Dead()
     {
         enemyGeneratorController.instance.exit();
-        enemyGeneratorController.instance.bossfighting = false ;
+        enemyGeneratorController.instance.bossfighting = false;
         base.Dead();
     }
 
@@ -59,10 +59,10 @@ public class Boss : EnemyBase
         dir = dir.normalized;
         return dir;
     }
-    public void SkillCDCount() 
+    public void SkillCDCount()
     {
         skillcd -= Time.deltaTime;
-        if (skillcd <= 0) 
+        if (skillcd <= 0)
         {
             skillcd = skillcdm;
             Skill();
@@ -70,14 +70,17 @@ public class Boss : EnemyBase
     }
     void Skill()
     {
-        int random=Random.Range(0,1);
-        switch (random) 
+        int random = Random.Range(0, 3);
+        switch (random)
         {
             case 0:
                 Dash();
                 break;
             case 1:
                 Shoot();
+                break;
+            case 2:
+                ShootAround();
                 break;
         }
     }
@@ -91,7 +94,7 @@ public class Boss : EnemyBase
         dashing = true;
         rb.velocity = Vector2.zero;
         Vector2 dir = DIR();
-        GameObject range = Instantiate(DashRange, transform.position + new Vector3(dir.x, dir.y, 0) * offset, UnityEngine.Quaternion.Euler(new Vector3(0,0,Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg)));
+        GameObject range = Instantiate(DashRange, transform.position + new Vector3(dir.x, dir.y, 0) * offset, UnityEngine.Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg)));
         yield return new WaitForSeconds(1.5f);
         DashSkill(dir);
     }
@@ -101,7 +104,7 @@ public class Boss : EnemyBase
         rb.velocity = dir * speed / 0.7f * 4;
         attack = attack * 4;
     }
-    IEnumerator FinishDash() 
+    IEnumerator FinishDash()
     {
         yield return new WaitForSeconds(1f);
         dashing = false;
@@ -109,9 +112,36 @@ public class Boss : EnemyBase
     }
     #endregion
     #region ShootSkill
-    void Shoot() 
+    void Shoot()
     {
-           
+        for (int i = 1; i < 6; i++)
+        {
+            Vector2 direction = new Vector2(
+    Mathf.Cos(72 * i * Mathf.Deg2Rad),
+    Mathf.Sin(72 * i * Mathf.Deg2Rad)
+);
+            GameObject insbullet=Instantiate(bullet,transform.position+new Vector3(direction.x,direction.y,0)*3,UnityEngine.Quaternion.identity);
+            StartCoroutine(Actbullet(insbullet.GetComponent<EnemyBullet>()));
+        }
+    }
+    IEnumerator Actbullet(EnemyBullet bullet)
+    {
+        yield return new WaitForSeconds(.5f);
+        bullet.Redir();
+    }
+    #endregion
+    #region ShootAround
+    void ShootAround() 
+    {
+        for (int i = 1; i < 16; i++)
+        {
+            Vector2 direction = new Vector2(
+    Mathf.Cos(24 * i * Mathf.Deg2Rad),
+    Mathf.Sin(24 * i * Mathf.Deg2Rad)
+);
+            GameObject insbullet = Instantiate(bullet, transform.position + new Vector3(direction.x, direction.y, 0) * 3, UnityEngine.Quaternion.identity);
+            insbullet.GetComponent<EnemyBullet>().Act(24*i);
+        }
     }
     #endregion
 }
