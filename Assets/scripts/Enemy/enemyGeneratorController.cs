@@ -23,8 +23,10 @@ public class enemyGeneratorController : MonoBehaviour
     public float fightTimem;
     public bool inend;//最终阶段
     public int level;
+    public bool bossfighting;
     public Action ExitAction = null;
     public List<GameObject> Enemys = new List<GameObject>();
+    public List<GameObject> Bosses = new List<GameObject>();
     // Start is called before the first frame update
     void Awake()
     {
@@ -34,7 +36,7 @@ public class enemyGeneratorController : MonoBehaviour
     {
         for (int i = 0; i < enemyGeneratorsScripts.Count; i++)
         {
-            AllWeights += 1/enemyGeneratorsScripts[i].costs;
+            AllWeights += 1 / enemyGeneratorsScripts[i].costs;
         }
     }
     // Update is called once per frame
@@ -57,7 +59,7 @@ public class enemyGeneratorController : MonoBehaviour
     public void FightTest()
     {
         Player.instance.transform.DOMove(foggylevel.position, 1);
-        Init();
+        Init(true);
     }
     public void FightEndTest()
     {
@@ -71,8 +73,8 @@ public class enemyGeneratorController : MonoBehaviour
         {
             int currentenemyPointer = 0;//记录当前所指向的怪物
             float randomweight = Random.Range(0, AllWeights);
-            float currentweight = 1/enemyGeneratorsScripts[0].costs;//在随机权重中当前记载的权重
-            while (currentweight < randomweight) 
+            float currentweight = 1 / enemyGeneratorsScripts[0].costs;//在随机权重中当前记载的权重
+            while (currentweight < randomweight)
             {
                 currentenemyPointer++;
                 currentweight += enemyGeneratorsScripts[currentenemyPointer].costs;
@@ -87,7 +89,7 @@ public class enemyGeneratorController : MonoBehaviour
         if (cd <= 0 && fightTime >= 0)
         {
             cd = cdm;
-            Generate(15+level*5);
+            Generate(15 + level * 5);
         }
     }
     void FightTimeCount()
@@ -98,16 +100,33 @@ public class enemyGeneratorController : MonoBehaviour
         }
         if (fightTime <= 0)
         {
+            if(!bossfighting)
             exit();
+            else 
+            {
+                Player.instance.health -= 10 * Time.deltaTime;
+            }
         }
     }
-    public void Init()
+    public void Init(bool isboss)
     {
         gameManager.instance.currentState = gameManager.GameState.InFight;
-        fightTime = 60f;
-        cdm = startcdm;
-        StartCoroutine(FightHard(fightTime - 30f));
-        cd = 0;
+        if (!isboss)
+        {
+            cdm = startcdm;
+            cd = 0;
+            fightTime = 60f;
+            StartCoroutine(FightHard(fightTime - 30f));
+            cd = 0;
+        }
+        else
+        {
+            bossfighting = true;
+            cdm=20000;
+            cd = cdm;
+            fightTime = 120f;
+            Instantiate(Bosses[gameManager.instance.currentlevel - 1], transform.position, Quaternion.identity);
+        }
     }
     public void HardInit()
     {
@@ -116,10 +135,10 @@ public class enemyGeneratorController : MonoBehaviour
         cdm = startcdm;
         cd = 0;
     }
-    void exit()
+    public void exit()
     {
-        if(level<=2)
-        level++;
+        if (level <= 2)
+            level++;
         if (Player.instance.targetRoom != null)
         {
             Player.instance.targetRoom.GetComponent<RoomBase>().Removefog();

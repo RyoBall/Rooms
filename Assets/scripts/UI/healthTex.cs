@@ -15,6 +15,7 @@ public class healthTex : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tex.text = Player.instance.health.ToString()+"/"+Player.instance.healthm.ToString();
+        int health = (int)Player.instance.health;
+        tex.text = health.ToString()+"/"+Player.instance.healthm.ToString();
     }
 }

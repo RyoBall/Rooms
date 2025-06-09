@@ -15,6 +15,8 @@ public class Boss : EnemyBase
     [SerializeField] private float offset;
     public override void Dead()
     {
+        enemyGeneratorController.instance.exit();
+        enemyGeneratorController.instance.bossfighting = false ;
         base.Dead();
     }
 
@@ -38,6 +40,7 @@ public class Boss : EnemyBase
         attack = 10;
         cdm = 1;
         skillcdm = 10;
+        speed = 3.5f;
     }
 
     public override void Update()

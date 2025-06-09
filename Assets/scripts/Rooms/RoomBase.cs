@@ -25,6 +25,7 @@ public class RoomBase : MonoBehaviour, RoomPosition
     public int RoomID;
     public bool unlock;
     public Color Startcolor;
+    public bool isBoosRoom;
     private enum DangerousLevel { none, low, medium, high };
     [SerializeField] private DangerousLevel dangerouslevel;
     [SerializeField]public Vector2 Position { get; set; }
@@ -116,7 +117,7 @@ public class RoomBase : MonoBehaviour, RoomPosition
     {
         Player.instance.targetRoom = transform;
         Player.instance.transform.DOMove(foggylevel.position,.3f);
-        enemyGeneratorController.instance.Init();
+        enemyGeneratorController.instance.Init(isBoosRoom);
     }
     public virtual void Removefog()
     {

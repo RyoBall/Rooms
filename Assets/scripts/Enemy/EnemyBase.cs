@@ -25,7 +25,7 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] protected float RepelResistance = 1;
     [SerializeField] protected GameObject bullet;
     // Start is called before the first frame update
-    public Action<bullet> attackedAction=null;
+    public Action<bullet> attackedAction = null;
     public virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -38,15 +38,16 @@ public class EnemyBase : MonoBehaviour
     public virtual void Update()
     {
         move();
-        Dead();
+        if (health <= 0)
+            Dead();
         CDCount();
         icytimecount();
         RecoverSpeed();
     }
-    void RecoverSpeed() 
+    void RecoverSpeed()
     {
         if (speed < normalspeed)
-            speed += Time.deltaTime*normalspeed*2;
+            speed += Time.deltaTime * normalspeed * 2;
     }
     protected virtual void CDCount()
     {
@@ -64,13 +65,10 @@ public class EnemyBase : MonoBehaviour
     }
     public virtual void Dead()
     {
-        if (health <= 0)
-        {
-            enemyGeneratorController.instance.Enemys.Remove(gameObject);
-            Instantiate(deadparticle, transform.position, Quaternion.identity);
-            expdrop(dropExpNum);
-            Destroy(gameObject);
-        }
+        enemyGeneratorController.instance.Enemys.Remove(gameObject);
+        Instantiate(deadparticle, transform.position, Quaternion.identity);
+        expdrop(dropExpNum);
+        Destroy(gameObject);
     }
     void icytimecount()
     {
@@ -111,8 +109,6 @@ public class EnemyBase : MonoBehaviour
     }
     private void Repel(float repelforce)
     {
-        if (speed > 0)
-            speed = 0;
         speed -= repelforce / RepelResistance;
         if (speed < -4)
             speed = -4;

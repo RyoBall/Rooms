@@ -6,6 +6,8 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using System;
 using Unity.VisualScripting;
+using UnityEditor.SearchService;
+using UnityEngine.SceneManagement;
 
 public class gameManager : MonoBehaviour
 {
@@ -20,9 +22,6 @@ public class gameManager : MonoBehaviour
     public List<RectTransform> backpacktrans;
     public GameObject chipGetButton;
     public GameObject chipGetButtonParent;
-    //加了这个
-    /*public RectTransform middleScreen;
-    public UnityEvent<int, int> OnChipClicked;*/
     [Header("GameState")]
     public GameState currentState;
     public enum GameState { UIPause, InFight, Normal, Rolling, Choosing };
@@ -38,6 +37,8 @@ public class gameManager : MonoBehaviour
     public int backpackcount;
     [Header("初始化芯片")]
     public List<ChipBase> StartChips;
+    [Header("不随场景销毁的物体")]
+    public List<GameObject> DontDestroyObjs;
     // Start is called before the first frame update
     void Awake()
     {
@@ -47,6 +48,7 @@ public class gameManager : MonoBehaviour
         UIExit += () => exit = true;
         UIExit += () => currentState = GameState.Normal;
         InitDic();
+        DontDestroy();
     }
     private void Start()
     {
@@ -68,6 +70,8 @@ public class gameManager : MonoBehaviour
             else
                 UIExit.Invoke();
         }
+        if (Input.GetKeyDown(KeyCode.Y))
+            SceneManager.LoadScene("ReLoad");
     }
     void InitDic()
     {
@@ -159,6 +163,11 @@ public class gameManager : MonoBehaviour
         replacement.GetComponent<Replacement>().segmentpart = segment;
         replacement.GetComponent<Replacement>().ID = i;
         replacement.GetComponent<Image>().color = segment.GetComponent<Image>().color;
+    }
+    void DontDestroy()
+    {
+        foreach(GameObject obj in DontDestroyObjs)
+        DontDestroyOnLoad(obj);
     }
     //用于生成给玩家选择的模块
     /*public void ShowChipAndButton(int type, int order, RectTransform middleScreen, Transform parent)
