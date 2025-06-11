@@ -9,7 +9,7 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     public Vector2 position;
     public bool chosen;
     public bool getin;
-    private RectTransform startposition;
+    public Transform StartPosition;
     private int startpositioncount;//初始位置ID
     private GameObject BagPanel;//芯片背包
     private UIframe background;//嵌入后的背景
@@ -52,7 +52,7 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     // Start is called before the first frame update
     public virtual void Start()
     {
-        startposition = gameManager.instance.backpacktrans[startpositioncount];
+        StartPosition = gameManager.instance.backpacktrans[startpositioncount];
         BagPanel = Bag.instance.gameObject;
         rectTransform = GetComponent<RectTransform>();
     }
@@ -81,8 +81,8 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     }
     public void returnposition()
     {
-        transform.SetParent(BagPanel.transform);
-        GetComponent<RectTransform>().position = startposition.position;
+        transform.SetParent(StartPosition);
+        GetComponent<RectTransform>().anchoredPosition=Vector2.zero;
     }
     public void OnDrag(PointerEventData eventData)
     {

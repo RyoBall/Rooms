@@ -6,8 +6,6 @@ using UnityEngine;
 public class Bag : MonoBehaviour
 {
     public static Bag instance;
-    public RectTransform exitpos;
-    public RectTransform enterpos;
     public bool exit;
     public float enterY;
     public float exitY;

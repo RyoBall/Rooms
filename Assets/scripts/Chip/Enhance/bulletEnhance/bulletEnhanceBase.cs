@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -7,8 +8,8 @@ using UnityEngine.UI;
 public class bulletEnhanceBase : EnhanceChipBase
 {
     public GameObject partA;
+    public RectTransform partArect;
     public Vector3 relativePosition;
-
     public override void chipentereffect(ChipBase chip)
     {
         base.chipentereffect(chip);
@@ -31,11 +32,9 @@ public class bulletEnhanceBase : EnhanceChipBase
         partA.GetComponent<occupy>().background.getin = false;
         partA.GetComponent<occupy>().background = null;
     }
-
     public override void FixedUpdate()
     {
         base.FixedUpdate();
-        partA.transform.position = transform.position + relativePosition;
     }
 
     public override void OnPointerDown(PointerEventData eventData)
@@ -50,7 +49,7 @@ public class bulletEnhanceBase : EnhanceChipBase
         List<RaycastResult> results = new List<RaycastResult>();
         List<RaycastResult> Aresults = new List<RaycastResult>();
         //以下是对副模块检测
-        Vector2 screenPos = RectTransformUtility.WorldToScreenPoint(null, partA.transform.position);
+        Vector2 screenPos = RectTransformUtility.WorldToScreenPoint(Camera.main, partA.transform.position);
         PointerEventData eventDataA = new PointerEventData(EventSystem.current);
         eventDataA.position = screenPos;
         EventSystem.current.RaycastAll(eventDataA, Aresults);
@@ -92,5 +91,6 @@ public class bulletEnhanceBase : EnhanceChipBase
         base.Start();
         partA = transform.Find("occupy").gameObject;
         relativePosition = partA.transform.position - transform.position;
+        partArect = partA.GetComponent<RectTransform>();
     }
 }

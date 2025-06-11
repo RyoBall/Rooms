@@ -20,6 +20,7 @@ public class gameManager : MonoBehaviour
     public List<GameObject> WeaponChips;
     public Dictionary<int, List<GameObject>> chipsDic = new Dictionary<int, List<GameObject>>();
     public List<RectTransform> backpacktrans;
+    public int chipnums = 0;
     public GameObject chipGetButton;
     public GameObject chipGetButtonParent;
     [Header("GameState")]
@@ -86,6 +87,7 @@ public class gameManager : MonoBehaviour
         for (int i = 0; i < StartChips.Count; i++)
         {
             StartChips[i].entereffect(SkillPanel.instance.transform.GetChild(i).gameObject);
+            chipnums++;
         }
     }
     public GameObject GetChip(int type, int order)
@@ -95,27 +97,30 @@ public class gameManager : MonoBehaviour
         {
             //1:武器 2：全局 3：增益 4:特殊
             case 1:
-                ins = Instantiate(BulletEffectChips[order], backpackpanel.transform);
-                ins.GetComponent<RectTransform>().position = backpacktrans[backpackcount].position;
+                ins = Instantiate(BulletEffectChips[order], backpacktrans[backpackcount]);
+                ins.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+                ins.GetComponent<ChipBase>().StartPosition = backpacktrans[chipnums];
                 backpackcount++;
                 break;
             case 2:
-                ins = Instantiate(GlobalChips[order], backpackpanel.transform);
+                ins = Instantiate(GlobalChips[order], backpacktrans[backpackcount]);
                 ins.GetComponent<RectTransform>().position = backpacktrans[backpackcount].position;
+                ins.GetComponent<ChipBase>().StartPosition = backpacktrans[chipnums];
                 backpackcount++;
                 break;
             case 3:
-                ins = Instantiate(BulletEnhanceChips[order], backpackpanel.transform);
+                ins = Instantiate(BulletEnhanceChips[order], backpacktrans[backpackcount]);
                 ins.GetComponent<RectTransform>().position = backpacktrans[backpackcount].position;
+                ins.GetComponent<ChipBase>().StartPosition = backpacktrans[chipnums];
                 backpackcount++;
                 break;
             case 4:
-                ins = Instantiate(WeaponChips[order], backpackpanel.transform);
+                ins = Instantiate(WeaponChips[order], backpacktrans[backpackcount]);
                 ins.GetComponent<RectTransform>().position = backpacktrans[backpackcount].position;
+                ins.GetComponent<ChipBase>().StartPosition = backpacktrans[chipnums];
                 backpackcount++;
                 break;
         }
-        ins.GetComponent<RectTransform>().DOAnchorPos(backpacktrans[backpackcount].position, 1);
         return ins;
     }
     public void GetChipButton(int type, int order, int position)
@@ -166,8 +171,8 @@ public class gameManager : MonoBehaviour
     }
     void DontDestroy()
     {
-        foreach(GameObject obj in DontDestroyObjs)
-        DontDestroyOnLoad(obj);
+        foreach (GameObject obj in DontDestroyObjs)
+            DontDestroyOnLoad(obj);
     }
     //用于生成给玩家选择的模块
     /*public void ShowChipAndButton(int type, int order, RectTransform middleScreen, Transform parent)

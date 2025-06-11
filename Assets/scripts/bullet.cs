@@ -70,7 +70,7 @@ public class bullet : MonoBehaviour
             }
             //½áÊø
             else
-                Destroy(gameObject);
+                gameObject.SetActive(false);
         }
     }
     public virtual void DIR()

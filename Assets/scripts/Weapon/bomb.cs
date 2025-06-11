@@ -21,7 +21,7 @@ public class bomb : WeaponBase
             Instantiate(disapearparticle, transform.position, Quaternion.identity);
             for (int i = 0; i < enemysin.Count; i++)
             {
-                enemysin[i].GetComponent<normalenemy>().health -= damage;
+                enemysin[i].GetComponent<EnemyBase>().health -= damage;
                 GameObject tex = Instantiate(damagetex, enemysin[i].transform.position + new Vector3(Random.Range(-damagetexcorecfactor, damagetexcorecfactor), Random.Range(-damagetexcorecfactor, damagetexcorecfactor), 0), Quaternion.identity);
                 tex.GetComponentInChildren<TMP_Text>().text = damage.ToString();
             }

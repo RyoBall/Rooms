@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8294140111520745712}
   m_Layer: 7
   m_Name: FastShooter
-  m_TagString: Untagged
+  m_TagString: chip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,6 +92,7 @@ MonoBehaviour:
   position: {x: 0, y: 0}
   chosen: 0
   getin: 0
+  StartPosition: {fileID: 0}
   chipname: 
   description: 
   ins: {fileID: 0}

@@ -77,7 +77,7 @@ public class enemyGeneratorController : MonoBehaviour
             while (currentweight < randomweight)
             {
                 currentenemyPointer++;
-                currentweight += enemyGeneratorsScripts[currentenemyPointer].costs;
+                currentweight += 1/enemyGeneratorsScripts[currentenemyPointer].costs;
             }
             Instantiate(enemyGenerators[currentenemyPointer], new Vector3(position.x + Random.Range(-Correctionfactor, Correctionfactor), position.y + Random.Range(-Correctionfactor, Correctionfactor), 0), Quaternion.identity);
             currentcost += enemyGeneratorsScripts[currentenemyPointer].costs;
@@ -127,13 +127,6 @@ public class enemyGeneratorController : MonoBehaviour
             fightTime = 120f;
             Instantiate(Bosses[gameManager.instance.currentlevel - 1], transform.position, Quaternion.identity);
         }
-    }
-    public void HardInit()
-    {
-        gameManager.instance.currentState = gameManager.GameState.InFight;
-        fightTime = 120f;
-        cdm = startcdm;
-        cd = 0;
     }
     public void exit()
     {

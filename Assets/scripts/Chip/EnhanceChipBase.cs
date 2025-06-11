@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class EnhanceChipBase : ChipBase
 {
     public LayerMask ChipLayer;
-    [HideInInspector]public List<ChipBase> ChipsAround;
+    public List<ChipBase> ChipsAround;
     private int inchipscount;
     public override void Start()
     {

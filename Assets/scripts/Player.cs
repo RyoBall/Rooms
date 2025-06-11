@@ -130,9 +130,8 @@ public class Player : MonoBehaviour
             ChipGetCount -= 1;
             for (int i = 0; i < 3; i++)
             {
-                ChoosePanel.instance.Enter();
                 int j = Random.Range(1, 4);
-                gameManager.instance.GetChipButton(j, gameManager.instance.chipsDic[j].Count, i);
+                gameManager.instance.GetChipButton(j, Random.Range(0,gameManager.instance.chipsDic[j].Count), i);
             }
             ChoosePanel.instance.Enter();
         }

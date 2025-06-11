@@ -28,6 +28,7 @@ public class WeaponBase : MonoBehaviour
     public int bombattacklevel;
     public int heavyattacklevel;
     public int fireattacklevel;
+    public GameObject bomber;
     [Header("AttackBuff")]
     public Action<EnemyBase, bullet> AttackAction=null;
     public virtual void Start()
@@ -128,9 +129,10 @@ public class WeaponBase : MonoBehaviour
     IEnumerator BombRoutine(EnemyBase target, bullet bullet,int bombpoints)
     {
         yield return new WaitForSeconds(.05f);
-        if (bombpoints > 1)
+        if (bombpoints > 0)
         {
-            GameObject bomb = Instantiate(bullet.bomber, target.transform.position, Quaternion.identity);
+            Debug.Log("bomb");
+            GameObject bomb = Instantiate(bomber, target.transform.position, Quaternion.identity);
             bomb.GetComponent<bomb>().damage = (int)(attack * .3f);
             StartCoroutine(BombRoutine(target,bullet,bombpoints-1));
         }
