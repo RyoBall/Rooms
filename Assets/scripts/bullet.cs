@@ -35,7 +35,7 @@ public class bullet : MonoBehaviour
     }
     void CriticalChec()
     {
-        float random=Random.Range(0, 1);
+        float random=Random.Range(0f, 1f);
         if (random < Player.instance.criticalfactor) 
         {
             attack = attack * Player.instance.criticalattackfactor;
