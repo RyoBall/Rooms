@@ -95,6 +95,7 @@ public class segment : MonoBehaviour
     void CreateSegment(int index, float startAngle, float angle)
     {
         GameObject segment = Instantiate(segmentparts[index % segmentparts.Count], transform.position, Quaternion.identity);
+        segment.transform.localScale = new Vector3(1, 1, 1);
         segment.transform.SetParent(transform);
         segment.GetComponent<segmentpart>().i=index;
         RectTransform rect = segment.GetComponent<RectTransform>();

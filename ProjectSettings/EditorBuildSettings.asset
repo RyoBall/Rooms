@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Resources/prefab/Scenes/SampleScene.unity
+    path: Assets/Scenes/NotUseScene/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Resources/prefab/Scenes/AnothorGame.unity
+    path: Assets/Scenes/AnothorGame.unity
     guid: 919e7d96a63264e4ba638a575e32fcb7
   - enabled: 1
-    path: Assets/Resources/prefab/Scenes/ReLoad.unity
+    path: Assets/Scenes/ReLoad.unity
     guid: cf1cef995dad4234aaece00fb784f026
   m_configObjects: {}

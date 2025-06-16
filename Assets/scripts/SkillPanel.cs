@@ -26,10 +26,6 @@ public class SkillPanel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameManager.instance.currentState == gameManager.GameState.InFight && !exit)
-        {
-            Exit();
-        }
     }
     public void Exit()
     {

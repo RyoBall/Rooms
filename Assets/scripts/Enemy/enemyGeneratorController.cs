@@ -146,6 +146,7 @@ public class enemyGeneratorController : MonoBehaviour
         }
         Enemys.Clear();
         gameManager.instance.currentState = gameManager.GameState.Normal;
+        Debug.Log(1);
         Player.instance.rb.velocity = Vector2.zero;
     }
     IEnumerator FightHard(float time)

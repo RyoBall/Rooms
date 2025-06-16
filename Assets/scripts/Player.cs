@@ -150,13 +150,24 @@ public class Player : MonoBehaviour
             if (Random.value > hidefactor)
             {
                 health -= damage;
-                ChangeState(new PlayerAttackedState());
+                ChangeState(new PlayerAttackedState(false));
+            }
+            else 
+            {
+                ChangeState(new PlayerAttackedState(true));
             }
         }
     }
-    public void AttackedAnim()
+    public void AttackedAnim(bool hided)
     {
-        Instantiate(AttackedParticle, transform.position, Quaternion.identity);
+        if (hided) 
+        {
+            Instantiate(AttackedParticle, transform.position, Quaternion.identity);
+        }
+        else 
+        {
+            //…¡±‹∂Øª≠;
+        }
         StartCoroutine(AttackedRoutine());
     }
     IEnumerator AttackedRoutine()

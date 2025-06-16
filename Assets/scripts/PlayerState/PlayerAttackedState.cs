@@ -5,10 +5,15 @@ using UnityEngine;
 public class PlayerAttackedState : PlayerState
 {
     public float attackedtime;
+    public bool hided;
+    public PlayerAttackedState(bool hided) 
+    {
+        this.hided = hided;
+    }
     public override void Enter()
     {
         base.Enter();
-        Player.instance.AttackedAnim();
+        Player.instance.AttackedAnim(hided);
         Player.instance.attacked = true;
         attackedtime = Player.instance.attackedtime;
     }

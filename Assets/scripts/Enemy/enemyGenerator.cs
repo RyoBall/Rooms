@@ -20,6 +20,8 @@ public class enemyGenerator : MonoBehaviour
         {
             cdCount();
         }
+        if (gameManager.instance.currentState != gameManager.GameState.InFight)
+            Destroy(gameObject);
         if (cd <= 0) 
         {
             GameObject Enemy=Instantiate(enemy, transform.position, transform.rotation);

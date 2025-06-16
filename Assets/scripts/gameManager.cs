@@ -59,6 +59,11 @@ public class gameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameManager.instance.currentState == gameManager.GameState.InFight && !exit)
+        {
+            UIExit.Invoke();
+            currentState = GameState.InFight;
+        }
         if (Input.GetKeyDown(KeyCode.X))
         {
             GetChipButton(1, 0, 0);

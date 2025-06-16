@@ -78,6 +78,7 @@
     <Compile Include="Assets\scripts\Weapon\CircleAttacker.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
+    <Compile Include="Assets\scripts\UI\ReplacementBag.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\scripts\damageText.cs" />
@@ -123,6 +124,7 @@
     <Compile Include="Assets\scripts\bullet.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\scripts\Chip\Enhance\rangeEnhance.cs" />
+    <Compile Include="Assets\scripts\UI\SegmentChangeButton.cs" />
     <Compile Include="Assets\scripts\Chip\ChipBase.cs" />
     <Compile Include="Assets\scripts\CameraScript.cs" />
     <Compile Include="Assets\scripts\Rooms\DrinkRoom.cs" />
@@ -181,6 +183,7 @@
     <Compile Include="Assets\scripts\Chip\Enhance\checer.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\scripts\Chip\EnhanceChipBase.cs" />
+    <Compile Include="Assets\scripts\UI\ChangeButton.cs" />
     <Compile Include="Assets\scripts\Rooms\Environment\Commodities\ChipCom.cs" />
     <Compile Include="Assets\scripts\UI\EXPTex.cs" />
     <Compile Include="Assets\scripts\UI\LevelTex.cs" />
