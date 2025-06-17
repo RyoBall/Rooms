@@ -16,21 +16,11 @@ public class Bag : MonoBehaviour
     void Start()
     {
         instance = this;
-        gameManager.instance.UIEnter += Enter;
-        gameManager.instance.UIExit += Exit;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-    }
-    public void Exit()
-    {
-        GetComponent<RectTransform>().DOAnchorPosY(exitY, .5f);
-    }
-    public void Enter()
-    {
-        GetComponent<RectTransform>().DOAnchorPosY(enterY, .5f);
     }
 }

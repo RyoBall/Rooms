@@ -22,11 +22,11 @@ public class SegmentChangeButton : MonoBehaviour
     {
         ExitAction?.Invoke();
         Bag.SetActive(true);
-        rect.DOAnchorPosX(207, .2f);
+        rect.DOAnchorPosX(105, .2f);
     }
     void Exit()
     {
         Bag.SetActive(false);
-        rect.DOAnchorPosX(195, .2f);
+        rect.DOAnchorPosX(98, .2f);
     }
 }

@@ -5,6 +5,7 @@ using DG.Tweening;
 using static UnityEngine.GraphicsBuffer;
 using System.Collections;
 using UnityEngine.Events;
+using System;
 public class segment : MonoBehaviour
 {
     public static segment instance;
@@ -13,6 +14,8 @@ public class segment : MonoBehaviour
     public const int segmentcount = 12;
     public List<GameObject> segmentparts = new List<GameObject>();
     [SerializeField]public List<Image> segmentImages = new List<Image>();
+    [SerializeField]public List<Transform> segmentPositions = new List<Transform>();
+    public RectTransform pos;
     [Header("旋转属性")]
     public float rotatespeed;
     public float rotatespeedm;
@@ -32,8 +35,8 @@ public class segment : MonoBehaviour
     {
         instance = this;
         here = GetComponent<RectTransform>();
-        gameManager.instance.UIEnter += UIEnter;
-        gameManager.instance.UIExit += UIExit;
+        gameManager.instance.SegUIEnter += UIEnter;
+        gameManager.instance.SegUIExit += UIExit;
     }
     private void Update()
     {
@@ -46,14 +49,14 @@ public class segment : MonoBehaviour
     }
     private void Startrotate() 
     {
-        rotatespeed = Random.Range(rotatespeedm - rotatespeedcorecfactor, rotatespeedm + rotatespeedcorecfactor);
+        rotatespeed = UnityEngine.Random.Range(rotatespeedm - rotatespeedcorecfactor, rotatespeedm + rotatespeedcorecfactor);
         float waittime = rotatespeed / downspeed;
         startchec(waittime+.2f);
     }
     public void rotatehere() //转动
     {
         if(rotatespeed>=0)
-        here.rotation = Quaternion.Euler(0, 0, here.localEulerAngles.z + Time.deltaTime * rotatespeed);
+        pos.rotation = Quaternion.Euler(0, 0, pos.localEulerAngles.z + Time.deltaTime * rotatespeed);
         if (rotatespeed >= 0)
             rotatespeed -= downspeed * Time.deltaTime;
     }
@@ -64,10 +67,9 @@ public class segment : MonoBehaviour
         float currentAngle = 0f;
         for (int i = 0; i < segmentcount; i++)
         {
-            float segmentAngle = 360f / segmentcount;
-            CreateSegment(i, currentAngle, segmentAngle);
+            CreateSegment(i, currentAngle);
             //用于替换轮盘块
-            currentAngle += segmentAngle;
+            currentAngle += 30;
         }
     }
 
@@ -92,19 +94,16 @@ public class segment : MonoBehaviour
         UIExit();
     }
 
-    void CreateSegment(int index, float startAngle, float angle)
+    void CreateSegment(int index, float startAngle)
     {
-        GameObject segment = Instantiate(segmentparts[index % segmentparts.Count], transform.position, Quaternion.identity);
+        GameObject segment = Instantiate(segmentparts[index % segmentparts.Count], segmentPositions[index % segmentparts.Count].position, Quaternion.identity,transform);
         segment.transform.localScale = new Vector3(1, 1, 1);
-        segment.transform.SetParent(transform);
         segment.GetComponent<segmentpart>().i=index;
         RectTransform rect = segment.GetComponent<RectTransform>();
         // 配置Image组件
         Image img = segment.GetComponent<Image>();
         // 设置旋转
-        rect.localRotation = Quaternion.Euler(0, 0, -startAngle);
-        //Button btn = segment.AddComponent<Button>();
-        //btn.onClick.AddListener(() => OnSegmentClicked?.Invoke(index));
+        rect.localRotation = Quaternion.Euler(0, 0, -startAngle-15);
         segmentImages.Add(img);
     }
     public void ClearWheel()
@@ -112,6 +111,7 @@ public class segment : MonoBehaviour
         here.rotation = Quaternion.Euler(0, 0, 0);
         foreach (Transform child in transform)
         {
+            if(child.name!= "SegmentBackGround")
             Destroy(child.gameObject);
         }
         segmentImages.Clear();
@@ -121,12 +121,12 @@ public class segment : MonoBehaviour
     {
         GenerateWheel();
         readytoroll = true;
-        transform.parent.GetComponent<RectTransform>().DOAnchorPosX(-82.5f, .8f);
+        transform.parent.GetComponent<RectTransform>().DOAnchorPosX(-200, .5f);
     }
     public void UIExit() 
     {
         readytoroll = false;
-        transform.parent.GetComponent<RectTransform>().DOAnchorPosX(82.5f, .8f);
+        transform.parent.GetComponent<RectTransform>().DOAnchorPosX(200, .5f);
     }
     public void startchec(float waittime)
     {

@@ -15,10 +15,15 @@ public class segmentpart : MonoBehaviour, IPointerClickHandler
     private void Awake()
     {
         GetComponent<Image>().alphaHitTestMinimumThreshold = 0.5f;
+        StartCoroutine(SetScale());
     }
     void Update() 
     {
-        ;
+    }
+    IEnumerator SetScale() 
+    {
+        yield return new WaitForSeconds(0);
+        GetComponent<RectTransform>().localScale=Vector3.one;
     }
     public void Effect()
     {

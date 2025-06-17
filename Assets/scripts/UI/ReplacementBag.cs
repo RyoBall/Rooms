@@ -19,8 +19,8 @@ public class ReplacementBag : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManager.instance.UIEnter += Enter;
-        gameManager.instance.UIExit += Exit;
+        gameManager.instance.SegUIEnter += Enter;
+        gameManager.instance.SegUIExit += Exit;
     }
 
     // Update is called once per frame

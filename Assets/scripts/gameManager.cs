@@ -28,9 +28,12 @@ public class gameManager : MonoBehaviour
     public enum GameState { UIPause, InFight, Normal, Rolling, Choosing };
     public int currentlevel;
     [Header("UI")]
-    public Action UIExit;
-    public Action UIEnter;
-    public bool exit;
+    public Action BagUIExit;
+    public Action BagUIEnter;
+    public Action SegUIExit;
+    public Action SegUIEnter;
+    public bool Bagexit;
+    public bool Segexit;
     [Header("GetReplacement")]
     public List<GameObject> Segments;//通过Segment代表的房间的RoomID访问列表获取Segment
     [Header("杂项")]
@@ -44,10 +47,14 @@ public class gameManager : MonoBehaviour
     void Awake()
     {
         instance = this;
-        UIEnter += () => exit = false;
-        UIEnter += () => currentState = GameState.UIPause;
-        UIExit += () => exit = true;
-        UIExit += () => currentState = GameState.Normal;
+        BagUIEnter += () => Bagexit = false;
+        SegUIEnter += () => Segexit = false;
+        BagUIEnter += () => currentState = GameState.UIPause;
+        SegUIEnter += () => currentState = GameState.UIPause;
+        BagUIExit += () => Bagexit = true;
+        SegUIExit += () => Segexit = true;
+        BagUIExit += () => currentState = GameState.Normal;
+        SegUIExit += () => currentState = GameState.Normal;
         InitDic();
         DontDestroy();
     }
@@ -59,9 +66,10 @@ public class gameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameManager.instance.currentState == gameManager.GameState.InFight && !exit)
+        if (gameManager.instance.currentState == gameManager.GameState.InFight && (!Bagexit || !Segexit))
         {
-            UIExit.Invoke();
+            BagUIExit.Invoke();
+            SegUIExit.Invoke();
             currentState = GameState.InFight;
         }
         if (Input.GetKeyDown(KeyCode.X))
@@ -69,12 +77,27 @@ public class gameManager : MonoBehaviour
             GetChipButton(1, 0, 0);
             ChoosePanel.instance.Enter();
         }
-        if (Input.GetKeyDown(KeyCode.K) && (currentState == GameState.UIPause || currentState == GameState.Normal))
+        if (Input.GetKeyDown(KeyCode.Alpha1) && (currentState == GameState.UIPause || currentState == GameState.Normal))
         {
-            if (exit)
-                UIEnter.Invoke();
+            if (Bagexit)
+            {
+                if (!Segexit)
+                    SegUIExit.Invoke();
+                BagUIEnter.Invoke();
+            }
             else
-                UIExit.Invoke();
+                BagUIExit.Invoke();
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2) && (currentState == GameState.UIPause || currentState == GameState.Normal))
+        {
+            if (Segexit) 
+            {
+                if (!Bagexit)
+                    BagUIExit.Invoke();
+                SegUIEnter.Invoke();
+            }
+            else
+                SegUIExit.Invoke();
         }
         if (Input.GetKeyDown(KeyCode.Y))
             SceneManager.LoadScene("ReLoad");
@@ -91,7 +114,7 @@ public class gameManager : MonoBehaviour
     {
         for (int i = 0; i < StartChips.Count; i++)
         {
-            StartChips[i].entereffect(SkillPanel.instance.MainPanel.transform.GetChild(i+1).gameObject);
+            StartChips[i].entereffect(SkillPanel.instance.MainPanel.transform.GetChild(i + 1).gameObject);
             chipnums++;
         }
     }
