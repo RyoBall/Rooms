@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -30,10 +31,18 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
 
     public virtual void OnPointerUp(PointerEventData eventData)
     {
-        bool AlreadyGetin = false;//是否已经找到对应的背景（防止背景重叠导致同时触发多个背景）
+        //bool AlreadyGetin = false;//是否已经找到对应的背景（防止背景重叠导致同时触发多个背景）
         chosen = false;
         GetComponent<Image>().raycastTarget = true;
-        List<RaycastResult> results = new List<RaycastResult>();
+        RaycastHit2D[] hits = Physics2D.GetRayIntersectionAll(Camera.main.ScreenPointToRay(eventData.position));
+        foreach(var hit in hits) 
+        {
+            if (hit.collider.gameObject.layer == GetinChips.UIcaolayer && hit.collider.gameObject.GetComponent<UIframe>().unlock && !hit.collider.gameObject.GetComponent<UIframe>().getin )
+            {
+                entereffect(hit.collider.gameObject);
+            }
+        }
+        /*List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(eventData, results);
         foreach (var result in results)
         {
@@ -42,7 +51,7 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
                 AlreadyGetin = true;
                 entereffect(result.gameObject);
             }
-        }
+        }*/
         if (!getin)
         {
             returnposition();
@@ -52,6 +61,7 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     // Start is called before the first frame update
     public virtual void Start()
     {
+        GetComponent<Image>().alphaHitTestMinimumThreshold = 0.1f;
         StartPosition = gameManager.instance.backpacktrans[startpositioncount];
         BagPanel = Bag.instance.gameObject;
         rectTransform = GetComponent<RectTransform>();
@@ -64,7 +74,7 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     }
     public virtual void entereffect(GameObject BackGround)
     {
-        background = BackGround.GetComponent<UIframe>();
+        background = BackGround.GetComponent<UIframe>(); 
         BackGround.GetComponent<RectTransform>().SetAsLastSibling();
         background.getin = true;
         GetComponent<RectTransform>().position = BackGround.GetComponent<RectTransform>().position;

@@ -11,6 +11,7 @@ public class SkillPanel : MonoBehaviour
     public bool exit;
     public float enterY;
     public float exitY;
+    public GameObject MainPanel;
     private void Awake()
     {
         instance = this;

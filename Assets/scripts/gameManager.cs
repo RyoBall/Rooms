@@ -91,7 +91,7 @@ public class gameManager : MonoBehaviour
     {
         for (int i = 0; i < StartChips.Count; i++)
         {
-            StartChips[i].entereffect(SkillPanel.instance.transform.GetChild(i).gameObject);
+            StartChips[i].entereffect(SkillPanel.instance.MainPanel.transform.GetChild(i+1).gameObject);
             chipnums++;
         }
     }

@@ -44,34 +44,31 @@ public class bulletEnhanceBase : EnhanceChipBase
     public override void OnPointerUp(PointerEventData eventData)
     {
         chosen = false;
-        bool Alreadygetin = false;
         GetComponent<Image>().raycastTarget = true;
-        List<RaycastResult> results = new List<RaycastResult>();
-        List<RaycastResult> Aresults = new List<RaycastResult>();
-        //以下是对副模块检测
+        RaycastHit2D[] hits;
+        RaycastHit2D[] Ahits;
         Vector2 screenPos = RectTransformUtility.WorldToScreenPoint(Camera.main, partA.transform.position);
         PointerEventData eventDataA = new PointerEventData(EventSystem.current);
+        hits = Physics2D.GetRayIntersectionAll(Camera.main.ScreenPointToRay(eventData.position));
         eventDataA.position = screenPos;
-        EventSystem.current.RaycastAll(eventDataA, Aresults);
+        Ahits = Physics2D.GetRayIntersectionAll(Camera.main.ScreenPointToRay(eventDataA.position));
         UIframe Aback = null;
-        foreach (var result in Aresults)
+        foreach (var hit in Ahits)
         {
-            if (result.gameObject.layer == GetinChips.UIcaolayer && result.gameObject.GetComponent<UIframe>().unlock && !result.gameObject.GetComponent<UIframe>().getin&&!Alreadygetin)
+            if (hit.collider.gameObject.layer == GetinChips.UIcaolayer && hit.collider.gameObject.GetComponent<UIframe>().unlock && !hit.collider.gameObject.GetComponent<UIframe>().getin)
             {
-                Alreadygetin = true;
-                Aback = result.gameObject.GetComponent<UIframe>();
+                Aback = hit.collider.gameObject.GetComponent<UIframe>();
             }
         }
         if (Aback != null && Aback.unlock)
         {
             //以下是对主模块检测
-            EventSystem.current.RaycastAll(eventData, results);
-            foreach (var result in results)
+            foreach (var hit in hits)
             {
-                if (result.gameObject.layer == GetinChips.UIcaolayer && result.gameObject.GetComponent<UIframe>().unlock && !result.gameObject.GetComponent<UIframe>().getin)
+                if (hit.collider.gameObject.layer == GetinChips.UIcaolayer && hit.collider.gameObject.GetComponent<UIframe>().unlock && !hit.collider.gameObject.GetComponent<UIframe>().getin)
                 {
                     partA.GetComponent<occupy>().background = Aback;
-                    entereffect(result.gameObject);
+                    entereffect(hit.collider.gameObject);
                 }
             }
         }
