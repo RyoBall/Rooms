@@ -4,20 +4,12 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class occupy : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
+public class occupy : MonoBehaviour
 {
     public UIframe background;
     public bulletEnhanceBase dad;
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        dad.OnPointerDown(eventData);
-    }
 
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        dad.OnPointerUp(eventData);
-    }
 
     // Start is called before the first frame update
     void Start()

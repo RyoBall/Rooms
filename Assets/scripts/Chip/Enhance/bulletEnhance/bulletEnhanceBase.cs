@@ -62,7 +62,7 @@ public class bulletEnhanceBase : EnhanceChipBase
         }
         if (Aback != null && Aback.unlock)
         {
-            //以下是对主模块检测
+            Debug.Log("Enter");
             foreach (var hit in hits)
             {
                 if (hit.collider.gameObject.layer == GetinChips.UIcaolayer && hit.collider.gameObject.GetComponent<UIframe>().unlock && !hit.collider.gameObject.GetComponent<UIframe>().getin)
@@ -72,7 +72,7 @@ public class bulletEnhanceBase : EnhanceChipBase
                 }
             }
         }
-        else if (Aback == null)
+        else
         {
             Debug.Log("notfind");
         }
@@ -86,7 +86,7 @@ public class bulletEnhanceBase : EnhanceChipBase
     public override void Start()
     {
         base.Start();
-        partA = transform.Find("occupy").gameObject;
+        partA = GetComponentInChildren<occupy>().gameObject;
         relativePosition = partA.transform.position - transform.position;
         partArect = partA.GetComponent<RectTransform>();
     }

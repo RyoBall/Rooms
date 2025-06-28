@@ -12,6 +12,7 @@ public class Boss : EnemyBase
     private bool dashing;
     [Header("dash")]
     [SerializeField] private GameObject DashRange;
+    [SerializeField] private float   distance;
     [SerializeField] private float offset;
     public override void Dead()
     {
@@ -35,12 +36,12 @@ public class Boss : EnemyBase
 
     public override void Start()
     {
-        base.Start();
         health = 1500;
         attack = 10;
         cdm = 1;
         skillcdm = 10;
         speed = 3.5f;
+        base.Start();
     }
 
     public override void Update()
@@ -91,6 +92,8 @@ public class Boss : EnemyBase
     }
     IEnumerator DashCourotine()
     {
+        float deg =Random.Range(0f,360f);
+        transform.position = Player.instance.transform.position + new Vector3(Mathf.Cos(deg * Mathf.Deg2Rad), Mathf.Sin(deg * Mathf.Deg2Rad), 0) * distance;
         dashing = true;
         rb.velocity = Vector2.zero;
         Vector2 dir = DIR();

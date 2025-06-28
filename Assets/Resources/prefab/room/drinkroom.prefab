@@ -144,13 +144,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bc5c8696fe81914b9d474f6c44ede3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDistance: 0
   foggylevel: {fileID: 0}
+  firstEnter: 1
   gameObjects:
   - {fileID: 6397470157905373266}
   canUpgrated: 0
   level: -1
   RoomID: 1
+  unlock: 0
+  Startcolor: {r: 0, g: 0, b: 0, a: 0}
+  isBoosRoom: 0
   dangerouslevel: 1
 --- !u!1001 &5796873145823394717
 PrefabInstance:

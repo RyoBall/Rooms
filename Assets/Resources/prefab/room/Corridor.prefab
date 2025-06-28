@@ -150,4 +150,6 @@ MonoBehaviour:
   level: -1
   RoomID: 0
   unlock: 0
+  Startcolor: {r: 0, g: 0, b: 0, a: 0}
+  isBoosRoom: 0
   dangerouslevel: 1

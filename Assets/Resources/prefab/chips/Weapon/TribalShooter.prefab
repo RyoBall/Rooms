@@ -93,8 +93,8 @@ MonoBehaviour:
   chosen: 0
   getin: 0
   StartPosition: {fileID: 0}
-  chipname: 
-  description: 
+  chipname: "\u9730\u5F39\u6A21\u5757"
+  description: "\u653B\u51FB\u529B60%\uFF0CCD1\u79D2\uFF0C\u4E2D\u5FC3\u5B50\u5F39\u7784\u51C6\u6700\u8FD1\u7684\u654C\u4EBA\uFF0C\u989D\u5916\u53D1\u5C04\u56DB\u53D1\u6563\u5C04"
   ins: {fileID: 0}
   insScript: {fileID: 0}
   prefab: {fileID: 4777491698639186324, guid: 907b7060674d77e43a1eb67dc03b74c8, type: 3}

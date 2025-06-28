@@ -144,12 +144,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 10.4715185, y: 19.616001}
-      - {x: -9.901035, y: 19.999035}
-      - {x: -20.009283, y: 0.26497686}
-      - {x: -10.073869, y: -19.896093}
-      - {x: 10.253776, y: -19.872509}
-      - {x: 20.104046, y: 0.040529907}
+    - - {x: 0, y: 36}
+      - {x: -30, y: 17.802948}
+      - {x: -30, y: -13}
+      - {x: 0, y: -32.758835}
+      - {x: 29, y: -15}
+      - {x: 30, y: 19.379425}
   m_UseDelaunayMesh: 0
 --- !u!1 &7364092323525878621
 GameObject:
@@ -232,7 +232,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 50}
+  m_Size: {x: 80, y: 80}
   m_EdgeRadius: 0
 --- !u!50 &8069592134075274904
 Rigidbody2D:

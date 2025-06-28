@@ -20,7 +20,7 @@ public class FastShooter : shooter
             DIR();
             shoot();
             doubleattackpoint = doubleattacklevel;
-            StartCoroutine(doubleroutine());
+            StartCoroutine(doubleroutine(doubleattacklevel));
         }
     }
 
@@ -45,9 +45,9 @@ public class FastShooter : shooter
         base.shoot();
     }
 
-    public override IEnumerator doubleroutine()
+    public override IEnumerator doubleroutine(float doubleattackpoint)
     {
-        return base.doubleroutine();
+        return base.doubleroutine(doubleattackpoint);
     }
 }
 

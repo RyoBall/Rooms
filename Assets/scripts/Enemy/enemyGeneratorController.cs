@@ -17,8 +17,11 @@ public class enemyGeneratorController : MonoBehaviour
     private float AllWeights = 0;
     public float Correctionfactor;
     public float cd;
+    public float Acd;
     public float cdm;
+    public float Acdm;
     public float startcdm;
+    public float Astartcdm;
     public float fightTime;
     public float fightTimem;
     public bool inend;//×îÖÕ½×¶Î
@@ -125,7 +128,7 @@ public class enemyGeneratorController : MonoBehaviour
             cdm=20000;
             cd = cdm;
             fightTime = 120f;
-            Instantiate(Bosses[gameManager.instance.currentlevel - 1], transform.position, Quaternion.identity);
+            Instantiate(Bosses[0], transform.position, Quaternion.identity);
         }
     }
     public void exit()
@@ -139,19 +142,19 @@ public class enemyGeneratorController : MonoBehaviour
         }
         Player.instance.targetRoom.GetComponent<RoomBase>().EnterAction?.Invoke();
         Player.instance.targetRoom = null;
-        ExitAction?.Invoke();
         for (int i = 0; i < Enemys.Count; i++)
         {
             Destroy(Enemys[i]);
         }
         Enemys.Clear();
         gameManager.instance.currentState = gameManager.GameState.Normal;
-        Debug.Log(1);
+        ExitAction?.Invoke();
         Player.instance.rb.velocity = Vector2.zero;
     }
     IEnumerator FightHard(float time)
     {
         yield return new WaitForSeconds(time);
         cdm = startcdm / 1.25f;
+        Acdm = Astartcdm / 1.25f;
     }
 }

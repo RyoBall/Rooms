@@ -153,6 +153,7 @@ MonoBehaviour:
   RoomID: 2
   unlock: 0
   Startcolor: {r: 0, g: 0, b: 0, a: 0}
+  isBoosRoom: 0
   dangerouslevel: 0
 --- !u!1001 &6750491274531322563
 PrefabInstance:

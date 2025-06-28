@@ -26,7 +26,7 @@ public class gameManager : MonoBehaviour
     [Header("GameState")]
     public GameState currentState;
     public enum GameState { UIPause, InFight, Normal, Rolling, Choosing };
-    public int currentlevel;
+    public static int currentlevel=1;
     [Header("UI")]
     public Action BagUIExit;
     public Action BagUIEnter;
@@ -74,19 +74,24 @@ public class gameManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.X))
         {
-            GetChipButton(1, 0, 0);
+            GetChipButton(1, 13, 0);
             ChoosePanel.instance.Enter();
         }
         if (Input.GetKeyDown(KeyCode.Alpha1) && (currentState == GameState.UIPause || currentState == GameState.Normal))
         {
             if (Bagexit)
             {
-                if (!Segexit)
+                if (!Segexit) 
+                {
                     SegUIExit.Invoke();
+                }
                 BagUIEnter.Invoke();
             }
-            else
+            else 
+            {
                 BagUIExit.Invoke();
+                Blacker.instance.Exit();
+            }
         }
         if (Input.GetKeyDown(KeyCode.Alpha2) && (currentState == GameState.UIPause || currentState == GameState.Normal))
         {
@@ -96,11 +101,12 @@ public class gameManager : MonoBehaviour
                     BagUIExit.Invoke();
                 SegUIEnter.Invoke();
             }
-            else
+            else 
+            {
                 SegUIExit.Invoke();
+                Blacker.instance.Exit();
+            }
         }
-        if (Input.GetKeyDown(KeyCode.Y))
-            SceneManager.LoadScene("ReLoad");
     }
     void InitDic()
     {
@@ -178,9 +184,11 @@ public class gameManager : MonoBehaviour
                 break;
         }
         Destroy(ins.GetComponent<ChipBase>());
+        Destroy(ins.GetComponent<Collider2D>());
         if (ins.GetComponentInChildren<occupy>() != null)
         {
-            Destroy(ins.GetComponent<occupy>());
+            Destroy(ins.GetComponentInChildren<occupy>());
+            Destroy(ins.GetComponentInChildren<Collider2D>());
         }
         insscript = chipbutton.AddComponent<GetChipBase>();
         insscript.type = type;

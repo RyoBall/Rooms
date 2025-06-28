@@ -12,6 +12,8 @@ public class Blacker : MonoBehaviour
     {
         image = GetComponent<Image>();
         instance = this;
+        gameManager.instance.BagUIEnter += Enter;
+        gameManager.instance.SegUIEnter += Enter;
     }
 
     // Update is called once per frame
@@ -19,11 +21,19 @@ public class Blacker : MonoBehaviour
     {
         
     }
-    public void Enter(float alpha=.3f,float time=.5f) 
+    public void Enter() 
+    {
+        Enter(.6f,.5f);
+    }
+    public void Exit() 
+    {
+        Exit(.5f);
+    }
+    public void Enter(float alpha,float time) 
     {
         image.DOColor(new Color(0,0,0,alpha),time);
     }
-    public void Exit(float time=.5f) 
+    public void Exit(float time) 
     {
         image.DOColor(new Color(0,0,0,0),time);
     }

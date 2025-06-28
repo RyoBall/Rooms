@@ -5,9 +5,9 @@ using UnityEngine.EventSystems;
 
 public class UpgradeBase : GlobalChipBase
 {
-    public int currentfactor;
-    public int growfactor;
-    public int maxfactor;
+    public float currentfactor;
+    public float growfactor;
+    public float maxfactor;
     public override void entereffect(GameObject BackGround)
     {
         base.entereffect(BackGround);

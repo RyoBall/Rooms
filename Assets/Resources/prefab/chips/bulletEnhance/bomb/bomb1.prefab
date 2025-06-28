@@ -26,13 +26,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612990448568480423}
-  m_LocalRotation: {x: 0, y: 0, z: -0.258819, w: 0.9659259}
+  m_LocalRotation: {x: 0, y: 0, z: -0.5, w: 0.8660254}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5841924847458801297}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -30}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -60}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -70,7 +70,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 19.834644, y: 0.17203236}
+  m_Offset: {x: 27, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -81,7 +81,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 90.51647, y: 51.350067}
+  m_Size: {x: 125, y: 75}
   m_EdgeRadius: 0
 --- !u!50 &125335460522713884
 Rigidbody2D:
@@ -217,12 +217,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 14.5}
-      - {x: -12, y: 7.5}
-      - {x: -12, y: -6}
-      - {x: 0, y: -13}
-      - {x: 12, y: -6}
-      - {x: 12, y: 7.5}
+    - - {x: 0, y: 36}
+      - {x: -30, y: 17.802948}
+      - {x: -30, y: -13}
+      - {x: 0, y: -32.758835}
+      - {x: 29, y: -15}
+      - {x: 30, y: 19.379425}
   m_UseDelaunayMesh: 0
 --- !u!114 &5845999046460698534
 MonoBehaviour:
@@ -391,12 +391,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 14.5}
-      - {x: -12, y: 7.5}
-      - {x: -12, y: -6}
-      - {x: 0, y: -13}
-      - {x: 12, y: -6}
-      - {x: 12, y: 7.5}
+    - - {x: 0, y: 36}
+      - {x: -30, y: 17.802948}
+      - {x: -30, y: -13}
+      - {x: 0, y: -32.758835}
+      - {x: 29, y: -15}
+      - {x: 30, y: 19.379425}
   m_UseDelaunayMesh: 0
 --- !u!114 &2449196720490405628
 MonoBehaviour:

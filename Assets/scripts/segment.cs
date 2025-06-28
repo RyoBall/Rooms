@@ -9,7 +9,6 @@ using System;
 public class segment : MonoBehaviour
 {
     public static segment instance;
-    public RectTransform here;
     [Header("¬÷≈Ã…Ë÷√")]
     public const int segmentcount = 12;
     public List<GameObject> segmentparts = new List<GameObject>();
@@ -34,7 +33,6 @@ public class segment : MonoBehaviour
     void Start()
     {
         instance = this;
-        here = GetComponent<RectTransform>();
         gameManager.instance.SegUIEnter += UIEnter;
         gameManager.instance.SegUIExit += UIExit;
     }
@@ -108,7 +106,7 @@ public class segment : MonoBehaviour
     }
     public void ClearWheel()
     {
-        here.rotation = Quaternion.Euler(0, 0, 0);
+        pos.rotation = Quaternion.Euler(0, 0, 0);
         foreach (Transform child in transform)
         {
             if(child.name!= "SegmentBackGround")
@@ -139,9 +137,9 @@ public class segment : MonoBehaviour
     }
     private void chec() 
     {
-        segmentImages[((int)here.rotation.eulerAngles.z / 30) % 12].GetComponent<segmentpart>().Effect();
+        segmentImages[((360-(int)pos.rotation.eulerAngles.z )/30 )% 12].GetComponent<segmentpart>().Effect();
     }
-    public void RemoveReplacementChosen() 
+    public void RemoveReplacementChosen()
     {
         for(int i = 0; i < segmentImages.Count; i++) 
         {

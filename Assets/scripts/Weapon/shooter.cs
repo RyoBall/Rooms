@@ -25,18 +25,17 @@ public class shooter : WeaponBase
                 cd = cdm;
             DIR();
             shoot();
-            doubleattackpoint = doubleattacklevel;  
-            StartCoroutine(doubleroutine());
+            StartCoroutine(doubleroutine(doubleattacklevel));
         }
     }
-    public virtual IEnumerator doubleroutine() 
+    public virtual IEnumerator doubleroutine(float doubleattackpoint) 
     {
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.05f);
         if (doubleattackpoint > 0) 
         {
-            doubleattackpoint--;
-            shoot();    
-            StartCoroutine(doubleroutine());
+            shoot();
+            Debug.Log(doubleattackpoint);
+            StartCoroutine(doubleroutine(doubleattackpoint-1));
         }
     }
     public virtual void shoot() 

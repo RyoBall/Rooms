@@ -16,6 +16,6 @@ public class EnergyTex : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = "Energy:" +Player.instance.energy.ToString();
+        text.text = "ฤÜิด:" +Player.instance.energy.ToString();
     }
 }

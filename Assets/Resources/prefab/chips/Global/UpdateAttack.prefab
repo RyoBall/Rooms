@@ -92,8 +92,8 @@ MonoBehaviour:
   chosen: 0
   getin: 0
   StartPosition: {fileID: 0}
-  chipname: 
-  description: 
-  currentfactor: 0
-  growfactor: 0
+  chipname: "\u517B\u6210\u653B\u51FB\u5168\u5C40\u6A21\u5757"
+  description: "\u521D\u59CB\u63D0\u4F9B3\u653B\u51FB\u529B,\u6BCF\u51FA\u4E00\u6B21\u9ED1\u5C4B\u989D\u5916\u63D0\u9AD82\u70B9"
+  currentfactor: 3
+  growfactor: 2
   maxfactor: 0

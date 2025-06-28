@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -16,6 +17,9 @@ public class CameraScript : MonoBehaviour
     private Vector2 velocity = Vector2.zero;
     private bool isDraging;
     public float Distancefactor;
+    public float OffsetFactor;
+    public float moveTime;
+
     void Start()
     {
         target = Player.instance.transform;
@@ -63,17 +67,7 @@ public class CameraScript : MonoBehaviour
         //按下H找到主角
         if (target != null && !isDraging)
         {
-            Vector3 targetPosition = target.position;
-            targetPosition.z = transform.position.z;
-            Vector2 smoothposition = Vector2.SmoothDamp(
-                transform.position,
-                targetPosition,
-                ref velocity,
-                smoothTime,
-                Mathf.Infinity,
-                Time.deltaTime
-            );
-            transform.position = new Vector3(smoothposition.x, smoothposition.y, transform.position.z);
+            Follow();
         }
         //按下鼠标拖动时让摄像机跟随鼠标
         if (isDraging)
@@ -99,6 +93,10 @@ public class CameraScript : MonoBehaviour
             transform.position = new Vector3(smoothposition.x, smoothposition.y, transform.position.z);
         }
     }
-
-
+    void Follow() 
+    {
+        Vector2 Offset=Player.instance.rb.velocity;
+        Vector3 targetPosition = Player.instance.transform.position + new Vector3(Offset.x*OffsetFactor, Offset.y*OffsetFactor, -10);
+        transform.DOMove(targetPosition,moveTime);
+    }
 }

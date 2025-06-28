@@ -13,6 +13,7 @@ public class EnemyBase : MonoBehaviour
     public float speed;
     public float normalspeed;
     public float health;
+    public float healthm;
     public GameObject deadparticle;
     public GameObject exp;
     public float CorrectingFactor;
@@ -28,6 +29,7 @@ public class EnemyBase : MonoBehaviour
     public Action<bullet> attackedAction = null;
     public virtual void Start()
     {
+        healthm = health;   
         rb = GetComponent<Rigidbody2D>();
         render = GetComponent<SpriteRenderer>();
         attackedAction += AttackedAction;
@@ -47,7 +49,9 @@ public class EnemyBase : MonoBehaviour
     void RecoverSpeed()
     {
         if (speed < normalspeed)
-            speed += Time.deltaTime * normalspeed * 2;
+            speed += Time.deltaTime * 5f;
+        if (speed > 0)
+            speed = normalspeed;
     }
     protected virtual void CDCount()
     {
@@ -109,7 +113,7 @@ public class EnemyBase : MonoBehaviour
     }
     private void Repel(float repelforce)
     {
-        speed -= repelforce / RepelResistance;
+        speed = -repelforce/RepelResistance;
         if (speed < -4)
             speed = -4;
     }

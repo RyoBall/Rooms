@@ -18,24 +18,24 @@ public class UIframe : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler,IP
             unlock = true;
             Player.instance.unlockpoint -= 1;
             islock = 0;
-            GetComponent<Image>().DOColor(new Color(0, 0, 0, .8f), .3f); 
+            GetComponent<Image>().enabled = false;
         }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        GetComponent<Image>().DOColor(new Color(.5f*islock,0, 0, .8f), .3f);
+        GetComponent<Image>().DOColor(new Color(.9f,0, 0, .6f), .15f);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        GetComponent<Image>().DOColor(new Color(.5f * islock, 0, 0, .4f), .3f);
+        GetComponent<Image>().DOColor(new Color(.9f, 0, 0, 1) ,.15f);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        GetComponent<Image>().alphaHitTestMinimumThreshold = 0.2f;
     }
 
     // Update is called once per frame

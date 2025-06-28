@@ -145,14 +145,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5aab5eb117f4284e9886e8f7684e3e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDistance: 0
   foggylevel: {fileID: 0}
+  firstEnter: 1
   gameObjects:
   - {fileID: 3165467740368063426}
   - {fileID: 1549693643856982693}
   canUpgrated: 0
   level: -1
   RoomID: 6
+  unlock: 0
+  Startcolor: {r: 0, g: 0, b: 0, a: 0}
+  isBoosRoom: 0
   dangerouslevel: 2
   Locker1: {fileID: 3165467740368063426}
   Locker2: {fileID: 1549693643856982693}

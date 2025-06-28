@@ -25,7 +25,7 @@ public class RoomController : MonoBehaviour
         xdistance = 20;
         ydistance = 15;
         Initroomlist();
-        Initlevel(LevelRoomlist[gameManager.instance.currentlevel-1][Random.Range(0, LevelRoomlist[gameManager.instance.currentlevel-1].Length)]);
+        Initlevel(LevelRoomlist[gameManager.currentlevel-1][Random.Range(0, LevelRoomlist[gameManager.currentlevel-1].Length)]);
     }
 
     // Update is called once per frame

@@ -50,8 +50,8 @@ public class TribalShooter : shooter
         base.Update();
     }
 
-    public override IEnumerator doubleroutine()
+    public override IEnumerator doubleroutine(float doubleattackpoint)
     {
-        return base.doubleroutine();
+        return base.doubleroutine(doubleattackpoint);
     }
 }

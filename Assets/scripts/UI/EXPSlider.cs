@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class EXPSlider : MonoBehaviour
 {
-    private Slider slider;
+    public Material targetMaterial;
+    // Start is called before the first frame update
     void Start()
     {
-        slider = GetComponent<Slider>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        slider.value = Player.instance.exp / Player.instance.expm;
+        targetMaterial.SetFloat("_Current", Player.instance.exp / Player.instance.expm);
     }
 }

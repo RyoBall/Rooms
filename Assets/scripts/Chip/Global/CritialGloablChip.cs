@@ -8,13 +8,13 @@ public class CritialGloablChip : GlobalChipBase
     public override void entereffect(GameObject BackGround)
     {
         base.entereffect(BackGround);
-        Player.instance.criticalfactor += 8;
+        Player.instance.criticalfactor += 0.08f;
     }
 
     public override void exiteffect()
     {
         base.exiteffect();
-        Player.instance.criticalfactor -= 8;
+        Player.instance.criticalfactor -= 0.08f;
     }
 
     public override void FixedUpdate()
