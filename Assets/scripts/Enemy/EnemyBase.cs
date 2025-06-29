@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 public class EnemyBase : MonoBehaviour
 {
     public float costs;
+    public float level=1;
     private SpriteRenderer render;
     public Rigidbody2D rb;
     public Vector2 dir;
@@ -113,8 +114,6 @@ public class EnemyBase : MonoBehaviour
     }
     private void Repel(float repelforce)
     {
-        speed = -repelforce/RepelResistance;
-        if (speed < -4)
-            speed = -4;
+        speed = -repelforce/RepelResistance*2;
     }
 }

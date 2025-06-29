@@ -28,6 +28,7 @@ public class enemyGeneratorController : MonoBehaviour
     public int level;
     public bool bossfighting;
     public Action ExitAction = null;
+    public Action EnterAction = null;
     public List<GameObject> Enemys = new List<GameObject>();
     public List<GameObject> Bosses = new List<GameObject>();
     // Start is called before the first frame update
@@ -80,10 +81,19 @@ public class enemyGeneratorController : MonoBehaviour
             while (currentweight < randomweight)
             {
                 currentenemyPointer++;
-                currentweight += 1/enemyGeneratorsScripts[currentenemyPointer].costs;
+                currentweight += 1 / enemyGeneratorsScripts[currentenemyPointer].costs;
             }
             Instantiate(enemyGenerators[currentenemyPointer], new Vector3(position.x + Random.Range(-Correctionfactor, Correctionfactor), position.y + Random.Range(-Correctionfactor, Correctionfactor), 0), Quaternion.identity);
             currentcost += enemyGeneratorsScripts[currentenemyPointer].costs;
+        }
+    }
+    void Generate(int type, int num, int level)
+    {
+        Vector3 position = new Vector3(Random.Range(t1.position.x, t3.position.x), Random.Range(t1.position.y, t7.position.y), 0);
+        for (int i = 0; i < num; i++)
+        {
+            enemyGenerator enemy = Instantiate(enemyGenerators[type], new Vector3(position.x + Random.Range(-Correctionfactor, Correctionfactor), position.y + Random.Range(-Correctionfactor, Correctionfactor), 0), Quaternion.identity).GetComponent<enemyGenerator>();
+            enemy.level = level;
         }
     }
     void CDCount()
@@ -92,7 +102,151 @@ public class enemyGeneratorController : MonoBehaviour
         if (cd <= 0 && fightTime >= 0)
         {
             cd = cdm;
-            Generate(15 + level * 5);
+            switch (gameManager.currentlevel)
+            {
+                case 1:
+                    switch (level)
+                    {
+                        case 1:
+                            Generate(0, 4, 1);
+                            break;
+                        case 2:
+                            Generate(0, 6, 2);
+                            break;
+                        case 3:
+                            Generate(0, 6, 3);
+                            break;
+                        case 4:
+                            Generate(0, 5, 3);
+                            Generate(0, 5, 3);
+                            break;
+                        default:
+                            Generate(0, 5, 3);
+                            Generate(0, 5, 3);
+                            break;
+                    }
+                    break;
+                case 2:
+                    switch (level)
+                    {
+                        case 1:
+                            Generate(0, 4, 3);
+                            break;
+                        case 2:
+                            Generate(0, 6, 3);
+                            break;
+                        case 3:
+                            Generate(0, 8, 3);
+                            break;
+                        case 4:
+                            Generate(0, 6, 3);
+                            break;
+                        case 5:
+                            Generate(0, 10, 3);
+                            break;
+                        default:
+                            Generate(0, 10, 3);
+                            break;
+                    }
+                    break;
+                case 3:
+                    switch (level)
+                    {
+                        case 1:
+                            Generate(1, 6, 3);
+                            break;
+                        case 2:
+                            Generate(1, 8, 3);
+                            break;
+                        case 3:
+                            Generate(1, 8, 3);
+                            break;
+                        case 4:
+                            Generate(1, 8, 3);
+                            break;
+                        case 5:
+                            Generate(1, 8, 3);
+                            break;
+                        case 6:
+                            Generate(1, 10, 3);
+                            break;
+                        default:
+                            Generate(1, 10, 3);
+                            break;
+                    }
+                    break;
+            }
+            if (Astartcdm != 0)
+            {
+                Acd -= Time.deltaTime;
+                if (Acd <= 0 && fightTime >= 0)
+                {
+                    Acd = Acdm;
+                    switch (gameManager.currentlevel)
+                    {
+                        case 2:
+                            switch (level)
+                            {
+                                case 1:
+                                    Generate(1, 4, 1);
+                                    break;
+                                case 2:
+                                    Generate(1, 6, 2);
+                                    break;
+                                case 3:
+                                    Generate(1, 8, 3);
+                                    break;
+                                case 4:
+                                    Generate(1, 6, 3);
+                                    break;
+                                case 5:
+                                    Generate(1, 10, 3);
+                                    break;
+                                default:
+                                    Generate(1, 10, 3);
+                                    break;
+                            }
+                            break;
+                        case 3:
+                            switch (level)
+                            {
+                                case 1:
+                                    Generate(2, 4, 1);
+                                    break;
+                                case 2:
+                                    Generate(2, 6, 2);
+                                    break;
+                                case 3:
+                                    Generate(2, 8, 3);
+                                    break;
+                                case 4:
+                                    Generate(2, 6, 3);
+                                    break;
+                                case 5:
+                                    Generate(2, 2, 3);
+                                    Generate(2, 2, 3);
+                                    Generate(2, 2, 3);
+                                    Generate(2, 2, 3);
+                                    break;
+                                case 6:
+                                    Generate(2, 2, 3);
+                                    Generate(2, 2, 3);
+                                    Generate(2, 2, 3);
+                                    Generate(2, 2, 3);
+                                    Generate(2, 2, 3);
+                                    break;
+                                default:
+                                    Generate(2, 2, 3);
+                                    Generate(2, 2, 3);
+                                    Generate(2, 2, 3);
+                                    Generate(2, 2, 3);
+                                    Generate(2, 2, 3);
+                                    break;
+                            }
+                            break;
+                    }
+                }
+            }
         }
     }
     void FightTimeCount()
@@ -103,9 +257,9 @@ public class enemyGeneratorController : MonoBehaviour
         }
         if (fightTime <= 0)
         {
-            if(!bossfighting)
-            exit();
-            else 
+            if (!bossfighting)
+                exit();
+            else
             {
                 Player.instance.health -= 10 * Time.deltaTime;
             }
@@ -113,6 +267,7 @@ public class enemyGeneratorController : MonoBehaviour
     }
     public void Init(bool isboss)
     {
+        EnterAction?.Invoke();
         gameManager.instance.currentState = gameManager.GameState.InFight;
         if (!isboss)
         {
@@ -120,12 +275,45 @@ public class enemyGeneratorController : MonoBehaviour
             cd = 0;
             fightTime = 60f;
             StartCoroutine(FightHard(fightTime - 30f));
+            switch (gameManager.currentlevel)
+            {
+                case 1:
+                    Astartcdm = 0;
+                    break;
+                case 2:
+                    switch (level)
+                    {
+                        case 1:
+                            Astartcdm = 10;
+                            break;
+                        case 2:
+                            Astartcdm = 10;
+                            break;
+                        case 3:
+                            Astartcdm = 10;
+                            break;
+                        case 4:
+                            Astartcdm = 5;
+                            break;
+                        case 5:
+                            Astartcdm = 5;
+                            break;
+                    }
+                    break;
+                case 3:
+                    if (level < 4)
+                        Astartcdm = 10;
+                    else
+                        Astartcdm = 5;
+                    break;
+            }
+            Acdm = Astartcdm;
             cd = 0;
         }
         else
         {
             bossfighting = true;
-            cdm=20000;
+            cdm = 20000;
             cd = cdm;
             fightTime = 120f;
             Instantiate(Bosses[0], transform.position, Quaternion.identity);
@@ -133,8 +321,7 @@ public class enemyGeneratorController : MonoBehaviour
     }
     public void exit()
     {
-        if (level <= 2)
-            level++;
+        level++;
         if (Player.instance.targetRoom != null)
         {
             Player.instance.targetRoom.GetComponent<RoomBase>().Removefog();
@@ -150,6 +337,8 @@ public class enemyGeneratorController : MonoBehaviour
         gameManager.instance.currentState = gameManager.GameState.Normal;
         ExitAction?.Invoke();
         Player.instance.rb.velocity = Vector2.zero;
+        Acdm = 0;
+        Astartcdm = 0;
     }
     IEnumerator FightHard(float time)
     {

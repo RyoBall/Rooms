@@ -31,6 +31,7 @@ public class WeaponBase : MonoBehaviour
     public GameObject bomber;
     [Header("AttackBuff")]
     public Action<EnemyBase, bullet> AttackAction=null;
+    public GameObject FireParticle;
     public virtual void Start()
     {
         rangechecer=GetComponent<CircleCollider2D>();
@@ -111,14 +112,15 @@ public class WeaponBase : MonoBehaviour
     }
     IEnumerator FireRoutine(EnemyBase target, bullet bullet, float time)
     {
-        if (time >= 0)
+        if (time >= 0&&target!=null)
         {
             target.health -= bullet.attack * (0.1f + 0.1f * bullet.dad.fireattacklevel);
-            GameObject tex = Instantiate(bullet.damagetex, transform.position + new Vector3(Random.Range(-bullet.damagetexcorecfactor, bullet.damagetexcorecfactor), Random.Range(-bullet.damagetexcorecfactor, bullet.damagetexcorecfactor), 0), Quaternion.identity);
-            tex.GetComponentInChildren<TMP_Text>().text = bullet.attack.ToString();
+            GameObject tex = Instantiate(bullet.damagetex, target.transform.position + new Vector3(Random.Range(-bullet.damagetexcorecfactor, bullet.damagetexcorecfactor), Random.Range(-bullet.damagetexcorecfactor, bullet.damagetexcorecfactor), 0), Quaternion.identity);
+            tex.GetComponentInChildren<TMP_Text>().text = (bullet.attack * (0.1f + 0.1f * bullet.dad.fireattacklevel)).ToString();
+            Instantiate(FireParticle, target.transform.position + new Vector3(Random.Range(-bullet.damagetexcorecfactor, bullet.damagetexcorecfactor), Random.Range(-bullet.damagetexcorecfactor, bullet.damagetexcorecfactor), 0), Quaternion.identity);
         }
         yield return new WaitForSeconds(1);
-        if (time >= 0)
+        if (time >= 0&&target!=null)
             StartCoroutine(FireRoutine(target, bullet, time - 1));
     }
     public void BombEffect(EnemyBase target, bullet bullet) 

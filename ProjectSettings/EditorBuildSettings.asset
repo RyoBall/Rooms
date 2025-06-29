@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/NotUseScene/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/AnothorGame.unity
+    path: Assets/Scenes/Enter.unity
+    guid: 034b0d4ea26ede74a8a90cb7076d2c17
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
     guid: 919e7d96a63264e4ba638a575e32fcb7
   - enabled: 1
-    path: Assets/Scenes/ReLoad.unity
-    guid: cf1cef995dad4234aaece00fb784f026
+    path: Assets/Scenes/Reload.unity
+    guid: 42ca36b246d32d5488bad152402ccf2a
   m_configObjects: {}

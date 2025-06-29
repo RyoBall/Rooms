@@ -5,6 +5,7 @@ using UnityEngine;
 public class Drink : MonoBehaviour
 {
     public int level;
+    public DrinkRoom dad;
     private void OnMouseDown()
     {
         int num = Random.Range(0, 3);
@@ -22,7 +23,10 @@ public class Drink : MonoBehaviour
             default:
                 break;
         }
-        Destroy(gameObject);
+        for(int i = 0; i < 3; i++) 
+        {
+            Destroy(dad.gameObjects[i]);
+        }
     }
 
 

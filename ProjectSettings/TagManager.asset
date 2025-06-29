@@ -55,3 +55,6 @@ TagManager:
   - name: UI
     uniqueID: 3525513819
     locked: 0
+  - name: Shop
+    uniqueID: 2003810669
+    locked: 0

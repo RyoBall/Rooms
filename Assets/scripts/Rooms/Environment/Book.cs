@@ -28,7 +28,7 @@ public class Book : MonoBehaviour
             case Color.green:
                 for (int i = 0; i < 3; i++)
                 {
-                    gameManager.instance.GetChipButton(1, Random.Range(0, gameManager.instance.chipsDic[3].Count), i);
+                    gameManager.instance.GetChipButton(2, Random.Range(0, gameManager.instance.chipsDic[2].Count), i);
                 }
                     ChoosePanel.instance.Enter();
                 //
@@ -36,7 +36,7 @@ public class Book : MonoBehaviour
             case Color.blue:
                 for (int i = 0; i < 3; i++)
                 {
-                    gameManager.instance.GetChipButton(1, Random.Range(0, gameManager.instance.chipsDic[2].Count), i);
+                    gameManager.instance.GetChipButton(3, Random.Range(0, gameManager.instance.chipsDic[3].Count), i);
                 }
                     ChoosePanel.instance.Enter();
                 //
@@ -44,6 +44,7 @@ public class Book : MonoBehaviour
             default:
                 return;
         }
+        GetComponentInParent<Lib>().DestroyBook();
         //GetComponentInParent<Lib>().DestroyBook();
         //把模块给予玩家
         //唤出模块装配画面

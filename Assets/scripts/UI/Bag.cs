@@ -13,7 +13,7 @@ public class Bag : MonoBehaviour
     public int CurrentBagNum;
     public GameObject currentreplacement;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         instance = this;
     }

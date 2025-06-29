@@ -16,8 +16,8 @@ public class BigEnemy : EnemyBase
     }
     public override void Start()
     {
-        health = 100 + 20 * enemyGeneratorController.instance.level;
-        attack = 5 + 2 * enemyGeneratorController.instance.level;
+        health = 100 + 20 * level;
+        attack = 5 + 2 * level;
         speed = 1.5f;
         costs = 10;
         cdm = 1;

@@ -118,8 +118,7 @@ public class segment : MonoBehaviour
     public void UIEnter()
     {
         GenerateWheel();
-        readytoroll = true;
-        transform.parent.GetComponent<RectTransform>().DOAnchorPosX(-200, .5f);
+        transform.parent.GetComponent<RectTransform>().DOAnchorPosX(-200, .5f).OnComplete(() => readytoroll = true  );
     }
     public void UIExit() 
     {

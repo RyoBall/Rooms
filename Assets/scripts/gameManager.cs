@@ -34,6 +34,7 @@ public class gameManager : MonoBehaviour
     public Action SegUIEnter;
     public bool Bagexit;
     public bool Segexit;
+    [SerializeField] private AudioSource UIaudioplayer;
     [Header("GetReplacement")]
     public List<GameObject> Segments;//通过Segment代表的房间的RoomID访问列表获取Segment
     [Header("杂项")]
@@ -41,8 +42,12 @@ public class gameManager : MonoBehaviour
     public int backpackcount;
     [Header("初始化芯片")]
     public List<ChipBase> StartChips;
+    public bool initfinish = false;
     [Header("不随场景销毁的物体")]
     public List<GameObject> DontDestroyObjs;
+    [Header("芯片音效储存")]
+    public AudioClip enterclip;
+    public AudioClip exitclip;
     // Start is called before the first frame update
     void Awake()
     {
@@ -74,7 +79,7 @@ public class gameManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.X))
         {
-            GetChipButton(1, 13, 0);
+            GetChipButton(1, 32, 0);
             ChoosePanel.instance.Enter();
         }
         if (Input.GetKeyDown(KeyCode.Alpha1) && (currentState == GameState.UIPause || currentState == GameState.Normal))
@@ -86,6 +91,7 @@ public class gameManager : MonoBehaviour
                     SegUIExit.Invoke();
                 }
                 BagUIEnter.Invoke();
+                UIaudioplayer.Play();
             }
             else 
             {
@@ -100,6 +106,7 @@ public class gameManager : MonoBehaviour
                 if (!Bagexit)
                     BagUIExit.Invoke();
                 SegUIEnter.Invoke();
+                UIaudioplayer.Play();
             }
             else 
             {
@@ -121,8 +128,10 @@ public class gameManager : MonoBehaviour
         for (int i = 0; i < StartChips.Count; i++)
         {
             StartChips[i].entereffect(SkillPanel.instance.MainPanel.transform.GetChild(i + 1).gameObject);
+            StartChips[i].StartPosition = backpacktrans[chipnums]; 
             chipnums++;
         }
+        initfinish = true;
     }
     public GameObject GetChip(int type, int order)
     {

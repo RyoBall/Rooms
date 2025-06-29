@@ -21,7 +21,7 @@ public class normalenemy : EnemyBase
 
     public override void Start()
     {
-        health = 20 + 10 * enemyGeneratorController.instance.level;
+        health = 20 + 10 *level;
         attack = 5;
         cdm = 1;
         speed = 2.5f;

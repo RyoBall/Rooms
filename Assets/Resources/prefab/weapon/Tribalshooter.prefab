@@ -96,6 +96,7 @@ MonoBehaviour:
   heavyattacklevel: 0
   fireattacklevel: 0
   bomber: {fileID: 5707013938116029968, guid: 622a7568b1d28184091dea16fcbcb559, type: 3}
+  FireParticle: {fileID: 760237439806765177, guid: 73600a1d4ccb28a4984a2df89f69a742, type: 3}
   bullet: {fileID: 5694872876357371771, guid: 804877621f21c0249818c10826d0abc8, type: 3}
   doubleattackpoint: 0
   speedfactor: 0

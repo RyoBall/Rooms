@@ -39,10 +39,6 @@ public class EnhanceChipBase : ChipBase
     public override void exiteffect()
     {
         base.exiteffect();
-        for (int i = 0; i < ChipsAround.Count; i++)
-        {
-            chipexiteffect(ChipsAround[i]);
-        }
     }
     public virtual void chipexiteffect(ChipBase chip)
     {

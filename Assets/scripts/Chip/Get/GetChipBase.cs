@@ -13,6 +13,7 @@ public class GetChipBase : MonoBehaviour, IPointerClickHandler,IPointerEnterHand
     public TMP_Text Description;
     public Action EnterAction;
     public Action ExitAction;
+    public AudioSource audio;
     public GetChipBase(int type, int order)
     {
         this.type = type;
@@ -22,6 +23,7 @@ public class GetChipBase : MonoBehaviour, IPointerClickHandler,IPointerEnterHand
     {
         EnterAction += EnterTex;
         ExitAction += ExitTex;
+        audio = GetComponent<AudioSource>();
     }
     // Start is called before the first frame update
     void Start()
@@ -38,6 +40,7 @@ public class GetChipBase : MonoBehaviour, IPointerClickHandler,IPointerEnterHand
     {
         gameManager.instance.GetChip(type, order);
         ChoosePanel.instance.Exit();
+        audio.Play();
     }
     public void EnterTex() 
     {

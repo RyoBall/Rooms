@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
     [Header("Attacked")]
     [SerializeField] private GameObject AttackedParticle;
     private SpriteRenderer sprite;
+    [SerializeField] private AudioSource attackedPlayer;
     // Start is called before the first frame update
     void Awake()
     {
@@ -101,7 +102,7 @@ public class Player : MonoBehaviour
         {
             level++;
             exp = 0;
-            expm += 10;
+            expm += 8;
             levelupreward();
         }
     }
@@ -149,6 +150,7 @@ public class Player : MonoBehaviour
         {
             if (Random.value > hidefactor)
             {
+                attackedPlayer.Play();
                 health -= damage;
                 ChangeState(new PlayerAttackedState(false));
             }

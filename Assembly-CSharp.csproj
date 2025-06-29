@@ -109,6 +109,7 @@
     <Compile Include="Assets\scripts\Chip\Weapon\shooterChip.cs" />
     <Compile Include="Assets\scripts\gameManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
+    <Compile Include="Assets\scripts\MusicManager.cs" />
     <Compile Include="Assets\scripts\Rooms\Environment\Commodities\RoomCom.cs" />
     <Compile Include="Assets\scripts\Chip\Global\AttackGlobalChip.cs" />
     <Compile Include="Assets\scripts\Enemy\EnemyBullet.cs" />
@@ -164,6 +165,7 @@
     <Compile Include="Assets\scripts\UI\FactorPanel.cs" />
     <Compile Include="Assets\scripts\Enemy\smallEnemy.cs" />
     <Compile Include="Assets\scripts\PlayerState\PlayerState.cs" />
+    <Compile Include="Assets\scripts\BulletChecer.cs" />
     <Compile Include="Assets\scripts\UI\ChipShow.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\scripts\Rooms\Environment\Flower.cs" />

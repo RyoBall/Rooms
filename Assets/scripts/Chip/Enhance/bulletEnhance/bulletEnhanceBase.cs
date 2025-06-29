@@ -12,11 +12,13 @@ public class bulletEnhanceBase : EnhanceChipBase
     public Vector3 relativePosition;
     public override void chipentereffect(ChipBase chip)
     {
+        Debug.Log("Enter");
         base.chipentereffect(chip);
     }
 
     public override void chipexiteffect(ChipBase chip)
     {
+        Debug.Log("Exit");
         base.chipexiteffect(chip);
     }
 
@@ -62,7 +64,6 @@ public class bulletEnhanceBase : EnhanceChipBase
         }
         if (Aback != null && Aback.unlock)
         {
-            Debug.Log("Enter");
             foreach (var hit in hits)
             {
                 if (hit.collider.gameObject.layer == GetinChips.UIcaolayer && hit.collider.gameObject.GetComponent<UIframe>().unlock && !hit.collider.gameObject.GetComponent<UIframe>().getin)
@@ -71,10 +72,6 @@ public class bulletEnhanceBase : EnhanceChipBase
                     entereffect(hit.collider.gameObject);
                 }
             }
-        }
-        else
-        {
-            Debug.Log("notfind");
         }
         if (!getin)
         {
