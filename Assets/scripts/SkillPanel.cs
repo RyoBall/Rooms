@@ -20,8 +20,8 @@ public class SkillPanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManager.instance.BagUIEnter += Enter;
-        gameManager.instance.BagUIExit += Exit;
+        gameManager.BagUIEnter += Enter;
+        gameManager.BagUIExit += Exit;
     }
 
     // Update is called once per frame

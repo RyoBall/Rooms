@@ -14,36 +14,32 @@ public class SegmentCom : ShopObj
     }
     static SegmentCom()
     {
-        unlocks.Add("Shop", true);
-        unlocks.Add("Lib", true);
-        unlocks.Add("Garden", true);
-        unlocks.Add("Drink", false);
-        unlocks.Add("Storage", false);
-        unlocks.Add("Research", false);
+        unlocks.Add("ÉÌµêÂÖÅÌ¿é", true);
+        unlocks.Add("Í¼Êé¹İÂÖÅÌ¿é", true);
+        unlocks.Add("Äş¾²»¨Ô°ÂÖÅÌ¿é", true);
+        unlocks.Add("ÒûÁÏÊÒÂÖÅÌ¿é", false);
+        unlocks.Add("´¢²ØÊÒÂÖÅÌ¿é", false);
+        unlocks.Add("ÑĞ¾¿ÊÒÂÖÅÌ¿é", false);
     }
     private void Start()
     {
         itemID = "Segment";
-        price = 1;
-        maxStock = 1;
+        itemName = itemName + "ÂÖÅÌ¿é";
         description = "»ñÈ¡Ò»¿é" + itemName + "ÂÖÅÌ¿é";
+        UnlockListener += Unlock;
         if (unlocks[itemName])
         {
             Unlock();
         }
-        else 
-        {
-            UnlockListener += Unlock;
-        }
     }
- 
+
     void Unlock()
     {
         if (unlocks[itemName]) 
         {
-            GetComponent<SpriteRenderer>().enabled = true;
-            GetComponent<Collider2D>().enabled = true;
-            UnlockListener -= Unlock;
+        GetComponent<SpriteRenderer>().enabled = true;
+        GetComponent<Collider2D>().enabled = true;
+        UnlockListener -= Unlock;
         }
     }
 

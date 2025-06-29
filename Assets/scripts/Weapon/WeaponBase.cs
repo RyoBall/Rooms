@@ -130,12 +130,12 @@ public class WeaponBase : MonoBehaviour
     }
     IEnumerator BombRoutine(EnemyBase target, bullet bullet,int bombpoints)
     {
+        Vector3 position = target.transform.position;
         yield return new WaitForSeconds(.05f);
-        if (bombpoints > 0)
+        if (bombpoints > 0&&target!=null)
         {
-            Debug.Log("bomb");
-            GameObject bomb = Instantiate(bomber, target.transform.position, Quaternion.identity);
-            bomb.GetComponent<bomb>().damage = (int)(attack * .3f);
+            GameObject bomb = Instantiate(bomber, position, Quaternion.identity);
+            bomb.GetComponent<bomb>().damage = (int)(bullet.attack * .3f);
             StartCoroutine(BombRoutine(target,bullet,bombpoints-1));
         }
     }

@@ -10,15 +10,15 @@ public class ShopObj : MonoBehaviour
     public int price;             // 价格
     public int maxStock = 1;      // 最大库存（0表示无限）
     [TextArea] public string description; // 商品描述
-
     virtual protected void OnMouseDown()
     {
         //货币是什么？（判断钱是不是大于价格
         if (Player.instance.energy >= price)
         {
-            if (maxStock > 1 && Player.instance.energy >= price)
+            if ((maxStock > 1 ||maxStock<=0)&& Player.instance.energy >= price)
             {
                 Buy();
+                OnMouseExit();
                 maxStock--;
                 Player.instance.energy -= price;
             }
@@ -28,10 +28,15 @@ public class ShopObj : MonoBehaviour
     {
         ;
     }
+    protected virtual void Update()
+    {
+        if(maxStock==1)
+        Destroy(gameObject);
+    }
     protected virtual void OnMouseEnter()
     {
         NameTex.instance.TMP_Text.text = itemName;
-        DescriptionTex.instance.TMP_Text.text = "Price:" + price.ToString() + "\r\n" + description;
+        DescriptionTex.instance.TMP_Text.text = "消耗能源:" + price.ToString() + "\r\n" + description;
     }
     protected virtual void OnMouseExit()
     {

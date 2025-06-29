@@ -22,8 +22,8 @@ public class RoomController : MonoBehaviour
     void Start()
     {
         instance = this;
-        xdistance = 20;
-        ydistance = 15;
+        xdistance = 28.8f;
+        ydistance = 18;
         Initroomlist();
         Initlevel(LevelRoomlist[gameManager.currentlevel-1][Random.Range(0, LevelRoomlist[gameManager.currentlevel-1].Length)]);
     }

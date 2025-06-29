@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TextBackGround : MonoBehaviour
 {
     private Image image;
+    [SerializeField]private Image backimage;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +19,12 @@ public class TextBackGround : MonoBehaviour
         if (NameTex.instance.TMP_Text.text == ""||NameTex.instance.TMP_Text.text == null)
         {
             image.enabled = false;
+            backimage.enabled = false;
         }
-        else
+        else 
+        {
             image.enabled = true;
+            backimage.enabled = true;
+        }
     }
 }

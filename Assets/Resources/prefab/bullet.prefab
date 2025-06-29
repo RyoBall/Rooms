@@ -4911,7 +4911,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 15
+  m_Radius: 100
 --- !u!50 &1448061541239260079
 Rigidbody2D:
   serializedVersion: 4
@@ -5016,7 +5016,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -299131281
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.4862745}
@@ -5046,6 +5046,8 @@ MonoBehaviour:
   speed: 20
   dad: {fileID: 0}
   disapearparticle: {fileID: 760237439806765177, guid: 8a9feeb5eac648a4d96845d530169f0f, type: 3}
+  Criticleparticle: {fileID: 760237439806765177, guid: 3d416cb0d2e3dee4eaf57bec9383119e, type: 3}
+  icyparticle: {fileID: 760237439806765177, guid: 6c6b018390da93a4387c1b0578b0310e, type: 3}
   damagetex: {fileID: 5765353168594061055, guid: eee2993fce5499149989e13db04d3e0e, type: 3}
   damagetexcorecfactor: 0.5
   attack: 0

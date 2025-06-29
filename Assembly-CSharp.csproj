@@ -139,6 +139,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\scripts\UI\Blacker.cs" />
+    <Compile Include="Assets\scripts\EnterGame.cs" />
     <Compile Include="Assets\scripts\Chip\Weapon\TribalShooter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\scripts\UI\DescriptionTex.cs" />
@@ -191,6 +192,7 @@
     <Compile Include="Assets\scripts\UI\ChangeButton.cs" />
     <Compile Include="Assets\scripts\Rooms\Environment\Commodities\ChipCom.cs" />
     <Compile Include="Assets\scripts\UI\EXPTex.cs" />
+    <Compile Include="Assets\scripts\DeathImage.cs" />
     <Compile Include="Assets\scripts\UI\LevelTex.cs" />
     <Compile Include="Assets\scripts\Rooms\Environment\Commodities\DeleteCom.cs" />
     <Compile Include="Assets\scripts\Rooms\Shop.cs" />

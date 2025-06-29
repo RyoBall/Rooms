@@ -54,7 +54,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Current: 1
+    - _Current: -2.1950002
     - _Max: 0.8
     - _Min: 0.336
     m_Colors: []

@@ -67,7 +67,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 4
 --- !u!114 &1166043427349658072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,11 +80,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459ded44a2d3ff64d835bde385535989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cd: 0
+  cd: 0.1
   cdm: 0
   enemysin: []
   dir: {x: 0, y: 0}
-  range: 15
+  range: 4
   closestenemy: {fileID: 0}
   rangechecer: {fileID: 0}
   attack: 1
@@ -96,6 +96,7 @@ MonoBehaviour:
   heavyattacklevel: 0
   fireattacklevel: 0
   bomber: {fileID: 0}
+  FireParticle: {fileID: 0}
   disapearparticle: {fileID: 760237439806765177, guid: 718dcc2070a45594bab5d82bf0f7d967, type: 3}
   damagetex: {fileID: 5765353168594061055, guid: eee2993fce5499149989e13db04d3e0e, type: 3}
   damagetexcorecfactor: 0.5

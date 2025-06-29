@@ -4843,6 +4843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50ff9cbb4b8b28c42ad7fac05f739b65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 890700637540671305, guid: c2320d5cf93610d4a8092ed79aa6ca81, type: 3}
+  enemy: {fileID: 890700637540671305, guid: 2c0f2ac392ff4ae499d54d1fdda89372, type: 3}
   cd: 3
   cdm: 3
+  level: 0

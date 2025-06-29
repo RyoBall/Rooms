@@ -12,8 +12,8 @@ public class FactorPanel : MonoBehaviour
     void Start()
     {
         rect = GetComponent<RectTransform>();
-        gameManager.instance.SegUIEnter += Enter;
-        gameManager.instance.SegUIExit += Exit;
+        gameManager.SegUIEnter += Enter;
+        gameManager.SegUIExit += Exit;
     }
 
     // Update is called once per frame

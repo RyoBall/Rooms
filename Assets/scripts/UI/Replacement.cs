@@ -14,6 +14,7 @@ public class Replacement : MonoBehaviour
         {
             segment.instance.segmentImages[i].GetComponent<segmentpart>().Clickaction = null;
             segment.instance.segmentImages[i].GetComponent<segmentpart>().Clickaction += ChooseSegment;
+            segment.instance.segmentImages[i].GetComponent<segmentpart>().readytoclick();
         }
     }
 

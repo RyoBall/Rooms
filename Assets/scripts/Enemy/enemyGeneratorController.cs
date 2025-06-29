@@ -30,6 +30,7 @@ public class enemyGeneratorController : MonoBehaviour
     public Action ExitAction = null;
     public Action EnterAction = null;
     public List<GameObject> Enemys = new List<GameObject>();
+    public List<GameObject> exps = new List<GameObject>();
     public List<GameObject> Bosses = new List<GameObject>();
     // Start is called before the first frame update
     void Awake()
@@ -46,14 +47,6 @@ public class enemyGeneratorController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            FightTest();
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            FightEndTest();
-        }
         if (gameManager.instance.currentState == gameManager.GameState.InFight)
         {
             CDCount();
@@ -316,12 +309,13 @@ public class enemyGeneratorController : MonoBehaviour
             cdm = 20000;
             cd = cdm;
             fightTime = 120f;
-            Instantiate(Bosses[0], transform.position, Quaternion.identity);
+            Instantiate(Bosses[0], transform.position,Quaternion.identity);
         }
     }
     public void exit()
     {
         level++;
+        fightTime = 0;
         if (Player.instance.targetRoom != null)
         {
             Player.instance.targetRoom.GetComponent<RoomBase>().Removefog();
@@ -334,7 +328,14 @@ public class enemyGeneratorController : MonoBehaviour
             Destroy(Enemys[i]);
         }
         Enemys.Clear();
+        for (int i = 0; i < exps.Count; i++)
+        {
+            Destroy(exps[i]);
+        }
+        exps.Clear();
         gameManager.instance.currentState = gameManager.GameState.Normal;
+        Player.instance.Walking = false;
+        Player.instance.sprite.flipX=false;
         ExitAction?.Invoke();
         Player.instance.rb.velocity = Vector2.zero;
         Acdm = 0;

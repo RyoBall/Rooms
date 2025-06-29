@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -10,14 +11,13 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     public float speed;
     public float moveTime;
-    private Animator anim;
-    private string animBoolName;
     public float movedistance;
     public Transform currentRoom;
     public Transform targetRoom;
     public float moveParticleCd;
     public float moveParticleCdm;
     public GameObject moveParticle;
+    public bool Walking;
     [Header("level")]
     public float exp;
     public float expm;
@@ -39,9 +39,11 @@ public class Player : MonoBehaviour
     public float criticalfactor;
     public float criticalattackfactor;
     public int energy;
+    [Header("Anim")]
+    private Animator anim;
+    public SpriteRenderer sprite;
     [Header("Attacked")]
     [SerializeField] private GameObject AttackedParticle;
-    private SpriteRenderer sprite;
     [SerializeField] private AudioSource attackedPlayer;
     // Start is called before the first frame update
     void Awake()
@@ -50,9 +52,10 @@ public class Player : MonoBehaviour
     }
     private void Start()
     {
+        anim = GetComponentInChildren<Animator>();
         currentState = new PlayerNormalState();
         rb = GetComponent<Rigidbody2D>();
-        sprite = GetComponent<SpriteRenderer>();
+        sprite = GetComponentInChildren<SpriteRenderer>();
         enemyGeneratorController.instance.ExitAction += GetChipReward;
         ChoosePanel.instance.ExitAction += GetChipReward;
     }
@@ -62,15 +65,50 @@ public class Player : MonoBehaviour
         Move();
         levelup();
         StateControl();
+        anim.SetBool("Walking",Walking);
+        if (health <= 0) 
+        {
+            DeathImage.instance.Enter();
+            StartCoroutine(DeadRoutine());
+        }
     }
+    IEnumerator DeadRoutine() 
+    {
+        yield return new WaitForSeconds(1);
+        Blacker.instance.Enter(1,3f);
+        StartCoroutine(DeadedRoutine());
+    }
+    IEnumerator DeadedRoutine() 
+    {
+        yield return new WaitForSeconds(3.1f);
+        foreach (GameObject obj in gameManager.NotDestroyObjs)
+        {
+            Destroy(obj);
+        }
+        SceneManager.LoadScene("Enter");  
+    } 
     void StateControl()
     {
         currentState.update();
     }
     void Move()
     {
-        if (gameManager.instance.currentState == gameManager.GameState.InFight)
+        if (gameManager.instance.currentState == gameManager.GameState.InFight) 
+        {
             rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized * speed;
+            if (rb.velocity.x < 0) 
+            {
+                sprite.flipX = true;
+            }
+            else  if(rb.velocity.x>0)
+            {
+                sprite.flipX = false;
+            }
+            if (rb.velocity != Vector2.zero)
+                Walking = true;
+            else
+                Walking = false;
+        }
         if (rb.velocity.x != 0 || rb.velocity.y != 0)
         {
             if (moveParticleCd > 0)
@@ -86,6 +124,11 @@ public class Player : MonoBehaviour
     #region AnimationAndMove
     public void BeginMove(int direction)
     {
+        if (direction == -1)
+            sprite.flipX = true;
+        else
+            sprite.flipX = false;
+        Walking = true;
         transform.DOMove(transform.position + Vector3.right * direction * movedistance, moveTime);
         sprite.DOColor(new Color(1, 1, 1, 0), moveTime);
     }
@@ -93,7 +136,7 @@ public class Player : MonoBehaviour
     public void EndMove(int direction)
     {
         transform.DOMove(transform.position + Vector3.right * direction * movedistance, moveTime);
-        sprite.DOColor(new Color(1, 1, 1, 1), moveTime);
+        sprite.DOColor(new Color(1, 1, 1, 1), moveTime).OnComplete(() => { Walking = false; sprite.flipX = false; });
     }
     #endregion
     void levelup()
@@ -164,11 +207,11 @@ public class Player : MonoBehaviour
     {
         if (hided) 
         {
-            Instantiate(AttackedParticle, transform.position, Quaternion.identity);
+            ;
         }
         else 
         {
-            //…¡±‹∂Øª≠;
+            Instantiate(AttackedParticle, transform.position, Quaternion.identity);
         }
         StartCoroutine(AttackedRoutine());
     }

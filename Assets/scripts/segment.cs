@@ -33,8 +33,8 @@ public class segment : MonoBehaviour
     void Start()
     {
         instance = this;
-        gameManager.instance.SegUIEnter += UIEnter;
-        gameManager.instance.SegUIExit += UIExit;
+        gameManager.SegUIEnter += UIEnter;
+        gameManager.SegUIExit += UIExit;
     }
     private void Update()
     {

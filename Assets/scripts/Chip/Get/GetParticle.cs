@@ -17,7 +17,10 @@ public class GetParticle : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     // Update is called once per frame
     void Update()
     {
-
+        for(int i = 0; i < 3; i++) 
+        {
+            partis[i].transform.localScale = new Vector3(Camera.main.orthographicSize/18,1,1);
+        }
     }
     public void OnPointerEnter(PointerEventData eventData)
     {

@@ -30,6 +30,9 @@ public class NextLevel : MonoBehaviour
     IEnumerator NextCoroutine()
     {
         yield return new WaitForSeconds(2f);
+        if(gameManager.currentlevel!=3)
         SceneManager.LoadScene("ReLoad");
+        else
+        SceneManager.LoadScene("Enter");
     }
 }

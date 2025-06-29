@@ -12,10 +12,12 @@ public class bullet : MonoBehaviour
     public float speed;
     public shooter dad;
     public GameObject disapearparticle;
+    public GameObject Criticleparticle;
+    public GameObject icyparticle;
     public GameObject damagetex;
     public float damagetexcorecfactor;
     public float attack;
-    public bool Criticaled=false;
+    public bool Criticaled = false;
     [Header("’€…‰")]
     private int bumpoint;
     private bool inbum;
@@ -35,14 +37,14 @@ public class bullet : MonoBehaviour
     }
     void CriticalChec()
     {
-        float random=Random.Range(0f, 1f);
-        if (random < Player.instance.criticalfactor) 
+        float random = Random.Range(0f, 1f);
+        if (random < Player.instance.criticalfactor)
         {
             attack = attack * Player.instance.criticalattackfactor;
             Criticaled = true;
         }
     }
-    void InitSkillLevel() 
+    void InitSkillLevel()
     {
         bumpoint = dad.bumattacklevel;
         bombpoint = dad.bombattacklevel;
@@ -51,7 +53,10 @@ public class bullet : MonoBehaviour
     {
         if (collision.tag == "Enemy" && collision.gameObject != nochec)
         {
-            Instantiate(disapearparticle, transform.position, Quaternion.identity);
+            if (!Criticaled)
+                Instantiate(disapearparticle, transform.position, Quaternion.identity);
+            else
+                Instantiate(Criticleparticle, transform.position, Quaternion.identity);
             collision.GetComponent<EnemyBase>().health -= attack;
             GameObject tex = Instantiate(damagetex, transform.position + new Vector3(Random.Range(-damagetexcorecfactor, damagetexcorecfactor), Random.Range(-damagetexcorecfactor, damagetexcorecfactor), 0), Quaternion.identity);
             tex.GetComponentInChildren<TMP_Text>().text = attack.ToString();
@@ -61,6 +66,8 @@ public class bullet : MonoBehaviour
             dad.AttackAction?.Invoke(collision.GetComponent<EnemyBase>(), this);
             //icychec
             collision.GetComponent<EnemyBase>().icytime += dad.icyattacklevel;
+            if(dad.icyattacklevel>0)
+            Instantiate(icyparticle, transform.position, Quaternion.identity);
             //’€…‰chec
             nochec = collision.gameObject;
             if (bumpoint > 0)
@@ -100,18 +107,21 @@ public class bullet : MonoBehaviour
         for (int i = 0; i < enemysin.Count; i++)
         {
             GameObject enemy = enemysin[i];
-            if (i == 0)
+            if (enemy != nochec)
             {
-                closest = enemy;
-                closestdistance = (enemy.transform.position.x - transform.position.x) * (enemy.transform.position.x - transform.position.x) + (enemy.transform.position.y - transform.position.y) * (enemy.transform.position.y - transform.position.y);
-            }
-            else
-            {
-                float distance = (enemy.transform.position.x - transform.position.x) * (enemy.transform.position.x - transform.position.x) + (enemy.transform.position.y - transform.position.y) * (enemy.transform.position.y - transform.position.y);
-                if (distance < closestdistance)
+                if (i == 0)
                 {
                     closest = enemy;
-                    closestdistance = distance;
+                    closestdistance = (enemy.transform.position.x - transform.position.x) * (enemy.transform.position.x - transform.position.x) + (enemy.transform.position.y - transform.position.y) * (enemy.transform.position.y - transform.position.y);
+                }
+                else
+                {
+                    float distance = (enemy.transform.position.x - transform.position.x) * (enemy.transform.position.x - transform.position.x) + (enemy.transform.position.y - transform.position.y) * (enemy.transform.position.y - transform.position.y);
+                    if (distance < closestdistance)
+                    {
+                        closest = enemy;
+                        closestdistance = distance;
+                    }
                 }
             }
         }

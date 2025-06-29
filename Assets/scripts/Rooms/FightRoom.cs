@@ -14,8 +14,4 @@ public class FightRoom : RoomBase
         base.Start();
     }
 
-    public override void ChangeTofoggy()
-    {
-        ;
-    }
 }

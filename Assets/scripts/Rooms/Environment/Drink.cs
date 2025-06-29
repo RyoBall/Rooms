@@ -23,7 +23,9 @@ public class Drink : MonoBehaviour
             default:
                 break;
         }
-        for(int i = 0; i < 3; i++) 
+        NameTex.instance.TMP_Text.text = null;
+        DescriptionTex.instance.TMP_Text.text = null;
+        for (int i = 0; i < 3; i++) 
         {
             Destroy(dad.gameObjects[i]);
         }
@@ -80,7 +82,6 @@ public class Drink : MonoBehaviour
                 break;
             case 2:
                 Player.instance.healthm += 30;
-                //其实没必要用这里但是我写都写了多用用好啦
                 CheckAndRecover(30);
                 break;
             default:
@@ -94,5 +95,28 @@ public class Drink : MonoBehaviour
         float max = Player.instance.healthm;
         Player.instance.health = current + health < max  ?
             current + health : max;
+    }
+    private void OnMouseEnter()
+    {
+        switch (level) 
+        {
+            case 1:
+                NameTex.instance.TMP_Text.text = "诡异的饮料";
+                DescriptionTex.instance.TMP_Text.text = "随机触发以下效果之一：恢复理智值上限的1/3理智度；\r\n降低理智值总上限的五分之一的理智值；\r\n提高20理智度上限，同时恢复20理智度";
+                break;
+            case 2:
+                NameTex.instance.TMP_Text.text = "疑似正常的饮料";
+                DescriptionTex.instance.TMP_Text.text = "随机触发以下效果之一:恢复理智值上限的2/3理智度；\r\n提高40理智值上限，不同时恢复理智值；\r\n提高20理智值上限，同时恢复30理智值；";
+                break;
+            case 3:
+                NameTex.instance.TMP_Text.text = "看起来不错的饮料";
+                DescriptionTex.instance.TMP_Text.text = "随机触发以下效果之一:恢复全部理智度；\r\n提高50理智值上限，不同时恢复理智值；\r\n提高30理智度上限，同时恢复30理智度；";
+                break;
+        }
+    }
+    private void OnMouseExit()
+    {
+        NameTex.instance.TMP_Text.text = null;
+        DescriptionTex.instance.TMP_Text.text = null;
     }
 }

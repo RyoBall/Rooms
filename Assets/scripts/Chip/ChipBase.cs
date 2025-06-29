@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
+public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler,IPointerEnterHandler,IPointerExitHandler
 {
     public Vector2 position;
     public bool chosen;
@@ -20,6 +20,8 @@ public class ChipBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     public string description;
     public virtual void OnPointerDown(PointerEventData eventData)
     {
+        player.clip = gameManager.instance.exitclip;
+        player.Play();
         if (getin)
         {
             exiteffect();
@@ -59,17 +61,11 @@ out Vector2 localPoint))
     // Start is called before the first frame update
     public virtual void Start()
     {
-        StartCoroutine(BlackExit(0.5f, 1));
         GetComponent<Image>().alphaHitTestMinimumThreshold = 0.1f;
         BagPanel = Bag.instance.gameObject;
         rectTransform = GetComponent<RectTransform>();
         player = GetComponent<AudioSource>();
         player.volume = .15f;
-    }
-    IEnumerator BlackExit(float starttime, float time)
-    {
-        yield return new WaitForSeconds(starttime);
-        Blacker.instance.Exit(time);//ºÚÄ»ÂäÏÂ
     }
     // Update is called once per frame
     public virtual void FixedUpdate()
@@ -97,8 +93,6 @@ out Vector2 localPoint))
         GetinChips.instance.chips.Remove(this);
         background.getin = false;
         background = null;
-        player.clip = gameManager.instance.exitclip;
-        player.Play();
     }
     public void returnposition()
     {
@@ -117,4 +111,17 @@ out Vector2 localPoint))
         }
     }
 
+
+
+    public virtual void OnPointerExit(PointerEventData eventData)
+    {
+        NameTex.instance.TMP_Text.text = null;
+        DescriptionTex.instance.TMP_Text.text = null;
+    }
+
+    public virtual void OnPointerEnter(PointerEventData eventData)
+    {
+        NameTex.instance.TMP_Text.text = chipname;
+        DescriptionTex.instance.TMP_Text.text = description;
+    }
 }

@@ -24,6 +24,8 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] protected float cdm;
     [Header("state")]
     public float icytime;
+    public bool icyResistence=false;
+    public bool isboss;
     [SerializeField] protected float RepelResistance = 1;
     [SerializeField] protected GameObject bullet;
     // Start is called before the first frame update
@@ -67,6 +69,11 @@ public class EnemyBase : MonoBehaviour
             dir = dir.normalized;
             rb.velocity = speed * dir;
         }
+        else 
+        {
+            if (!icyResistence)
+                rb.velocity = Vector2.zero;
+        }
     }
     public virtual void Dead()
     {
@@ -94,7 +101,8 @@ public class EnemyBase : MonoBehaviour
     {
         for (int i = 0; i < nums; i++)
         {
-            Instantiate(exp, transform.position + new Vector3(Random.Range(-CorrectingFactor, CorrectingFactor), Random.Range(-CorrectingFactor, CorrectingFactor), 0), Quaternion.identity);
+            GameObject Exp=Instantiate(exp, transform.position + new Vector3(Random.Range(-CorrectingFactor, CorrectingFactor), Random.Range(-CorrectingFactor, CorrectingFactor), 0), Quaternion.identity);
+            enemyGeneratorController.instance.exps.Add(Exp);
         }
     }
     protected void AttackedAction(bullet source)
@@ -109,11 +117,12 @@ public class EnemyBase : MonoBehaviour
     }
     IEnumerator attackroutine()
     {
-        yield return new WaitForSeconds(0);
+        yield return new WaitForSeconds(0.1f);
         render.color = Color.white;
     }
     private void Repel(float repelforce)
     {
+        if(!isboss)
         speed = -repelforce/RepelResistance*2;
     }
 }

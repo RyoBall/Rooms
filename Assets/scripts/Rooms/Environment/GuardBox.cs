@@ -38,4 +38,14 @@ public class GuardBox : MonoBehaviour
             dexp.active = true;
         }
     }
+    private void OnMouseEnter()
+    {
+        NameTex.instance.TMP_Text.text = "禁闭盒";
+        DescriptionTex.instance.TMP_Text.text = "给予大量经验，能源，模块";
+    }
+    private void OnMouseExit()
+    {
+        NameTex.instance.TMP_Text.text = null;
+        DescriptionTex.instance.TMP_Text.text = null;
+    }
 }

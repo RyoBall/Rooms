@@ -6,7 +6,11 @@ public class Locker : MonoBehaviour
 {
     public int level;
     public int type;
-
+    private void Awake()
+    {
+        if (type == 2 && level == 0)
+            Destroy(gameObject);
+    }
     private void OnMouseDown()
     {
         //第一个柜子
@@ -20,7 +24,10 @@ public class Locker : MonoBehaviour
                         Player.instance.energy += Random.Range(5, 21);
                     }
                     else
-                        RandomAllChip();
+                    {
+                        int i = Random.Range(1, 4);
+                        gameManager.instance.GetChip(i, Random.Range(0, gameManager.instance.chipsDic[i].Count));
+                    }
                     break;
                 case 1:
                     Player.instance.energy += Random.Range(5, 21);
@@ -34,46 +41,54 @@ public class Locker : MonoBehaviour
         }
         else if (type == 2)
         {
+            int i = Random.Range(1, 4);
             switch (level)
             {
                 case 1:
-                    RandomAllChip();
+                    gameManager.instance.GetChip(i, Random.Range(0, gameManager.instance.chipsDic[i].Count));
                     break;
                 case 2:
-                    RandomTypeChip();
-                    break ;
+                    for (int j = 0; j < 3; j++)
+                    {
+                        gameManager.instance.GetChipButton(i, Random.Range(0, gameManager.instance.chipsDic[i].Count), j);
+                    }
+                    ChoosePanel.instance.Enter();
+                    break;
                 default:
                     break;
             }
         }
+        OnMouseExit();
         Destroy(gameObject);
     }
-
-    private static void RandomTypeChip()
+    private void OnMouseEnter()
     {
-        int type = Random.Range(1, 5);
-        //根据不同类型随机模块
-        switch (type)
+        switch (level)
         {
             case 1:
+                NameTex.instance.TMP_Text.text = "破旧的柜子";
+                DescriptionTex.instance.TMP_Text.text = "打开大概率获得少量经验，小概率随机获得一个模块";
                 break;
             case 2:
+                NameTex.instance.TMP_Text.text = "落灰的柜子";
+                if (type == 1)
+                    DescriptionTex.instance.TMP_Text.text = "打开获得一些经验";
+                else
+                    DescriptionTex.instance.TMP_Text.text = "打开获得一个随机模块";
                 break;
             case 3:
-                break;
-            case 4:
-                break;
-            default:
+                NameTex.instance.TMP_Text.text = "精致的柜子";
+                if (type == 1)
+                    DescriptionTex.instance.TMP_Text.text = "打开获得大量经验";
+                else
+                    DescriptionTex.instance.TMP_Text.text = "打开会从三个随机模块中选择一个获取";
                 break;
         }
-        //gameManager.instance.ShowChipAndButton(type,
     }
-
-    void RandomAllChip()
+    private void OnMouseExit()
     {
-        //这里需要确定总数
-        //gameManager.instance.ShowChipAndButton
+        NameTex.instance.TMP_Text.text = null;
+        DescriptionTex.instance.TMP_Text.text = null;
     }
-
 }
 

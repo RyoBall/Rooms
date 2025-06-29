@@ -19,7 +19,7 @@ public class CameraScript : MonoBehaviour
     public float Distancefactor;
     public float OffsetFactor;
     public float moveTime;
-
+    public float movespeed;
     void Start()
     {
         target = Player.instance.transform;
@@ -95,8 +95,16 @@ public class CameraScript : MonoBehaviour
     }
     void Follow() 
     {
-        Vector2 Offset=Player.instance.rb.velocity;
-        Vector3 targetPosition = Player.instance.transform.position + new Vector3(Offset.x*OffsetFactor, Offset.y*OffsetFactor, -10);
-        transform.DOMove(targetPosition,moveTime);
+        /*Vector2 Offset=Player.instance.rb.velocity;
+        Vector3 targetPosition = Player.instance.transform.position + new Vector3(Offset.x * OffsetFactor, Offset.y * OffsetFactor, -10);
+        if(!(transform.position.x-targetPosition.x<.05f&& transform.position.x - targetPosition.x > -.05f&& transform.position.y - targetPosition.y < .05f && transform.position.y - targetPosition.y > -.05f))
+        {
+            transform.position += (targetPosition - transform.position).normalized * movespeed * Time.deltaTime;        
+        }
+        if(transform.position.x - targetPosition.x >10||transform.position.x - targetPosition.x < -10f || transform.position.y - targetPosition.y > 10f || transform.position.y - targetPosition.y < -10) 
+        {
+            transform.position = Player.instance.transform.position+new Vector3(0,0,-10);
+        }*/
+        transform.position = Player.instance.transform.position + new Vector3(0, 0, -10);
     }
 }

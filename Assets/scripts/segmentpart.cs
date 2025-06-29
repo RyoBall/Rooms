@@ -12,13 +12,16 @@ public class segmentpart : MonoBehaviour, IPointerClickHandler
     public GameObject room;
     public int i;
     public Action<segmentpart> Clickaction=null;
+    public ParticleSystem parti;
     private void Awake()
     {
+        gameManager.SegUIExit += Stopclick;
         GetComponent<Image>().alphaHitTestMinimumThreshold = 0.5f;
         StartCoroutine(SetScale());
     }
     void Update() 
     {
+        parti.transform.localScale = new Vector3(Camera.main.orthographicSize / 18, 1, 1);
     }
     IEnumerator SetScale() 
     {
@@ -27,7 +30,6 @@ public class segmentpart : MonoBehaviour, IPointerClickHandler
     }
     public void Effect()
     {
-        Debug.Log("enterpos");
         GameObject ins = Instantiate(room, segment.instance.targetroom.transform.position, Quaternion.identity);
         ins.GetComponent<RoomBase>().Position = segment.instance.targetroom.GetComponent<RoomPosition>().Position;
         Destroy(segment.instance.targetroom.gameObject);
@@ -40,5 +42,14 @@ public class segmentpart : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         Clickaction?.Invoke(this);
+    }
+    public void readytoclick() 
+    {
+        parti.Play();   
+    }
+    public void Stopclick() 
+    {
+        if(parti!=null)
+        parti.Stop();
     }
 }

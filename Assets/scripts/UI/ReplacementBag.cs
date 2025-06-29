@@ -6,12 +6,15 @@ using UnityEngine;
 public class ReplacementBag : MonoBehaviour
 {
     public static ReplacementBag instance;
+    public List<SegmentBag> segmentBags;
+    public int segmentsnum;
     public bool exit;
     public float enterY;
     public float exitY;
     public GameObject CurrentBag;
     public int CurrentBagNum;
     public GameObject currentreplacement;
+    public GameObject replacement;
     private void Awake()
     {
         instance = this;
@@ -19,8 +22,8 @@ public class ReplacementBag : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManager.instance.SegUIEnter += Enter;
-        gameManager.instance.SegUIExit += Exit;
+        gameManager.SegUIEnter += Enter;
+        gameManager.SegUIExit += Exit;
     }
 
     // Update is called once per frame

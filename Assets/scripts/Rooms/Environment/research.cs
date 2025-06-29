@@ -69,4 +69,25 @@ public class research : MonoBehaviour
         freepoint = level;
         cost = 5;
     }
+    private void OnMouseOver()
+    {
+        if (cost <= 20) 
+        {
+            NameTex.instance.TMP_Text.text = "研究器具";
+            if(freepoint<=0)
+            DescriptionTex.instance.TMP_Text.text = "消耗"+cost.ToString()+ "能源进行研究,概率获得一个模块，失败会提高下次成功的概率";
+            else
+            DescriptionTex.instance.TMP_Text.text =  "不消耗能源进行一次研究,概率获得一个模块，失败会提高下次成功的概率";
+        }
+        else 
+        {
+            NameTex.instance.TMP_Text.text = "报废的研究器具";
+            DescriptionTex.instance.TMP_Text.text =  "使用多次已无法再次进行研究的研究器具";
+        }
+    }
+    private void OnMouseExit()
+    {
+        NameTex.instance.TMP_Text.text = null;
+        DescriptionTex.instance.TMP_Text.text = null;
+    }
 }

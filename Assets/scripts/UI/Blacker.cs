@@ -12,8 +12,8 @@ public class Blacker : MonoBehaviour
     {
         image = GetComponent<Image>();
         instance = this;
-        gameManager.instance.BagUIEnter += Enter;
-        gameManager.instance.SegUIEnter += Enter;
+        gameManager.BagUIEnter += Enter;
+        gameManager.SegUIEnter += Enter;
     }
 
     // Update is called once per frame

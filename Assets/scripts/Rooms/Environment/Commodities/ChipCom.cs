@@ -36,8 +36,6 @@ public class ChipCom : ShopObj
         ChipBase chipBase = gameManager.instance.chipsDic[(int)chipType][order].GetComponent<ChipBase>();
         itemID = "Chip";
         itemName = chipBase.chipname;
-        price = 1;
-        maxStock = 0;
         description = chipBase.description;
     }
     void insSprite() //获取芯片商品图片
@@ -49,20 +47,17 @@ public class ChipCom : ShopObj
             Destroy(inschip.GetComponentInChildren<occupy>());
         }
     }
-
     protected override void Buy()
     {
         base.Buy();
         gameManager.instance.GetChipButton((int)chipType, order, 2);
         ChoosePanel.instance.Enter();
     }
-
     protected override void OnMouseEnter()
     {
         base.OnMouseEnter();
         insSprite();
     }
-
     protected override void OnMouseExit()
     {
         base.OnMouseExit();

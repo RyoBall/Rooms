@@ -22,8 +22,6 @@ public class Recover : ShopObj
     {
         itemID = "Recover";
         itemName = "Recover";
-        price = 1;
-        maxStock = 1;
         description = "ª÷∏¥“ª∞Îµƒ¿Ì÷«";
     }
 }

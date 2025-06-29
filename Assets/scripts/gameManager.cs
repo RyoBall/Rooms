@@ -6,14 +6,12 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using System;
 using Unity.VisualScripting;
-using UnityEditor.SearchService;
 using UnityEngine.SceneManagement;
 
 public class gameManager : MonoBehaviour
 {
     public static gameManager instance;
     [Header("GetChip")]
-    [SerializeField] private GameObject backpackpanel;
     public List<GameObject> BulletEffectChips;
     public List<GameObject> GlobalChips;
     public List<GameObject> BulletEnhanceChips;
@@ -28,10 +26,10 @@ public class gameManager : MonoBehaviour
     public enum GameState { UIPause, InFight, Normal, Rolling, Choosing };
     public static int currentlevel=1;
     [Header("UI")]
-    public Action BagUIExit;
-    public Action BagUIEnter;
-    public Action SegUIExit;
-    public Action SegUIEnter;
+    public static Action BagUIExit;
+    public static Action BagUIEnter;
+    public static Action SegUIExit;
+    public static Action SegUIEnter;
     public bool Bagexit;
     public bool Segexit;
     [SerializeField] private AudioSource UIaudioplayer;
@@ -45,6 +43,7 @@ public class gameManager : MonoBehaviour
     public bool initfinish = false;
     [Header("不随场景销毁的物体")]
     public List<GameObject> DontDestroyObjs;
+    public static List<GameObject> NotDestroyObjs=new List<GameObject>();
     [Header("芯片音效储存")]
     public AudioClip enterclip;
     public AudioClip exitclip;
@@ -65,7 +64,9 @@ public class gameManager : MonoBehaviour
     }
     private void Start()
     {
+        chipGetButtonParent = ChoosePanel.instance.gameObject;
         InitChip();
+        StartCoroutine(BlackExit(0.5f,1));
     }
 
     // Update is called once per frame
@@ -76,11 +77,6 @@ public class gameManager : MonoBehaviour
             BagUIExit.Invoke();
             SegUIExit.Invoke();
             currentState = GameState.InFight;
-        }
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            GetChipButton(1, 32, 0);
-            ChoosePanel.instance.Enter();
         }
         if (Input.GetKeyDown(KeyCode.Alpha1) && (currentState == GameState.UIPause || currentState == GameState.Normal))
         {
@@ -166,6 +162,11 @@ public class gameManager : MonoBehaviour
         }
         return ins;
     }
+    IEnumerator BlackExit(float starttime, float time)
+    {
+        yield return new WaitForSeconds(starttime);
+        Blacker.instance.Exit(time);//黑幕落下
+    }
     public void GetChipButton(int type, int order, int position)
     {
         GameObject chipbutton = Instantiate(chipGetButton, buttonpacktrans[position].position, Quaternion.identity, chipGetButtonParent.transform);
@@ -199,25 +200,30 @@ public class gameManager : MonoBehaviour
             Destroy(ins.GetComponentInChildren<occupy>());
             Destroy(ins.GetComponentInChildren<Collider2D>());
         }
+        ins.transform.localScale = new Vector3(.5f,.5f,1);
         insscript = chipbutton.AddComponent<GetChipBase>();
         insscript.type = type;
         insscript.order = order;
     }
     public void GetReplacementInReward(GameObject segment)
     {
-        GetReplacement(segment, SegmentBag.instance.segmentsnum++);
+        GetReplacement(segment, ReplacementBag.instance.segmentsnum);
     }
     public void GetReplacement(GameObject segment, int i)
     {
-        GameObject replacement = Instantiate(SegmentBag.instance.replacement, SegmentBag.instance.Positions[i].position, Quaternion.identity, SegmentBag.instance.transform);
+        ReplacementBag.instance.segmentsnum++;
+        GameObject replacement = Instantiate(ReplacementBag.instance.replacement, ReplacementBag.instance.segmentBags[i / 21].Positions[i%21].position, Quaternion.identity, ReplacementBag.instance.transform);
         replacement.GetComponent<Replacement>().segmentpart = segment;
         replacement.GetComponent<Replacement>().ID = i;
-        replacement.GetComponent<Image>().color = segment.GetComponent<Image>().color;
+        replacement.GetComponent<Image>().sprite = segment.GetComponent<Image>().sprite;
     }
     void DontDestroy()
     {
-        foreach (GameObject obj in DontDestroyObjs)
+        foreach (GameObject obj in DontDestroyObjs) 
+        {
             DontDestroyOnLoad(obj);
+            NotDestroyObjs.Add(obj);
+        }
     }
     //用于生成给玩家选择的模块
     /*public void ShowChipAndButton(int type, int order, RectTransform middleScreen, Transform parent)

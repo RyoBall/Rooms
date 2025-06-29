@@ -27,7 +27,7 @@ public class AttackGlobalChip : GlobalChipBase
         base.OnPointerDown(eventData);
     }
 
-    public override void OnPointerUp(PointerEventData eventData)
+    public override void OnPointerUp(PointerEventData eventData)    
     {
         base.OnPointerUp(eventData);
     }

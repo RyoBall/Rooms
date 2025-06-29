@@ -39,7 +39,7 @@ public class Boss : EnemyBase
         health = 1500;
         attack = 10;
         cdm = 1;
-        skillcdm = 10;
+        skillcdm = 6-gameManager.currentlevel;
         speed = 3.5f;
         base.Start();
     }
